@@ -1,7 +1,7 @@
 #ITP_EmblemObjects#
 
 ##Server Info##
-[DEV Server](itp460.uscitp.com)
+[DEV Server](http://itp460.uscitp.com)
 
 
 ##Team Members##
