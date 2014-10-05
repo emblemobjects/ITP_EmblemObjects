@@ -1,6 +1,10 @@
-ITP_EmblemObjects
+#ITP_EmblemObjects#
 =================
+##Server Info##
+[DEV Server](itp460.uscitp.com)
 
+=================
+##Team Members##
 Angela Liu
 213-550-9117
 ziweiliu@usc.edu
