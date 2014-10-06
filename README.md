@@ -16,3 +16,7 @@ valderru@usc.edu
 Alexa Dorsey
 408-470-0547
 acdorsey@usc.edu
+
+Kevin Wang
+8327159975
+kevinjwa@usc.edu 
