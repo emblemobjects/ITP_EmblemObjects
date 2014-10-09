@@ -20,3 +20,7 @@ acdorsey@usc.edu
 Kevin Wang
 8327159975
 kevinjwa@usc.edu 
+
+Tyler Anne Isaman
+8603719468
+isaman@usc.edu
