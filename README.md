@@ -24,3 +24,7 @@ kevinjwa@usc.edu
 Tyler Anne Isaman
 8603719468
 isaman@usc.edu
+
+Tess Wu
+4082502158
+veronitw@usc.edu
