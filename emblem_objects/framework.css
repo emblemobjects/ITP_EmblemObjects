@@ -87,6 +87,37 @@ html,body{
     height: 40px;
 }
 
+#navigation div {
+    height: 40px;
+}
+
+#search-field {
+    display: inline-block;
+    background-color: #ffcc66;
+    height : 25px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float:right;
+}
+
+#search-field input {
+    border: none;
+    padding: 5px;
+    width: 180px;
+    background-color: #ffcc66;
+
+}
+
+#search-field button {
+    border: none;
+    background: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
 
 /*******************************/
 /***  CONTENT  ***/
