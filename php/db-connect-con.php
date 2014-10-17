@@ -1,0 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Angela
+ * Date: 10/16/2014
+ * Time: 6:50 PM
+ */
+//Create Connection
+include_once 'db-config.php';
+$con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+// Check connection
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
