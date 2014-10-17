@@ -53,3 +53,6 @@ desktop.ini
 /dist
 /bower_components
 /node_modules
+
+#IDE GENERATED 
+.idea
