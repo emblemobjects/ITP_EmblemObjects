@@ -1,0 +1,26 @@
+html, body {
+    background-color: #f8f8f8;
+    font-family: 'EB Garamond', serif;
+    color: #ffffff;
+    background-image: url("http://localhost:8080/itp460/ITP_EmblemObjects/images/geometric_lines_background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* wrapper div for entire page */
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+/* container with fixed width for page */
+.container {
+    margin: auto;
+    width: 1200px;
+    background-color: transparent;
+    text-align: center;    
+}
