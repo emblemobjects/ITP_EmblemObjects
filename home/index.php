@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+include './../php/json-store-objects.php';
+?>
 
 <html lang="en">
 <head>
@@ -6,7 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ITP460/ITP_EmblemObjects/css/header.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
@@ -27,8 +30,7 @@
         <!-- CONTENT --> 
         <div id="content">
             <div class="container">
-                
-                
+
                 <!-- Homepage content goes here! -->
             
             </div>
