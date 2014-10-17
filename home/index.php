@@ -26,7 +26,7 @@
     
         <!-- CONTENT --> 
         <div id="content">
-            <div id="container">
+            <div class="container">
                 
                 
                 <!-- Homepage content goes here! -->

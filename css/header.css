@@ -2,7 +2,7 @@
     background-color: #333333;
     overflow: hidden;
     height: 150px;
-    position: relative;
+    width:100%;
     padding-bottom: 10px;  
 }
 
@@ -43,5 +43,7 @@
 #title{
     float: left;
     font-size: 28pt;
-    margin-top: 45px;    
+    margin-top: 45px;
+    text-decoration: none;
+    color: white;
 }
