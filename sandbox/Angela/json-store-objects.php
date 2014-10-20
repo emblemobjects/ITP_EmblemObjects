@@ -15,7 +15,6 @@ $sql = "SELECT item_id, item_tag, subcategory_desc, item_name, user_first_name, 
 $items_results = mysqli_query($con, $sql);
 
 $items_array = array();
-$details_array = array();//this is creating the array that will be used to add to the 3rd dimension
 
 if (!$items_results){
     echo mysqli_error($con);
@@ -23,6 +22,7 @@ if (!$items_results){
 else {
     while ($row = mysqli_fetch_array($items_results)) {
         $item_id = $row['item_id'];
+        $details_array = array();//this is creating the array that will be used to add to the 3rd dimension
         $sql_details = "SELECT item_detail_id, item_raw_price, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
         $detail_results = mysqli_query($con, $sql_details);
         if (!$detail_results){
@@ -30,7 +30,6 @@ else {
         }
         else {
             while ($row2 = mysqli_fetch_array($detail_results)){
-
                 array_push($details_array, array('detail_id'=>$row2['item_detail_id'], 'price'=>$row2['item_raw_price'], 'material'=>$row2['material_desc'], 'size'=>$row2['item_size']));
             }
 
