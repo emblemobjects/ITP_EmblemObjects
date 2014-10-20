@@ -1,7 +1,4 @@
 <!doctype html>
-<?php
-include './../php/json-store-objects.php';
-?>
 
 <html lang="en">
 <head>
@@ -9,10 +6,10 @@ include './../php/json-store-objects.php';
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ITP460/ITP_EmblemObjects/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/header.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
+    <link rel="stylesheet" type="text/css" href="content.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">   
 
 </head>
@@ -20,18 +17,25 @@ include './../php/json-store-objects.php';
 
 <body>  
     <div id="wrapper">
-        <div id="header"></div><div style="clear:both"></div>
-        <div id="navigation"></div><div style="clear:both"></div>
+        <div id="header"></div>
+        <div style="clear:both"></div>
+        <div id="navigation"></div>
+        <div style="clear:both"></div>
      
      
-     
-     
-    
+
         <!-- CONTENT --> 
         <div id="content">
             <div class="container">
+                
+                
+                <!-- Container to hold the objects -->
+                <div id="objects-display">
+                    
+                    
+                    
+                </div>
 
-                <!-- Homepage content goes here! -->
             
             </div>
         </div>
@@ -39,8 +43,13 @@ include './../php/json-store-objects.php';
     
     
 
-        <div id="footer"></div><div style="clear:both"></div>
+        <div id="footer"></div>
+        <div style="clear:both"></div>
     </div>
+    
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/json_search_db.js"></script>
+
+        
 </html>
