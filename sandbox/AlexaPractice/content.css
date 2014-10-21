@@ -1,0 +1,5 @@
+#content {
+    height: 100%;
+    padding-bottom: 100px;  /* Height of the footer (to keep it at the bottom of the page) */
+    color:black;
+}

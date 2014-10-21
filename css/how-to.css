@@ -5,29 +5,74 @@
 #content .container {
     color: black;
     text-align: left;
-    background-color: white;
-    padding: 0px 100px 40px 100px;
-    width: 1000px;
+    padding: 0px 0px 40px 0px;
+    width: 1200px;
 }
 
 #content .container h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
     margin:0px;
     padding:20px 0px 20px 0px;
 }
 
-#content .text {
-    color: black;
-    font-size: 1.5em;
+
+#content .container hr {
+    height: 1px;
+    color: #ffffff;
 }
 
-.index {
+
+.how-to-index {
+    width: 50px;
+    float:left;
+    margin-left: 20px;
+    font-size:18pt;
+    color: #333333;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.how-to-index span {
     margin-right: 12px;
     font-size: 2.5em;
     font-weight: bold;
 }
 
-#content .container hr {
-    height: 1px;
+
+.how-to-box {
+    width: 1090px;
+    padding: 0px 20px 0px 20px;
+    float:left;
+    font-size:11pt;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.how-to-box span {
+    color: black;
+    font-size: 1.8em;
+}
+
+.how-to-image {
+    margin-top: 20px;
+    margin-right: 0px;
+}
+
+.box-color-1{
+    background-color: rgba(255, 255, 255, 0.8);
+    height:350px;
+    text-align: center;
+}
+
+.box-color-2{
+    background-color: rgba(240, 240, 240, 0.8);
+    height:350px;
+    text-align: center;
 }

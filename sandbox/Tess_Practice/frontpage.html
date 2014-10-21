@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>EmblemObjects</title>
+    <style>
+        @font-face {
+            font-family: "Garamond", serif;
+            src: url("Garamond.ttf") format("truetype");
+        }
+        #outer-container {
+            width:100%;
+            height:1450px;
+            margin:auto;
+            background-color: #eeeeee;
+            font-family: "Garamond", serif;
+            font-size:1em;
+            color: #ffffff;
+        }
+        .live-container {
+            width:1200px;
+            height:100%;
+            margin:auto;
+            position:relative;
+        }
+        #header {
+            background-color: #333333;
+            height:160px;
+        }
+        #signin-bar {
+            float:left;
+            width:100%;
+        }
+        #signin {
+            width:120px;
+            height:20px;
+            float:right;
+            margin-top:15px;
+            background-color: #444444;
+            text-align:center;
+            padding:10px;
+        }
+        #title-bar {
+            float:left;
+            width:100%;
+            height:65px;
+            position:absolute;
+            bottom:0px;
+        }
+        #logo {
+            float:left;
+            position:absolute;
+            bottom:19px;
+        }
+        #title {
+            float:left;
+            font-size:2em;
+            position:absolute;
+            left:60px;
+            bottom:12px;
+        }
+        #info-nav {
+            float:right;
+            position:absolute;
+            bottom:13px;
+            right:0px;
+        }
+        #how-to {
+            float:left;
+            margin-right:100px;
+            color:#ffa800;
+        }
+        #whats-new {
+            float:right;
+        }
+        #nav-bar {
+            width:100%;
+            height:40px;
+            background-color: #ffa800;
+        }
+        .nav {
+            margin-top:12px;
+        }
+        #main-nav1 {
+            float:left;
+            margin-left:150px;
+        }
+        #main-nav2 {
+            float:left;
+            margin-left:300px;
+        }
+        #search-bar {
+            width:230px;
+            height:28px;
+            float:right;
+            background-color: #ffcb66;
+            margin:6px 0px 6px 0px;
+        }
+        #search-icon {
+            float:left;
+            margin:5px 0px 5px 5px;
+        }
+        #body {
+            background-image: url("images/geometric_lines_background.png");
+            border-top:1px solid #ffa800;
+            height: 1200px;
+        }
+        #store {
+            margin-top:30px;
+        }
+        .item {
+            background-image: url("placeholders/earrings.jpg");
+            background-size: 100%;
+            -o-background-size: 100%;
+            -webkit-background-size: 100%;
+            width: 285px;
+            height: 250px;
+            float: left;
+            position: relative;
+        }
+        .item-hover {
+            width: 225px;
+            height: 190px;
+            float: left;
+            opacity:.75;
+            background-color:#000000;
+            padding:30px;
+            position:absolute;
+            visibility: hidden;
+        }
+        .item-name {
+            width:271px;
+            height:16px;
+            position:absolute;
+            bottom:0px;
+            background-color: #000000;
+            padding:7px;
+        }
+        .item-type {
+            float:right;
+        }
+        #footer {
+            height:200px;
+            background-color: #333333;
+        }
+        #social-media {
+            margin:auto;
+            padding-top:100px;
+            width:230px;
+        }
+        .social-media-icons {
+            height:30px;
+            margin-left:10px;
+        }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function() {
+                $('.item').on('mouseover', function () {
+                    $('.item-hover').css('visibility', 'visible');
+                });
+
+                $('.item').on('mouseout', function () {
+                    $('.item-hover').css('visibility', 'hidden');
+                });
+        });
+    </script>
+
+</head>
+<body>
+<div id="outer-container">
+     <div id="header">
+         <div class="live-container">
+             <div id="signin-bar">
+                 <div id="signin">SIGN IN</div>
+             </div>
+             <div id="title-bar">
+                <img id="logo" src="images/logo.png">
+                <div id="title">EmblemObjects</div>
+                <div id="info-nav">
+                    <div id="how-to">HOW TO</div>
+                    <div id="whats-new">WHAT'S NEW</div>
+                </div>
+             </div>
+        </div>
+     </div>
+    <div id="nav-bar">
+        <div class="live-container">
+            <div id="main-nav1" class="nav">SHOP | DESIGNERS | COLLECTIONS</div>
+            <div id="main-nav2" class="nav">LATEST | POPULAR</div>
+            <div id="search-bar"><img id="search-icon" src="images/search-icon.png"></div>
+        </div>
+    </div>
+     <div id="body">
+         <div class="live-container">
+            <div id="store">
+                <!--1-->
+                <div name="1" class="item" style="margin:0px 20px 20px 0px">
+                    <div name="1" class="item-hover">
+                        by PICASSO<br/>
+                        from INSECT COLLECTION<br/>
+                        <br/>
+                        8 configurations<br/>
+                        <br/>
+                        Starting at $14.95<br/>
+                        <br/>
+                        Standard dogtag shape, 1.125" x 2", with a symmetrical pattern.
+                    </div>
+                    <div class="item-name">RIBBON RING1
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--2-->
+                <div name="2" class="item" style="margin:0px 20px 20px 0px">
+                    <div name="2" class="item-name">RIBBON RING2
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--3-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING3
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--4-->
+                <div class="item" style="margin:0px 0px 20px 0px">
+                    <div class="item-name">RIBBON RING4
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--5-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING5
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--6-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING6
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--7-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING7
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--8-->
+                <div class="item" style="margin:0px 0px 20px 0px">
+                    <div class="item-name">RIBBON RING8
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--9-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING9
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--10-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING10
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--11-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING11
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--12-->
+                <div class="item" style="margin:0px 0px 20px 0px">
+                    <div class="item-name">RIBBON RING12
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--13-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING13
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--14-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING14
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--15-->
+                <div class="item" style="margin:0px 20px 20px 0px">
+                    <div class="item-name">RIBBON RING15
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+
+                <!--16-->
+                <div class="item" style="margin:0px 0px 20px 0px">
+                    <div class="item-name">RIBBON RING16
+                        <div class="item-type">SOLO</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+     <div id="footer">
+        <div id="social-media">
+            <img class="social-media-icons" src="images/icon_facebook.png">
+            <img class="social-media-icons" src="images/icon_google+.png">
+            <img class="social-media-icons" src="images/icon_tumblr.png">
+            <img class="social-media-icons" src="images/icon_twitter.png">
+            <img class="social-media-icons" src="images/icon_youtube.png">
+        </div>
+     </div>
+ </div>
+</div>
+</body>
+</html>
