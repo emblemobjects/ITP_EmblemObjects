@@ -19,19 +19,22 @@ facebook.init({
 include_once '../../php/facebook-php-require.php';
 
 use Facebook\FacebookSession;
-// use Facebook\FacebookJavaScriptLoginHelper;
-
-echo 'Hello!<hr/>';
+use Facebook\FacebookJavaScriptLoginHelper;
 
 FacebookSession::setDefaultApplication('360442404114516','3685eca8c02b480bb2027336c8b820e3');
 
-$fb_token = $_GET['access_token'];
+echo 'Hello!<hr/>';
 
-$fb_session = new FacebookSession($fb_token);
 
-if(isset($fb_session)) {
-	echo "connected! facebook session";
-}
+/* Create Seesion Auth with Token
+ */
+// $fb_token = $_GET['access_token'];
+
+// $fb_session = new FacebookSession($fb_token);
+
+// if(isset($fb_session)) {
+// 	echo "connected! facebook session";
+// }
 
 
 
@@ -49,21 +52,23 @@ if(isset($fb_session)) {
 
 /* Get Auth from JS
  */
-// $helper = new FacebookJavaScriptLoginHelper();
+$helper = new FacebookJavaScriptLoginHelper();
 
-// try {
-// 	$session = $helper->getSession();
-// } catch (FacebookRequestException $ex) {
-// 	echo "<br/>Facebook Returned Error";
-// } catch (\Exception $ex) {
-// 	echo "<br/>Validation Failed / Local Issues";
-// }
+try {
+	$session = $helper->getSession();
+	echo "got session";
+} catch (FacebookRequestException $ex) {
+	echo "<br/>Facebook Returned Error";
+} catch (\Exception $ex) {
+	echo "<br/>Validation Failed / Local Issues";
+}
 
 // echo 'session: ' . $session;
+// echo $_SESSION['loggedin'];
 
-// if ($session) {
-// 	echo "<hr/>starting session...";
-// }
+if ($session) {
+	echo "<hr/>starting session...";
+}
 
 ?>
 
@@ -75,7 +80,7 @@ if(isset($fb_session)) {
 // });
 
 </script>
-
+<hr/>
 <div
   class="fb-like"
   data-href="http://www.google.com"
