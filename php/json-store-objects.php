@@ -30,7 +30,7 @@ else {
         else {
             while ($row2 = mysqli_fetch_array($detail_results)){
                 $detail_id = $row2['item_detail_id'];
-                $sql_detail_images = "SELECT item_detail_id, image_filepath FROM item_image WHERE item_detail_id = $detail_id";//selects all the images associated with the specific detail id
+                $sql_detail_images = "SELECT material_id, image_filepath FROM item_image WHERE item_detail_id = $detail_id";//selects all the images associated with the specific detail id
                 $image_detail_array = array();//this is the 4th dimension
                 $image_detail_results = mysqli_query($con, $sql_detail_images);
                 if (!$image_detail_results){
