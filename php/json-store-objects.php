@@ -22,7 +22,7 @@ else {
     while ($row = mysqli_fetch_array($items_results)) {
         $item_id = $row['item_id'];
         $details_array = array();//this is creating the array that will be used to add to the 3rd dimension
-        $sql_details = "SELECT item_detail_id, item_raw_price, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
+        $sql_details = "SELECT item_detail_id, item_raw_price, material_id, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
         $sql_images = "SELECT material_id, image_filepath, item_id, is_primary FROM item_image WHERE item_id = $item_id";//selects all the images associated with the specific detail id
         $image_array = array();//this is the image array to be pushed into $items_array
         $image_results = mysqli_query($con, $sql_images);
@@ -38,7 +38,7 @@ else {
             echo mysqli_error($con);
         } else {
             while ($row2 = mysqli_fetch_array($detail_results)) {
-                array_push($details_array, array('detail_id' => $row2['item_detail_id'], 'price' => $row2['item_raw_price'], 'material' => $row2['material_desc'], 'size' => $row2['item_size']));
+                array_push($details_array, array('detail_id' => $row2['item_detail_id'],'material_id'=>$row2['material_id'],'price' => $row2['item_raw_price'], 'material' => $row2['material_desc'], 'size' => $row2['item_size']));
             }
         }
         //pushing another array to the second dimension
@@ -55,3 +55,5 @@ $items_json = json_encode($items_array);
     store.items = <?php echo $items_json; ?>; // this creates the JSON
     console.log(store.items); //temporary, to look at the object
 </script>
+
+
