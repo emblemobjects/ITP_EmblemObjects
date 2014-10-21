@@ -36,7 +36,7 @@ include './../php/json-store-objects.php';
           <h3> Welcome, Please sign in to continue </h3>
 
 
-          <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_main">
+          <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_list">
           <img src="http://localhost:8080/itp460/ITP_EmblemObjects/images/facebook_login.png" alt="Facebook_Login" style="width:18%">
           </a>
 

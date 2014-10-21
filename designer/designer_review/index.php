@@ -34,33 +34,40 @@ include './../php/json-store-objects.php';
 
               <p>&nbsp</p>
               <center>
-              <table border="0" cellpadding="1" cellspacing="1" style="width: 100%;">
+              <table border="0" cellpadding="1" cellspacing="1" style="width: 80%;">
               <tbody>
             		<tr>
             			<td>
+                    <center>
+                    <a align="left" href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_list/"><button> < Back </button></a>&nbsp&nbsp&nbsp&nbsp
+                    <a align="right" href="#"><button> Next > </button></a>
+                  </center>
                     <center>
                       <h3> Request Information </h3>
                     </center>
                     <h4>
                       <p>
-                      Time Remaining: 12:32<br>
+                      Time Remaining: D:1 H:12 M:32<br>
                       Customer: Jon Doe<br>
-                      
+                      Due Date: 10/26/2014 @ 12:02 PM<br>
+
 
 
                       </p>
                       <p>
                     </h4>
-                    <hr>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" style="margin-top: 10px; margin-bottom: 10px;"/></a><p></p>
-                    <hr>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Approve.png" /></a><p></p>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Reject.png" /></a><p></p>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Submit.png" /></a><p></p>
+                    <center>
+                      <p>&nbsp</p>
+                      <hr>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" style="width: 80%;"/></a><p></p>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Approve.png" style="width: 80%;"/></a><p></p>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Reject.png" style="width: 80%;"/></a><p></p>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Submit.png" style="width: 80%;"/></a><p></p>
+                    <center>
                   </td>
             			<td>
                     <center>
-                      <img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg" style="width: 60%;" />
+                      <img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg" style="width: 80%;" />
                     </center>
                   </td>
             		</tr>
