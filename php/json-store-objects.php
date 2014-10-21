@@ -38,7 +38,7 @@ else {
                 }
                 else {
                     while ($row3 = mysqli_fetch_array($image_detail_results)){
-                        array_push($image_detail_array, array('item_detail_id'=>$row3['item_detail_id'], 'image_filepath'=>$row3['image_filepath']));//4th dimension array
+                        array_push($image_detail_array, array('material_id'=>$row3['material_id'], 'image_filepath'=>$row3['image_filepath']));//4th dimension array
                     }
                     array_push($details_array, array('detail_id'=>$row2['item_detail_id'], 'price'=>$row2['item_raw_price'], 'material'=>$row2['material_desc'], 'size'=>$row2['item_size'], 'image'=>$image_detail_array));
                 }
