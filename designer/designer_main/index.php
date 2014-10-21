@@ -32,13 +32,22 @@ include './../php/json-store-objects.php';
             <div class="container">
           <!-- Homepage content goes here! -->
 
-          <p>&nbsp</p>
-          <h3> Welcome, Please sign in to continue </h3>
+              <p>&nbsp</p>
+              <center>
+              <table border="0" cellpadding="1" cellspacing="1" style="width: 100%;">
+              <tbody>
+            		<tr>
+            			<td>
+                    <a href="http://facebook.com"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" /></a><p></p>
+                    <a href="http://facebook.com"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Approve.png" /></a><p></p>
 
+                  </td>
+            			<td>NO</td>
+            		</tr>
+            	</tbody>
+            </table>
+            <center>
 
-          <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_main">
-          <img src="http://localhost:8080/itp460/ITP_EmblemObjects/images/facebook_login.png" alt="Facebook_Login" style="width:18%">
-          </a>
 
 
             </div>
