@@ -38,11 +38,31 @@ include './../php/json-store-objects.php';
               <tbody>
             		<tr>
             			<td>
-                    <a href="http://facebook.com"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" /></a><p></p>
-                    <a href="http://facebook.com"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Approve.png" /></a><p></p>
+                    <center>
+                      <h3> Request Information </h3>
+                    </center>
+                    <h4>
+                      <p>
+                      Time Remaining: 12:32<br>
+                      Customer: Jon Doe<br>
+                      
 
+
+                      </p>
+                      <p>
+                    </h4>
+                    <hr>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" style="margin-top: 10px; margin-bottom: 10px;"/></a><p></p>
+                    <hr>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Approve.png" /></a><p></p>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Reject.png" /></a><p></p>
+                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Submit.png" /></a><p></p>
                   </td>
-            			<td>NO</td>
+            			<td>
+                    <center>
+                      <img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg" style="width: 60%;" />
+                    </center>
+                  </td>
             		</tr>
             	</tbody>
             </table>
