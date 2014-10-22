@@ -5,13 +5,13 @@ $target_dir = $target_dir . basename ( $_FILES["uploadFile"]["name"]);
 $uploadOk = 1;
 
 //insert file constraints (size, types, etc)
-if($uploadFile_size > 500000)
+if($uploadFile_size > 500000) //what is the file size?
 {
-    echo "File is too large "
+    echo "File is too large ";
     $uploadOk = 0;
 }
-if(!($uploadFile_type == "image/gif")){
-    echo "Sorry, only ___ types of files are allowed";
+if(!($uploadFile_type == "image/gif" || $uploadFile_type == "image/jpg" || $uploadFile_type == "image/png")){
+    echo "Sorry, only image file types are allowed";
     $uploadOk = 0;
 }
 if($ok ==0) {
