@@ -51,20 +51,20 @@ while ($items_row = mysqli_fetch_array($items_results)) {
     $detail_array = array();
 
     // Select all details with current item_id
-    $detail_sql = "SELECT item_detail_id, item_raw_price, material_id, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
+    $detail_sql = "SELECT item_detail_id, item_raw_price, item_detail.material_id, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
     
     $detail_results = mysqli_query($con, $detail_sql);
     // Error Check - detail results
-    // if (!$detail_results) {
-    //     exit('$detail_results error: ' . mysqli_error($con));
-    // }
+    if (!$detail_results) {
+         exit('$detail_results error: ' . mysqli_error($con));
+     }
 
     while ($detail_row = mysqli_fetch_array($detail_results)) {
-        array_push($details_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $detail_row['item_raw_price'], 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
+        array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $detail_row['item_raw_price'], 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
     }
 
     //pushing another array to the second dimension
-    array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $details_array, 'images' => $image_array));
+    array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array));
 }
 
 $items_json = json_encode($items_array);
