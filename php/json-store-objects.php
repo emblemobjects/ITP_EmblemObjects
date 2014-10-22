@@ -15,40 +15,56 @@ $items_results = mysqli_query($con, $sql);
 
 $items_array = array();
 
-if (!$items_results){
-    echo mysqli_error($con);
-}
-else {
-    while ($row = mysqli_fetch_array($items_results)) {
-        $item_id = $row['item_id'];
-        $details_array = array();//this is creating the array that will be used to add to the 3rd dimension
-        $sql_details = "SELECT item_detail_id, item_raw_price, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
-        $detail_results = mysqli_query($con, $sql_details);
-        if (!$detail_results){
-            echo mysqli_error($con);
-        }
-        else {
-            while ($row2 = mysqli_fetch_array($detail_results)){
-                $detail_id = $row2['item_detail_id'];
-                $sql_detail_images = "SELECT item_detail_id, image_filepath FROM item_image WHERE item_detail_id = $detail_id";//selects all the images associated with the specific detail id
-                $image_detail_array = array();//this is the 4th dimension
-                $image_detail_results = mysqli_query($con, $sql_detail_images);
-                if (!$image_detail_results){
-                    echo mysqli_error($con);
-                }
-                else {
-                    while ($row3 = mysqli_fetch_array($image_detail_results)){
-                        array_push($image_detail_array, array('item_detail_id'=>$row3['item_detail_id'], 'image_filepath'=>$row3['image_filepath']));//4th dimension array
-                    }
-                    array_push($details_array, array('detail_id'=>$row2['item_detail_id'], 'price'=>$row2['item_raw_price'], 'material'=>$row2['material_desc'], 'size'=>$row2['item_size'], 'image'=>$image_detail_array));
-                }
+// Error Check - items results
+// if (!$items_results) {
+//     exit('$items_results error: ' . mysqli_error($con));
+// }
 
-            }
-        }
-        //pushing another array to the second dimension
-        array_push($items_array, array('id'=>$row['item_id'], 'tag'=>$row['item_tag'], 'subcategory'=>$row['subcategory_desc'], 'name'=>$row['item_name'], 'designer_first_name'=>$row['user_first_name'], 'designer_last_name'=>$row['user_last_name'], 'description'=>$row['item_description'], 'category'=>$row['category_desc'], 'type'=>$row['item_type'], 'collection_name'=>$row['collection_desc'], 'details'=>$details_array));
+while ($items_row = mysqli_fetch_array($items_results)) {
+    // current item_id
+    $item_id = $items_row['item_id'];
+
+    /* 
+     * image of current item_id
+     */
+    //reset image array
+    $image_array = array();
+
+    // Select all images with current item_id
+    $image_sql = "SELECT material_id, image_filepath, item_id, is_primary FROM item_image WHERE item_id = $item_id";
+
+    $image_results = mysqli_query($con, $image_sql);
+    // Error Check - image results
+    // if (!$image_results) {
+    //     exit('$image_results error: ' . mysqli_error($con));
+    // }
+
+    while ($image_row = mysqli_fetch_array($image_results)) {
+        array_push($image_array, array('material_id' => $image_row['material_id'], 'image_filepath' => $image_row['image_filepath'], 'is_primary' => $image_row['is_primary']));//4th dimension array
     }
 
+
+    /* 
+     * detail of current item_id
+     */
+    //reset details array
+    $detail_array = array();
+
+    // Select all details with current item_id
+    $detail_sql = "SELECT item_detail_id, item_raw_price, item_detail.material_id, material_desc, item_size FROM item_detail, material WHERE item_detail.material_id = material.material_id AND item_detail.item_id = $item_id";
+    
+    $detail_results = mysqli_query($con, $detail_sql);
+    // Error Check - detail results
+    if (!$detail_results) {
+         exit('$detail_results error: ' . mysqli_error($con));
+     }
+
+    while ($detail_row = mysqli_fetch_array($detail_results)) {
+        array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $detail_row['item_raw_price'], 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
+    }
+
+    //pushing another array to the second dimension
+    array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array));
 }
 
 $items_json = json_encode($items_array);
@@ -60,3 +76,5 @@ $items_json = json_encode($items_array);
     store.items = <?php echo $items_json; ?>; // this creates the JSON
     console.log(store.items); //temporary, to look at the object
 </script>
+
+
