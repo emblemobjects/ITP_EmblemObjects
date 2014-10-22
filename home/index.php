@@ -29,22 +29,14 @@ include './../php/json-store-objects.php';
 
     <!-- CONTENT -->
     <div id="content">
-        <div id="container">
+        <div class="container">
         
-        <!-- Container to hold the objects -->
+            <!-- Container to hold the objects -->
             <div id="objects-display">
 
-<<<<<<< HEAD
-            <div class="storeItem" onclick="openOverlay()">
-                <p> STORE ITEM </p>
-            </div>
-=======
-            	<div class="storeItem" onclick="openOverlay()">
-                	<p> STORE ITEM </p>
-
-            	</div>
->>>>>>> FETCH_HEAD
-
+                <div class="storeItem" onclick="openOverlay()">
+                    <p> STORE ITEM </p>
+                </div>
             	<!-- /////////////////////////////////////////////////////////////////// -->
 
             	<div id="light" class="bright_content">
@@ -58,6 +50,7 @@ include './../php/json-store-objects.php';
 
 
         	</div>
+
         </div>
     </div>
     <div style="clear:both"></div>
