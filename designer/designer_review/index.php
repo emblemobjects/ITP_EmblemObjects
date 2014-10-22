@@ -1,7 +1,3 @@
-<!doctype html>
-<?php
-include './../php/json-store-objects.php';
-?>
 
 <html lang="en">
 <head>
