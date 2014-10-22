@@ -33,7 +33,6 @@ include './../php/json-store-objects.php';
 
             <div class="storeItem" onclick="openOverlay()">
                 <p> STORE ITEM </p>
-
             </div>
 
             <!-- /////////////////////////////////////////////////////////////////// -->
