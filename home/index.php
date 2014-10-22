@@ -30,24 +30,28 @@ include './../php/json-store-objects.php';
     <!-- CONTENT -->
     <div id="content">
         <div id="container">
+        
+        <!-- Container to hold the objects -->
+            <div id="objects-display">
 
-            <div class="storeItem" onclick="openOverlay()">
-                <p> STORE ITEM </p>
+            	<div class="storeItem" onclick="openOverlay()">
+                	<p> STORE ITEM </p>
 
-            </div>
+            	</div>
 
-            <!-- /////////////////////////////////////////////////////////////////// -->
+            	<!-- /////////////////////////////////////////////////////////////////// -->
 
-            <div id="light" class="bright_content">
-                <overlayText> Handlebars bizzz nassssss </overlayText>
+            	<div id="light" class="bright_content">
+                	<overlayText> Handlebars bizzz nassssss </overlayText>
 
-            </div>
+            	</div>
 
-            <div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
+            	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
 
-            <!-- ////////////    {{#each storeItems}}//////////////////   {{/each}}///////////////////////////////////// -->
+            	<!-- ////////////    {{#each storeItems}}//////////////////   {{/each}}///////////////////////////////////// -->
 
 
+        	</div>
         </div>
     </div>
     <div style="clear:both"></div>
