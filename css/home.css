@@ -1,12 +1,21 @@
 .storeItem {
-    width: 200px;
-    height: 100px;
-    background-color: red;
-    margin-left: 50px;
+    background-color: pink;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-overlayText {
-    color: #555555;
+.storeItem-hover {
+    visibility: hidden;
+    float: right;
+    width: 250px;
+    height: 300px;
+    background-color: #0c1280;
+    z-index: 1001;
+    -moz-opacity: 0.75;
+    opacity: .75;
+    filter: alpha(opacity=75);
+    position:absolute;
 }
 
 .dark_overlay
@@ -37,6 +46,10 @@ overlayText {
 
 }
 
+overlayText {
+    color: #555555;
+}
+
 .leftText {
     float: left;
     border: 3px solid black;
@@ -60,13 +73,68 @@ overlayText {
     width: 230px;
 }
 
-#buttonDiv {
-    margin-left: 40%;
+#buttonBuySoloDiv {
+    margin-left: 43%;
 }
 
+<<<<<<< HEAD
+#itemDescriptionBox {
+    height: 40px;
+    width: 250px;
+    background-color: green;
+}
 
+#itemImageBox {
+    width: 250px;
+    height: 240px;
+    background-color: #ffac21;
+}
 
+.itemm {
+    background: red;
+    width: 285px;
+    height: 250px;
+    float: left;
+    position: relative;
+}
+.itemm-hover {
+    width: 225px;
+    height: 190px;
+    float: left;
+    opacity:.75;
+    background-color:#000000;
+    padding:30px;
+    position:absolute;
+    color: white;
+    visibility: hidden;
+}
+.itemm-name {
+    width:271px;
+    height:16px;
+    position:absolute;
+    bottom:0px;
+    background-color: #000000;
+    color: white;
+    padding:7px;
+}
+.itemm-type {
+    float:right;
+#buttonCustomDiv {
+    margin-left: 35%;
+}
 
+#itemDescriptionBox {
+    height: 40px;
+    width: 250px;
+    background-color: green;
+}
 
+#itemImageBox {
+    width: 250px;
+    height: 240px;
+    background-color: #ffac21;
+}
 
-
+#choiceButtonsBox {
+    border: 4px solid navy;
+}

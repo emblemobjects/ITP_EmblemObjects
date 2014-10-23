@@ -1,3 +1,36 @@
+
+
+///////////////////////////////////////// HANDLEBARS HELPER
+
+Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
+
+    if (arguments.length < 3)
+        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+
+    operator = options.hash.operator || "==";
+
+    var operators = {
+        '===':      function(l,r) { return l === r; },
+        '!=':       function(l,r) { return l != r; },
+        '<':        function(l,r) { return l < r; },
+        '>':        function(l,r) { return l > r; },
+    }
+
+    if (!operators[operator])
+        throw new Error("Handlerbars Helper 'compare' doesn't know the operator "+operator);
+
+    var result = operators[operator](lvalue,rvalue);
+
+    if( result ) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+
+});
+
+///////////////////////////////////////// DATA TO BE REPLACED BY JSON
+
 var theData = {
     storeItems:[
         {
@@ -5,7 +38,8 @@ var theData = {
             materials: ["wood", "copper", "plastic"],
             sizes: [5, 6, 7],
             colors: ["red", "blue", "white"],
-            img: "../images/icon_tumblr.png",
+            type: "SOLO",
+            img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render1.jpg",
             description: "This is the complete ically pass the ically pass the ting HTML code from " +
                 "ically pass the ically pass the ically pass the ically pass thpass the ically pass the " +
                 "the data into a JavaScript variable, I decided tically pass the o put all of that into",
@@ -16,7 +50,9 @@ var theData = {
             materials: ["silver", "copper", "plastic"],
             sizes: [5, 7],
             colors: ["pink", "purple", "cyan"],
-            img: "../images/logo.png",
+            type: "SOLO",
+            type: "CUSTOM",
+            img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render2.jpg",
             description: "ically pass the ically pass the ically pass the ically pass the ically pass the " +
                 "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
                 "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
@@ -26,14 +62,16 @@ var theData = {
     ]
 };
 
+var jsonArray = store.items;
+
+
+///////////////////////////////////////// OVERLAY FUNCTIONS
+
 var openOverlay = function() {
 
-    console.log("hello");
-
+    $('.storeItem-hover').css('visibility', 'visible');
     document.getElementById('light').style.display = 'block';
     document.getElementById('fade').style.display = 'block';
-    //document.getElementById('light').style.top = (parseInt($(window).height()) / 2)-200 + "px";
-    //document.getElementById('light').style.left = (parseInt($(window).width()) / 2)-200 + "px";
     $('#light').center();
 
 };
@@ -42,10 +80,60 @@ var closeOverlay = function() {
 
     document.getElementById('light').style.display='none';
     document.getElementById('fade').style.display='none';
+    $('.storeItem-hover').css('visibility', 'hidden');
 
 };
 
-/////////////////////////////////////////
+///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
+
+var renderOverlayTemplate = function() {
+    var scriptHTML = document.getElementById('overlay-template').innerHTML;
+    var templateFunction = Handlebars.compile(scriptHTML);
+    document.getElementById('light').innerHTML = templateFunction(theData.storeItems[0]);
+};
+
+///////////////////////////////////////// JSON STUFF FUNCTION
+
+function jsonStuff() {
+    console.log(' start of jsonStuff function');
+
+    $.ajax({
+        type: "GET",
+        url: './../php/json-store-objects.php',
+        dataType: "json",
+        success: function(data){
+            // do your stuff with the JSON data
+
+            // push data into array... this is not working and getJSON isn't either... help
+
+            console.log('helllllllllloooo...... ' + data);
+        }
+    });
+
+}
+
+///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
+
+var renderOverlayTemplate = function() {
+    var scriptHTML = document.getElementById('overlay-template').innerHTML;
+    var templateFunction = Handlebars.compile(scriptHTML);
+    document.getElementById('light').innerHTML = templateFunction(theData.storeItems[0]);
+};
+
+var renderItemTemplate = function() {
+    var itemHTML = document.getElementById('item-template').innerHTML;
+    var itemTemplateFunction = Handlebars.compile(itemHTML);
+    document.getElementById('item').innerHTML = itemTemplateFunction(theData.storeItems[0]);
+};
+
+var renderHoverTemplate = function() {
+    var hoverHTML = document.getElementById('hover-template').innerHTML;
+    var hoverTemplateFunction = Handlebars.compile(hoverHTML);
+    document.getElementById('hover').innerHTML = hoverTemplateFunction(theData.storeItems[0]);
+};
+
+///////////////////////////////////////// JQUERY PROTOTYPING (CENTERING)
+
 jQuery.prototype.center = function () {
     this.css("position","absolute");
 
@@ -58,11 +146,42 @@ jQuery.prototype.center = function () {
     return this;
 };
 
-/////////////////////////////
+//////////////////////////////////////// EXECUTION
+
+renderItemTemplate();
+renderOverlayTemplate();
+renderHoverTemplate();
 
 
+//////////////////////////////////////// JQUERY STUFF
+$(".storeItem").mouseenter(function() {
+    $('.storeItem-hover').css('visibility', 'visible');
+});
 
-var scriptHTML = document.getElementById('overlay-template').innerHTML;
-var templateFunction = Handlebars.compile(scriptHTML);
-var html = templateFunction(theData.storeItems[0]);
-document.getElementById('light').innerHTML = html;
+$(".storeItem-hover").mouseleave(function() {
+    $('.storeItem-hover').css('visibility', 'hidden');
+});
+
+$(".itemm").mouseenter(function() {
+    $('.itemm-hover').css('visibility', 'visible');
+});
+
+$(".itemm").mouseleave(function() {
+    $('.itemm-hover').css('visibility', 'hidden');
+});
+
+
+renderItemTemplate();
+renderOverlayTemplate();
+renderHoverTemplate();
+//jsonStuff();
+
+//////////////////////////////////////// JQUERY STUFF
+$(".storeItem").mouseenter(function() {
+    $('.storeItem-hover').css('visibility', 'visible');
+});
+
+
+$(".storeItem-hover").mouseleave(function() {
+    $('.storeItem-hover').css('visibility', 'hidden');
+});

@@ -8,6 +8,38 @@
 #navigation div {
     height: 40px;
 }
+/* shop designers collections */
+#main-nav1 {
+    margin-top:10px;
+    float:left;
+    margin-left:150px;
+}
+
+/* latest popular  */
+#main-nav2 {
+    margin-top:10px;
+    float:left;
+    margin-left:300px;
+}
+
+/* drop down nav */
+#drop-down {
+    width:400px;
+    height:300px;
+    position:absolute;
+    left:300px;
+    background-color:#000000;
+    opacity:.75;
+    padding:20px;
+}
+.drop-down-col {
+    height: 250px;
+    float: left;
+    margin-left:20px;
+}
+#drop-down h1 {
+    font-size:1em;
+}
 
 /* search box container */
 #search-field {

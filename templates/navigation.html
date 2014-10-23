@@ -1,15 +1,38 @@
 <!doctype html>
 
 <html lang="en">
-    
     <!-- NAVIGATION -->
     <div class="container">
         <!-- search box -->
-        <form name="search-field" id="search-field" onsubmit="return searchDB();">
-            <input name="search-input" />
+        <div id="main-nav1" class="nav">
+            <div>SHOP</div> |
+            DESIGNERS |
+            COLLECTIONS
+        </div>
+        <div id="main-nav2" class="nav">
+            LATEST |
+            POPULAR
+        </div>
+        <form name="search-field" id="search-field" method="GET" action="http://localhost:8080/itp460/ITP_EmblemObjects/php/search.php">
+            <input name="query"/>
             <button type="submit"><img src="http://localhost:8080/itp460/ITP_EmblemObjects/images/icon_search.png" alt="Search" height="15px" width="15px"/></button>
         </form>
-        <script type="text/javascript">
-        </script>
+    </div>
+    <div id="drop-down">
+        <div class="drop-down-col">
+            <h1>SOLO OBJECTS</h1>
+            JEWELRY<br/>
+            <br/>
+            rings<br/>
+            bracelets<br/>
+            pendants<br/>
+            earrings<br/>
+            cufflinks<br/>
+        </div>
+        <div class="drop-down-col">
+            OTHER<br/>
+            <br/>
+            models<br/>
+        </div>
     </div>
 </html>
