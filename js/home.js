@@ -1,4 +1,33 @@
 
+///////////////////////////////////////// HANDLEBARS HELPER
+
+Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
+
+    if (arguments.length < 3)
+        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+
+    operator = options.hash.operator || "==";
+
+    var operators = {
+        '===':      function(l,r) { return l === r; },
+        '!=':       function(l,r) { return l != r; },
+        '<':        function(l,r) { return l < r; },
+        '>':        function(l,r) { return l > r; },
+    }
+
+    if (!operators[operator])
+        throw new Error("Handlerbars Helper 'compare' doesn't know the operator "+operator);
+
+    var result = operators[operator](lvalue,rvalue);
+
+    if( result ) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+
+});
+
 ///////////////////////////////////////// DATA TO BE REPLACED BY JSON
 
 var theData = {
@@ -20,7 +49,7 @@ var theData = {
             materials: ["silver", "copper", "plastic"],
             sizes: [5, 7],
             colors: ["pink", "purple", "cyan"],
-            type: "SOLO",
+            type: "CUSTOM",
             img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render2.jpg",
             description: "ically pass the ically pass the ically pass the ically pass the ically pass the " +
                 "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
@@ -30,8 +59,6 @@ var theData = {
         }
     ]
 };
-
-var jsonArray = store.items;
 
 ///////////////////////////////////////// OVERLAY FUNCTIONS
 
@@ -51,6 +78,24 @@ var closeOverlay = function() {
     $('.storeItem-hover').css('visibility', 'hidden');
 
 };
+
+///////////////////////////////////////// JSON STUFF FUNCTION
+
+function jsonStuff() {
+    console.log(' start of jsonStuff function');
+
+    $.ajax({
+        type: "GET",
+        url: './../php/json-store-objects.php',
+        dataType: "json",
+        success: function(data){
+            //do your stuff with the JSON data
+            var obj = JSON.parse(data);
+            console.log('helllllllllloooo...... ' + obj);
+        }
+    });
+
+}
 
 ///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
 
@@ -91,7 +136,7 @@ jQuery.prototype.center = function () {
 renderItemTemplate();
 renderOverlayTemplate();
 renderHoverTemplate();
-
+//jsonStuff();
 
 //////////////////////////////////////// JQUERY STUFF
 $(".storeItem").mouseenter(function() {
@@ -101,15 +146,3 @@ $(".storeItem").mouseenter(function() {
 $(".storeItem-hover").mouseleave(function() {
     $('.storeItem-hover').css('visibility', 'hidden');
 });
-
-$(".itemm").mouseenter(function() {
-    $('.itemm-hover').css('visibility', 'visible');
-});
-
-$(".itemm").mouseleave(function() {
-    $('.itemm-hover').css('visibility', 'hidden');
-});
-
-
-
-

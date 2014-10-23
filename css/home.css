@@ -88,34 +88,3 @@ overlayText {
     height: 240px;
     background-color: #ffac21;
 }
-
-.itemm {
-    background: red;
-    width: 285px;
-    height: 250px;
-    float: left;
-    position: relative;
-}
-.itemm-hover {
-    width: 225px;
-    height: 190px;
-    float: left;
-    opacity:.75;
-    background-color:#000000;
-    padding:30px;
-    position:absolute;
-    color: white;
-    visibility: hidden;
-}
-.itemm-name {
-    width:271px;
-    height:16px;
-    position:absolute;
-    bottom:0px;
-    background-color: #000000;
-    color: white;
-    padding:7px;
-}
-.itemm-type {
-    float:right;
-}
