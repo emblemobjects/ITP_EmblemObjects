@@ -37,7 +37,7 @@ if (empty($_REQUEST["query"])) {
             $index++;
         }
     }
-    echo("<script>console.log('search results: ".json_encode($arr)."');</script>");
+    echo("<script>console.log(".json_encode($arr).");</script>");
     
     ?>
     
