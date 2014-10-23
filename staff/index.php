@@ -9,12 +9,11 @@ include './../php/json-store-objects.php';
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css"
-          href="http://localhost:8080/ITP460/ITP_EmblemObjects/artist/header_artist.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/artist/navigation.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/artist/body_artist.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/artist/content.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/artist/footer.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ITP460/ITP_EmblemObjects/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">
 
 </head>
 
