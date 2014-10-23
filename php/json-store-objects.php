@@ -66,15 +66,15 @@ while ($items_row = mysqli_fetch_array($items_results)) {
     //pushing another array to the second dimension
     array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array));
 }
-
-$items_json = json_encode($items_array);
+//$items_json = json_encode($items_array);
 
 ?>
 <script>
-    var store = window.store || {};
 
-    store.items = <?php echo $items_json; ?>; // this creates the JSON
+    var store = window.store || {};
+    store.items = <?php echo json_encode($items_array); ?>; // this creates the JSON
     console.log(store.items); //temporary, to look at the object
+
 </script>
 
 

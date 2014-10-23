@@ -1,3 +1,4 @@
+
 ///////////////////////////////////////// DATA TO BE REPLACED BY JSON
 
 var theData = {
@@ -29,6 +30,8 @@ var theData = {
         }
     ]
 };
+
+var jsonArray = store.items;
 
 ///////////////////////////////////////// OVERLAY FUNCTIONS
 
@@ -89,6 +92,8 @@ renderItemTemplate();
 renderOverlayTemplate();
 renderHoverTemplate();
 
+
+//////////////////////////////////////// JQUERY STUFF
 $(".storeItem").mouseenter(function() {
     $('.storeItem-hover').css('visibility', 'visible');
 });
