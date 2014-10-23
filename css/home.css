@@ -6,6 +6,10 @@ body {
     width:1200px;
     margin:auto;
 }
+
+#objects-display {
+    margin-top:15px;
+}
 .storeItem {
     background-color: pink;
     width: 285px;
