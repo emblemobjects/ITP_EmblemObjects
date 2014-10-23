@@ -5,7 +5,7 @@ var theData = {
             materials: ["wood", "copper", "plastic"],
             sizes: [5, 6, 7],
             colors: ["red", "blue", "white"],
-            img: "../images/icon_tumblr.png",
+            img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render1.jpg",
             description: "This is the complete ically pass the ically pass the ting HTML code from " +
                 "ically pass the ically pass the ically pass the ically pass thpass the ically pass the " +
                 "the data into a JavaScript variable, I decided tically pass the o put all of that into",

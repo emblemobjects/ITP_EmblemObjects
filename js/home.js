@@ -1,3 +1,5 @@
+///////////////////////////////////////// DATA TO BE REPLACED BY JSON
+
 var theData = {
     storeItems:[
         {
@@ -5,7 +7,8 @@ var theData = {
             materials: ["wood", "copper", "plastic"],
             sizes: [5, 6, 7],
             colors: ["red", "blue", "white"],
-            img: "../images/icon_tumblr.png",
+            type: "SOLO",
+            img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render1.jpg",
             description: "This is the complete ically pass the ically pass the ting HTML code from " +
                 "ically pass the ically pass the ically pass the ically pass thpass the ically pass the " +
                 "the data into a JavaScript variable, I decided tically pass the o put all of that into",
@@ -16,7 +19,8 @@ var theData = {
             materials: ["silver", "copper", "plastic"],
             sizes: [5, 7],
             colors: ["pink", "purple", "cyan"],
-            img: "../images/logo.png",
+            type: "SOLO",
+            img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render2.jpg",
             description: "ically pass the ically pass the ically pass the ically pass the ically pass the " +
                 "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
                 "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
@@ -26,14 +30,12 @@ var theData = {
     ]
 };
 
-var openOverlay = function() {
+///////////////////////////////////////// OVERLAY FUNCTIONS
 
-    console.log("hello");
+var openOverlay = function() {
 
     document.getElementById('light').style.display = 'block';
     document.getElementById('fade').style.display = 'block';
-    //document.getElementById('light').style.top = (parseInt($(window).height()) / 2)-200 + "px";
-    //document.getElementById('light').style.left = (parseInt($(window).width()) / 2)-200 + "px";
     $('#light').center();
 
 };
@@ -45,7 +47,22 @@ var closeOverlay = function() {
 
 };
 
-/////////////////////////////////////////
+///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
+
+var renderOverlayTemplate = function() {
+    var scriptHTML = document.getElementById('overlay-template').innerHTML;
+    var templateFunction = Handlebars.compile(scriptHTML);
+    document.getElementById('light').innerHTML = templateFunction(theData.storeItems[0]);
+};
+
+var renderItemTemplate = function() {
+    var itemHTML = document.getElementById('item-template').innerHTML;
+    var itemTemplateFunction = Handlebars.compile(itemHTML);
+    document.getElementById('item').innerHTML = itemTemplateFunction(theData.storeItems[0]);
+};
+
+///////////////////////////////////////// JQUERY PROTOTYPING (CENTERING)
+
 jQuery.prototype.center = function () {
     this.css("position","absolute");
 
@@ -58,11 +75,20 @@ jQuery.prototype.center = function () {
     return this;
 };
 
-/////////////////////////////
+//////////////////////////////////////// EXECUTION
+
+renderItemTemplate();
+renderOverlayTemplate();
+
+$(".storeItem").mouseenter(function() {
+    $('#helloWorld').css('visibility', 'visible');
+});
+
+$(".storeItem").mouseleave(function() {
+    $('#helloWorld').css('visibility', 'hidden');
+});
 
 
 
-var scriptHTML = document.getElementById('overlay-template').innerHTML;
-var templateFunction = Handlebars.compile(scriptHTML);
-var html = templateFunction(theData.storeItems[0]);
-document.getElementById('light').innerHTML = html;
+
+

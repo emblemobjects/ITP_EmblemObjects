@@ -1,12 +1,8 @@
 .storeItem {
-    width: 200px;
-    height: 100px;
-    background-color: red;
-    margin-left: 50px;
-}
-
-overlayText {
-    color: #555555;
+    border: 5px dotted darkslategray;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 250px;
 }
 
 .dark_overlay
@@ -37,6 +33,10 @@ overlayText {
 
 }
 
+overlayText {
+    color: #555555;
+}
+
 .leftText {
     float: left;
     border: 3px solid black;
@@ -64,9 +64,61 @@ overlayText {
     margin-left: 40%;
 }
 
+#itemDescriptionBox {
+    height: 35px;
+    width: 240px;
+    background-color: green;
+}
 
+#itemImageBox {
+    width: 245px;
+    height: 245px;
+    background-color: #ffac21;
+}
 
+#itemTemplate {
 
+}
 
+#helloWorld {
+    visibility: hidden;
+    float: right;
+    width: 200px;
+    height: 190px;
+    background-color: #0c1280;
+    z-index: 1001;
+    -moz-opacity: 0.75;
+    opacity: .75;
+    filter: alpha(opacity=75);
+}
 
-
+.itemm {
+    background: red;
+    width: 285px;
+    height: 250px;
+    float: left;
+    position: relative;
+}
+.itemm-hover {
+    width: 225px;
+    height: 190px;
+    float: left;
+    opacity:.75;
+    background-color:#000000;
+    padding:30px;
+    position:absolute;
+    color: white;
+    visibility: hidden;
+}
+.itemm-name {
+    width:271px;
+    height:16px;
+    position:absolute;
+    bottom:0px;
+    background-color: #000000;
+    color: white;
+    padding:7px;
+}
+.itemm-type {
+    float:right;
+}

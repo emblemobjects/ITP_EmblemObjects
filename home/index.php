@@ -34,32 +34,47 @@ include './../php/json-store-objects.php';
             <!-- Container to hold the objects -->
             <div id="objects-display">
 
-                <div class="storeItem" onclick="openOverlay()">
-                    <p> STORE ITEM </p>
-                </div>
-            	<!-- /////////////////////////////////////////////////////////////////// -->
+                <div class="itemm-hover" id="helloWorld"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
 
-            	<div id="light" class="bright_content">
-                	<overlayText> Handlebars bizzz nassssss </overlayText>
+                <div id="item" class="storeItem" onclick="openOverlay()"> </div>
 
-            	</div>
+            	<div id="light" class="bright_content"> </div>
 
             	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
 
-            	<!-- ////////////    {{#each storeItems}}//////////////////   {{/each}}///////////////////////////////////// -->
-
-
         	</div>
+
+            <div class="itemm" >
+                <div class="itemm-hover">
+                    by PICASSO<br/>
+                    from INSECT COLLECTION<br/>
+                    <br/>
+                    8 configurations<br/>
+                    <br/>
+                    Starting at $14.95<br/>
+                    <br/>
+                    Standard dogtag shape, 1.125" x 2", with a symmetrical pattern.
+                </div>
+                <div class="itemm-name">RIBBON RING1
+                    <div class="itemm-type">SOLO</div>
+                </div>
+            </div>
+
+            <br /><br />
 
         </div>
     </div>
     <div style="clear:both"></div>
+    <br /><br />
+    <br /><br />
+    <br /><br />
 
     <div id="footer"></div>
     <div style="clear:both"></div>
 </div>
 
 <script type="text/handlebars" id="overlay-template">
+<div id="overlayTemplate">
 <overlayText>
 
     <div class="leftText">
@@ -73,7 +88,7 @@ include './../php/json-store-objects.php';
     <br />
 
     <div id="imgBox" class="leftText">
-        <img src="{{img}}" alt="" width="100px" height="100px"/>
+        <img src="{{img}}" alt="" width="230px" height="230px"/>
     </div>
 
     <div id="optionsBox" class="rightText">
@@ -119,6 +134,22 @@ include './../php/json-store-objects.php';
     </div>
 
 </overlayText>
+</div>
+</script>
+
+<script type="text/handlebars" id="item-template">
+<div id="itemTemplate">
+
+    <div id="itemImageBox">
+        <img src="{{img}}" alt="" width="240px" height="240px"/>
+    </div>
+
+    <div id="itemDescriptionBox">
+        <p>{{ name }} ------ ${{price}} </p>
+    </div>
+
+
+</div>
 </script>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
