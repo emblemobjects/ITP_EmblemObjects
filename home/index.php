@@ -109,7 +109,9 @@
     <br />
 
     <div id="buttonBuySoloDiv" class="leftText">
-        <button type="submit">Buy Item</button>
+        <form action="../payment/index.php">
+            <button type="submit">Buy Item</button>
+        </form>
     </div>
 {{/compare}}
 
@@ -165,11 +167,15 @@
     <div style="clear:both"></div>
 
         <div id="buttonCustomDiv" class="leftText">
-            <button type="submit">Buy Item</button>
+            <form action="../payment/index.php">
+                <button type="submit">Buy Item</button>
+            </form>
         </div>
 
         <div class="leftText">
-            <button type="submit">Customize Item</button>
+            <form action="../customize/index.php">
+                <button type="submit">Customize Item</button>
+            </form>
         </div>
 
     <div style="clear:both"></div>
