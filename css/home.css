@@ -1,13 +1,15 @@
 .storeItem {
     background-color: pink;
     width: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .storeItem-hover {
     visibility: hidden;
     float: right;
     width: 250px;
-    height: 190px;
+    height: 300px;
     background-color: #0c1280;
     z-index: 1001;
     -moz-opacity: 0.75;
@@ -76,14 +78,14 @@ overlayText {
 }
 
 #itemDescriptionBox {
-    height: 35px;
-    width: 240px;
+    height: 40px;
+    width: 250px;
     background-color: green;
 }
 
 #itemImageBox {
-    width: 245px;
-    height: 245px;
+    width: 250px;
+    height: 240px;
     background-color: #ffac21;
 }
 

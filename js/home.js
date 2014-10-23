@@ -34,6 +34,7 @@ var theData = {
 
 var openOverlay = function() {
 
+    $('.storeItem-hover').css('visibility', 'visible');
     document.getElementById('light').style.display = 'block';
     document.getElementById('fade').style.display = 'block';
     $('#light').center();
@@ -44,6 +45,7 @@ var closeOverlay = function() {
 
     document.getElementById('light').style.display='none';
     document.getElementById('fade').style.display='none';
+    $('.storeItem-hover').css('visibility', 'hidden');
 
 };
 
@@ -91,7 +93,7 @@ $(".storeItem").mouseenter(function() {
     $('.storeItem-hover').css('visibility', 'visible');
 });
 
-$(".storeItem").mouseleave(function() {
+$(".storeItem-hover").mouseleave(function() {
     $('.storeItem-hover').css('visibility', 'hidden');
 });
 

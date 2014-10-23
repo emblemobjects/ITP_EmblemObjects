@@ -34,9 +34,9 @@ include './../php/json-store-objects.php';
             <!-- Container to hold the objects -->
             <div id="objects-display">
 
-                <div id="hover" class="storeItem-hover"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
+                <div id="hover" class="storeItem-hover" onclick="openOverlay()"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
 
-                <div id="item" class="storeItem" onclick="openOverlay()"> </div>
+                <div id="item" class="storeItem" "> </div>
 
             	<div id="light" class="bright_content"> </div>
 
@@ -44,7 +44,6 @@ include './../php/json-store-objects.php';
 
         	</div>
 
-            <br /> <br />
 
             <div class="itemm" >
                 <div class="itemm-hover">
@@ -61,8 +60,6 @@ include './../php/json-store-objects.php';
                     <div class="itemm-type">SOLO</div>
                 </div>
             </div>
-
-            <br /><br />
 
         </div>
     </div>
