@@ -30,24 +30,37 @@ include './../php/json-store-objects.php';
 
     <!-- CONTENT -->
     <div id="content">
-        <div class="container">
-
-            <h1> CUSTOMER CUSTOMIZE PAGE </h1>
-
-            <h3> upload a file...</h3>
-
-            <input id="uploadFile" placeholder="Please Choose A File ..." disabled="disabled" />
-            <input id="uploadButton" type="file" class="upload" />
-            <div class="fileUpload">
-
+        <div class="container" id="container">
+            <div id="title-div">
+            <h1>DESIGN YOUR OBJECT</h1>
             </div>
+            <div id="container-left">
 
-            <br />
 
+                <h3>upload an image.</h3>
+
+                <input id="uploadFile" disabled="disabled" />
+                <input id="uploadButton" type="file" class="upload" />
+                <div class="fileUpload">
+
+                </div>
+
+                <br style="clear:both;"/>
+            </div>
+            <div id="container-right">
+                <form>
+                    <div id="fname" class="input">first name<br><input type="text" name="firstname"></div>
+                    <div id="lname" class="input">last name<br><input type="text" name="lastname"></div>
+                    <div id="email" class="input">email<br><input type="text" name="email"></div>
+                    <div id="message" class="input">message<br><textarea rows="4" cols="50" maxlength="1000"></textarea></div>
+                </form>
+            </div>
+        </div>
+        <br style="clear:both">
+        <div id="buy-div">
             <form id="buttonForm" action="../payment/index.php">
                 <button type="submit">Buy Item</button>
             </form>
-
         </div>
     </div>
     <div style="clear:both"></div>

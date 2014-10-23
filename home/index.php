@@ -127,11 +127,6 @@
         </form>
     </div>
 
-    <div id="buttonCustomDiv" class="RightText">
-        <form action="../customize/index.php">
-            <button type="submit">Design</button>
-        </form>
-    </div>
 {{/compare}}
 
 {{#compare type "CUSTOM" operator="==="}}
