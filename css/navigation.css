@@ -8,6 +8,8 @@
 #navigation div {
     height: 40px;
 }
+
+
 /* shop designers collections */
 #main-nav1 {
     margin-top:-4px;
@@ -26,7 +28,7 @@ pre {
 #main-nav2 {
     margin-top:10px;
     float:left;
-    margin-left:300px;
+    margin-left: 200px;
 }
 
 /* drop down nav */
@@ -88,4 +90,115 @@ pre {
 
 #search-field button:hover {
     cursor: pointer;
+}
+
+
+
+
+
+
+/* Main Navigation */
+#nav {
+    margin-left: 150px;
+}
+
+ul#navig {
+	margin:0px auto;
+	position:relative;
+	float:left;
+}
+
+ul#navig li {
+	display:inline;
+	font-size:11pt;
+        font-weight: bold;
+	margin:0;
+	padding:0;
+	float:left;
+	position:relative;
+}
+
+ul#navig li a {
+	padding:10px 25px;
+	color:#fff;
+	text-decoration:none;
+	display:inline-block;	
+	-webkit-transition:color 0.2s linear, background 0.2s linear;	
+	-moz-transition:color 0.2s linear, background 0.2s linear;	
+	-o-transition:color 0.2s linear, background 0.2s linear;	
+	transition:color 0.2s linear, background 0.2s linear;	
+}
+
+ul#navig li a:hover {
+	background:#f8f8f8;
+	color:#282828;  
+}
+
+ul#navig li a.first {
+	border-left: 0 none;
+}
+
+ul#navig li a.last {
+	border-right: 0 none;
+}
+
+ul#navig li:hover > a {
+	background:#ffcc66;
+        color:#fff
+}
+
+
+
+
+/* Drop-Down Navigation */
+ul#navig li:hover > ul {
+    visibility:visible;
+    opacity:1;
+}
+
+ul#navig ul, ul#navig ul li ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;    
+    visibility:hidden;
+    opacity:0;
+    position: absolute;
+    z-index: 99999;
+    width:180px;
+    background:#f8f8f8;
+    box-shadow:1px 1px 3px #ccc;
+    -webkit-transition:opacity 0.2s linear, visibility 0.2s linear; 
+    -moz-transition:opacity 0.2s linear, visibility 0.2s linear; 
+    -o-transition:opacity 0.2s linear, visibility 0.2s linear; 
+    transition:opacity 0.2s linear, visibility 0.2s linear; 	
+}
+
+ul#navig ul {
+    top: 43px;
+    left: 1px;
+}
+
+ul#navig ul li ul {
+    top: 0;
+    left: 181px; /* strong related to width:180px; from above */
+}
+
+/* Line under each li */
+ul#navig ul li {
+    clear:both;
+    width:100%;
+    border:0 none;
+    border-bottom:1px solid #ffcc66;
+}
+
+ul#navig ul li a {
+    background:none;
+    padding:12px 15px;
+    color:#000;
+    text-decoration:none;
+    display:inline-block;
+    border:0 none;
+    float:left;
+    clear:both;
+    width:150px;
 }
