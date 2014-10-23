@@ -102,6 +102,3 @@ if (empty($_REQUEST["query"])) {
 <?php }
 mysqli_close($con);
 ?>
-
-
-

@@ -8,64 +8,64 @@
             
             <nav id="nav">
                 <ul id="navig">
-                    <li><a href="#" class="first">STORE</a>
+                    <li><a href="#" name="Store" class="first division">STORE</a>
 			<ul>
-			    <li><a href="#">Accessories</a>
+			    <li><a href="#" class="category" name="Accessories">Accessories</a>
                                 <ul>
-				    <li><a href="#">Cases</a></li>
-				    <li><a href="#">Keychains</a></li>
-				    <li><a href="#">Belts & Buckles</a></li>
+				    <li><a href="#" class="subcategory" name="Cases">Cases</a></li>
+				    <li><a href="#" class="subcategory" name="Keychains">Keychains</a></li>
+				    <li><a href="#" class="subcategory" name="Belts & Buckles" >Belts & Buckles</a></li>
 				</ul>
                             </li>
-			    <li><a href="#">Art</a>
+			    <li><a href="#" class="category" name="Art">Art</a>
                                 <ul>
-				    <li><a href="#">Sculptures</a></li>
-				    <li><a href="#">Parametics</a></li>
-				    <li><a href="#">Themed</a></li>
+				    <li><a href="#" class="subcategory" name="Sculpture">Sculptures</a></li>
+				    <li><a href="#" class="subcategory" name="Parametics">Parametics</a></li>
+				    <li><a href="#" class="subcategory" name="Themed">Themed</a></li>
 				</ul>
                             </li>
-			    <li><a href="#">Gadgets</a>
+			    <li><a href="#" class="category" name="Gadgets">Gadgets</a>
                                 <ul>
-				    <li><a href="#">Parts</a></li>
-				    <li><a href="#">Props</a></li>
+				    <li><a href="#" class="subcategory" name="Parts">Parts</a></li>
+				    <li><a href="#" class="subcategory" name="Props">Props</a></li>
 				</ul>	
 			    </li>
-			    <li><a href="#">Home</a>
+			    <li><a href="#" class="category" name="Home">Home</a>
                                 <ul>
-				    <li><a href="#">Placements</a></li>
-				    <li><a href="#">Holders</a></li>
-				    <li><a href="#">Vases</a></li>
-				    <li><a href="#">Lighting</a></li>
-                                    <li><a href="#">Desktop</a></li>
+				    <li><a href="#" class="subcategory" name="Placements">Placements</a></li>
+				    <li><a href="#" class="subcategory" name="Holders">Holders</a></li>
+				    <li><a href="#" class="subcategory" name="Vases">Vases</a></li>
+				    <li><a href="#" class="subcategory" name="Lightning">Lighting</a></li>
+                                    <li><a href="#" class="subcategory" name="Desktop">Desktop</a></li>
 				</ul>	
                             </li>
-                            <li><a href="#">Jewelry</a>
+                            <li><a href="#" class="category" name="Jewelry">Jewelry</a>
                                 <ul>
-				    <li><a href="#">Rings</a></li>
-				    <li><a href="#">Pendants</a></li>
-				    <li><a href="#">Necklaces</a></li>
-				    <li><a href="#">Bracelets</a></li>
-                                    <li><a href="#">Earrings</a></li>
-                                    <li><a href="#">Cufflinks</a></li>
-                                    <li><a href="#">Watches</a></li>
+				    <li><a href="#" class="subcategory" name="Rings">Rings</a></li>
+				    <li><a href="#" class="subcategory" name="Pendants">Pendants</a></li>
+				    <li><a href="#" class="subcategory" name="Necklaces">Necklaces</a></li>
+				    <li><a href="#" class="subcategory" name="Bracelets">Bracelets</a></li>
+                                    <li><a href="#" class="subcategory" name="Earrings">Earrings</a></li>
+                                    <li><a href="#" class="subcategory" name="Cufflinks">Cufflinks</a></li>
+                                    <li><a href="#" class="subcategory" name="Watches">Watches</a></li>
 				</ul>	
                             </li>
-                            <li><a href="#">Novelty</a>
+                            <li><a href="#" class="category" name="Novelty">Novelty</a>
                                 <ul>
-				    <li><a href="#">Desk Toys</a></li>
-				    <li><a href="#">Puzzles</a></li>
+				    <li><a href="#" class="subcategory" name="Desk Toys">Desk Toys</a></li>
+				    <li><a href="#" class="subcategory" name="Puzzles">Puzzles</a></li>
 				</ul>	
 			    </li>
 			</ul> 
                     </li>
-                    <li><a href="#">DESIGNERS</a>
+                    <li><a href="#" class="division" name="Designers" >DESIGNERS</a>
 			<ul>
-			    <li><a href="#">Jacob Blitzer</a></li>
+			    <li><a href="#" class="category" name="Jacob Blitzer">Jacob Blitzer</a></li>
 			</ul>
                     </li>
-                    <li><a href="#" class="last">COLLECTIONS</a>
+                    <li><a href="#" class="last division" name="Collections">COLLECTIONS</a>
                         <ul>
-			    <li><a href="#">Launch Collection</a></li>
+			    <li><a href="#" class="category" name="Launch Collection">Launch Collection</a></li>
 			</ul>
                     </li>
                 </ul>
@@ -80,8 +80,8 @@
             -->
        <!-- </div> -->
         <div id="main-nav2" class="nav">
-            LATEST |
-            POPULAR
+            <a href="#" name="latest" onclick="alert('Database call to sort by ' + this.name)">LATEST</a> &nbsp;|&nbsp;
+            <a href="#" name="popular" onclick="alert('Database call to sort by most ' + this.name)">POPULAR</a>
         </div>
         <form name="search-field" id="search-field" method="GET" action="http://localhost:8080/itp460/ITP_EmblemObjects/php/search.php">
             <input name="query"/>
@@ -105,4 +105,32 @@
             models<br/>
         </div>
     </div>
+    
+    <script type="text/javascript">
+        function searchCategoryAlert(category) {
+            var division = getParent(category);
+            var divisionName = division.getAttribute("name");
+            alert("Database call to search by " + divisionName + " >> " + category.name);
+        }
+        
+        function searchSubcategoryAlert(subcategory) {
+            var category = getParent(subcategory);
+            var division = getParent(category);
+            var categoryName = category.getAttribute("name");
+            var divisionName = division.getAttribute("name");
+            alert("Database call to search by " + divisionName + " >> " +  categoryName + " >> " + subcategory.name);
+        }
+        
+        function getParent(node) {
+            return node.parentNode.parentNode.parentNode.firstChild;
+        }
+        
+        
+        $(".category").click(function() {
+            searchCategoryAlert(this);
+        });
+        $(".subcategory").click(function() {
+            searchSubcategoryAlert(this);
+        });
+    </script>
 </html>
