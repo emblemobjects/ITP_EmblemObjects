@@ -37,7 +37,9 @@ pre {
     left:180px;
     background-color:#000000;
     opacity:.75;
-    padding:20px;
+    padding:20px 50px 20px 30px;
+    z-index:1000;
+    visibility: hidden;
 }
 .drop-down-col {
     height: 250px;
@@ -46,10 +48,10 @@ pre {
     font-size:.8em;
 }
 #column-2 {
-    margin-top:34.5px;
+    margin-top:37px;
 }
 #drop-down-1 h1 {
-    font-size:1rem;
+    font-size:1.1em;
 }
 
 /* search box container */

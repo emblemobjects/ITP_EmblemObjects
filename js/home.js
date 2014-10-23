@@ -148,3 +148,7 @@ $(".storeItem").mouseenter(function() {
 $(".storeItem-hover").mouseleave(function() {
     $('.storeItem-hover').css('visibility', 'hidden');
 });
+
+$("#shop").mouseenter(function() {
+    $('#drop-down').css('visibility', 'visible')
+});
