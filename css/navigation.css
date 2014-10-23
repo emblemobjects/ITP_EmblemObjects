@@ -8,6 +8,19 @@
 #navigation div {
     height: 40px;
 }
+/* shop designers collections */
+#main-nav1 {
+    margin-top:10px;
+    float:left;
+    margin-left:150px;
+}
+
+/* latest popular  */
+#main-nav2 {
+    margin-top:10px;
+    float:left;
+    margin-left:300px;
+}
 
 /* search box container */
 #search-field {
