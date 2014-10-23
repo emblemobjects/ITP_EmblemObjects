@@ -89,9 +89,11 @@ function jsonStuff() {
         url: './../php/json-store-objects.php',
         dataType: "json",
         success: function(data){
-            //do your stuff with the JSON data
-            var obj = JSON.parse(data);
-            console.log('helllllllllloooo...... ' + obj);
+            // do your stuff with the JSON data
+
+            // push data into array... this is not working and getJSON isn't either... help
+
+            console.log('helllllllllloooo...... ' + data);
         }
     });
 
