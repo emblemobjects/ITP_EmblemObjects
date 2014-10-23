@@ -73,7 +73,11 @@ overlayText {
     width: 230px;
 }
 
-#buttonDiv {
+#buttonBuySoloDiv {
+    margin-left: 43%;
+}
+
+#buttonCustomDiv {
     margin-left: 35%;
 }
 

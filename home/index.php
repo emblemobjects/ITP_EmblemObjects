@@ -108,7 +108,7 @@
 
     <br />
 
-    <div id="buttonDiv">
+    <div id="buttonBuySoloDiv" class="leftText">
         <button type="submit">Buy Item</button>
     </div>
 {{/compare}}
@@ -164,7 +164,7 @@
 
     <div style="clear:both"></div>
 
-        <div id="buttonDiv" class="leftText">
+        <div id="buttonCustomDiv" class="leftText">
             <button type="submit">Buy Item</button>
         </div>
 
