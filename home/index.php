@@ -67,7 +67,7 @@
     <br />
 
     <div id="imgBox" class="leftText">
-        <img src="{{img}}" alt="" width="230px" height="230px"/>
+        <img src="{{img}}" alt="" class="store-img" width="285px" height="250px"/>
     </div>
 
     <div id="optionsBox" class="rightText">
@@ -111,6 +111,12 @@
     <div id="buttonBuySoloDiv" class="leftText">
         <form action="../payment/index.php">
             <button type="submit">Buy Item</button>
+        </form>
+    </div>
+
+    <div id="buttonCustomDiv" class="RightText">
+        <form action="../customize/index.php">
+            <button type="submit">Design</button>
         </form>
     </div>
 {{/compare}}
@@ -190,7 +196,7 @@
 <div id="itemTemplate">
 
     <div id="itemImageBox">
-        <img src="{{img}}" alt="" width="240px" height="240px"/>
+        <img src="{{img}}" alt="" class="store-img" width="240px" height="240px"/>
     </div>
 
     <div id="itemDescriptionBox">
