@@ -1,5 +1,4 @@
 
-
 ///////////////////////////////////////// HANDLEBARS HELPER
 
 Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
@@ -50,7 +49,6 @@ var theData = {
             materials: ["silver", "copper", "plastic"],
             sizes: [5, 7],
             colors: ["pink", "purple", "cyan"],
-            type: "SOLO",
             type: "CUSTOM",
             img: "../objects/1_boxPendant/jacobBBlitzer_1_boxPendant_render2.jpg",
             description: "ically pass the ically pass the ically pass the ically pass the ically pass the " +
@@ -61,9 +59,6 @@ var theData = {
         }
     ]
 };
-
-var jsonArray = store.items;
-
 
 ///////////////////////////////////////// OVERLAY FUNCTIONS
 
@@ -82,14 +77,6 @@ var closeOverlay = function() {
     document.getElementById('fade').style.display='none';
     $('.storeItem-hover').css('visibility', 'hidden');
 
-};
-
-///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
-
-var renderOverlayTemplate = function() {
-    var scriptHTML = document.getElementById('overlay-template').innerHTML;
-    var templateFunction = Handlebars.compile(scriptHTML);
-    document.getElementById('light').innerHTML = templateFunction(theData.storeItems[0]);
 };
 
 ///////////////////////////////////////// JSON STUFF FUNCTION
@@ -151,36 +138,12 @@ jQuery.prototype.center = function () {
 renderItemTemplate();
 renderOverlayTemplate();
 renderHoverTemplate();
-
-
-//////////////////////////////////////// JQUERY STUFF
-$(".storeItem").mouseenter(function() {
-    $('.storeItem-hover').css('visibility', 'visible');
-});
-
-$(".storeItem-hover").mouseleave(function() {
-    $('.storeItem-hover').css('visibility', 'hidden');
-});
-
-$(".itemm").mouseenter(function() {
-    $('.itemm-hover').css('visibility', 'visible');
-});
-
-$(".itemm").mouseleave(function() {
-    $('.itemm-hover').css('visibility', 'hidden');
-});
-
-
-renderItemTemplate();
-renderOverlayTemplate();
-renderHoverTemplate();
 //jsonStuff();
 
 //////////////////////////////////////// JQUERY STUFF
 $(".storeItem").mouseenter(function() {
     $('.storeItem-hover').css('visibility', 'visible');
 });
-
 
 $(".storeItem-hover").mouseleave(function() {
     $('.storeItem-hover').css('visibility', 'hidden');
