@@ -10,9 +10,16 @@
 }
 /* shop designers collections */
 #main-nav1 {
-    margin-top:10px;
+    margin-top:-4px;
     float:left;
     margin-left:150px;
+}
+.nav-1-btn {
+    float:left;
+}
+
+pre {
+    font-family: "Garamond", serif;
 }
 
 /* latest popular  */
@@ -23,21 +30,26 @@
 }
 
 /* drop down nav */
-#drop-down {
-    width:400px;
-    height:300px;
+#drop-down-1 {
+    width:350px;
+    height:100%;
     position:absolute;
-    left:300px;
+    left:180px;
     background-color:#000000;
     opacity:.75;
     padding:20px;
+    clear:both;
 }
 .drop-down-col {
     height: 250px;
     float: left;
     margin-left:20px;
+    font-size:.8em;
 }
-#drop-down h1 {
+#column-2 {
+    margin-top:34.5px;
+}
+#drop-down-1 h1 {
     font-size:1em;
 }
 

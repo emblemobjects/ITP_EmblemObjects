@@ -1,16 +1,21 @@
+body {
+    color:#ffffff;
+}
 .storeItem {
     background-color: pink;
-    width: 250px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: 285px;
+    height: 250px;
+    float: left;
+    position: relative;
 }
 
 .storeItem-hover {
     visibility: hidden;
-    float: right;
-    width: 250px;
-    height: 300px;
-    background-color: #0c1280;
+    float: left;
+    width: 225px;
+    height: 190px;
+    padding:30px;
+    background-color: #000000;
     z-index: 1001;
     -moz-opacity: 0.75;
     opacity: .75;
@@ -59,7 +64,10 @@ overlayText {
     float: right;
     border: 3px solid red;
 }
-
+.img {
+    width:285px;
+    height:250px;
+}
 #imgBox {
     width: 230px;
     height: 230px;
@@ -82,9 +90,19 @@ overlayText {
 }
 
 #itemDescriptionBox {
-    height: 40px;
-    width: 250px;
-    background-color: green;
+    text-align: left;
+    background-color: #000000;
+    color: #ffffff;
+    width: 271px;
+    height: 13px;
+    padding: 7px 7px 10px 7px;
+}
+
+.item-type {
+    text-align: left;
+    background-color: #000000;
+    color: #ffffff;
+    float:right;
 }
 
 #itemImageBox {

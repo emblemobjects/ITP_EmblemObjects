@@ -194,7 +194,7 @@
     </div>
 
     <div id="itemDescriptionBox">
-        <p>{{ name }} --- {{type}} </p>
+        {{ name }} --- {{type}}
     </div>
 
 </div>
@@ -202,10 +202,6 @@
 
 <script type="text/handlebars" id="hover-template">
 <div id="hoverTemplate">
-
-    <div id="itemDescriptionBox">
-        <p>{{ name }} ------ ${{price}} </p>
-    </div>
 
     Description: {{description}}
 
