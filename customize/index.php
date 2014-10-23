@@ -14,6 +14,8 @@ include './../php/json-store-objects.php';
     <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/customize.css">
+
 
 </head>
 
@@ -32,6 +34,20 @@ include './../php/json-store-objects.php';
 
             <h1> CUSTOMER CUSTOMIZE PAGE </h1>
 
+            <h3> upload a file...</h3>
+
+            <input id="uploadFile" placeholder="Please Choose A File ..." disabled="disabled" />
+            <input id="uploadButton" type="file" class="upload" />
+            <div class="fileUpload">
+
+            </div>
+
+            <br />
+
+            <form id="buttonForm" action="../payment/index.php">
+                <button type="submit">Buy Item</button>
+            </form>
+
         </div>
     </div>
     <div style="clear:both"></div>
@@ -42,4 +58,5 @@ include './../php/json-store-objects.php';
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
+<script type="text/javascript" src="../js/customize.js"></script>
 </html>

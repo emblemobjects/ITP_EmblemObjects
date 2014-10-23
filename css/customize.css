@@ -1,0 +1,15 @@
+#uploadFile {
+    float: left;
+    margin-left: 37%;
+    border: 3px dotted blue;
+
+}
+#uploadButton {
+    float: right;
+    margin-right: 30%;
+    border: 3px dotted red;
+}
+
+#buttonForm {
+    border: 3px dotted green;
+}

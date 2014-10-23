@@ -32,6 +32,8 @@ include './../php/json-store-objects.php';
 
             <h1> PAYMENT PAGE </h1>
 
+            <h3> via PayPal plugin...</h3>
+
         </div>
     </div>
     <div style="clear:both"></div>
