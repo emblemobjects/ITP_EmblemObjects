@@ -30,30 +30,36 @@
             <div class="container">
           <!-- Homepage content goes here! -->
           <center>
-            <p>&nbsp</p>
-          <a href="http://localhost:8080/ITP460/ITP_EmblemObjects/designer/"><div align="right" style="margin-right:130px;"><button>Logout</button></div></a>
-          <p>&nbsp</p>
+            <p></p>
+            <div align="right" style="margin-right:117px;"><a href="http://localhost:8080/ITP460/ITP_EmblemObjects/designer/"><button>Logout</button></a></div>
+            <p></p>
+            <h2>Waiting</h2>
           <table border="1" cellpadding="0" cellspacing="0" style="width: 80%; height: 50px">
           <tbody>
             <tr>
-              <td width="10%">
+              <td width="12%">
                 <center>
-                <h4> Order Number </h4>
+                <p>Order #</p>
                 </center>
               </td>
               <td>
                 <center>
-                <h4> Customer Name </h4>
+                <p>Customer Name</p>
                 </center>
               </td>
               <td>
                 <center>
-                <h4> Object </h4>
+                <p>Object</p>
                 </center>
               </td>
               <td>
                 <center>
-                <h4> Time Remaining </h4>
+                <p>Image</p>
+              </center>
+              </td>
+              <td>
+                <center>
+                <p>Approve</p>
                 </center>
               </td>
             </tr>
@@ -61,54 +67,251 @@
           <tbody>
             <td>
               <center>
-              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p> 192168 </p></a>
+              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p>101452</p></a>
             </center>
             </td>
             <td>
               <center>
-              <p> John Doe </p>
+              <p>Tim Burke</p>
             </center>
             </td>
             <td>
               <center>
-              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"<p> Gold Ring </p></a>
+              <p>Coin</p>
             </center>
             </td>
             <td>
               <center>
-              <p> D:1 H:12 M:1 </p>
+                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+              </center>
+            </td>
+            <td>
+              <center>
+              <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/yes.png">&nbsp<img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/no.png">
             </center>
             </td>
+          </tbody>
+
+        </tbody>
+          <tbody>
+            <td>
+              <center>
+              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p>192168</p></a>
+            </center>
+            </td>
+            <td>
+              <center>
+              <p>John Doe</p>
+            </center>
+            </td>
+            <td>
+              <center>
+              <p>Ring</p>
+            </center>
+            </td>
+            <td>
+              <center>
+                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+              </center>
+            </td>
+            <td>
+              <center>
+              <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/yes.png">&nbsp<img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/no.png">
+            </center>
+            </td>
+          </tbody>
+          </table>
+
+
+
+          <p>&nbsp</p>
+          <h2>Approved</h2>
+          <table border="1" cellpadding="0" cellspacing="0" style="width: 80%; height: 50px">
+          <tbody>
+            <tr>
+              <td width="12%">
+                <center>
+                <p>Order #</p>
+                </center>
+              </td>
+              <td>
+                <center>
+                <p>Customer Name</p>
+                </center>
+              </td>
+              <td>
+                <center>
+                <p>Object</p>
+                </center>
+              </td>
+              <td>
+                <center>
+                <p>Image</p>
+              </center>
+              </td>
+              <td>
+                <center>
+                <p>Upload</p>
+                </center>
+              </td>
+            </tr>
           </tbody>
           <tbody>
             <td>
               <center>
-              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p> 192169 </p></a>
+              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p>101452</p></a>
             </center>
             </td>
             <td>
               <center>
-              <p> Patrick Lee </p>
+              <p>Tim Burke</p>
             </center>
             </td>
             <td>
               <center>
-              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"<p> Silver Ring </p></a>
+              <p>Coin</p>
             </center>
             </td>
             <td>
               <center>
-              <p> D:0 H:3 M:4 </p>
+                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+              </center>
+            </td>
+            <td>
+              <center>
+              <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/upload_1.png">
+            </center>
+            </td>
+          </tbody>
+        </tbody>
+          <tbody>
+            <td>
+              <center>
+              <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p>192168</p></a>
+            </center>
+            </td>
+            <td>
+              <center>
+              <p>John Doe</p>
+            </center>
+            </td>
+            <td>
+              <center>
+              <p>Ring</p>
+            </center>
+            </td>
+            <td>
+              <center>
+                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+              </center>
+            </td>
+            <td>
+              <center>
+              <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/upload_1.png">
             </center>
             </td>
           </tbody>
           </table>
           </center>
 
-
+        <center>
+        <p>&nbsp</p>
+        <h2>Pending Payment</h2>
+        <table border="1" cellpadding="0" cellspacing="0" style="width: 80%; height: 50px">
+        <tbody>
+          <tr>
+            <td width="12%">
+              <center>
+              <p>Order #</p>
+              </center>
+            </td>
+            <td>
+              <center>
+              <p>Customer Name</p>
+              </center>
+            </td>
+            <td>
+              <center>
+              <p>Object</p>
+              </center>
+            </td>
+            <td>
+              <center>
+              <p>Day Processed</p>
+            </center>
+            </td>
+            <td>
+              <center>
+              <p>Total Amount</p>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <td>
+            <center>
+            <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p>101452</p></a>
+          </center>
+          </td>
+          <td>
+            <center>
+            <p>Tim Burke</p>
+          </center>
+          </td>
+          <td>
+            <center>
+            <p>Coin</p>
+          </center>
+          </td>
+          <td>
+            <center>
+              <p>October 23, 2014</p>
+            </center>
+          </td>
+          <td>
+            <center>
+            <p>$34.54</p>
+          </center>
+          </td>
+        </tbody>
+      </tbody>
+        <tbody>
+          <td>
+            <center>
+            <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"<p>192168</p></a>
+          </center>
+          </td>
+          <td>
+            <center>
+            <p>John Doe</p>
+          </center>
+          </td>
+          <td>
+            <center>
+            <p>Ring</p>
+          </center>
+          </td>
+          <td>
+            <center>
+              <p>October 24, 2014</p>
+            </center>
+          </td>
+          <td>
+            <center>
+            <p>$89.25</p>
+          </center>
+          </td>
+        </tbody>
+        </table>
+        </center>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+      </center>
 
             </div>
         </div>
+
+
         <div style="clear:both"></div>
 
 

@@ -39,7 +39,7 @@
                     <a align="right" href="#"><button> Next > </button></a>
                   </center>
                     <center>
-                      <h3> Request Information </h3>
+                      <h3>Request Information</h3>
                     </center>
                     <h4>
                       <p>
@@ -53,24 +53,20 @@
                       <p>
                     </h4>
                     <center>
-                      <p>&nbsp</p>
                       <hr>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" style="width: 80%;"/></a><p></p>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Approve.png" style="width: 80%;"/></a><p></p>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Reject.png" style="width: 80%;"/></a><p></p>
-                    <a href="#"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Submit.png" style="width: 80%;"/></a><p></p>
+                    <a href="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/downloads/sample.zip"><img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png" style="width: 80%;"/></a><p></p>
                     <center>
                   </td>
             			<td>
                     <center>
-                      <img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg" style="width: 80%;" />
+                      <img alt="" src="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg" style="width: 60%;" />
                     </center>
                   </td>
             		</tr>
             	</tbody>
             </table>
             <center>
-
+            <p>&nbsp</p>
 
 
             </div>
