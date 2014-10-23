@@ -74,7 +74,7 @@ overlayText {
 }
 
 #buttonDiv {
-    margin-left: 40%;
+    margin-left: 35%;
 }
 
 #itemDescriptionBox {
@@ -87,4 +87,8 @@ overlayText {
     width: 250px;
     height: 240px;
     background-color: #ffac21;
+}
+
+#choiceButtonsBox {
+    border: 4px solid navy;
 }

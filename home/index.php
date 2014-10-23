@@ -55,7 +55,7 @@
 <div id="overlayTemplate">
 <overlayText>
 
-{{#compare type "SOLO" operator="==="}}
+{{#compare type "CUSTOM" operator="==="}}
     <div class="leftText">
         <h1>{{ name }}</h1>
     </div>
@@ -113,7 +113,7 @@
     </div>
 {{/compare}}
 
-{{#compare type "CUSTOM" operator="==="}}
+{{#compare type "SOLO" operator="==="}}
     <div class="leftText">
         <h1>{{ name }}</h1>
     </div>
@@ -164,15 +164,16 @@
 
     <div style="clear:both"></div>
 
-    <br />
+        <div id="buttonDiv" class="leftText">
+            <button type="submit">Buy Item</button>
+        </div>
 
-    <div id="buttonDiv">
-        <button type="submit">Buy Item</button>
-    </div>
+        <div class="leftText">
+            <button type="submit">Customize Item</button>
+        </div>
 
-    <div id="buttonDiv">
-        <button type="submit">Customize Item</button>
-    </div>
+    <div style="clear:both"></div>
+
 {{/compare}}
 
 </overlayText>
