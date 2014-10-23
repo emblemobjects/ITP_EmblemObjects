@@ -37,6 +37,19 @@
             	<div id="light" class="bright_content"> </div>
             	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
 
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+
+
         	</div>
 
 
