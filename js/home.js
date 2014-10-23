@@ -61,6 +61,12 @@ var renderItemTemplate = function() {
     document.getElementById('item').innerHTML = itemTemplateFunction(theData.storeItems[0]);
 };
 
+var renderHoverTemplate = function() {
+    var hoverHTML = document.getElementById('hover-template').innerHTML;
+    var hoverTemplateFunction = Handlebars.compile(hoverHTML);
+    document.getElementById('hover').innerHTML = hoverTemplateFunction(theData.storeItems[0]);
+};
+
 ///////////////////////////////////////// JQUERY PROTOTYPING (CENTERING)
 
 jQuery.prototype.center = function () {
@@ -79,15 +85,23 @@ jQuery.prototype.center = function () {
 
 renderItemTemplate();
 renderOverlayTemplate();
+renderHoverTemplate();
 
 $(".storeItem").mouseenter(function() {
-    $('#helloWorld').css('visibility', 'visible');
+    $('.storeItem-hover').css('visibility', 'visible');
 });
 
 $(".storeItem").mouseleave(function() {
-    $('#helloWorld').css('visibility', 'hidden');
+    $('.storeItem-hover').css('visibility', 'hidden');
 });
 
+$(".itemm").mouseenter(function() {
+    $('.itemm-hover').css('visibility', 'visible');
+});
+
+$(".itemm").mouseleave(function() {
+    $('.itemm-hover').css('visibility', 'hidden');
+});
 
 
 

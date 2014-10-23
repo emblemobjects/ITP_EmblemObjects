@@ -34,7 +34,7 @@ include './../php/json-store-objects.php';
             <!-- Container to hold the objects -->
             <div id="objects-display">
 
-                <div class="itemm-hover" id="helloWorld"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
+                <div id="hover" class="storeItem-hover"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
 
                 <div id="item" class="storeItem" onclick="openOverlay()"> </div>
 
@@ -43,6 +43,8 @@ include './../php/json-store-objects.php';
             	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
 
         	</div>
+
+            <br /> <br />
 
             <div class="itemm" >
                 <div class="itemm-hover">
@@ -148,6 +150,17 @@ include './../php/json-store-objects.php';
         <p>{{ name }} ------ ${{price}} </p>
     </div>
 
+</div>
+</script>
+
+<script type="text/handlebars" id="hover-template">
+<div id="hoverTemplate">
+
+    <div id="itemDescriptionBox">
+        <p>{{ name }} ------ ${{price}} </p>
+    </div>
+
+    Description: {{description}}
 
 </div>
 </script>

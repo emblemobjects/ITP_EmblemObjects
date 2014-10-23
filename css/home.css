@@ -1,8 +1,19 @@
 .storeItem {
-    border: 5px dotted darkslategray;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    background-color: pink;
     width: 250px;
+}
+
+.storeItem-hover {
+    visibility: hidden;
+    float: right;
+    width: 250px;
+    height: 190px;
+    background-color: #0c1280;
+    z-index: 1001;
+    -moz-opacity: 0.75;
+    opacity: .75;
+    filter: alpha(opacity=75);
+    position:absolute;
 }
 
 .dark_overlay
@@ -74,22 +85,6 @@ overlayText {
     width: 245px;
     height: 245px;
     background-color: #ffac21;
-}
-
-#itemTemplate {
-
-}
-
-#helloWorld {
-    visibility: hidden;
-    float: right;
-    width: 200px;
-    height: 190px;
-    background-color: #0c1280;
-    z-index: 1001;
-    -moz-opacity: 0.75;
-    opacity: .75;
-    filter: alpha(opacity=75);
 }
 
 .itemm {
