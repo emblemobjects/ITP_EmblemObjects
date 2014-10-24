@@ -57,7 +57,7 @@ body {
     padding: 50px;
     z-index:1002;
     overflow:visible;
-    background-color: #000000;
+    background-color: white;
     color:#ffffff;
 }
 
@@ -66,12 +66,12 @@ overlayText {
 }
 
 .leftText {
-    color:white;
+    color:black;
     float: left;
 }
 
 .rightText {
-    color:white;
+    color:black;
     float: right;
     width:50%;
 }
