@@ -1,12 +1,37 @@
-.storeItem {
-    width: 200px;
-    height: 100px;
-    background-color: red;
-    margin-left: 50px;
+body {
+    color:#ffffff;
 }
 
-overlayText {
-    color: #555555;
+#content {
+    width:1200px;
+    margin:auto;
+}
+
+#objects-display {
+    margin-top:15px;
+}
+.storeItem {
+    background-color: pink;
+    width: 285px;
+    height: 220px;
+    float: left;
+    position: relative;
+}
+
+.storeItem-hover {
+    visibility: hidden;
+    float: left;
+    width: 225px;
+    height: 160px;
+    padding:30px;
+    color:white;
+    text-align:left;
+    background-color: #000000;
+    z-index: 1001;
+    -moz-opacity: 0.75;
+    opacity: .75;
+    filter: alpha(opacity=75);
+    position:absolute;
 }
 
 .dark_overlay
@@ -27,46 +52,81 @@ overlayText {
 {
     display: none;
     position: absolute;
-    width: 500px;
+    width: 600px;
     height: 390px;
-    padding: 20px;
-    border: 10px solid #ffac21;
+    padding: 50px;
     z-index:1002;
     overflow:visible;
-    background-color: #ffffff;
+    background-color: #000000;
+    color:#ffffff;
+}
 
+overlayText {
+    color: #555555;
 }
 
 .leftText {
+    color:white;
     float: left;
-    border: 3px solid black;
 }
 
 .rightText {
+    color:white;
     float: right;
-    border: 3px solid red;
+    width:50%;
 }
-
+.store-img {
+    width:285px;
+    height:220px;
+}
 #imgBox {
-    width: 230px;
-    height: 230px;
-    border: 3px solid purple;
+    width: 285px;
+    height: 220px;
     background-color: #ffac21;
 }
 
 #optionsBox {
-    border: 3px dotted blue;
+    text-align:left;
     margin-right: 5px;
     width: 230px;
 }
 
-#buttonDiv {
-    margin-left: 40%;
+#buttonBuySoloDiv {
+    margin-left: 45%;
 }
 
+#itemDescriptionBox {
+    text-align: left;
+    background-color: #000000;
+    color: #ffffff;
+    width: 271px;
+    height: 13px;
+    padding: 7px 7px 10px 7px;
+}
 
+.item-jpeg {
+    margin:-1px 0px 20px 18px;
+    float:left;
+}
 
+.item-jpeg-1 {
+    margin:-1px 0px 20px -2px;
+    float:left;
+}
 
+.item-type {
+    text-align: left;
+    background-color: #000000;
+    color: #ffffff;
+    float:right;
+}
 
+#itemImageBox {
+    width: 285px;
+    height: 220px;
+    background-color: #333333;
+}
 
-
+#choiceButtonsBox {
+    border: 4px solid navy;
+}

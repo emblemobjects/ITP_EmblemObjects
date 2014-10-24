@@ -9,11 +9,11 @@ include './../php/json-store-objects.php';
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ITP460/ITP_EmblemObjects/css/header.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../css/body.css">
+    <link rel="stylesheet" type="text/css" href="../css/content.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
 
 </head>
 
@@ -30,9 +30,10 @@ include './../php/json-store-objects.php';
     <div id="content">
         <div class="container">
 
-            <h1>Dongyang's Page!</h1>
+            <h1> PAYMENT PAGE </h1>
 
-            
+            <h3> via PayPal plugin...</h3>
+
         </div>
     </div>
     <div style="clear:both"></div>

@@ -1,7 +1,5 @@
 <!doctype html>
-<?php
-include './../php/json-store-objects.php';
-?>
+<?php   include './../php/json-store-objects.php';  ?>
 
 <html lang="en">
 <head>
@@ -29,36 +27,48 @@ include './../php/json-store-objects.php';
 
     <!-- CONTENT -->
     <div id="content">
-        <div id="container">
+        <div class="container">
+        
+            <!-- Container to hold the objects -->
+            <div id="objects-display">
 
-            <div class="storeItem" onclick="openOverlay()">
-                <p> STORE ITEM </p>
+                <div id="hover" class="storeItem-hover" onclick="openOverlay()"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
+                <div id="item" class="storeItem"> </div>
+            	<div id="light" class="bright_content"> </div>
+            	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
 
-            </div>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+                <img src= "../images/store_image.jpg" class="item-jpeg"/>
 
-            <!-- /////////////////////////////////////////////////////////////////// -->
 
-            <div id="light" class="bright_content">
-                <overlayText> Handlebars bizzz nassssss </overlayText>
-
-            </div>
-
-            <div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
-
-            <!-- ////////////    {{#each storeItems}}//////////////////   {{/each}}///////////////////////////////////// -->
+        	</div>
 
 
         </div>
     </div>
     <div style="clear:both"></div>
+    <br /><br />
+    <br /><br />
+    <br /><br />
 
     <div id="footer"></div>
     <div style="clear:both"></div>
 </div>
 
 <script type="text/handlebars" id="overlay-template">
+<div id="overlayTemplate">
 <overlayText>
 
+{{#compare type "SOLO" operator="==="}}
     <div class="leftText">
         <h1>{{ name }}</h1>
     </div>
@@ -70,7 +80,7 @@ include './../php/json-store-objects.php';
     <br />
 
     <div id="imgBox" class="leftText">
-        <img src="{{img}}" alt="" width="100px" height="100px"/>
+        <img src="{{img}}" alt="" class="store-img" width="285px" height="250px"/>
     </div>
 
     <div id="optionsBox" class="rightText">
@@ -111,11 +121,105 @@ include './../php/json-store-objects.php';
 
     <br />
 
-    <div id="buttonDiv">
-        <button type="submit">Buy Item</button>
+    <div id="buttonBuySoloDiv" class="leftText">
+        <form action="../payment/index.php">
+            <button type="submit">Buy Item</button>
+        </form>
     </div>
 
+{{/compare}}
+
+{{#compare type "CUSTOM" operator="==="}}
+    <div class="leftText">
+        <h1>{{ name }}</h1>
+    </div>
+
+    <div class="rightText">
+        <h2> $ {{ price }} </h2>
+    </div>
+    <div style="clear:both"></div>
+    <br />
+
+    <div id="imgBox" class="leftText">
+        <img src="{{img}}" alt="" width="230px" height="230px"/>
+    </div>
+
+    <div id="optionsBox" class="rightText">
+
+        Description: {{description}}
+
+        <br /><br />
+
+        <form>
+
+        Select a Color
+        <select name="colors">
+            {{#each colors}}
+                <option> {{this}} </option>
+            {{/each}}
+        </select>
+        <br />
+
+        Select a Material
+        <select name="materials">
+            {{#each materials}}
+                <option> {{this}} </option>
+            {{/each}}
+        </select>
+        <br />
+
+        Select a Size
+        <select name="sizes">
+            {{#each sizes}}
+                <option> {{this}} </option>
+            {{/each}}
+        </select>
+
+        </form>
+    </div>
+
+    <div style="clear:both"></div>
+
+        <div id="buttonCustomDiv" class="leftText">
+            <form action="../payment/index.php">
+                <button type="submit">Buy Item</button>
+            </form>
+        </div>
+
+        <div class="leftText">
+            <form action="../customize/index.php">
+                <button type="submit">Customize Item</button>
+            </form>
+        </div>
+
+    <div style="clear:both"></div>
+
+{{/compare}}
+
 </overlayText>
+</div>
+</script>
+
+<script type="text/handlebars" id="item-template">
+<div id="itemTemplate">
+
+    <div id="itemImageBox">
+        <img src="{{img}}" alt="" class="store-img" width="240px" height="240px"/>
+    </div>
+
+    <div id="itemDescriptionBox">
+        {{ name }} --- {{type}}
+    </div>
+
+</div>
+</script>
+
+<script type="text/handlebars" id="hover-template">
+<div id="hoverTemplate">
+
+    Description: {{description}}
+
+</div>
 </script>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>

@@ -29,10 +29,26 @@ include './../php/json-store-objects.php';
     <!-- CONTENT -->
     <div id="content">
         <div class="container">
+            <!-- Homepage content goes here! -->
 
-            <h1>Dongyang's Page!</h1>
+            <p></p>
 
-            
+            <h1> Welcome, Please sign in to continue </h1>
+
+            <p></p>
+
+            <form name="user-field" id="user-field" action="" method=POST>
+                <input name="search-input"/>
+            </form>
+            <p></p>
+
+            <form name="user-field" id="user-field" action="" method=POST>
+                <input name="search-input"/>
+            </form>
+
+
+            <center><input id="sign-in-staff" type="button" value="SIGN IN"/></center>
+
         </div>
     </div>
     <div style="clear:both"></div>
