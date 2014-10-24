@@ -4,6 +4,7 @@ $designer_name;
 $enable_id;
 $subject = "Enable Request has Passed Enable Review";
 $message ="<html>
+ <img src = 'images/logo.png'> <br>
 From: designreview@emblemobjects.com<br>
 Subject: Enable Request has Passed Enable Review<br>
 Body:<br>

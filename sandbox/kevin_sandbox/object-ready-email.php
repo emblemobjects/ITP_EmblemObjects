@@ -5,7 +5,8 @@ $customer_name;
 $image;
 $link;
 $subject = "Your Object is READY! Request: ". $enable_id;
-$message = "<html>From: confirmation@emblemobjects.com<br>
+$message = "<html> <img src = 'images/logo.png'> <br>
+From: confirmation@emblemobjects.com<br>
 Subject: Your Object is READY! Request: " . $enable_id . "<br>
 Body:<br>
 Dear" . $customer_name ."<br>

@@ -8,6 +8,7 @@ $designer_name;
 $designer_email;
 $message = "
  <html>
+ <img src = 'images/logo.png'> <br>
 <p> From: confirmation@emblemobjects.com<br> Subject: Your Design Request Confirmation:" . $enable_id .
 "Body:<br>Dear" . $customer_name .
 ", Thank you for your design request submission. Your design request number is " . $enableID .

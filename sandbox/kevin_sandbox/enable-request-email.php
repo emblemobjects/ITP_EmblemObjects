@@ -6,7 +6,8 @@ $customer_name;
 $enable_link;
 $designer_name;
 $subject = "New Enable Request :" . $enable_id;
-$message = "<html>From: enable@emblemobjects.com<br>
+$message = "<html> <img src = 'images/logo.png'> <br>
+From: enable@emblemobjects.com<br>
 Subject: New Enable Request:" . $enable_id +"<br>
 Body:<br>
 Designer" + $designer_name . ",<br>
