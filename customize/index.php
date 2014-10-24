@@ -35,8 +35,7 @@ include './../php/json-store-objects.php';
             <h1>DESIGN YOUR OBJECT</h1>
             </div>
             <div id="container-left">
-
-
+                
                 <h3>upload an image.</h3>
 
                 <input id="uploadFile" disabled="disabled" />
