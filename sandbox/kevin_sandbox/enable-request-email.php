@@ -1,4 +1,6 @@
 <?php
+
+//CREATE A FUCNTION TAHT CALLSE EACH EMAIL FORMAT IN A NEW FILE
 $to = "somebody@example.com";
 //variables to retrieve
 $enable_id;
@@ -25,4 +27,10 @@ $headers = "<html>
 <img src = 'images/logo.png'>
 </html>";
 $mail($to,$subject,$message,$headers);
+//create test page to call function
+//function sendEmail ($template_number, $designer_id, $enable_id){
+ //sql statement to look up other info
+//include db-connect-con.php
+//send me email
+
 ?>
