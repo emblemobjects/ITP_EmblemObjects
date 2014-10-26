@@ -1,11 +1,18 @@
-<!doctype html>
-<?php   include './../php/json-store-objects.php';  ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <?php include '../php/db-config.php';  ?>
+    <?php include '../php/config.php';  ?>
+    <?php include '../php/json-store-objects.php';  ?>
     <title>Emblem Objects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
+    <!--External Scripts-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/handlebars-v2.0.0.js"></script>
+
+    <!--External CSS-->
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/navigation.css">
@@ -119,7 +126,7 @@
     <br />
 
     <div id="buttonBuySoloDiv" class="leftText">
-        <form action="../payment/index.php">
+        <form action="../payment/index.php?item_id={{id}}&detail_id={{detail_id}}">
             <button type="submit">Buy Item</button>
         </form>
     </div>
@@ -184,7 +191,7 @@
         </div>
 
         <div class="leftText">
-            <form action="../customize/index.php">
+            <form method="get" action="../customize/index.php?item_id={{id}}&detail_id={{details.detail_id}}">
                 <button type="submit">Customize Item</button>
             </form>
         </div>
@@ -219,10 +226,8 @@
 </div>
 </script>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="../js/json-search-db.js"></script>
-    <script src="../js/handlebars-v2.0.0.js"></script>
-    <script src="../js/home.js"></script>
+<script type="text/javascript" src="../js/json-search-db.js"></script>
+<script src="../js/home.js"></script>
 
 </body>
 </html>
