@@ -22,9 +22,15 @@ h3 {
     text-align:right;
     font-size:1.2em;
     margin-bottom:15px;
+    margin-top: 20px;
+}
+h5{
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 #container-right{
-    margin-top:36px;
+    margin-top:20px;
     width:580px;
     text-align:left;
     float:right;
@@ -49,4 +55,19 @@ h3 {
 #uploadButton {
     float: right;
     margin:10px 0px 0px 0px;
+    position: relative;
+    left: 50px;
+}
+
+.fileUpload{
+    text-align: right;
+    float: right;
+}
+#confirmationContent{
+    padding: 50px;
+    width: 600px;
+    margin: 0px auto;
+}
+p{
+    margin-bottom: 10px;
 }

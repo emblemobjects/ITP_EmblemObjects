@@ -1,8 +1,10 @@
-<!doctype html>
 <?php
-include './../php/json-store-objects.php';
+if (empty($_REQUEST['item_id'])) {
+    header("location: ../home/index.php");
+}
 ?>
 
+<!doctype html>
 <html lang="en">
 <head>
     <title>Emblem Objects</title>
@@ -22,50 +24,47 @@ include './../php/json-store-objects.php';
 
 <body>
 <div id="wrapper">
-    <?php include "../templates/header.php";?>
+    <?php include "../templates/header.php"; ?>
 
 
     <!-- CONTENT -->
     <div id="content">
         <div class="container" id="container">
             <div id="title-div">
-            <h1>DESIGN YOUR OBJECT</h1>
+                <h1>DESIGN YOUR OBJECT</h1>
             </div>
-            <div id="container-left">
-                
-                <h3>upload an image.</h3>
+            <form id="customizeObject" method="POST" action="customize-request.php">
+                <div id="container-left">
 
-                <input id="uploadFile" disabled="disabled" />
-                <input id="uploadButton" type="file" class="upload" />
-                <div class="fileUpload">
+                    <h3>Upload an image.</h3>
+                    <h5>Allowed file types: .gif, .png, .jpg, .ai</h5>
 
+
+                    <div class="fileUpload">
+                        <input id="uploadFile" disabled="disabled"/>
+                        <input id="uploadButton" type="file" class="upload"/>
+
+                    </div>
+
+                    <br style="clear:both;"/>
+                </div>
+                <div id="container-right">
+                    <div id="fname" class="input">First Name<br><input type="text" name="firstName" required></div>
+                    <div id="lname" class="input">Last Name<br><input type="text" name="lastName" required></div>
+                    <div id="email" class="input">Email<br><input type="text" name="email" required></div>
+                    <div id="message" class="input">Message to Designer<br><textarea name="message" rows="5" cols="50"
+                                                                                     maxlength="1000"></textarea></div>
                 </div>
 
-                <br style="clear:both;"/>
-            </div>
-            <div id="container-right">
-                <form>
-                    <div id="fname" class="input">first name<br><input type="text" name="firstname"></div>
-                    <div id="lname" class="input">last name<br><input type="text" name="lastname"></div>
-                    <div id="email" class="input">email<br><input type="text" name="email"></div>
-                    <div id="message" class="input">message<br><textarea rows="4" cols="50" maxlength="1000"></textarea></div>
-                </form>
-            </div>
-        </div>
-        <br style="clear:both">
-        <div id="buy-div">
-            <form id="buttonForm" action="../payment/index.php">
-                <button type="submit">Buy Item</button>
+                <br style="clear:both">
+                <br/>
+                <button type="submit" value="Submit Request">Submit Request</button>
             </form>
         </div>
     </div>
     <div style="clear:both"></div>
-
-
-    <div id="footer"></div>
-    <div style="clear:both"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="<?php echo $Dir;?>/js/load_templates.js"></script>
+<?php include "../templates/footer.php"; ?>
 <script type="text/javascript" src="../js/customize.js"></script>
 </html>
