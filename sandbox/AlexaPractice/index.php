@@ -48,7 +48,7 @@
     </div>
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="<?php echo $Dir;?>/js/load_templates.js"></script>
+    <?php include "../templates/header.php";?>
     <script type="text/javascript" src="<?php echo $Dir;?>/js/json_search_db.js"></script>
 
         

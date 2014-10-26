@@ -174,7 +174,7 @@ if (!empty($_REQUEST["query"]) || !empty($_REQUEST["class"]) || !empty($_REQUEST
         </div>
     
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="<?php echo $Dir;?>/js/load_templates.js"></script>
+        <?php include "../templates/header.php";?>
         <script type="text/javascript" src="<?php echo $Dir;?>/js/json-search-db.js"></script>
         <script src="<?php echo $Dir;?>/js/handlebars-v2.0.0.js"></script>
         <script src="<?php echo $Dir;?>/js/home.js"></script>

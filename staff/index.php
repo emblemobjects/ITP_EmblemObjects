@@ -55,5 +55,5 @@ include './../php/json-store-objects.php';
     <div style="clear:both"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="<?php echo $Dir;?>/js/load_templates.js"></script>
+<?php include "../templates/header.php";?>
 </html>
