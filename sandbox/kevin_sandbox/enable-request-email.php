@@ -30,7 +30,7 @@ $mail($to,$subject,$message,$headers);
 //create test page to call function
 //function sendEmail ($template_number, $designer_id, $enable_id){
  //sql statement to look up other info
-//include db-connect-con.php
+//include config.php
 //send me email
 
 ?>

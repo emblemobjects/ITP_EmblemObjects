@@ -12,3 +12,5 @@ $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+//Directory setting
+$Dir = "http://localhost:8080/ITP460/ITP_EmblemObjects";

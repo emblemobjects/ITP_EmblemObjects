@@ -20,10 +20,8 @@
 
 <body>
 <div id="wrapper">
-    <div id="header"></div>
-    <div style="clear:both"></div>
-    <div id="navigation"></div>
-    <div style="clear:both"></div>
+    <?php include "../templates/header.php";?>
+
 
     <!-- CONTENT -->
     <div id="content">
@@ -60,8 +58,7 @@
     <br /><br />
     <br /><br />
 
-    <div id="footer"></div>
-    <div style="clear:both"></div>
+    <?php include "../templates/footer.php";?>
 </div>
 
 <script type="text/handlebars" id="overlay-template">
@@ -223,7 +220,6 @@
 </script>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="../js/load_templates.js"></script>
     <script type="text/javascript" src="../js/json-search-db.js"></script>
     <script src="../js/handlebars-v2.0.0.js"></script>
     <script src="../js/home.js"></script>

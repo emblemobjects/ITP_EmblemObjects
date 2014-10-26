@@ -1,5 +1,5 @@
 <?php
-    include_once 'db-connect-con.php';
+    include_once 'config.php';
 
     // Get the search input
     // If ends in 's', delete the s (i.e. Rings should also return results with the word Ring in them)

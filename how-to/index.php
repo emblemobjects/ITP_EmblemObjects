@@ -19,8 +19,7 @@
 
 <body>  
     <div id="wrapper">
-        <div id="header"></div><div style="clear:both"></div>
-        <div id="navigation"></div><div style="clear:both"></div>
+<?php include "../templates/header.php";?>
         
         
         <!-- CONTENT --> 
@@ -63,9 +62,8 @@
     
     
         
-        <div id="footer"></div><div style="clear:both"></div>
+        <?php include "../templates/footer.php";?>
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="../js/load_templates.js"></script>
 
 </html>
