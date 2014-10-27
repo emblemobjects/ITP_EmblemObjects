@@ -17,25 +17,33 @@ function test_input($data){
     $data = htmlspecialchars($data);
     return $data;
 }
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $recipient = test_input($_REQUEST["recipient"]);
     $template = test_input($_REQUEST["template"]);
     $designer_id= test_input($_REQUEST["designer_id"]);
     $enable_id = test_input($_REQUEST["enable_id"]);//request_id ??
 }
-
+echo "RECEPIENT : " . $recipient;
+echo "TEMPLATE : " . $template;
+echo "DESIGNER ID : " . $designer_id;
+echo "ENABLE ID : " . $enable_id;
 //make sure the email is a valid format
 //get variables from the form/ SQL database
-    $sql = "SELECT request_id, customer_id, image_filepath, user_email,
-      user_first_name
+
+    $sql = "SELECT design_request.request_id, design_request.customer_id, design_request.image_filepath, user_table.user_email,
+      user_table.user_first_name, user_table.user_last_name
       FROM design_request, user_table
-      ";//WHERE?
-    $customer_name = mysql_query("SELECT"); //customer ID?
-    $designer_name = mysql_query("SELECT");//user first name
-    $enable_link = mysql_query("SELECT");//???
-    $image = mysql_query("SELECT");//image_filepath
-    $link = mysql_query("SELECT");//???
-    $designer_email = mysql_query("SELECT");//user email
+     WHERE design_request.request_id = design_request.request_id , design_request.customer_id = design_request.customer_id,
+     design_request.image_filepath = design_request.image_filepath,
+     user_table.user_email = user_table.user_email, user_table.user_first_name = user_table.user_first_name,
+     user_table.user_last_name = user_table.user_last_name  ";
+    $customer_name = mysql_query($con, $sql); //customer ID?
+    $designer_name = mysql_query($con, $sql);//user first name
+    $enable_link = mysql_query($con, $sql);//???
+    $image = mysql_query($con, $sql);//image_filepath
+    $link = mysql_query($con, $sql);//???
+    $designer_email = mysql_query($con, $sql);//user email
 
 if(!filter_var($recipient, FILTER_VALIDATE_EMAIL)){
     $emailErr= "Invalid email format";
