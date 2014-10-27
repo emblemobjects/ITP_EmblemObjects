@@ -13,7 +13,7 @@
  * connection const HOST,USER,PASSWORD,DATABASE
  */
 
-echo 'config.php<hr/>'; // debug line - comment out for prod
+// echo 'config.php<hr/>'; // debug line - comment out for prod
 
 // Base Directory
 const DIR = 'http://localhost:8080/ITP460/ITP_EmblemObjects';
