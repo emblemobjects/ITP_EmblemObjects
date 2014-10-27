@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "SELECT request_id, customer_id, image_filepath, user_email,
       user_first_name
       FROM design_request, user_table
-      ";//WHERE? 
+      ";//WHERE?
     $customer_name = mysql_query("SELECT"); //customer ID?
     $designer_name = mysql_query("SELECT");//user first name
     $enable_link = mysql_query("SELECT");//???
