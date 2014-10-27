@@ -6,11 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/header.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/body.css">
     <link rel="stylesheet" type="text/css" href="content.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">   
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/footer.css">
 
 </head>
 
@@ -48,8 +48,8 @@
     </div>
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/json_search_db.js"></script>
+    <?php include "../templates/header.php";?>
+    <script type="text/javascript" src="<?php echo $Dir;?>/js/json_search_db.js"></script>
 
         
 </html>

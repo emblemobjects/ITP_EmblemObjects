@@ -4,21 +4,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ITP460/ITP_EmblemObjects/css/header.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/body.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/content.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/footer.css">
 
 </head>
 
 
 <body>
 <div id="wrapper">
-    <div id="header"></div>
-    <div style="clear:both"></div>
-    <div id="navigation"></div>
-    <div style="clear:both"></div>
+    <?php include "../templates/header.php";?>
 
 
     <!-- CONTENT -->
@@ -34,7 +31,7 @@
                         <td>
                             <center>
                                 <a align="left"
-                                   href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_list/">
+                                   href="<?php echo $Dir;?>/designer/designer_list/">
                                     <button> < Back</button>
                                 </a>&nbsp&nbsp&nbsp&nbsp
                                 <a align="right" href="#">
@@ -57,9 +54,9 @@
                             </h4>
                             <center>
                                 <hr>
-                                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/downloads/sample.zip"><img
+                                <a href="<?php echo $Dir;?>/images/designer/downloads/sample.zip"><img
                                         alt=""
-                                        src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/Download.png"
+                                        src="<?php echo $Dir;?>/images/designer/Download.png"
                                         style="width: 80%;"/></a>
 
                                 <p></p>
@@ -68,7 +65,7 @@
                         <td>
                             <center>
                                 <img alt=""
-                                     src="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"
+                                     src="<?php echo $Dir;?>/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"
                                      style="width: 60%;"/>
                             </center>
                         </td>
@@ -88,5 +85,5 @@
     <div style="clear:both"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
+<?php include "../templates/header.php";?>
 </html>

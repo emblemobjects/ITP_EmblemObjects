@@ -20,10 +20,7 @@ include './../php/json-store-objects.php';
 
 <body>
 <div id="wrapper">
-    <div id="header"></div>
-    <div style="clear:both"></div>
-    <div id="navigation"></div>
-    <div style="clear:both"></div>
+    <?php include "../templates/header.php";?>
 
 
     <!-- CONTENT -->
@@ -43,5 +40,5 @@ include './../php/json-store-objects.php';
     <div style="clear:both"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
+<?php include "../templates/header.php";?>
 </html>

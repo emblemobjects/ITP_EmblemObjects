@@ -1,6 +1,6 @@
-<!doctype html>
-
-<html lang="en">
+<?php
+//This file is now obsolete...
+?>
     <!-- NAVIGATION -->
     <div class="container">
         <!-- search box -->
@@ -83,7 +83,7 @@
             <a href="#" name="latest" onclick="alert('Database call to sort by ' + this.name)">LATEST</a> &nbsp;|&nbsp;
             <a href="#" name="popular" onclick="alert('Database call to sort by most ' + this.name)">POPULAR</a>
         </div>
-        <form name="search-field" id="search-field" method="GET" action="http://localhost:8080/itp460/ITP_EmblemObjects/php/search.php">
+        <form name="search-field" id="search-field" method="GET" action="<?php echo $Dir;?>/php/search.php">
             <input name="query"/>
             <button type="submit"><img src="http://localhost:8080/itp460/ITP_EmblemObjects/images/icon_search.png" alt="Search" height="15px" width="15px"/></button>
         </form>

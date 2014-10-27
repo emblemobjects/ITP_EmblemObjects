@@ -1,5 +1,5 @@
 <?php
-    include_once 'db-connect-con.php';
+    include_once 'config.php';
 /**
 Function that takes in the email type, designer name, enable ID, and a recepient and sends an email to it
  * */

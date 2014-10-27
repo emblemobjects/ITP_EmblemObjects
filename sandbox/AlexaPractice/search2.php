@@ -2,10 +2,10 @@
     
 if (empty($_REQUEST["query"]) && empty($_REQUEST["class"]) && empty($_REQUEST["category"]) && empty($_REQUEST["subcategory"])) {
     echo("<script>console.log('IN HERE ');</script>");
-    header('location: http://localhost:8080/itp460/ITP_EmblemObjects/home');
+    header("location: $Dir/home");
 } else {
     
-    include_once 'db-connect-con.php';
+    include_once 'config.php';
    // readfile("http://localhost:8080/itp460/ITP_EmblemObjects/home");
    
     $q = null;
@@ -186,12 +186,12 @@ if (empty($_REQUEST["query"]) && empty($_REQUEST["class"]) && empty($_REQUEST["c
         <title>Emblem Objects</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">   
         <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/header.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/home.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/header.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/body.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/content.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/footer.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/home.css">
     </head>
 
 
@@ -236,10 +236,10 @@ if (empty($_REQUEST["query"]) && empty($_REQUEST["class"]) && empty($_REQUEST["c
         </div>
     
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
-        <script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/json-search-db.js"></script>
-        <script src="http://localhost:8080/itp460/ITP_EmblemObjects/js/handlebars-v2.0.0.js"></script>
-        <script src="http://localhost:8080/itp460/ITP_EmblemObjects/js/home.js"></script>
+        <?php include "../templates/header.php";?>
+        <script type="text/javascript" src="<?php echo $Dir;?>/js/json-search-db.js"></script>
+        <script src="<?php echo $Dir;?>/js/handlebars-v2.0.0.js"></script>
+        <script src="<?php echo $Dir;?>/js/home.js"></script>
     
     </body>
 </html>

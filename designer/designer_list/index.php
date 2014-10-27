@@ -7,11 +7,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ITP460/ITP_EmblemObjects/css/header.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/body.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/content.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/itp460/ITP_EmblemObjects/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/body.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/content.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/footer.css">
 
 </head>
 
@@ -31,7 +31,7 @@
 <center>
     <p></p>
 
-    <div align="right" style="margin-right:117px;"><a href="http://localhost:8080/ITP460/ITP_EmblemObjects/designer/">
+    <div align="right" style="margin-right:117px;"><a href="<?php echo $Dir;?>/designer/">
             <button>Logout</button>
         </a></div>
     <p></p>
@@ -70,7 +70,7 @@
         <tbody>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"
+                <a href="<?php echo $Dir;?>/designer/designer_review/"
 
                 <p>101452</p></a>
             </center>
@@ -87,16 +87,16 @@
         </td>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
+                <a href="<?php echo $Dir;?>/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
                         height="35px"
-                        src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+                        src="<?php echo $Dir;?>/images/designer/image.png"></a>
             </center>
         </td>
         <td>
             <center>
                 <img height="35px"
-                     src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/yes.png">&nbsp<img
-                    height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/no.png">
+                     src="<?php echo $Dir;?>/images/designer/yes.png">&nbsp<img
+                    height="35px" src="<?php echo $Dir;?>/images/designer/no.png">
             </center>
         </td>
         </tbody>
@@ -105,7 +105,7 @@
         <tbody>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"
+                <a href="<?php echo $Dir;?>/designer/designer_review/"
 
                 <p>192168</p></a>
             </center>
@@ -122,15 +122,15 @@
         </td>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
+                <a href="<?php echo $Dir;?>/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
                         height="35px"
-                        src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+                        src="<?php echo $Dir;?>/images/designer/image.png"></a>
             </center>
         </td>
         <td>
             <center>
-                <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/yes.png">&nbsp
-                <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/no.png">
+                <img height="35px" src="<?php echo $Dir;?>/images/designer/yes.png">&nbsp
+                <img height="35px" src="<?php echo $Dir;?>/images/designer/no.png">
             </center>
         </td>
         </tbody>
@@ -173,7 +173,7 @@
         <tbody>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"
+                <a href="<?php echo $Dir;?>/designer/designer_review/"
 
                 <p>101452</p></a>
             </center>
@@ -190,14 +190,14 @@
         </td>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
+                <a href="<?php echo $Dir;?>/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
                         height="35px"
-                        src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+                        src="<?php echo $Dir;?>/images/designer/image.png"></a>
             </center>
         </td>
         <td>
             <center>
-                <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/upload_1.png">
+                <img height="35px" src="<?php echo $Dir;?>/images/designer/upload_1.png">
             </center>
         </td>
         </tbody>
@@ -205,7 +205,7 @@
         <tbody>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"
+                <a href="<?php echo $Dir;?>/designer/designer_review/"
 
                 <p>192168</p></a>
             </center>
@@ -222,14 +222,14 @@
         </td>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
+                <a href="<?php echo $Dir;?>/objects/7_ovalRing/jacobBBlitzer_7_ovalRing_render1.jpg"><img
                         height="35px"
-                        src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/image.png"></a>
+                        src="<?php echo $Dir;?>/images/designer/image.png"></a>
             </center>
         </td>
         <td>
             <center>
-                <img height="35px" src="http://localhost:8080/itp460/ITP_EmblemObjects/images/designer/upload_1.png">
+                <img height="35px" src="<?php echo $Dir;?>/images/designer/upload_1.png">
             </center>
         </td>
         </tbody>
@@ -273,7 +273,7 @@
         <tbody>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"
+                <a href="<?php echo $Dir;?>/designer/designer_review/"
 
                 <p>101452</p></a>
             </center>
@@ -303,7 +303,7 @@
         <tbody>
         <td>
             <center>
-                <a href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_review/"
+                <a href="<?php echo $Dir;?>/designer/designer_review/"
 
                 <p>192168</p></a>
             </center>
@@ -347,5 +347,5 @@
 <div style="clear:both"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="http://localhost:8080/itp460/ITP_EmblemObjects/js/load_templates.js"></script>
+<?php include "../templates/header.php";?>
 </html>
