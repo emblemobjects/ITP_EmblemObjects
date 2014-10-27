@@ -13,7 +13,7 @@
  * connection const HOST,USER,PASSWORD,DATABASE
  */
 
-// echo 'config.php<hr/>'; // debug line - comment out for prod
+echo 'config.php<hr/>'; // debug line - comment out for prod
 
 // Base Directory
 const DIR = 'http://localhost:8080/ITP460/ITP_EmblemObjects';
@@ -22,7 +22,7 @@ $Dir = DIR; // compat
 // Inlucde helper.php
 include_once 'helper.php';
 // secure file
-helper::secure_file(__FILE__);
+// helper::secure_file(__FILE__);
 
 // Set database CONST
 const HOST = "uscitp.com";

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <?php include '../php/db-config.php';  ?>
-    <?php include '../php/config.php';  ?>
-    <?php include '../php/json-store-objects.php';  ?>
+    <?php
+    include_once '../php/config.php';
+    include_once '../php/json-store-objects.php';
+    ?>
     <title>Emblem Objects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     

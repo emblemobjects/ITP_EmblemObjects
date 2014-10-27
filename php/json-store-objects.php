@@ -6,7 +6,6 @@
  * Time: 9:55 PM
  */
 
-include_once 'config.php';
 //sql statement to select (maybe do a view?)
 $sql = "SELECT item_id, item_tag, subcategory_desc, item_name, user_first_name, user_last_name, item_description, category_desc, item_type, collection_desc
         FROM item, item_category, item_subcategory, user_table, collection
