@@ -22,7 +22,7 @@
  * escape_str - strings - return escaped string
  */
 
-echo 'helper.php<hr/>'; // debug line - comment out for prod
+// echo 'helper.php<hr/>'; // debug line - comment out for prod
 
 // MUST Include config.php
 include_once 'config.php';
@@ -33,6 +33,7 @@ class helper {
 
 	// Prevent direct access to file
 	// @param __FILE__, $_SERVER['SCRIPT_NAME']
+	// @require DIR must be set
 	public function secure_file($file) {
 		$file = helper::get_file($file);
 		$path = $_SERVER['SCRIPT_NAME'];
