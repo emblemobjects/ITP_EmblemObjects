@@ -34,7 +34,7 @@ class helper {
 	// Prevent direct access to file
 	// @param __FILE__, $_SERVER['SCRIPT_NAME']
 	// @require DIR must be set
-	public function secure_file($file) {
+	public static function secure_file($file) {
 		$file = helper::get_file($file);
 		$path = $_SERVER['SCRIPT_NAME'];
 
@@ -45,7 +45,7 @@ class helper {
 
 	// Get curernt file name
 	// @param __FILE__, file extension str if you want extension removed.
-	public function get_file($file,$extension = NULL) {
+	public static function get_file($file,$extension = NULL) {
 		// function
 		if ( isset($extension) ) {
 			return basename($file,$extension);
@@ -57,7 +57,7 @@ class helper {
 	// Get escaped value
 	// @param $con = mysqli_connect, str need to be escaped
 	// @require function must be called after $con = mysqli_connect
-	public function escape_str($con,$value) {
+	public static function escape_str($con,$value) {
 		return mysqli_real_escape_string($con,$value);
 	}
 }

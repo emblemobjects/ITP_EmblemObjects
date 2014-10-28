@@ -30,5 +30,5 @@ const USER = "itp460_admin";
 const PASSWORD = "usc2014";
 const DATABASE = "itp460_emblemobjects";
 
-// db-config.php compat
-include_once 'db-con.php';
+// database connection using CONST
+$con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
