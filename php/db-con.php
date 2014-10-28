@@ -15,6 +15,6 @@ include_once 'config.php';
 // Inlucde helper.php
 include_once 'helper.php';
 // secure file
-helper::secure_file(__FILE__);
+// helper::secure_file(__FILE__);
 
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);

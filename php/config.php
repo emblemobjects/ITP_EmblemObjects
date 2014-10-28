@@ -22,7 +22,7 @@ $Dir = DIR; // compat
 // Inlucde helper.php
 include_once 'helper.php';
 // secure file
-helper::secure_file(__FILE__);
+// helper::secure_file(__FILE__);
 
 // Set database CONST
 const HOST = "uscitp.com";
