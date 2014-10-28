@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enable Requests Page</title>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: #666;
+	background-color: #EEE;
+	font-family: verdana;
+	font-size: 12pt;
+}
+article, aside, header, footer, nav, section {
+	display: block;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+
+#main {
+	width: 1000px;
+	margin: 20px auto;
+	background-color: #FFF;
+}
+
+.section-nav {
+	width: 150px;
+	float: left;
+	line-height: 2rem;
+	margin: 10px;
+	text-align: center;
+	background-color: #EEE;
+}
+.heading {
+	font-size: 1.6rem;
+}
+
+.current-header {
+	font-size: 1.2rem;
+	background-color: #666;
+	color: #EEE;
+}
+.current-row {
+	line-height: 1rem;
+	font-size: 1rem;
+}
+.current-id {
+	width: 210px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.current-datetime {
+	width: 200px;
+	float: left;
+	min-height: 100%;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.current-timeleft {
+	width: 150px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.current-name {
+	width: 250px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.current-artwork {
+	width: 100px;
+	float: left;
+	padding: 10px 0;
+	line-height: 50px;
+	text-align: center;
+}
+.current-artwork img {
+	display: block;
+	width: 50px;
+	margin-left: 25px;
+}
+.current-pass {
+	width: 90px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.light {
+	background-color: #FFF;
+	color: #666;
+}
+.dark {
+	background-color: #EEE;
+	color: #666;
+}
+.pass {
+	display: block;
+	font-size: 2rem;
+}
+.pass:hover {
+	color: orange;
+}
+.light:hover {
+	background-color: #999;
+	color: #EEE;
+}
+.dark:hover {
+	background-color: #999;
+	color: #EEE;
+}
+</style>
+</head>
+<body>
+
+<div id="main">
+
+<a href="#current-enable"><div class="section-nav">Current Enable</div></a>
+<a href="#pending-review"><div class="section-nav">Pending Review</div></a>
+<a href="#approved-enable"><div class="section-nav">Approved Enable</div></a>
+<a href="#rejected-enable"><div class="section-nav">Rejected Enable</div></a>
+<div class="clear"></div>
+
+<section id="current-enable">
+	<span class="heading">Current Enable Requests</span> click for more info or pass to skip request
+	<!--enable-id date time time-left object-name object-image enable-artwork pass-->
+	<div class="current-header">
+		<div class="current-id">Enable Request ID</div>
+		<div class="current-datetime">End Time</div>
+		<div class="current-timeleft">Time Left</div>
+		<div class="current-name">Object Name</div>
+		<div class="current-artwork">Artwork</div>
+		<div class="current-pass">Pass</div>
+		<div class="clear"></div>
+	</div><!--END current-header-->
+	<div class="clear"></div>
+	<!--
+	<a href="#">
+		<div class="current-row light">
+			<div class="current-id">
+				#65343
+			</div>
+			<div class="current-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="current-timeleft">
+				28 HR 37 MIN
+			</div>
+			<div class="current-name">
+				Standard Dogtag
+			</div>
+			<div class="current-artwork">
+				<img src="http://placekitten.com/800/801"/>
+			</div>
+			<div class="current-pass">
+				<a href="#pass">
+					<span class="pass">&#10006;</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<a href="#">
+		<div class="current-row dark">
+			<div class="current-id">
+				#65343
+			</div>
+			<div class="current-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="current-timeleft">
+				28 HR 37 MIN
+			</div>
+			<div class="current-name">
+				Standard Dogtag
+			</div>
+			<div class="current-artwork">
+				<img src="http://placekitten.com/800/801"/>
+			</div>
+			<div class="current-pass">
+				<a href="#pass">
+					<span class="pass">&#10006;</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<a href="#">
+		<div class="current-row light">
+			<div class="current-id">
+				#65343
+			</div>
+			<div class="current-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="current-timeleft">
+				28 HR 37 MIN
+			</div>
+			<div class="current-name">
+				Standard Dogtag
+			</div>
+			<div class="current-artwork">
+				<img src="http://placekitten.com/800/801"/>
+			</div>
+			<div class="current-pass">
+				<a href="#pass">
+					<span class="pass">&#10006;</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<a href="#">
+		<div class="current-row dark">
+			<div class="current-id">
+				#65343
+			</div>
+			<div class="current-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="current-timeleft">
+				28 HR 37 MIN
+			</div>
+			<div class="current-name">
+				Standard Dogtag
+			</div>
+			<div class="current-artwork">
+				<img src="http://placekitten.com/800/801"/>
+			</div>
+			<div class="current-pass">
+				<a href="#pass">
+					<span class="pass">&#10006;</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+
+</section><!--END current-enable-->
+
+<section id="pending-review">
+	<span class="heading">Pending Enable Reivew</span> submitted enable requests waiting for review
+	<div class="pending-header">
+		<div class="pending-id">Enable Request ID</div>
+		<div class="pending-datetime">Submit Time</div>
+		<div class="pending-name">Object Name</div>
+		<div class="pending-pass">Edit</div>
+		<div class="clear"></div>
+	</div><!--END pending-header-->
+	<div class="clear"></div>
+</section><!--END pending-review-->
+
+<section id="approved-enable">
+</section><!--END approved-enable-->
+
+<section id="rejected-enable">
+</section><!--END rejected-enable-->
+
+
+<div class="clear"></div>
+</div><!--END main-->
+
+</body>
+</html>
