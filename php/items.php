@@ -1,13 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Angela
- * Date: 10/27/2014
- * Time: 9:31 PM
+/* items.php
+ *
+ * all php functions related items generation from DB
+ *
+ * USING:
+ * include this file after config.php
+ * <?php include DIR.'/php/items.php' ?>
+ * 
+ * FUNCTION LIST:
+ * search_DB - search for items and write to items php array
+ * convert_JSON - convert items php array into json
+ * display_grid - display items php array on page in grid layout
  */
-include_once 'config.php';
-include_once 'json-store-objects.php';
-class item  {
+// echo 'items.php<hr/>'; // debug line - comment out for prod
+
+// include_once 'config.php';
+// include_once 'json-store-objects.php';
+
+// CLASS items - to call items::function_name();
+class items  {
     public static function display_grid($items){
         for ($i = 0; $i < count($items); $i++){
             $primaryImage = 0;//Default to 0 if there's an error or whatever
@@ -67,10 +78,10 @@ class item  {
                     </div>
                     <div class="clear"></div>
             </div>
+            </a>
 <?php
         }
     }
 }
-//item::display_grid($GLOBALS['items_array']);
+//items::display_grid($GLOBALS['items_array']);
 
-?>
