@@ -45,7 +45,7 @@ if($email_Ok == 1) {
     if ($template == "confirmation") {
         $subject = "Your Design Request Confirmation : " . $enable_id ;
         $message = "
-         <html>
+         <handlebar-templates>
          <img src = '../images/logo.png'> <br />
             Dear" . $customer_name .
             ", Thank you for your design request submission. Your design request number is " . $enable_id .
@@ -58,20 +58,20 @@ if($email_Ok == 1) {
             Thank you for designing with us!<br />
             EmblemObjects Team<br />
             Note: This is a one time email, you have not been entered in any mailing list.
-        </html>";
+        </handlebar-templates>";
     } else if ($template == "approval") {
         $subject = "Enable Request has Passed Enable Review";
-        $message = "<html>
+        $message = "<handlebar-templates>
          <img src = '../images/logo.png'> <br />
              Designer " . $designer_name . "<br />
             Your completed enable request" . $enable_id . " has passed Enable Review. An
             email has been sent to the customer with order information. We hope they like the object and
             buy it. Keep up the good work.<br />
             Great Job!<br />
-            EmblemObjects Team</html>";
+            EmblemObjects Team</handlebar-templates>";
     } else if ($template == "enable") {
         $subject = "New Enable Request :" . $enable_id;
-        $message = "<html> <img src = '../images/logo.png'> <br />
+        $message = "<handlebar-templates> <img src = '../images/logo.png'> <br />
         Designer" . $designer_name . ",<br />
         Congratulations! Customer" . $customer_name . "has asked you to enable their design!.<br />
         Remember, you have 36 hours to complete this request, before it is transferred to
@@ -82,17 +82,17 @@ if($email_Ok == 1) {
         complete this request. Good Luck!<br /><br />
         Thank you for working with us!<br />
         EmblemObjects Team
-        </html>";
+        </handlebar-templates>";
     } else if ($template == "ready") {
         $subject = "Your Object is READY! Request: ". $enable_id;
-        $message = "<html> <img src = '../images/logo.png'> <br />
+        $message = "<handlebar-templates> <img src = '../images/logo.png'> <br />
         Dear" . $customer_name . "<br />
         Thanks again for your submission! Our designers have been hard at work creating your
         object. Below is a digital preview of your object and link to order.<br />
         " . $image . "<br />Buy! " . $link .
             "<br /> We hope you like your object and hope to help you again on your creative endeavors!<br />
         Thank you for working with us!<br />
-        EmblemObjects Team</html>";
+        EmblemObjects Team</handlebar-templates>";
     }
     mail($to,$subject,$message);
     mysql_close($con);

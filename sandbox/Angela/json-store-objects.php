@@ -51,7 +51,7 @@ else {
     }
 
 }
-
+var_dump($items_array);
 $items_json = json_encode($items_array);
 
 ?>

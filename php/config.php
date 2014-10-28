@@ -4,7 +4,7 @@
  * site config file - ALL php files MUST include this file
  * include_once '/php/config.php';
  * php files - immediatly after first <?php
- * HTML files - before <html> tag
+ * HTML files - before <handlebar-templates> tag
  *
  * DIR - server path
  *

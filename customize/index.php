@@ -1,6 +1,6 @@
 <?php
 if (empty($_REQUEST['item_id'])) {
-    header("location: ../home/index.php");
+    //header("location: ../home/index.php");
 }
 ?>
 
@@ -9,6 +9,7 @@ if (empty($_REQUEST['item_id'])) {
 <head>
     <title>Emblem Objects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
@@ -63,8 +64,10 @@ if (empty($_REQUEST['item_id'])) {
         </div>
     </div>
     <div style="clear:both"></div>
+
+
+    <?php include "../templates/footer.php"; ?>
 </div>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<?php include "../templates/footer.php"; ?>
+</body>
 <script type="text/javascript" src="../js/customize.js"></script>
 </html>
