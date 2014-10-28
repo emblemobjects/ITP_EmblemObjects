@@ -1,0 +1,119 @@
+/* GENERAL CSS
+ *
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #666;
+    background-color: #EEE;
+    font-size: 12pt;
+}
+.clear {
+    clear: both;
+}
+
+/* main wrapper
+ *
+ */
+#main {
+    width: 900px;
+    margin: 20px auto;
+    background-color: #FFF;
+}
+
+/* item container
+ *
+ */
+.item-container {
+    width: 280px;
+    height: 250px;
+    position: relative;
+    /*cursor: pointer;*/
+    float: left;
+    margin: 10px;
+    font-family: verdana;
+}
+.item-container:hover .item-hover {
+    visibility: visible;
+    opacity: 1;
+}
+.item-image {
+    width: 280px;
+    height: 220px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.item-image img {
+    width: 280px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+.item-hover {
+    visibility: hidden;
+    opacity: 0;
+    width: 260px;
+    height: 200px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    color: #DDD;
+    transition: opacity .1s linear;
+    overflow: hidden;
+}
+.item-description {
+    width: 280px;
+    height: 30px;
+    position: relative;
+    top: 220px;
+    left: 0;
+    background-color: #000;
+    color: #EEE;
+}
+.hover-designer {
+    line-height: 1.5rem;
+}
+.hover-collection {
+    font-size: .9rem;
+    line-height: 1rem;
+}
+.hover-configuration {
+    line-height: 2rem;
+}
+.hover-price {
+    line-height: 2rem;
+}
+.hover-description {
+    padding-top: .5rem;
+    line-height: 1rem;
+    height: 4.01rem;
+    overflow:hidden;
+}
+.white {
+    color: #FFF;
+}
+.cap {
+    text-transform: uppercase;
+}
+.description-name {
+    text-transform: uppercase;
+    text-align: left;
+    float: left;
+    width: 186px;
+    padding: 0 7px;
+    line-height: 30px;
+}
+.description-type {
+    text-transform: uppercase;
+    text-align: right;
+    float: right;
+    width: 66px;
+    padding: 0 7px;
+    line-height: 30px;
+}

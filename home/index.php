@@ -4,6 +4,7 @@
     <?php
     include_once '../php/config.php';
     include_once '../php/json-store-objects.php';
+    include_once '../php/item.php';
     ?>
     <title>Emblem Objects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -19,8 +20,8 @@
     <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/items-grid.css">
 
 </head>
 
@@ -36,23 +37,26 @@
         
             <!-- Container to hold the objects -->
             <div id="objects-display">
+                <?php
+                item::display_grid($GLOBALS['items_array']);
+                ?>
 
-                <div id="hover" class="storeItem-hover" onclick="openOverlay()"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>
-                <div id="item" class="storeItem"> </div>
-            	<div id="light" class="bright_content"> </div>
-            	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>
-
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
-                <img src= "../images/store_image.jpg" class="item-jpeg"/>
+<!--                <div id="hover" class="storeItem-hover" onclick="openOverlay()"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>-->
+<!--                <div id="item" class="storeItem"> </div>-->
+<!--            	<div id="light" class="bright_content"> </div>-->
+<!--            	<div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>-->
+<!---->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
+<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
 
 
         	</div>
@@ -67,8 +71,10 @@
 
     <?php include "../templates/footer.php";?>
 </div>
-
-<script type="text/handlebars" id="overlay-template">
+<?php
+    include "../handlebar-templates/overlay-template.php";
+?>
+<!--<script type="text/handlebars" id="overlay-template">
 <div id="overlayTemplate">
 <overlayText>
 
@@ -202,7 +208,7 @@
 
 </overlayText>
 </div>
-</script>
+</script>-->
 
 <script type="text/handlebars" id="item-template">
 <div id="itemTemplate">

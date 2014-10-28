@@ -8,7 +8,7 @@ $customer_name;
 $enable_link;
 $designer_name;
 $subject = "New Enable Request :" . $enable_id;
-$message = "<html> <img src = 'images/logo.png'> <br>
+$message = "<handlebar-templates> <img src = 'images/logo.png'> <br>
 From: enable@emblemobjects.com<br>
 Subject: New Enable Request:" . $enable_id +"<br>
 Body:<br>
@@ -22,10 +22,10 @@ enable review. Please let EmblemObjects Staff know in advance if you will not be
 complete this request. Good Luck!<br><br>
 Thank you for working with us!<br>
 EmblemObjects Team
-</html>";
-$headers = "<html>
+</handlebar-templates>";
+$headers = "<handlebar-templates>
 <img src = 'images/logo.png'>
-</html>";
+</handlebar-templates>";
 $mail($to,$subject,$message,$headers);
 //create test page to call function
 //function sendEmail ($template_number, $designer_id, $enable_id){

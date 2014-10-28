@@ -7,7 +7,7 @@ $customer_name;
 $designer_name;
 $designer_email;
 $message = "
- <html>
+ <handlebar-templates>
  <img src = 'images/logo.png'> <br>
 <p> From: confirmation@emblemobjects.com<br> Subject: Your Design Request Confirmation:" . $enable_id .
 "Body:<br>Dear" . $customer_name .
@@ -21,12 +21,12 @@ You are one step closer to creating something truly special with us!<br>
 Thank you for designing with us!<br>
 EmblemObjects Team<br>
 Note: This is a one time email, you have not been entered in any mailing list.
-</html>";
-$headers = "<html>
+</handlebar-templates>";
+$headers = "<handlebar-templates>
 <img src = 'images/logo.png'>
-</html>";
+</handlebar-templates>";
 //change brackets to variables
 //add image header to the top of email images/logo.png
-//use html format
+//use handlebar-templates format
 mail($to,$subject,$message,$headers);
 ?>

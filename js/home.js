@@ -60,52 +60,60 @@ var theData = {
     ]
 };
 
-///////////////////////////////////////// OVERLAY FUNCTIONS
+/////////////////////////////////////////// OVERLAY FUNCTIONS
+//
+//var openOverlay = function() {
+//
+//    $('.storeItem-hover').css('visibility', 'visible');
+//    document.getElementById('light').style.display = 'block';
+//    document.getElementById('fade').style.display = 'block';
+//    $('#light').center();
+//
+//};
+//
+//var closeOverlay = function() {
+//
+//    document.getElementById('light').style.display='none';
+//    document.getElementById('fade').style.display='none';
+//    $('.storeItem-hover').css('visibility', 'hidden');
+//
+//};
 
-var openOverlay = function() {
-
-    $('.storeItem-hover').css('visibility', 'visible');
-    document.getElementById('light').style.display = 'block';
-    document.getElementById('fade').style.display = 'block';
-    $('#light').center();
-
-};
-
-var closeOverlay = function() {
-
-    document.getElementById('light').style.display='none';
-    document.getElementById('fade').style.display='none';
-    $('.storeItem-hover').css('visibility', 'hidden');
-
-};
-
-///////////////////////////////////////// JSON STUFF FUNCTION
-
-function jsonStuff() {
-    console.log(' start of jsonStuff function');
-
-    $.ajax({
-        type: "GET",
-        url: './../php/json-store-objects.php',
-        dataType: "json",
-        success: function(data){
-            // do your stuff with the JSON data
-
-            // push data into array... this is not working and getJSON isn't either... help
-
-            console.log('helllllllllloooo...... ' + data);
-        }
-    });
-
-}
+/////////////////////////////////////////// JSON STUFF FUNCTION
+//
+//function jsonStuff() {
+//    console.log(' start of jsonStuff function');
+//
+//    $.ajax({
+//        type: "GET",
+//        url: './../php/json-store-objects.php',
+//        dataType: "json",
+//        success: function(data){
+//            // do your stuff with the JSON data
+//
+//            // push data into array... this is not working and getJSON isn't either... help
+//
+//            console.log('helllllllllloooo...... ' + data);
+//        }
+//    });
+//
+//}
 
 ///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
 
 var renderOverlayTemplate = function() {
     var scriptHTML = document.getElementById('overlay-template').innerHTML;
     var templateFunction = Handlebars.compile(scriptHTML);
-    document.getElementById('light').innerHTML = templateFunction(theData.storeItems[0]);
+    document.getElementById('light').innerHTML = layout();
 };
+
+function layout(){
+    var html = "";
+    for (var i = 0; $i < store.items.length; i++){
+        html += templateFunction(store.item[i]);
+    }
+    return html;
+}
 
 var renderItemTemplate = function() {
     var itemHTML = document.getElementById('item-template').innerHTML;
@@ -152,3 +160,9 @@ $(".storeItem-hover").mouseleave(function() {
 $("#shop").mouseenter(function() {
     $('#drop-down').css('visibility', 'visible')
 });
+
+function openLayer(){
+    $('item-container').on('click', function(){
+        $(this).attr('data-item-id')
+    })
+}

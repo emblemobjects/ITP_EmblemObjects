@@ -61,9 +61,33 @@ while ($items_row = mysqli_fetch_array($items_results)) {
     while ($detail_row = mysqli_fetch_array($detail_results)) {
         array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $detail_row['item_raw_price'], 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
     }
+    $material_array = [];
+    for ($i = 0; $i < count($detail_array); $i++) {
+        $insertOption = 1;
+        for ($j = 0; $j < count($material_array); $j++) {
+            if ($detail_array[$i]['material_id'] == $material_array[$j]['mat_id']) {
+                $insertOption = 0;
+            }
+        }
+        if ($insertOption == 1) {
+            array_push($material_array, array('mat_id'=>$detail_array[$i]['material_id'], 'mat_name'=>$detail_array[$i]['material']));
+        }
+    }
+    $size_array = [];
+    for ($i = 0; $i < count($detail_array); $i++) {
+        $insertOption = 1;
+        for ($j = 0; $j < count($size_array); $j++) {
+            if ($detail_array[$i]['size'] == $size_array[$j]) {
+                $insertOption = 0;
+            }
+        }
+        if ($insertOption == 1) {
+            array_push($size_array, $detail_array[$i]['size']);
+        }
+    }
 
     //pushing another array to the second dimension
-    array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array));
+    array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array, 'material_array' => $material_array, 'size_array' => $size_array));
 }
 
 $items_json = json_encode($items_array);
