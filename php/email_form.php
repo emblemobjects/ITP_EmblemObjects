@@ -31,10 +31,18 @@ echo "ENABLE ID : " . $enable_id . "\n";
 //make sure the email is a valid format
 //get variables from the form/ SQL database
 
-    $sql = "SELECT enable_request.user_id, enable_request.item_id, enable_request.image_filepath, user_table.user_email,
-    user_table.user_first_name, user_table.user_last_name
+    $sql = "SELECT enable_request.enable_id, enable_request.user_id, enable_request.item_id, enable_request.image_filepath,
+    user_table.user_email, user_table.user_first_name, user_table.user_last_name
       FROM enable_request, user_table
-     WHERE enable_request.user_id =  ";
+     WHERE enable_request.user_id = $designer_id,
+      enable_request.enable_id = $enable_id";
+/*      $customer_name = user_table.user_first_name . user_table.user_last_name
+      $designer_name = user_table.user_first_name . user_table.user_last_name
+      $enable_link = enable_request.image_filepath
+      $image = enable_request.image_filepath
+      $link = enable_request.image_filepath
+      $designer_email = user_table.user_email";
+*/
     $customer_name = mysqli_query($con, $sql); //customer ID?
     $designer_name = mysqli_query($con, $sql);//user first name
     $enable_link = mysqli_query($con, $sql);//???
@@ -69,7 +77,7 @@ if($email_Ok == 1) {
         $message = "<handlebar-templates>
          <img src = '../images/logo.png'> <br />
              Designer " . $designer_name . "<br />
-            Your completed enable request" . $enable_id . " has passed Enable Review. An
+            Your completed enable request " . $enable_id . " has passed Enable Review. An
             email has been sent to the customer with order information. We hope they like the object and
             buy it. Keep up the good work.<br />
             Great Job!<br />
@@ -99,6 +107,7 @@ if($email_Ok == 1) {
         Thank you for working with us!<br />
         EmblemObjects Team</handlebar-templates>";
     }
+    echo $message;
     mail($recipient,$subject,$message);
     mysqli_close($con);
 }
