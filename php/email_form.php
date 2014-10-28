@@ -24,22 +24,23 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $designer_id= test_input($_REQUEST["designer_id"]);
     $enable_id = test_input($_REQUEST["enable_id"]);//request_id ??
 }
-echo "RECEPIENT : " . $recipient;
-echo "TEMPLATE : " . $template;
-echo "DESIGNER ID : " . $designer_id;
-echo "ENABLE ID : " . $enable_id;
+echo "RECEPIENT : " . $recipient . "\n";
+echo "TEMPLATE : " . $template . "\n";
+echo "DESIGNER ID : " . $designer_id. "\n";
+echo "ENABLE ID : " . $enable_id . "\n";
 //make sure the email is a valid format
 //get variables from the form/ SQL database
 
-    $sql = "SELECT 
-      FROM
-     WHERE  ";
-    $customer_name = mysql_query($con, $sql); //customer ID?
-    $designer_name = mysql_query($con, $sql);//user first name
-    $enable_link = mysql_query($con, $sql);//???
-    $image = mysql_query($con, $sql);//image_filepath
-    $link = mysql_query($con, $sql);//???
-    $designer_email = mysql_query($con, $sql);//user email
+    $sql = "SELECT enable_request.user_id, enable_request.item_id, enable_request.image_filepath, user_table.user_email,
+    user_table.user_first_name, user_table.user_last_name
+      FROM enable_request, user_table
+     WHERE enable_request.user_id =  ";
+    $customer_name = mysqli_query($con, $sql); //customer ID?
+    $designer_name = mysqli_query($con, $sql);//user first name
+    $enable_link = mysqli_query($con, $sql);//???
+    $image = mysqli_query($con, $sql);//image_filepath
+    $link = mysqli_query($con, $sql);//???
+    $designer_email = mysqli_query($con, $sql);//user email
 
 if(!filter_var($recipient, FILTER_VALIDATE_EMAIL)){
     $emailErr= "Invalid email format";
@@ -98,7 +99,7 @@ if($email_Ok == 1) {
         Thank you for working with us!<br />
         EmblemObjects Team</handlebar-templates>";
     }
-    mail($to,$subject,$message);
-    mysql_close($con);
+    mail($recipient,$subject,$message);
+    mysqli_close($con);
 }
 ?>
