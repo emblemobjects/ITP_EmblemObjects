@@ -11,7 +11,10 @@
 body {
 	color: #666;
 	background-color: #EEE;
-	font-family: verdana;
+	/*font-family: 'tahoma';*/
+	font-family: 'verdana';
+	/*font-family: 'arial';*/
+	/*font-family: 'myriad pro';*/
 	font-size: 12pt;
 }
 article, aside, header, footer, nav, section {
@@ -39,8 +42,31 @@ a {
 	text-align: center;
 	background-color: #EEE;
 }
+.section-nav:hover {
+	background-color: #999;
+	color: #EEE;
+}
+.section-enable-list {
+	margin-bottom: 30px;
+}
 .heading {
 	font-size: 1.6rem;
+}
+.light {
+	background-color: #FFF;
+	color: #666;
+}
+.dark {
+	background-color: #EEE;
+	color: #666;
+}
+.light:hover {
+	background-color: #999;
+	color: #EEE;
+}
+.dark:hover {
+	background-color: #999;
+	color: #EEE;
 }
 
 .current-header {
@@ -100,29 +126,62 @@ a {
 	padding: 10px 0;
 	text-align: center;
 }
-.light {
-	background-color: #FFF;
-	color: #666;
-}
-.dark {
-	background-color: #EEE;
-	color: #666;
-}
 .pass {
 	display: block;
 	font-size: 2rem;
 }
 .pass:hover {
-	color: orange;
+	color: #F93;
 }
-.light:hover {
-	background-color: #999;
+
+.pending-header {
+	font-size: 1.2rem;
+	background-color: #666;
 	color: #EEE;
 }
-.dark:hover {
-	background-color: #999;
-	color: #EEE;
+.pending-row {
+	line-height: 1rem;
+	font-size: 1rem;
 }
+.pending-id {
+	margin-left: 125px;
+	width: 210px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.pending-datetime {
+	width: 200px;
+	float: left;
+	min-height: 100%;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.pending-name {
+	width: 250px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.pending-edit {
+	width: 90px;
+	float: left;
+	line-height: 50px;
+	padding: 10px 0;
+	text-align: center;
+}
+.edit {
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.edit:hover {
+	color: #F93;
+}
+
 </style>
 </head>
 <body>
@@ -135,7 +194,7 @@ a {
 <a href="#rejected-enable"><div class="section-nav">Rejected Enable</div></a>
 <div class="clear"></div>
 
-<section id="current-enable">
+<section id="current-enable" class="section-enable-list">
 	<span class="heading">Current Enable Requests</span> click for more info or pass to skip request
 	<!--enable-id date time time-left object-name object-image enable-artwork pass-->
 	<div class="current-header">
@@ -148,7 +207,8 @@ a {
 		<div class="clear"></div>
 	</div><!--END current-header-->
 	<div class="clear"></div>
-	<!--
+
+	<!-- CURRENT LIST -->
 	<a href="#">
 		<div class="current-row light">
 			<div class="current-id">
@@ -252,25 +312,113 @@ a {
 			<div class="clear"></div>
 		</div><!--END current-header-->
 	</a>
+	<!-- END CURRENT LIST-->
 
 </section><!--END current-enable-->
 
-<section id="pending-review">
+<section id="pending-review" class="section-enable-list">
 	<span class="heading">Pending Enable Reivew</span> submitted enable requests waiting for review
 	<div class="pending-header">
 		<div class="pending-id">Enable Request ID</div>
 		<div class="pending-datetime">Submit Time</div>
 		<div class="pending-name">Object Name</div>
-		<div class="pending-pass">Edit</div>
+		<div class="pending-edit">Edit</div>
 		<div class="clear"></div>
 	</div><!--END pending-header-->
 	<div class="clear"></div>
+
+	<!-- PENDING LIST -->
+	<a href="#">
+		<div class="pending-row light">
+			<div class="pending-id">
+				#65343
+			</div>
+			<div class="pending-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="pending-name">
+				Standard Dogtag
+			</div>
+
+			<div class="pending-edit">
+				<a href="#edit">
+					<span class="edit">EDIT</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<a href="#">
+		<div class="pending-row dark">
+			<div class="pending-id">
+				#65343
+			</div>
+			<div class="pending-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="pending-name">
+				Standard Dogtag
+			</div>
+
+			<div class="pending-edit">
+				<a href="#edit">
+					<span class="edit">EDIT</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<a href="#">
+		<div class="pending-row light">
+			<div class="pending-id">
+				#65343
+			</div>
+			<div class="pending-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="pending-name">
+				Standard Dogtag
+			</div>
+
+			<div class="pending-edit">
+				<a href="#edit">
+					<span class="edit">EDIT</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<a href="#">
+		<div class="pending-row dark">
+			<div class="pending-id">
+				#65343
+			</div>
+			<div class="pending-datetime">
+				10/29/2014 4:24PM
+			</div>
+			<div class="pending-name">
+				Standard Dogtag
+			</div>
+
+			<div class="pending-edit">
+				<a href="#edit">
+					<span class="edit">EDIT</span>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div><!--END current-header-->
+	</a>
+	<div class="clear"></div>
+	<!-- END PENDING LIST-->
 </section><!--END pending-review-->
 
-<section id="approved-enable">
+<section id="approved-enable" class="section-enable-list">
 </section><!--END approved-enable-->
 
-<section id="rejected-enable">
+<section id="rejected-enable" class="section-enable-list">
 </section><!--END rejected-enable-->
 
 
