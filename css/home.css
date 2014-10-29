@@ -9,6 +9,7 @@ body {
 
 #objects-display {
     margin-top:15px;
+    width:1200px;
 }
 .storeItem {
     background-color: pink;
