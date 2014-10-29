@@ -19,6 +19,9 @@
 
 // CLASS items - to call items::function_name();
 class items  {
+    //Function
+    //Required: items_array from json-store-objects.php
+    //Output: store items in grid layout
     public static function display_grid($items){
         for ($i = 0; $i < count($items); $i++){
             $primaryImage = 0;//Default to 0 if there's an error or whatever
@@ -82,6 +85,10 @@ class items  {
 <?php
         }
     }
+    //Function: getPrimaryImage
+    //Required: $items_array from json-store-objects.php
+    //Required: $id of the specific object
+    //Return: the image filepath for the primary image of the object
     public static function getPrimaryImage($items, $id){
         $primaryImage = 0;//Default to 0 if there's an error or whatever
         for ($j = 0; $j < count($items[$id]['images']); $j++){
@@ -92,10 +99,19 @@ class items  {
         $image_filepath = DIR."/objects/".$items[$id]['images'][$primaryImage]['image_filepath'];
         return $image_filepath;
     }
+    //Function: get_field_value
+    //Required: $id of the specific object, the field name to look for
+    //Return: the value of the field
     public static function get_field_value($id, $field_name){
         $value = $GLOBALS['items_array'][$id][$field_name];
         return $value;
     }
+    //Function: get_detail_info
+    //Similar to get_field_value, but needs to go one more array deep to retrieve detail information
+    //Required: $id of the object
+    //Required: the detail id
+    //Required: the field name
+    //Return: the value of the field
     public static function get_detail_info($id, $detail_id, $field_name){
         $value = $GLOBALS['items_array'][$id]['details'][$detail_id][$field_name];
         return $value;

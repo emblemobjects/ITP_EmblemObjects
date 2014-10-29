@@ -5,22 +5,25 @@ if (empty($_REQUEST['firstName'])) {
 }
 include_once '../php/config.php';
 include_once '../php/helper.php';
+//Fixes the time differences
 date_default_timezone_set("America/Los_Angeles");
 //DATETIME format for SQL is YYYY-MM--DD HH-MI-SS
 $current_date = date("Y-m-d H:i:s");
 $due_date = date("Y-m-d H:i:s", strtotime('+36 hours'));
 $firstName = $_REQUEST['firstName'];
 $lastName = $_REQUEST['lastName'];
+$material_id = $_REQUEST['material_id'];
 $email = $_REQUEST['email'];
 $message = $_REQUEST['message'];
 $item_id = $_REQUEST['item_id'];
 $size = $_REQUEST['size'];
+//Declaring the variables for use later
 $user_id = 0;
 $enable_id = 0;
-$material_id = $_REQUEST['material_id'];
-//PLACEHOLDERS
+//PLACEHOLDERS that needs to be replaced by functions
 $image_filepath="uploads/placeholder.png";
 $status = 0;
+//Looking up designer information
 $sql_designer = "SELECT item_designer, user_first_name, user_last_name, user_email FROM item, user_table WHERE item.item_id = $item_id AND item.item_designer = user_table.user_id";
 $result_designer = mysqli_query($con, $sql_designer);
 if (!$result_designer) {
@@ -32,6 +35,7 @@ while ($r = mysqli_fetch_array($result_designer)){
     $designer_email = $r['user_email'];
 }
 $designer_name = $designer_first_name." ".$designer_last_name;
+//Inserts the customer into the table - disregard duplicates
 $sql_customer_insert = "INSERT INTO user_table (user_first_name, user_last_name, user_email) VALUES ('$firstName', '$lastName', '$email')";
 if (mysqli_query($con, $sql_customer_insert)){
     $sql_user_id = "SELECT user_id FROM user_table WHERE user_first_name = '$firstName'";
@@ -40,12 +44,13 @@ if (mysqli_query($con, $sql_customer_insert)){
         exit ('$result_user_id error: '.mysqli_error($con));
     }
     while ($r = mysqli_fetch_array($result_user_id)){
-        $user_id = $r['user_id'];
+        $user_id = $r['user_id'];//this is needed for the next SQL statement to insert into enable requests table
     }
 }
 else {
     echo mysqli_error($con);
 }
+//Inserts the enable request into the table
 $sql_insert = "INSERT INTO enable_request (user_id, date_submitted, item_id, material_id, size, image_filepath, due_date, message, status) VALUES ('$user_id', '{$current_date}', '$item_id', '$material_id', '$size', '$image_filepath', '{$due_date}', '$message', '$status')";
 if (mysqli_query($con, $sql_insert)){
     $sql_enable_id = "SELECT request_id FROM enable_request WHERE date_submitted = '$current_date'";
@@ -54,7 +59,7 @@ if (mysqli_query($con, $sql_insert)){
         exit('$result_enable_id error: ' . mysqli_error($con));
     }
     while ($r = mysqli_fetch_array($result_enable_id)){
-        $enable_id = $r['request_id'];
+        $enable_id = $r['request_id'];//Needed in the email/text
     }
 }
 else {
