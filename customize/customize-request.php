@@ -1,18 +1,65 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Angela
- * Date: 10/26/2014
- * Time: 9:50 AM
- */
 //Catching people who got here without filling out the form
 if (empty($_REQUEST['firstName'])) {
     //header('location: index.php');
 }
+include_once '../php/config.php';
+include_once '../php/helper.php';
+date_default_timezone_set("America/Los_Angeles");
+//DATETIME format for SQL is YYYY-MM--DD HH-MI-SS
+$current_date = date("Y-m-d H:i:s");
+$due_date = date("Y-m-d H:i:s", strtotime('+36 hours'));
 $firstName = $_REQUEST['firstName'];
 $lastName = $_REQUEST['lastName'];
 $email = $_REQUEST['email'];
 $message = $_REQUEST['message'];
+$item_id = $_REQUEST['item_id'];
+$size = $_REQUEST['size'];
+$user_id = 0;
+$enable_id = 0;
+$material_id = $_REQUEST['material_id'];
+//PLACEHOLDERS
+$image_filepath="uploads/placeholder.png";
+$status = 0;
+$sql_designer = "SELECT item_designer, user_first_name, user_last_name, user_email FROM item, user_table WHERE item.item_id = $item_id AND item.item_designer = user_table.user_id";
+$result_designer = mysqli_query($con, $sql_designer);
+if (!$result_designer) {
+    exit('$result_designer error: ' . mysqli_error($con));
+}
+while ($r = mysqli_fetch_array($result_designer)){
+    $designer_first_name = $r['user_first_name'];
+    $designer_last_name = $r['user_last_name'];
+    $designer_email = $r['user_email'];
+}
+$designer_name = $designer_first_name." ".$designer_last_name;
+$sql_customer_insert = "INSERT INTO user_table (user_first_name, user_last_name, user_email) VALUES ('$firstName', '$lastName', '$email')";
+if (mysqli_query($con, $sql_customer_insert)){
+    $sql_user_id = "SELECT user_id FROM user_table WHERE user_first_name = '$firstName'";
+    $result_user_id = mysqli_query($con, $sql_user_id);
+    if (!$result_user_id){
+        exit ('$result_user_id error: '.mysqli_error($con));
+    }
+    while ($r = mysqli_fetch_array($result_user_id)){
+        $user_id = $r['user_id'];
+    }
+}
+else {
+    echo mysqli_error($con);
+}
+$sql_insert = "INSERT INTO enable_request (user_id, date_submitted, item_id, material_id, size, image_filepath, due_date, message, status) VALUES ('$user_id', '{$current_date}', '$item_id', '$material_id', '$size', '$image_filepath', '{$due_date}', '$message', '$status')";
+if (mysqli_query($con, $sql_insert)){
+    $sql_enable_id = "SELECT request_id FROM enable_request WHERE date_submitted = '$current_date'";
+    $result_enable_id = mysqli_query($con, $sql_enable_id);
+    if (!$result_enable_id) {
+        exit('$result_enable_id error: ' . mysqli_error($con));
+    }
+    while ($r = mysqli_fetch_array($result_enable_id)){
+        $enable_id = $r['request_id'];
+    }
+}
+else {
+    echo mysqli_error($con);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,16 +84,14 @@ $message = $_REQUEST['message'];
     <?php include "../templates/header.php"; ?>
     <div id="content">
         <div id="confirmationContent">
-            <h2>Your Design Request Confirmation:</h2>
-    <span style="margin: 10px;"><p>Dear <strong><?php echo $firstName . " " . $lastName ?></strong>,
+            <h1>Your Design Request Confirmation:</h1>
+    <span><p>Dear <strong><?php echo $firstName . " " . $lastName ?></strong>,
             <br/>
-        <p>Thank you for your design request submission. Your design request number is [Enable
-            Request ID] and your designer is [Designer Name: link to designer page]. Your designer will get
+        <p>Thank you for your design request submission. Your design request number is <strong><?php echo $enable_id ?></strong> and your designer is <strong><?php echo $designer_name ?></strong>. Your designer will get
             to work on your design right away, turning your artwork into a unique product created just for you.</p>
         <p>Please check the email you provided: <strong><?php echo $email ?></strong> for a confirmation message.</p>
         <p>Within 48 hours, you will receive another email from EmblemObjects.com with your
-            unique object ready to to order. Until then, your designer may wish to contact you from [Designer
-            Email].</p>
+            unique object ready to to order. Until then, your designer may wish to contact you from <strong><?php echo $designer_email ?></strong>.</p>
         <p>You are one step closer to creating something truly special with us!</p>
         <p>Thank you for designing with us!</p>
 
@@ -57,5 +102,4 @@ $message = $_REQUEST['message'];
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <?php include "../templates/footer.php"; ?>
-    <script type="text/javascript" src="../js/customize.js"></script>
 </html>

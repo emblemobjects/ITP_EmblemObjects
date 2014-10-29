@@ -1,7 +1,19 @@
 <?php
 if (empty($_REQUEST['item_id'])) {
-    //header("location: ../home/index.php");
+    header("location: ../home/index.php");
 }
+include_once '../php/config.php';
+include_once '../php/helper.php';
+include_once '../php/json-store-objects.php';
+include_once '../php/items.php';
+
+$item_id = $_REQUEST['item_id'];
+$item_name = items::get_field_value($item_id, "name");
+$detail_id = $_REQUEST['detail_id'];
+$material_name = items::get_detail_info($item_id, $detail_id, "material");
+$material_id = items::get_detail_info($item_id, $detail_id, "material_id");
+$price = items::get_detail_info($item_id, $detail_id, "price");
+$size = items::get_detail_info($item_id, $detail_id, "size");
 ?>
 
 <!doctype html>
@@ -33,6 +45,7 @@ if (empty($_REQUEST['item_id'])) {
         <div class="container" id="container">
             <div id="title-div">
                 <h1>DESIGN YOUR OBJECT</h1>
+                <h4>Base Object: <?php echo $item_name ?></h4>
             </div>
             <form id="customizeObject" method="POST" action="customize-request.php">
                 <div id="container-left">
@@ -42,7 +55,7 @@ if (empty($_REQUEST['item_id'])) {
 
 
                     <div class="fileUpload">
-                        <input id="uploadFile" disabled="disabled"/>
+                        <div id="uploadFile"><img id = "previewObject" src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>" /></div>
                         <input id="uploadButton" type="file" class="upload"/>
 
                     </div>
@@ -50,16 +63,21 @@ if (empty($_REQUEST['item_id'])) {
                     <br style="clear:both;"/>
                 </div>
                 <div id="container-right">
-                    <div id="fname" class="input">First Name<br><input type="text" name="firstName" required></div>
-                    <div id="lname" class="input">Last Name<br><input type="text" name="lastName" required></div>
-                    <div id="email" class="input">Email<br><input type="text" name="email" required></div>
-                    <div id="message" class="input">Message to Designer<br><textarea name="message" rows="5" cols="50"
-                                                                                     maxlength="1000"></textarea></div>
+                    <input type="hidden" name="item_id" value="<?php echo $item_id ?>" />
+                    <input type="hidden" name="material_id" value="<?php echo $material_id ?>" />
+                    <br />
+                    <div class="input">Material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
+                    <div class="input">Size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
+                    <div class="input">Price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
+                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' required><br />
+                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' required><br />
+                    <div class="input">Email:</div><input type="text" name="email" size='25' required><br />
+                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"></textarea><br />
                 </div>
 
                 <br style="clear:both">
                 <br/>
-                <button type="submit" value="Submit Request">Submit Request</button>
+                <div id="submitRequest"><button type="submit" value="Submit Request">Submit Request</button></div>
             </form>
         </div>
     </div>
@@ -69,5 +87,4 @@ if (empty($_REQUEST['item_id'])) {
     <?php include "../templates/footer.php"; ?>
 </div>
 </body>
-<script type="text/javascript" src="../js/customize.js"></script>
 </html>

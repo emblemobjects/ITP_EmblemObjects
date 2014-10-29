@@ -82,6 +82,24 @@ class items  {
 <?php
         }
     }
+    public static function getPrimaryImage($items, $id){
+        $primaryImage = 0;//Default to 0 if there's an error or whatever
+        for ($j = 0; $j < count($items[$id]['images']); $j++){
+            if ($items[$id]['images'][$j]['is_primary']==1){
+                $primaryImage = $j;
+            }
+        }
+        $image_filepath = DIR."/objects/".$items[$id]['images'][$primaryImage]['image_filepath'];
+        return $image_filepath;
+    }
+    public static function get_field_value($id, $field_name){
+        $value = $GLOBALS['items_array'][$id][$field_name];
+        return $value;
+    }
+    public static function get_detail_info($id, $detail_id, $field_name){
+        $value = $GLOBALS['items_array'][$id]['details'][$detail_id][$field_name];
+        return $value;
+    }
 }
 //items::display_grid($GLOBALS['items_array']);
 

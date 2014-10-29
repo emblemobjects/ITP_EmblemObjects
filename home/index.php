@@ -190,27 +190,27 @@
 </div>
 </script>-->
 
-<script type="text/handlebars" id="item-template">
-<div id="itemTemplate">
+<!--<script type="text/handlebars" id="item-template">-->
+<!--<div id="itemTemplate">-->
+<!---->
+<!--    <div id="itemImageBox">-->
+<!--        <img src="{{img}}" alt="" class="store-img" width="240px" height="240px"/>-->
+<!--    </div>-->
+<!---->
+<!--    <div id="itemDescriptionBox">-->
+<!--        {{ name }} --- {{type}}-->
+<!--    </div>-->
+<!---->
+<!--</div>-->
+<!--</script>-->
 
-    <div id="itemImageBox">
-        <img src="{{img}}" alt="" class="store-img" width="240px" height="240px"/>
-    </div>
-
-    <div id="itemDescriptionBox">
-        {{ name }} --- {{type}}
-    </div>
-
-</div>
-</script>
-
-<script type="text/handlebars" id="hover-template">
-<div id="hoverTemplate">
-
-    Description: {{description}}
-
-</div>
-</script>
+<!--<script type="text/handlebars" id="hover-template">-->
+<!--<div id="hoverTemplate">-->
+<!---->
+<!--    Description: {{description}}-->
+<!---->
+<!--</div>-->
+<!--</script>-->
 
 <script type="text/javascript" src="../js/json-search-db.js"></script>
 <script src="../js/home.js"></script>
