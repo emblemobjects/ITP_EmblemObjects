@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show overlay</title>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function() {
+	// DOM
+	$('#click').on('click', function() {
+		console.log('clicked #click');
+
+		$('#overlay')
+			.removeClass('hidden')
+			.addClass('shown');
+
+		$('body').addClass('no-scroll');
+	});
+
+	$('#overlay').on('click', function() {
+		console.log('clicked #overlay');
+
+		$(this)
+			.removeClass('shown')
+			.addClass('hidden');
+
+		$('body').removeClass('no-scroll');
+	});
+});
+</script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: #666;
+	background-color: #EEE;
+	font-family: verdana;
+	font-size: 12pt;
+}
+article, aside, header, footer, nav, section {
+	display: block;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+
+/* MODIFY CSS
+ *
+ */
+.hidden {
+	visibility: hidden;
+	display: none;
+	opacity: 0;
+}
+.shown {
+	visibility: visible;
+	display: block;
+	opacity: 1;
+}
+.no-scroll {
+	overflow: hidden;
+}
+
+/* OVERLAY CSS
+ *
+ */
+ #overlay {
+ 	position: fixed;
+ 	top: 0; left: 0;
+ 	height: 100%; width: 100%; 	
+ 	z-index: 100;
+ 	background-color: rgba(0,0,0,.9);
+ 	overflow-y: scroll; 
+ }
+ #overlay-display {
+ 	position: static;
+ 	width: 1000px; height: 3000px;
+ 	margin: 100px auto;
+ 	background-color: #FFF;
+ 	z-index: 200;
+ }
+
+
+/* MAIN CSS
+ *
+ */
+#main {
+	width: 1200px;
+	height: 4000px;
+	margin: 20px auto;
+	background-color: #FFF;
+	position: relative;
+	z-index: 0;
+}
+#click {
+	cursor: pointer;
+	padding: 20px;
+}
+#bottom {
+	position: absolute;
+	bottom: 20px;
+}
+</style>
+</head>
+<body>
+<!-- OVERLAY -->
+<div id="overlay" class="hidden">
+	<div id="overlay-display">
+		hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm 
+	</div><!--end #overlay-display-->
+</div><!--end #overlay-->
+<!-- END OVERLAY -->
+
+<!-- MAIN CONTENT -->
+<div id="main">
+take up spaces!
+<div id="click">click here!</div>
+
+<div id="bottom">MORE SPACE</div>
+<div class="clear"></div>
+</div><!--END main-->
+<!-- END MAIN CONTENT -->
+
+</body>
+</html>
