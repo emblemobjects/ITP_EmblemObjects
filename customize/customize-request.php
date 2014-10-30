@@ -9,6 +9,13 @@ if (empty($_REQUEST['firstName'])) {
 
 helper::redirect_page($valid,'/customize/index.php');
 
+session_start();
+
+//Catching people who got here without filling out the form
+if (empty($_REQUEST['firstName'])) {
+    //header('location: index.php');
+}
+
 //Fixes the time differences
 date_default_timezone_set("America/Los_Angeles");
 //DATETIME format for SQL is YYYY-MM--DD HH-MI-SS
@@ -21,12 +28,27 @@ $email = $_REQUEST['email'];
 $message = $_REQUEST['message'];
 $item_id = $_REQUEST['item_id'];
 $size = $_REQUEST['size'];
+
+
+// Store session information in case uploading the file throws an error
+$_SESSION['first_name'] = $firstName;
+$_SESSION['last_name'] = $lastName;
+$_SESSION['email'] = $email;
+$_SESSION['message'] = $message;
+
+
 //Declaring the variables for use later
 $user_id = 0;
 $enable_id = 0;
+
 //PLACEHOLDERS that needs to be replaced by functions
-$image_filepath="uploads/placeholder.png";
+$target_dir = "../uploads/";
+$image_filepath = "/uploads/placeholder.png";
 $status = 0;
+
+/* disable autocommit */
+mysqli_autocommit($con, FALSE);
+
 //Looking up designer information
 $sql_designer = "SELECT item_designer, user_first_name, user_last_name, user_email FROM item, user_table WHERE item.item_id = $item_id AND item.item_designer = user_table.user_id";
 $result_designer = mysqli_query($con, $sql_designer);
@@ -38,6 +60,7 @@ while ($r = mysqli_fetch_array($result_designer)){
     $designer_last_name = $r['user_last_name'];
     $designer_email = $r['user_email'];
 }
+
 $designer_name = $designer_first_name." ".$designer_last_name;
 //Inserts the customer into the table - disregard duplicates
 $sql_customer_insert = "INSERT INTO user_table (user_first_name, user_last_name, user_email) VALUES ('$firstName', '$lastName', '$email')";
@@ -50,10 +73,11 @@ if (mysqli_query($con, $sql_customer_insert)){
     while ($r = mysqli_fetch_array($result_user_id)){
         $user_id = $r['user_id'];//this is needed for the next SQL statement to insert into enable requests table
     }
-}
-else {
+} else {
     echo mysqli_error($con);
 }
+
+
 //Inserts the enable request into the table
 $sql_insert = "INSERT INTO enable_request (user_id, date_submitted, item_id, material_id, size, image_filepath, due_date, message, status) VALUES ('$user_id', '{$current_date}', '$item_id', '$material_id', '$size', '$image_filepath', '{$due_date}', '$message', '$status')";
 if (mysqli_query($con, $sql_insert)){
@@ -65,11 +89,45 @@ if (mysqli_query($con, $sql_insert)){
     while ($r = mysqli_fetch_array($result_enable_id)){
         $enable_id = $r['request_id'];//Needed in the email/text
     }
-}
-else {
+} else {
     echo mysqli_error($con);
 }
+
+
+// Uploads the file
+include "../php/upload.php";
+
+$file_type_num = 1;
+$dir = "../uploads/";
+$file = $_FILES["uploadButton"];
+$newFileName = $_REQUEST['newFileName'];
+
+$status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
+$uploadOk = $status_array[0];
+$upload_message = $status_array[1];
+
+if ($uploadOk == 1){
+    $image_filepath = $upload_message; // Update the order's image file path
+    $sql_update = "UPDATE enable_request SET image_filepath = '$image_filepath' WHERE request_id = '$enable_id'";
+    mysqli_query($con, $sql_update);
+    mysqli_commit($con);
+    mysqli_autocommit($con, TRUE);
+} else {  // There was an error uploading the file
+    $_SESSION['error_message'] = $upload_message;  // Change the error message
+    mysqli_rollback($con); // Rollback the data just inserted
+    mysqli_autocommit($con, TRUE);
+    header('location: ../customize/');
+    exit();
+}
+
+// If successful, clear and destroy the session
+session_unset();
+session_destroy(); 
+
 ?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
