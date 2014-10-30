@@ -1,33 +1,60 @@
 <?php
-    include_once 'config.php';
-//form used to upload a file onto the database
 
-    $target_dir = "objects/";
-    $target_dir = $target_dir . basename($_FILES["uploadFile"]["name"]);
-    $uploadOk = 1; //upload is ok to begin with
+/*  uploadFile : Validates, renames, and moves a file to the server or returns an error if this cannot be done
+*   Input:
+*       $file : The file being uploaded
+*       $target_dir : The directory where the file should go in the server
+*       $enable_id : The id of the enable order, such as "154"
+*       $new_file_name : The name of the file, such as "customer_artwork"    
+*       (The file will be stored as ../uploads/154_customer_artwork.png)
+*   Output:
+*       An array containing 2 values:
+*       1) $uploadOk: the upload status of the file. 1 = ok, 0 = error
+*       2) $message: Either an error message if the upload was not successful or the images new file path after uploading
+*/
+function uploadFile($file, $target_dir, $enable_id, $new_file_name) {
+      
+    $target_file = $target_dir . basename($file["name"]);   
+    $uploadFile_type = $file["type"];
+    $uploadFile_size = $file["size"];
 
-    //check if the file exists
-    if($uploadFile_size > 1000){
-        echo "Sorry your file is too large.";
+    $uploadOk = 1;  // Upload status
+    
+    
+    // Check if file size > 3MB
+    if ($uploadFile_size > 3000000) {
+        $message = "*File size can not exceed 3MB.";
         $uploadOk = 0;
     }
-    if(!($uploadFile_type == "image/gif") || !($uploadFile_type == "image/png") || !($uploadFile_type == "image/png")
-        || !($uploadFile_type == "image/bmp")){
-        echo "Sorry only image files are allowed.";
+    
+    
+    // Only  gif, png, jpg, & ai files allowed
+    $filetypes = array("image/gif", "image/png", "image/jpg", "image/jpeg", "application/postscript");
+    if (!in_array($uploadFile_type, $filetypes)) {
+        $message = "*Only .gif, .png, .jpg, .jpeg, and .ai files are allowed.";
         $uploadOk = 0;
+    } else {
+        $uploadFile_type = strstr($uploadFile_type, '/');
+        $uploadFile_type = str_replace("/", ".", $uploadFile_type);    
     }
-    //if uploadOk = 0, dont upload the file
-    if($uploadOk == 0){
-        echo "Your file was unable to be uploaded.";
+    
+    
+    // If uploadOk, rename and move file
+    if ($uploadOk == 1) {
+        $file_name = $enable_id . "_" . $new_file_name;
+        $file_path = $target_dir . $file_name . $uploadFile_type;
+        
+        // Move the uploads to the order directory and rename them
+        if (move_uploaded_file($_FILES["uploadButton"]["tmp_name"], $file_path)) {
+            $message = $file_path;
+        } else {
+            $message = "There is a problem with your file. Please choose another";
+            $uploadOk = 0;
+        } 
     }
-    else{
-        if(move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)){
-            echo "The file " . basename($_FILES["uploadFile"]["name"]) . "has been uploaded.";
-        }
-        else {
-            echo "The file was unable to be uploaded.";
-        }
+    
+    return array($uploadOk, $message);
+}
 
-    }
 
-?>
+?> 
