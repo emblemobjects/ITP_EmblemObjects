@@ -90,16 +90,21 @@ h4{
 }
 
 #submit-button{
-    font-size: 12pt;
     cursor: pointer;
 }
 
 .readOnly {
     float:left;
     margin-right: 10px;
+    border: 0;
+    background-color: inherit;
 }
 
 .readOnlyBox{
     background-color: #cccccc;
     width:100px;
+}
+.input {
+    width: 150px;
+    float: left;
 }
