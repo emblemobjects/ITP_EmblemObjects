@@ -20,9 +20,10 @@
     float:left;
 }
 
-pre {
+
+/*pre {
     font-family: "Garamond", serif;
-}
+}*/
 
 /* latest popular  */
 #main-nav2 {
@@ -150,11 +151,11 @@ ul#navig li a:hover {
 }
 
 ul#navig li a.first {
-	border-left: 0 none;
+	border-right: solid 1px #CCC;
 }
 
 ul#navig li a.last {
-	border-right: 0 none;
+	border-left: 0 none;
 }
 
 ul#navig li:hover > a {

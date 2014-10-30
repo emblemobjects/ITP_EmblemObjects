@@ -1,22 +1,30 @@
 <?php
-if (empty($_REQUEST['item_id'])) {
-    header("location: ../home/index.php");
-}
+/* /customize/index.php
+ * test - ?item_id=1$detail_id=3
+ */
 include_once '../php/config.php';
 include_once '../php/helper.php';
 include_once '../php/json-store-objects.php';
 include_once '../php/items.php';
 
+// set valid browse
+if (empty($_REQUEST['item_id']) || empty($_REQUEST['detail_id'])) {
+   $valid = false;
+} else { $valid = true; }
+
+// redirect to home if invalid
+helper::redirect_page($valid,'/home/index.php');
+
 $item_id = $_REQUEST['item_id'];
-$item_name = items::get_field_value($item_id, "name");
 $detail_id = $_REQUEST['detail_id'];
+$item_name = items::get_field_value($item_id, "name");
 $material_name = items::get_detail_info($item_id, $detail_id, "material");
 $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
 $price = items::get_detail_info($item_id, $detail_id, "price");
 $size = items::get_detail_info($item_id, $detail_id, "size");
 ?>
 
-<!doctype html>
+<!DOCTYPEe html>
 <html lang="en">
 <head>
     <title>Emblem Objects</title>

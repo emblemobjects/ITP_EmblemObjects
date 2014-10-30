@@ -102,29 +102,29 @@ var theData = {
 ///////////////////////////////////////// RENDERING HANDLEBARS FUNCTIONS
 
 var renderOverlayTemplate = function() {
-    var scriptHTML = document.getElementById('overlay-template').innerHTML;
-    var templateFunction = Handlebars.compile(scriptHTML);
-    document.getElementById('light').innerHTML = layout();
+    // var scriptHTML = document.getElementById('overlay-template').innerHTML;
+    // var templateFunction = Handlebars.compile(scriptHTML);
+    // document.getElementById('light').innerHTML = layout();
 };
 
 function layout(){
     var html = "";
-    for (var i = 0; $i < store.items.length; i++){
-        html += templateFunction(store.item[i]);
-    }
+    // for (var i = 0; i < store.items.length; i++){
+    //     html += templateFunction(store.item[i]);
+    // }
     return html;
 }
 
 var renderItemTemplate = function() {
-    var itemHTML = document.getElementById('item-template').innerHTML;
-    var itemTemplateFunction = Handlebars.compile(itemHTML);
-    document.getElementById('item').innerHTML = itemTemplateFunction(theData.storeItems[0]);
+    // var itemHTML = document.getElementById('item-template').innerHTML;
+    // var itemTemplateFunction = Handlebars.compile(itemHTML);
+    // document.getElementById('item').innerHTML = itemTemplateFunction(theData.storeItems[0]);
 };
 
 var renderHoverTemplate = function() {
-    var hoverHTML = document.getElementById('hover-template').innerHTML;
-    var hoverTemplateFunction = Handlebars.compile(hoverHTML);
-    document.getElementById('hover').innerHTML = hoverTemplateFunction(theData.storeItems[0]);
+    // var hoverHTML = document.getElementById('hover-template').innerHTML;
+    // var hoverTemplateFunction = Handlebars.compile(hoverHTML);
+    // document.getElementById('hover').innerHTML = hoverTemplateFunction(theData.storeItems[0]);
 };
 
 ///////////////////////////////////////// JQUERY PROTOTYPING (CENTERING)

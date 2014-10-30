@@ -20,6 +20,7 @@
  * secure_file - prevent access to file directly
  * get_file - return current file name
  * escape_str - strings - return escaped string
+ * redirect_page - redirect use to page from parameter
  */
 
 // echo 'helper.php<hr/>'; // debug line - comment out for prod
@@ -59,6 +60,16 @@ class helper {
 	// @require function must be called after $con = mysqli_connect
 	public static function escape_str($con,$value) {
 		return mysqli_real_escape_string($con,$value);
+	}
+
+	// Redirect to page
+	// @param $valid allow access to page, false for redirect
+	// @param $page must contain "/" and extendsion
+	// @require must be called after DIR
+	public static function redirect_page($valid,$page) {
+		if ($valid == false) {
+			header('location: '.DIR.$page);
+		} else { return; }
 	}
 }
 

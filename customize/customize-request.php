@@ -1,10 +1,14 @@
 <?php
-//Catching people who got here without filling out the form
-if (empty($_REQUEST['firstName'])) {
-    //header('location: index.php');
-}
 include_once '../php/config.php';
 include_once '../php/helper.php';
+
+//Catching people who got here without filling out the form
+if (empty($_REQUEST['firstName'])) {
+    $valid = false;
+} else { $valid = true; }
+
+helper::redirect_page($valid,'/customize/index.php');
+
 //Fixes the time differences
 date_default_timezone_set("America/Los_Angeles");
 //DATETIME format for SQL is YYYY-MM--DD HH-MI-SS

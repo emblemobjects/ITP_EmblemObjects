@@ -1,0 +1,37 @@
+nav {
+    height: 40px;
+    min-width: 1200px;
+    color: #666;
+    background-color: orange;
+    vertical-align: middle;
+}
+
+.nav-btn {
+    display: block;
+    float: left;
+    padding-top: 4px;
+    padding-right: 20px; 
+    font-size: 1.5em;
+    line-height: 1.5em;
+    position: relative;
+}
+.nav-btn:hover {
+    color: #FFF;
+    /*font-weight: bold;*/
+}
+.nav-br {
+    position: absolute;
+    top: 10px; right: 0;
+    margin-right: 10px;
+    height: 20px;
+    border-right: 1px solid #EEE
+}
+/*#nav-shop {
+    width: 50px;
+}
+#nav-collection {
+    width: 100px;
+}
+#nav-designer {
+    width: 70px;
+}*/
