@@ -91,11 +91,12 @@ if (mysqli_query($con, $sql_insert)){
 // Uploads the file
 include "../php/upload.php";
 
+$file_type_num = 1;
 $dir = "../uploads/";
 $file = $_FILES["uploadButton"];
 $newFileName = $_REQUEST['newFileName'];
 
-$status_array = uploadFile($file, $dir, $enable_id, $newFileName);
+$status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
 $uploadOk = $status_array[0];
 $message = $status_array[1];
 
