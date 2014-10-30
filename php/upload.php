@@ -23,7 +23,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
     
     // Check if file size > 3MB
     if ($uploadFile_size > 3000000) {
-        $message = "*File size can not exceed 3MB.";
+        $upload_message = "*File size can not exceed 3MB.";
         $uploadOk = 0;
     }
     
@@ -35,7 +35,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
             $uploadFile_type = strstr($uploadFile_type, '/');
             $uploadFile_type = str_replace("/", ".", $uploadFile_type);
         } else {
-            $message = "*Only .gif, .png, .jpg, .jpeg, and .ai files are allowed.";
+            $upload_message = "*Only .gif, .png, .jpg, .jpeg, and .ai files are allowed.";
             $uploadOk = 0;
         } 
     } elseif ($file_type_num == 2){
@@ -45,7 +45,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         } elseif ($uploadFile_type == $filetypes[1]){
             $uploadFile_type = ".stl";
         } else {
-            $message = "*Only .obj and .stl files are allowed.";
+            $upload_message = "*Only .obj and .stl files are allowed.";
             $uploadOk = 0;
         }
     } elseif ($file_type_num == 3){
@@ -53,7 +53,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         if (in_array($uploadFile_type, $filetypes)) {
             $uploadFile_type = ".3dm"; 
         } else {
-            $message = "*Only .3dm files are allowed.";
+            $upload_message = "*Only .3dm files are allowed.";
             $uploadOk = 0;
         }
     }
@@ -67,14 +67,14 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         
         // Move the uploads to the order directory and rename them
         if (move_uploaded_file($_FILES["uploadButton"]["tmp_name"], $file_path)) {
-            $message = $file_path;
+            $upload_message = $file_path;
         } else {
-            $message = "There is a problem with your file. Please choose another";
+            $upload_message = "There is a problem with your file. Please choose another";
             $uploadOk = 0;
         } 
     }
     
-    return array($uploadOk, $message);
+    return array($uploadOk, $upload_message);
 }
 
 

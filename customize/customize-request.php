@@ -98,16 +98,16 @@ $newFileName = $_REQUEST['newFileName'];
 
 $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
 $uploadOk = $status_array[0];
-$message = $status_array[1];
+$upload_message = $status_array[1];
 
 if ($uploadOk == 1){
-    $image_filepath = $message; // Update the order's image file path
+    $image_filepath = $upload_message; // Update the order's image file path
     $sql_update = "UPDATE enable_request SET image_filepath = '$image_filepath' WHERE request_id = '$enable_id'";
     mysqli_query($con, $sql_update);
     mysqli_commit($con);
     mysqli_autocommit($con, TRUE);
 } else {  // There was an error uploading the file
-    $_SESSION['error_message'] = $message;  // Change the error message
+    $_SESSION['error_message'] = $upload_message;  // Change the error message
     mysqli_rollback($con); // Rollback the data just inserted
     mysqli_autocommit($con, TRUE);
     header('location: ../customize/');

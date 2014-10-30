@@ -72,10 +72,10 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                     <div class="input">Material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
                     <div class="input">Size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
                     <div class="input">Price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
-                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' required><br />
-                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' required><br />
-                    <div class="input">Email:</div><input type="text" name="email" size='25' required><br />
-                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"></textarea><br />
+                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' value="<?php echo $firstName; ?>required><br />
+                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' value="<?php echo $lastName; ?>required><br />
+                    <div class="input">Email:</div><input type="text" name="email" size='25' value="<?php echo $email; ?>required><br />
+                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"><?php echo $message; ?></textarea><br />
                 </div>
 
                 <br style="clear:both">
