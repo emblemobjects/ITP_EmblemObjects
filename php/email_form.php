@@ -1,7 +1,7 @@
 <?php
     include_once 'config.php';
 /**
-Function that takes in the email type, designer name, enable ID, and a recepient and sends an email to it
+Function that takes in the email type, designer name, enable ID, and a recipient and sends an email to it
  * */
 
 //variables from the form
@@ -44,7 +44,7 @@ echo "REQUEST ID : " . $request_id . "\n";
 //$row[' SELECT-ed variable ' ]
     while($rowC = mysqli_fetch_array($customer_result))
     {
-        $customer_name = $rowC['user_first_name'] . $rowC['user_last_name'];
+        $customer_name = $rowC['user_first_name'] . " " . $rowC['user_last_name'];
         $customer_email = $rowC['user_email'];
     }
 //fetch the ID
@@ -57,26 +57,24 @@ echo "REQUEST ID : " . $request_id . "\n";
     }
 //fetch the designer name
     $sql_designer = "SELECT user_first_name, user_last_name, user_email
-                    FROM user_table, item WHERE item.item_id = $item_id AND user_table.user_id = item.item_designer";
+                    FROM user_table, item
+                    WHERE item.item_id = $item_id
+                    AND user_table.user_id = item.item_designer";
     $designer_result = mysqli_query($con, $sql_designer);
     while($rowD = mysqli_fetch_array($designer_result))
     {
-        $designer_name = $rowD['user_first_name'] . $rowD['user_last_name'];
+        $designer_name = $rowD['user_first_name'] . " " . $rowD['user_last_name'];
         $designer_email = $rowD['user_email'];
     }
+    $image = " [IMAGE]";
+    $link = " [LINK] ";
+    $enable_link = " [ENABLE_LINK] ";
 /*      $customer_name = user_table.user_first_name . user_table.user_last_name
       $designer_name = user_table.user_first_name . user_table.user_last_name
       $enable_link = enable_request.image_filepath
       $image = enable_request.image_filepath
       $link = enable_request.image_filepath
       $designer_email = user_table.user_email";
-*/
-/*    $customer_name = mysqli_query($con, $sql); //customer ID?
-    $designer_name = mysqli_query($con, $sql);//user first name
-    $enable_link = mysqli_query($con, $sql);//???
-    $image = mysqli_query($con, $sql);//image_filepath
-    $link = mysqli_query($con, $sql);//???
-    $designer_email = mysqli_query($con, $sql);//user email
 */
 if(!filter_var($recipient, FILTER_VALIDATE_EMAIL)){
     $emailErr= "Invalid email format";
@@ -88,12 +86,12 @@ if($email_Ok == 1) {
         $message = "
          <handlebar-templates>
          <img src = '/images/logo.png'> <br />
-            Dear" . $customer_name .
+            Dear " . $customer_name .
             ", Thank you for your design request submission. Your design request number is " . $request_id .
             " and your designer is " . $designer_name .
             ". Your designer will get to work on your design right away, turning your artwork into a unique product created just for you.
             <br>Within 48 hours, you will receive another email from EmblemObjects.com with your
-            unique object ready to to order. Until then, your designer may wish to contact you from"
+            unique object ready to to order. Until then, your designer may wish to contact you from "
             . $designer_email . ".
             You are one step closer to creating something truly special with us!<br />
             Thank you for designing with us!<br />
@@ -113,8 +111,8 @@ if($email_Ok == 1) {
     } else if ($template == "enable") {
         $subject = "New Enable Request :" . $request_id;
         $message = "<handlebar-templates> <img src = '/images/logo.png'> <br />
-        Designer" . $designer_name . ",<br />
-        Congratulations! Customer" . $customer_name . "has asked you to enable their design!.<br />
+        Designer " . $designer_name . ",<br />
+        Congratulations! Customer" . $customer_name . " has asked you to enable their design!.<br />
         Remember, you have 36 hours to complete this request, before it is transferred to
         EmblemObjects Staff for completion.<br />"
             . $enable_link . "
@@ -127,9 +125,9 @@ if($email_Ok == 1) {
     } else if ($template == "ready") {
         $subject = "Your Object is READY! Request: ". $request_id;
         $message = "<handlebar-templates> <img src = '/images/logo.png'> <br />
-        Dear" . $customer_name . "<br />
+        Dear " . $customer_name . "<br />
         Thanks again for your submission! Our designers have been hard at work creating your
-        object. Below is a digital preview of your object and link to order.<br />
+        object. Below is a digital preview of your object and link to order. <br />
         " . $image . "<br />Buy! " . $link .
             "<br /> We hope you like your object and hope to help you again on your creative endeavors!<br />
         Thank you for working with us!<br />
