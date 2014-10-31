@@ -5,7 +5,8 @@ include_once '../php/items.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include_once '../php/json-store-objects.php'; ?>
+    <?php include_once '../php/json-store-objects.php';
+    ?>
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="<?php echo DIR; ?>/favicon.ico" type="image/x-icon"/>
@@ -29,15 +30,48 @@ include_once '../php/items.php';
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/items-grid.css">
 
-<script>
-facebook.init({
-  appID: '609528499167439',
-});
-</script>
+    <script>
+    facebook.init({
+      appID: '609528499167439',
+    });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // DOM
+            $('.no-go').on('click', function(e) {
+                e.preventDefault();
+                console.log('clicked #click');
+
+                $('#overlay')
+                    .removeClass('hidden')
+                    .addClass('shown');
+
+                $('body').addClass('no-scroll');
+                var index = store.getIndex(this);
+                store.displayOverlay(store.renderOverlay(index));
+
+            });
+
+            $('#overlay').on('click', function() {
+                console.log('clicked #overlay');
+
+                $(this)
+                    .removeClass('shown')
+                    .addClass('hidden');
+
+                $('body').removeClass('no-scroll');
+            });
+        });
+    </script>
 </head>
 
 
 <body>
+<div id="overlay" class="hidden">
+    <div id="overlay-display">
+
+    </div><!--end #overlay-display-->
+</div><!--end #overlay-->
 <div id="wrapper">
     <!-- HEADER -->
     <?php include "../templates/new-header.php"; ?>
@@ -205,47 +239,7 @@ facebook.init({
 </div>
 </script>-->
 
-<!--<script type="text/handlebars" id="item-template">-->
-<!--<div id="itemTemplate">-->
-<!---->
-<!--    <div id="itemImageBox">-->
-<!--        <img src="{{img}}" alt="" class="store-img" width="240px" height="240px"/>-->
-<!--    </div>-->
-<!---->
-<!--    <div id="itemDescriptionBox">-->
-<!--        {{ name }} --- {{type}}-->
-<!--    </div>-->
-<!---->
-<!--</div>-->
-<!--</script>-->
-
-<!--<script type="text/handlebars" id="hover-template">-->
-<!--<div id="hoverTemplate">-->
-<!---->
-<!--    Description: {{description}}-->
-<!---->
-<!--</div>-->
-<!--</script>-->
-
 <script type="text/javascript" src="../js/json-search-db.js"></script>
 <script src="../js/home.js"></script>
-<!-- END TEMPLATE -->
-
-<!--                <div id="hover" class="storeItem-hover" onclick="openOverlay()"><p> THIS IS SOME TEXT STUFF FOR HELLO WORLD </p></div>-->
-<!--                <div id="item" class="storeItem"> </div>-->
-<!--                <div id="light" class="bright_content"> </div>-->
-<!--                <div id="fade" class="dark_overlay" onclick="closeOverlay()"> </div>-->
-<!---->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg-1"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
-<!--                <img src= "../images/store_image.jpg" class="item-jpeg"/>-->
 </body>
 </html>
