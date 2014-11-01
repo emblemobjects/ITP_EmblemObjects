@@ -81,7 +81,8 @@ if(!filter_var($recipient, FILTER_VALIDATE_EMAIL)){
     $email_Ok = 0;
 }
 if($email_Ok == 1) {
-    if ($template == "confirmation") {
+    if ($template == "enableC") {
+        //$to = $customer_email;
         $subject = "Your Design Request Confirmation : " . $request_id ;
         $message = "
          <handlebar-templates>
@@ -98,7 +99,8 @@ if($email_Ok == 1) {
             EmblemObjects Team<br />
             Note: This is a one time email, you have not been entered in any mailing list.
         </handlebar-templates>";
-    } else if ($template == "approval") {
+    } else if ($template == "passD") {
+        //$to = $designer_email;
         $subject = "Enable Request has Passed Enable Review";
         $message = "<handlebar-templates>
          <img src = '/images/logo.png'> <br />
@@ -108,7 +110,8 @@ if($email_Ok == 1) {
             buy it. Keep up the good work.<br />
             Great Job!<br />
             EmblemObjects Team</handlebar-templates>";
-    } else if ($template == "enable") {
+    } else if ($template == "enableD") {
+        //$to = $designer_email;
         $subject = "New Enable Request :" . $request_id;
         $message = "<handlebar-templates> <img src = '/images/logo.png'> <br />
         Designer " . $designer_name . ",<br />
@@ -122,7 +125,8 @@ if($email_Ok == 1) {
         Thank you for working with us!<br />
         EmblemObjects Team
         </handlebar-templates>";
-    } else if ($template == "ready") {
+    } else if ($template == "passC") {
+        //$to = $customer_email;
         $subject = "Your Object is READY! Request: ". $request_id;
         $message = "<handlebar-templates> <img src = '/images/logo.png'> <br />
         Dear " . $customer_name . "<br />
@@ -132,7 +136,28 @@ if($email_Ok == 1) {
             "<br /> We hope you like your object and hope to help you again on your creative endeavors!<br />
         Thank you for working with us!<br />
         EmblemObjects Team</handlebar-templates>";
+    } else if ($template == "failC") {
+        //$to = $customer_email;
+        $subject = "Your Object could not be printed: " . $request_id;
+        $message = "<handlebar-templates> <img src = '/images/logo.png'><br />
+        Dear " . $customer_name . "
+        Our printer could not print you design with sufficient quality. The designer tried their best
+        but technology has its limits. We will continue to work with our printers so that more design will
+        be printable. Come back and check us out soon, maybe we can print it then! <br /> <br />
+                See you soon!<br />
+                EmblemObjects Staff";
+    } else if ($template == "failD") {
+        //$to = $designer_email;
+        $subject = "Enable Request Failed Enable Review : " . $request_id;
+        $message = "<handlebar-templates> <img src = '/images/logo.png'><br />
+        Designer" . $designer_name . "
+        Sorry, your enable did not pass out enable review. If you want to know, please contact:
+        designreview@emblemobjects.com. Most likely, the detail was too fine to be printed or files is
+        too large. There will always be more enable requests. <br /> <br />
+                Keep on up the good work!<br />
+                EmblemObjects Team";
     }
+
     echo $message;
     mail($recipient,$subject,$message);
     mysqli_close($con);

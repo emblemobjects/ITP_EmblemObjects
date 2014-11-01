@@ -9,10 +9,12 @@
 <form action="email_form.php" method = "get">
     Recipient : <input type = "text" name = "recipient"> <br />
     Template type : <br />
-    <input type = "radio" name = "template" value = "confirmation">Confirmation
-    <input type = "radio" name = "template" value = "enable">Enable Request
-    <input type = "radio" name = "template" value = "ready">Object Ready
-    <input type = "radio" name = "template" value = "approval">Approval<br />
+    <input type = "radio" name = "template" value = "enableC">Enable - customer
+    <input type = "radio" name = "template" value = "enableD">Enable - designer<br />
+    <input type = "radio" name = "template" value = "passC">Passed - customer
+    <input type = "radio" name = "template" value = "passD">Passed - designer<br />
+    <input type = "radio" name = "template" value = "failC">Failed - customer
+    <input type = "radio" name = "template" value = "failD">Failed - designer <br />
     Enable ID : <input type = "text" name = "request_id"><br />
     <input type = "submit" value = "Send Email">
 </form>
