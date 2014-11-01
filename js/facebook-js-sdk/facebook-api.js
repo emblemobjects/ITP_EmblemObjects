@@ -9,8 +9,7 @@ facebook.init = function(appInfo) {
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId      : appInfo.appID, //608964315890524
-			cookie     : true,  // enable cookies to allow the server to access 
-			                    // the session
+			cookie     : true,  // enable cookies to allow the server to access the session
 			xfbml      : true,  // parse social plugins on this page
 			version    : 'v2.1' // use version 2.1
 		});

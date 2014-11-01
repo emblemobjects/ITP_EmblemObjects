@@ -16,10 +16,10 @@ $(document).ready(function() {
 		$('body').addClass('no-scroll');
 	});
 
-	$('#overlay').on('click', function() {
+	$('#overlay-close').on('click', function() {
 		console.log('clicked #overlay');
 
-		$(this)
+		$(this).parent()
 			.removeClass('shown')
 			.addClass('hidden');
 
@@ -74,15 +74,20 @@ a {
  	top: 0; left: 0;
  	height: 100%; width: 100%; 	
  	z-index: 100;
- 	background-color: rgba(0,0,0,.9);
  	overflow-y: scroll; 
  }
  #overlay-display {
- 	position: static;
+ 	position: relative;
  	width: 1000px; height: 3000px;
  	margin: 100px auto;
  	background-color: #FFF;
  	z-index: 200;
+ }
+ #overlay-close {
+ 	position: fixed;
+ 	top: 0; left: 0; right: 0; bottom: 0;
+ 	z-index: 101;
+ 	background-color: rgba(0,0,0,.9);
  }
 
 
@@ -110,8 +115,9 @@ a {
 <body>
 <!-- OVERLAY -->
 <div id="overlay" class="hidden">
+	<div id="overlay-close"></div>
 	<div id="overlay-display">
-		hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm hmm hmm hmm hmm hmm hmm hmmm hmm 
+		
 	</div><!--end #overlay-display-->
 </div><!--end #overlay-->
 <!-- END OVERLAY -->

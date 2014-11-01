@@ -1,13 +1,13 @@
 <?php
-include_once "../php/config.php";
+// include_once "../php/config.php";
 ?>
 
 <!-- NAV -->
 <nav>
 <div class="container">
 
-<div id="nav-group">
-    <div id="nav-shop" class="nav-btn">
+<div id="nav-type">
+    <div id="nav-shop" class="nav-btn nav-btn-active ml-1">
         <a href="#shop">SHOP</a><div class="nav-br"></div>
     </div>
     <div class="nav-btn">
@@ -19,15 +19,23 @@ include_once "../php/config.php";
 </div>
 
 <div id="nav-sort">
-    <div class="nav-btn">
-        <a href="#newest">NEWEST</a><div class="nav-br"></div>
+    <div class="nav-btn nav-btn-active ml-2">
+        <a href="#newest">POPULAR</a><div class="nav-br"></div>
     </div>
     <div class="nav-btn">
-        <a href="#popular">POPULAR</a>
+        <a href="#popular">NEWEST</a>
     </div>
 </div>
 
-<div id="nav-search">
+<div id="nav-search" class="">
+
+<form method="get" action="<?php echo DIR; ?>/home/">
+        <input class="ml-3" type="text" name="search"/>
+        <button type="sumbit"><div id="magnifying-glass"></div></button>
+</form>
+
+
+
 </div>
 
 </div><!-- end div.container -->

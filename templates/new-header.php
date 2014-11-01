@@ -1,20 +1,6 @@
-<!--
 <?php
-include_once "../php/config.php";
+// include_once "../php/config.php";
 ?>
-
-<link rel="stylesheet" type="text/css" href="../css/new-header.css">
-<link rel="stylesheet" type="text/css" href="../css/core.css">
-
-<script type="text/javascript" src="<?php echo DIR; ?>/js/facebook-js-sdk/facebook-sdk.js"></script>
-<script type="text/javascript" src="<?php echo DIR; ?>/js/facebook-js-sdk/facebook-api.js"></script>
-
-<script>
-facebook.init({
-  appID: '609528499167439',
-});
-</script>
--->
 
 <!-- HEADER -->
 <header>
@@ -39,14 +25,14 @@ facebook.init({
 
 <div id="header-head">
     <a href="<?php echo DIR; ?>/home" class="head-home">
-        <img src="<?php echo DIR; ?>/asset/favicon-white.png"/>
-        <span class="head-btn">EmblemObjects</span>
+        <div id="head-logo"></div>
+        <span class="head-btn">EMBLEMOBJECTS</span>
     </a>
     <a href="<?php echo DIR; ?>/whats-new" class="head-btn">
-        What's New
+        WHAT'S NEW
     </a>
     <a href="<?php echo DIR; ?>/how-to" class="head-btn">
-        How To
+        HOW TO
     </a>
 </div>
 
