@@ -1,33 +1,13 @@
-<script id="overlay-template" type="text/x-handlebars-template">
+<script id="overlay-template" type="template">
 <div id="display-preview">
 	<img id="preview-main" src="../objects/{{images.[0].image_filepath}}" />
 	<div id="display-thumbnails">
+	{{#each images}}
 		<div class="thumbnail-icon">
-			<img class="icon-img" src="../objects/{{images.[1].image_filepath}}"/>
-			<div class="icon-state icon-selected"></div>
+			<img class="icon-img" src="../objects/{{this.image_filepath}}"/>
+			<div class="icon-state"></div>
 		</div>
-		<div class="thumbnail-icon">
-			<img class="icon-img" src="../objects/{{images.[2].image_filepath}}"/>
-			<div class="icon-state icon-none"></div>
-		</div>
-		<div class="thumbnail-icon">
-			<img class="icon-img" src="http://placekitten.com/110/115"/>
-			<div class="icon-state icon-none"></div>
-		</div>
-		<div class="thumbnail-icon">
-			<img class="icon-img" src="http://placekitten.com/110/115"/>
-			<div class="icon-state icon-none"></div>
-		</div>
-
-		<div class="thumbnail-icon">
-			<img class="icon-img" src="http://placekitten.com/110/115"/>
-			<div class="icon-state icon-none"></div>
-		</div>
-		<div class="thumbnail-icon">
-			<img class="icon-img" src="http://placekitten.com/110/115"/>
-			<div class="icon-state icon-none"></div>
-		</div>
-
+	{{/each}}
 	</div>
 </div><!-- end div#display-preview -->
 
@@ -45,54 +25,42 @@
 	<form method="get">
 		<div id="form-size" class="form-grp">
 			<div class="form-label">What size would you like your object in?</div>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="size" value="1in x 2in"/>
-				<span>1in x 2in</span>
-			</label>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="size" value="1.25in x 2.5in"/>
-				<span>1.25in x 2.5in</span>
-			</label>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="size" value="1.5in x 3in"/>
-				<span>1.5in x 3in</span>
-			</label>
+			{{#each size_array}}
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="size" value="{{this}}"/>
+					<span>{{this}}</span>
+				</label>
+			{{/each}}
 			<div class="clear"></div>
 		</div>
 		<div id="form-material" class="form-grp">
 			<div class="form-label">What material would you like your object to be made from?</div>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="material-id" value="1"/>
-				<span>Bronze</span>
-			</label>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="material-id" value="2"/>
-				<span>Brass</span>
-			</label>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="material-id" value="3"/>
-				<span>Silver</span>
-			</label>
-			<label class="radio-label">
-				<input class="radio-input" type="radio" name="material-id" value="4"/>
-				<span>Gold Plated Brass</span>
-			</label>
+			{{#each material_array}}
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="material-id" value="{{mat_id}}"/>
+					<span>{{mat_name}}</span>
+				</label>
+			{{/each}}
 			<div class="clear"></div>
 		</div>
-		<div id="form-accesory" class="form-grp bb-1">
-			<div class="form-label">Would you like to add an accessory?</div>
-			<select class="select-input" name="accessory-id">
-				<option value="none">none</option>
-				<option value="1">10" silver necklace</option>
-				<option value="2">14" silver necklace</option>
-				<option value="3">16" leather necklace</option>
-			</select>
-		</div>
-		<div id="form-price" class="form-grp bb-1">Price: <span>starting at $10.74</span></div>
-		<input type="hidden" name="detail-id"/>
+		{{#if accessory_array}}
+			<div id="form-accesory" class="form-grp">
+				<div class="form-label">Would you like to add an accessory?</div>
+				<select class="select-input" name="accessory-id">
+					<option value="none">none</option>
+					<option value="1">10in silver necklace</option>
+					<option value="2">14in silver necklace</option>
+					<option value="3">16in leather necklace</option>
+				</select>
+			</div>
+		{{/if}}
+		<div id="form-price" class="form-grp bb-1 bt-1">Price: <span>starting at $10.74</span></div>
+		<input type="hidden" name="detail-id" value=""/>
 		<button type="submit" formaction="#purchase">BUY</button>
+		{{#ifEqual type 1}}
 		<button type="submit" formaction="#enable/request">DESIGN</button>
 		<div id="form-info">BUY ORDERS OBJECT AS IS.</div>
+		{{/ifEqual}}
 	</form>
 </div><!-- div#display-form -->
 

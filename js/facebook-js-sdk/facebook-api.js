@@ -21,7 +21,7 @@ facebook.init = function(appInfo) {
 	};
 
 	console.log(appInfo.appID);
-	console.log(appInfo.msg);
+	// console.log(appInfo.msg);
 
 	function statusChangeCallback(response) {
 	    console.log('statusChangeCallback');

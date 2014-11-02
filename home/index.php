@@ -12,10 +12,11 @@ include_once '../php/items.php';
     <link rel="icon" href="<?php echo DIR; ?>/favicon.ico" type="image/x-icon"/>
     
     <!--External Scripts-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="../js/handlebars-v2.0.0.js"></script>
+    <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/handlebars-v2.0.0.js"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/facebook-js-sdk/facebook-sdk.js"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/facebook-js-sdk/facebook-api.js"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/config.js"></script>
 
     <!--External CSS-->
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
@@ -35,12 +36,13 @@ include_once '../php/items.php';
 
     <script>
     facebook.init({
-      appID: '609528499167439',
+      appID: config.FBID,
     });
     </script>
     <script>
         $(document).ready(function() {
             // DOM
+
             $('.no-go').on('click', function(e) {
                 e.preventDefault();
                 console.log('clicked a.no-go');
@@ -52,6 +54,10 @@ include_once '../php/items.php';
                 $('body').addClass('no-scroll');
                 var index = store.getIndex(this);
                 store.displayOverlay(store.renderOverlay(index));
+
+                store.overlayInitThumb();
+
+                store.overlaySetPreview();
 
             });
 
@@ -70,6 +76,7 @@ include_once '../php/items.php';
 
 
 <body>
+<div id="fb-root"></div>
 <!-- OVERLAY -->
 <div id="overlay" class="hidden">
     <div id="overlay-close"></div>
@@ -111,7 +118,7 @@ include_once '../php/items.php';
     // include "../handlebar-templates/overlay-template.php";
 ?>
 
-<script type="text/javascript" src="../js/json-search-db.js"></script>
+<!-- <script type="text/javascript" src="../js/json-search-db.js"></script> -->
 <script src="../js/home.js"></script>
 </body>
 </html>
