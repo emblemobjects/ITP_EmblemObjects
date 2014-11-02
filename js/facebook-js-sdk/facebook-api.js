@@ -31,49 +31,58 @@ facebook.init = function(appInfo) {
 	    // Full docs on the response object can be found in the documentation
 	    // for FB.getLoginStatus().
 	    if (response.status === 'connected') {
-	      // Logged into your app and Facebook.
+			// Logged into your app and Facebook.
 
-	      // testAPI();
+			// testAPI();
+			displayUsername();
 	    } else if (response.status === 'not_authorized') {
-	      // The person is logged into Facebook, but not your app.
+			// The person is logged into Facebook, but not your app.
 
-	      // document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+			// document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+			$('#user-name').html('EmblemObjects under closed alpha.');
 	    } else {
-	      // The person is not logged into Facebook, so we're not sure if
-	      // they are logged into this app or not.
+			// The person is not logged into Facebook, so we're not sure if
+			// they are logged into this app or not.
 
-	      // document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+			// document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+			$('#user-name').html('EmblemObjects under closed alpha.');
 	    }
 	}
 	
 	function checkLoginState() {
 	    FB.getLoginStatus(function(response) {
-	      statusChangeCallback(response);
+	    	statusChangeCallback(response);
 	    });
-	  }
+	}
 
-	  // Here we run a very simple test of the Graph API after login is
-	  // successful.  See statusChangeCallback() for when this call is made.
-	  function testAPI() {
-	    console.log('Welcome!  Fetching your information.... ');
-	    FB.api('/me', function(response) {
-	      console.log('Successful login for: ' + response.name);
-	      document.getElementById('status').innerHTML =
-	        'Thanks for logging in, ' + response.name + '!';
-	    });
-	  }
+	// Here we run a very simple test of the Graph API after login is
+	// successful.  See statusChangeCallback() for when this call is made.
+	function testAPI() {
+		console.log('Welcome!  Fetching your information.... ');
+		FB.api('/me', function(response) {
+			console.log('Successful login for: ' + response.name);
+			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+		});
+	}
 
-	  // function eoPage() {
-	  //   FB.api('/Emblemobjects?access_token=218952278313886|V9ctcJXDHttIku4J7cv60N2dMZk', function(response) {
-	  //     console.log("random page");
-	  //     console.log(response);
-	  //   });
-	  // }
+	function displayUsername() {
+		FB.api('/me', function(response) {
+			console.log(response);
+			$('#user-name').html(response.name);
+		});
+	}
 
-	  // function tcPage() {
-	  //   FB.api('/dctestcause/posts?access_token=218952278313886|V9ctcJXDHttIku4J7cv60N2dMZk', function(response) {
-	  //     console.log("random page");
-	  //     console.log(response);
-	  //   });
-	  // }
+	// function eoPage() {
+	//   FB.api('/Emblemobjects?access_token=218952278313886|V9ctcJXDHttIku4J7cv60N2dMZk', function(response) {
+	//     console.log("random page");
+	//     console.log(response);
+	//   });
+	// }
+
+	// function tcPage() {
+	//   FB.api('/dctestcause/posts?access_token=218952278313886|V9ctcJXDHttIku4J7cv60N2dMZk', function(response) {
+	//     console.log("random page");
+	//     console.log(response);
+	//   });
+	// }
 };

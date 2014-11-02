@@ -18,19 +18,22 @@ header {
 }
 #user-login {
     width: 85px;
-    float: left;
+    float: right;
 }
 #user-name {
     width: 200px;
-    float: left;
-    line-height: 1.8em;
+    float: right;
+    line-height: 1.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #user-name:hover {
     color: #f2b139;
 }
 .user-btn {
     display: block;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 .user-btn:hover {
     color: #f2b139;

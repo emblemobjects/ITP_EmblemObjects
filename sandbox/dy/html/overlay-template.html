@@ -1,6 +1,310 @@
 <style>
+* {
+	margin: 0; padding: 0;
+}
+body {
+	background-color: rgba(0,0,0,.9);
+	color: #666;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+.hover:hover {
+	color: #f2b139;
+}
+
+
+
+#overlay-display {
+	width: 1000px;
+	padding: 30px;
+	margin: 100px auto;
+	background-color: #FFF;
+	font-family: 'Garamond', serif;
+}
+
+
+.bb-1 {
+	border-bottom: solid 1px #f2b139;
+	padding-bottom: 15px;
+}
+#display-preview {
+	width: 570px;
+	float: left;
+}
+img#preview-main {
+	display: block;
+	width: 565px;
+	height: 565px;
+	margin-bottom: 0px;
+	/*border-bottom: 2px solid #f2b139;*/
+}
+.thumbnail-icon {
+	display: block;
+	position: relative;
+	width: 90px;
+	height: 90px;
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+	/*border-bottom: 2px solid #FFF;*/
+}
+.icon-img {
+	display: block;
+	position: absolute;
+	width: 90px;
+	height: 90px;
+}
+.icon-state {
+	position: absolute;
+	display: block;
+	width: 90px;
+	height: 87px;
+	opacity: .6;
+}
+.icon-selected {
+	border-bottom: 3px solid #f2b139;
+}
+.icon-none {
+	border: none;
+}
+.icon-bs {
+	/*border-bottom: 2px solid #f2b139;*/
+	box-shadow: inset 0 0 0 3px rgba(242,177,57,1);
+}
+
+#display-info {
+	width: 415px;
+	float: right;
+	color: #888;
+	padding-bottom: 15px;
+	border-bottom: solid 1px #f2b139;
+}
+.standout {
+	text-transform: uppercase;
+	color: #000;
+}
+#info-name {
+	width: 399px;
+	color: #FFF;
+	background-color: #333;
+	padding: 5px 8px;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+#info-collection {
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+#info-designer {
+	text-align: right;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	margin-top: 15px;
+}
+#info-category {
+	text-align: left;
+	margin-top: 20px;
+	font-size: .8em;
+	line-height: 1.5em;
+}
+#info-description {
+	font-size: 1em;
+	color: #666;
+	margin-top: 5px;
+}
+
+
+#display-form {
+	width: 415px;
+	float: right;
+	margin-top: -10px;
+}
+.form-grp {
+	width: 415px;
+	display: block;
+	margin-top: 15px;
+}
+.form-label {
+	width: 415px;
+	display: block;
+}
+
+.radio-label {
+    float:left;
+    /*width:150px;*/
+    margin:4px;
+    background-color:#EEE;
+    overflow:auto;
+}
+.radio-label:hover {
+    background-color: #333;
+    color: #f2b139;
+    cursor: pointer;
+}
+.radio-label span {
+    text-align:center;
+    font-size: .9em;
+    padding:5px 7px;
+    display:block;
+    text-transform: uppercase;
+    /*font-family: arial;*/
+}
+.radio-input {
+    position:absolute;
+    visibility: hidden;
+    /*opacity: .5;*/
+}
+.radio-input:checked + span {
+    background-color:#333;
+    color:#FFF;
+}
+.select-input {
+	margin-top: 5px;
+	margin-left: 3px;
+	padding: 5px;
+	background: #EEE;
+	outline: 0;
+	border: none;
+	color: #666;
+	font-family: garamond;
+	text-transform: uppercase;
+	font-size: .9em;
+}
+.select-input:active {
+	background: #EEE;
+}
+#form-price {
+	font-size: 1.3em;
+
+}
+#display-form button {
+	border: none;
+	background: #333;
+	color: #fff;
+	padding: 5px 10px;
+	margin-top: 15px;
+	margin-left: 90px;
+	font-size: 1.1em;
+	font-family: garamond;
+}
+#display-form button:hover {
+	cursor: pointer;
+	color: #f2b139;
+}
+#form-info {
+	font-size: .7em;
+	color: #CCC;
+	font-family: arial, sans-serif;
+	margin-left: 45px;
+	margin-top: 3px;
+}
+
+
 </style>
 <div id="overlay-display">
 
+	<div id="display-preview">
+		<img id="preview-main" src="http://placekitten.com/800/810"/>
+		<div id="display-thumbnails">
+			<div class="thumbnail-icon">
+				<img class="icon-img" src="http://placekitten.com/800/810"/>
+				<div class="icon-state icon-selected"></div>
+			</div>
+			<div class="thumbnail-icon">
+				<img class="icon-img" src="http://placekitten.com/110/115"/>
+				<div class="icon-state icon-none"></div>
+			</div>
+			<div class="thumbnail-icon">
+				<img class="icon-img" src="http://placekitten.com/110/115"/>
+				<div class="icon-state icon-none"></div>
+			</div>
+			<div class="thumbnail-icon">
+				<img class="icon-img" src="http://placekitten.com/110/115"/>
+				<div class="icon-state icon-none"></div>
+			</div>
 
+			<div class="thumbnail-icon">
+				<img class="icon-img" src="http://placekitten.com/110/115"/>
+				<div class="icon-state icon-none"></div>
+			</div>
+			<div class="thumbnail-icon">
+				<img class="icon-img" src="http://placekitten.com/110/115"/>
+				<div class="icon-state icon-none"></div>
+			</div>
+
+		</div>
+	</div><!-- end div#display-preview -->
+
+	<div id="display-info">
+		<div id="info-name">Standard Dogtag</div>
+		<div id="info-collection">from the <a class="standout hover" href="#collection">Emblem Launch</a> collection</div>
+		<div id="info-designer">designed by <a class="standout hover" href="#designer">Jacob Blitzer</a></div>
+		<div id="info-category">
+			<a class="standout hover" href="#category">Personal Accesories</a> - <a class="standout hover" href="#subcategory">Pendant</a>
+		</div>
+		<div id="info-description">A Standard dogtag shape, 1.125" x 2.0", with a symmetrical pattern. The Dogtag is modeled off the classic dimensions of the ubiquitous dogtags we are all familiar with, but departs from the norm with a purely geometric surface design.</div>
+	</div><!-- end div#display-info -->
+
+	<div id="display-form">
+		<form method="get">
+			<div id="form-size" class="form-grp">
+				<div class="form-label">What size would you like your object in?</div>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="size" value="1in x 2in"/>
+					<span>1in x 2in</span>
+				</label>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="size" value="1.25in x 2.5in"/>
+					<span>1.25in x 2.5in</span>
+				</label>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="size" value="1.5in x 3in"/>
+					<span>1.5in x 3in</span>
+				</label>
+				<div class="clear"></div>
+			</div>
+			<div id="form-material" class="form-grp">
+				<div class="form-label">What material would you like your object to be made from?</div>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="material-id" value="1"/>
+					<span>Bronze</span>
+				</label>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="material-id" value="2"/>
+					<span>Brass</span>
+				</label>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="material-id" value="3"/>
+					<span>Silver</span>
+				</label>
+				<label class="radio-label">
+					<input class="radio-input" type="radio" name="material-id" value="4"/>
+					<span>Gold Plated Brass</span>
+				</label>
+				<div class="clear"></div>
+			</div>
+			<div id="form-accesory" class="form-grp bb-1">
+				<div class="form-label">Would you like to add an accessory?</div>
+				<select class="select-input" name="accessory-id">
+					<option value="none">none</option>
+					<option value="1">10" silver necklace</option>
+					<option value="2">14" silver necklace</option>
+					<option value="3">16" leather necklace</option>
+				</select>
+			</div>
+			<div id="form-price" class="form-grp bb-1">Price: <span>starting at $10.74</span></div>
+			<input type="hidden" name="detail-id"/>
+			<button type="submit" formaction="#purchase">BUY</button>
+			<button type="submit" formaction="#enable/request">DESIGN</button>
+			<div id="form-info">BUY ORDERS OBJECT AS IS.</div>
+		</form>
+	</div><!-- div#display-form -->
+
+<div class="clear"></div>
 </div><!-- end div#overlay-display-->

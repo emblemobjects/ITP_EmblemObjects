@@ -27,10 +27,10 @@
     </div>
 </div>
 
-<div id="nav-search" class="">
+<div id="nav-search">
 
 <form method="get" action="<?php echo DIR; ?>/home/">
-        <input class="ml-3" type="text" name="search"/>
+        <input class="ml-3" type="text" name="search" placeholder="Search..."/>
         <button type="sumbit"><div id="magnifying-glass"></div></button>
 </form>
 

@@ -33,21 +33,31 @@ nav {
     top: 6px; right: 0;
     margin-right: 10px;
     height: 12px;
-    border-right: 1px solid #EEE
+    border-right: 1px solid #888;
 }
 .nav-btn-active {
     color: #FFF;
 }
 
 #nav-search input {
-    width: 170px;
+    width: 166px;
     background-color: #ffcc66;
     color: #666;
     border: none;
     padding: 5px;
-    padding-left: 6px;
+    padding-left: 10px;
     padding-right: 25px;
+    line-height: 15px;
     font-size: .8em;
+}
+#nav-search input::-webkit-input-placeholder {
+    color: #f2b139;
+}
+#nav-search input::-moz-placeholder {
+    color: #f2b139;
+}
+#nav-search input::-ms-placeholder {
+    color: #f2b139;
 }
 #nav-search input:focus {
     outline: 0;
@@ -56,8 +66,10 @@ nav {
     background: none;
     border: none;
     margin-left: -25px;
-
     cursor: pointer;
+}
+#nav-search button:focus {
+    outline: 0;
 }
 
 #magnifying-glass {
@@ -84,6 +96,7 @@ nav {
      -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
 }
+
 #nav-search button:hover #magnifying-glass {
     border: .1em solid #FFF;
 }

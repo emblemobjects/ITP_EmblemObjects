@@ -7,9 +7,6 @@
 <div class="container">
 
 <div id="user">
-    <a href="#user">
-        <div id="user-name">Jacob Blitzer</div>
-    </a>
     <div id="user-login">
         <fb:login-button 
             scope="public_profile,email"
@@ -17,6 +14,9 @@
             onlogin="checkLoginState();">
         </fb:login-button>
     </div><!--end span#user-login-->
+    <a href="#user">
+        <div id="user-name"></div>
+    </a>
     <div class="clear"></div>
     <a href="#designer" class="user-btn">Designer</a>
     <a href="#staff" class="user-btn">Emblem Staff</a>

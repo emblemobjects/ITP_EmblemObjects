@@ -1,0 +1,63 @@
+<style>
+
+
+
+.label {
+    float:left;
+    /*width:150px;*/
+    margin:4px;
+    background-color:#EFEFEF;
+    overflow:auto;
+       
+}
+
+.label span {
+    text-align:center;
+    font-size: 32px;
+    padding:13px 13px;
+    display:block;
+}
+
+.input {
+    position:absolute;
+    visibility: hidden;
+    /*opacity: .5;*/
+}
+
+.input:checked + span {
+    background-color:#404040;
+    color:#F7F7F7;
+}
+
+</style>
+<body>
+
+
+
+    <label class="label">
+        <input class="input" type="radio" name="toggle">
+        <span>$20</span>
+    </label>
+    <label class="label">
+        <input class="input" type="radio" name="toggle">
+        <span>$50</span>
+    </label>
+    <label class="label">
+        <input class="input" type="radio" name="toggle">
+        <span>$100</span>
+    </label>
+    <label class="label">
+        <input checked class="input" type="radio" name="toggle">
+        <span>$500</span>
+    </label>
+    <label class="label">
+        <input class="input" type="radio" name="toggle">
+        <span>$1000</span>
+    </label>
+
+
+
+
+
+
+</body>
