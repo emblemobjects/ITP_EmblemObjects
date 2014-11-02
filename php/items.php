@@ -135,6 +135,7 @@ class items  {
         $value = $GLOBALS['items_array'][$id]['details'][$detail_id][$field_name];
         return $value;
     }
+
     public static function get_items($category_id, $subcategory_id, $type, $order_by, $search_text){
         global $con;
         //sql statement to select -basic
@@ -244,8 +245,9 @@ class items  {
         }
         return $items_array;
     }
-    public static function items_encode($items_array){
-        $items_json = json.encode($items_array);
+
+    public static function to_JS($items_array){
+        $items_json = json_encode($items_array);
         ?>
         <script>
             var store = window.store || {};

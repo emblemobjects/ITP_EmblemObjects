@@ -1,11 +1,13 @@
 <?php
 include_once '../php/config.php';
 include_once '../php/items.php';
+$store_items_result = items::get_items(0, 0, 2, 0, "");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include_once '../php/json-store-objects.php';
+    <?php
+    items::to_JS($store_items_result);
     ?>
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -100,7 +102,7 @@ include_once '../php/items.php';
         
             <!-- Container to hold the objects -->
             <div id="objects-display">
-                <?php items::display_grid(items::get_items(0, 0, 2, 0, "")); ?>
+                <?php items::display_grid($store_items_result); ?>
                 <div class="clear"></div>
         	</div><!--END objects-display-->
         </div><!--END container-->
