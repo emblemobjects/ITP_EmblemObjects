@@ -152,7 +152,8 @@ class items  {
             $sql = $sql . "AND item.item_type = $type ";
         }
         if ($search_text != ""){
-            $sql = $sql . "AND item.item_name LIKE '%$search_text%' OR item.item_tag LIKE '%$search_text%' OR item_subcategory.subcategory_desc LIKE '%$search_text%' OR user_table.user_first_name LIKE '%$search_text%' OR user_table.user_last_name LIKE '%$search_text%' OR item_category.category_desc LIKE '%$search_text%' OR collection.collection_desc LIKE '%$search_text%' ";
+            $sql = $sql . "AND item.item_name LIKE '%$search_text%' ";
+            //$sql = $sql . "AND item.item_name LIKE '%$search_text%' OR item.item_tag LIKE '%$search_text%' OR item_subcategory.subcategory_desc LIKE '%$search_text%' OR user_table.user_first_name LIKE '%$search_text%' OR user_table.user_last_name LIKE '%$search_text%' OR item_category.category_desc LIKE '%$search_text%' OR collection.collection_desc LIKE '%$search_text%' ";
         }
         if ($order_by !=0){
             if ($order_by == 1){
