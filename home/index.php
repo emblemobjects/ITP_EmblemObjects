@@ -50,8 +50,8 @@ include_once '../php/items.php';
                     .addClass('shown');
 
                 $('body').addClass('no-scroll');
-                //var index = store.getIndex(this);
-                //store.displayOverlay(store.renderOverlay(index));
+                var index = store.getIndex(this);
+                store.displayOverlay(store.renderOverlay(index));
 
             });
 

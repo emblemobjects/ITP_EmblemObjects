@@ -35,9 +35,9 @@ store.getIndex = function(el){
 var template = Handlebars.compile($('#overlay-template').html());
 store.renderOverlay = function(index){
     var html = "";
-    html = template(store.items[index]);
+    html = template(store.items[index-1]);
     return html;
 }
 store.displayOverlay = function(html){
-    $('#overlay').html(html);
+    $('#overlay-display').html(html);
 }

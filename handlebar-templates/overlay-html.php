@@ -1,12 +1,13 @@
+<script id="overlay-template" type="text/x-handlebars-template">
 <div id="display-preview">
-	<img id="preview-main" src="http://placekitten.com/800/810"/>
+	<img id="preview-main" src="../objects/{{images.[0].image_filepath}}" />
 	<div id="display-thumbnails">
 		<div class="thumbnail-icon">
-			<img class="icon-img" src="http://placekitten.com/800/810"/>
+			<img class="icon-img" src="../objects/{{images.[1].image_filepath}}"/>
 			<div class="icon-state icon-selected"></div>
 		</div>
 		<div class="thumbnail-icon">
-			<img class="icon-img" src="http://placekitten.com/110/115"/>
+			<img class="icon-img" src="../objects/{{images.[2].image_filepath}}"/>
 			<div class="icon-state icon-none"></div>
 		</div>
 		<div class="thumbnail-icon">
@@ -31,13 +32,13 @@
 </div><!-- end div#display-preview -->
 
 <div id="display-info">
-	<div id="info-name">Standard Dogtag</div>
-	<div id="info-collection">from the <a class="standout hover" href="#collection">Emblem Launch</a> collection</div>
-	<div id="info-designer">designed by <a class="standout hover" href="#designer">Jacob Blitzer</a></div>
+	<div id="info-name">{{name}}</div>
+	<div id="info-collection">from the <a class="standout hover" href="#collection">{{collection_name}}h</a> collection</div>
+	<div id="info-designer">designed by <a class="standout hover" href="#designer">{{designer_first_name}} {{designer_last_name}}</a></div>
 	<div id="info-category">
-		<a class="standout hover" href="#category">Personal Accesories</a> - <a class="standout hover" href="#subcategory">Pendant</a>
+		<a class="standout hover" href="#category">{{category}}</a> - <a class="standout hover" href="#subcategory">{{subcategory}}</a>
 	</div>
-	<div id="info-description">A Standard dogtag shape, 1.125" x 2.0", with a symmetrical pattern. The Dogtag is modeled off the classic dimensions of the ubiquitous dogtags we are all familiar with, but departs from the norm with a purely geometric surface design.</div>
+	<div id="info-description">{{description}}</div>
 </div><!-- end div#display-info -->
 
 <div id="display-form">
@@ -96,3 +97,4 @@
 </div><!-- div#display-form -->
 
 <div class="clear"></div>
+</script>
