@@ -100,7 +100,7 @@ include_once '../php/items.php';
         
             <!-- Container to hold the objects -->
             <div id="objects-display">
-                <?php items::display_grid($items_array); ?>
+                <?php items::display_grid(items::get_items(0, 0, 2, 0, "")); ?>
                 <div class="clear"></div>
         	</div><!--END objects-display-->
         </div><!--END container-->

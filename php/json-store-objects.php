@@ -6,7 +6,7 @@
  * Time: 9:55 PM
  */
 
-//sql statement to select (maybe do a view?)
+//sql statement to select
 $sql = "SELECT item_id, item_tag, subcategory_desc, item_name, user_first_name, user_last_name, item_description, category_desc, item_type, collection_desc
         FROM item, item_category, item_subcategory, user_table, collection
         WHERE item.subcategory_id = item_subcategory.subcategory_id AND item_subcategory.category_id = item_category.category_id AND item.item_designer = user_table.user_ID AND item.collection_id = collection.collection_id";
@@ -15,9 +15,9 @@ $items_results = mysqli_query($con, $sql);
 $items_array = array();
 
 // Error Check - items results
-// if (!$items_results) {
-//     exit('$items_results error: ' . mysqli_error($con));
-// }
+ if (!$items_results) {
+     exit('$items_results error: ' . mysqli_error($con));
+ }
 
 while ($items_row = mysqli_fetch_array($items_results)) {
     // current item_id
@@ -34,9 +34,9 @@ while ($items_row = mysqli_fetch_array($items_results)) {
 
     $image_results = mysqli_query($con, $image_sql);
     // Error Check - image results
-    // if (!$image_results) {
-    //     exit('$image_results error: ' . mysqli_error($con));
-    // }
+     if (!$image_results) {
+         exit('$image_results error: ' . mysqli_error($con));
+     }
 
     while ($image_row = mysqli_fetch_array($image_results)) {
         array_push($image_array, array('material_id' => $image_row['material_id'], 'image_filepath' => $image_row['image_filepath'], 'is_primary' => $image_row['is_primary']));//4th dimension array
@@ -91,6 +91,9 @@ while ($items_row = mysqli_fetch_array($items_results)) {
 }
 
 $items_json = json_encode($items_array);
+
+
+
 
 ?>
 <script>

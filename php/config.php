@@ -37,3 +37,5 @@ $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 // jQuery - google cdn
 // $jQuery = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"; // min - production
 $jQuery = "http://code.jquery.com/jquery-2.1.1.js"; // uncompressed - dev
+
+?>
