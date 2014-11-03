@@ -11,7 +11,7 @@ facebook.init = function(appInfo) {
 			appId      : appInfo.appID, //608964315890524
 			cookie     : true,  // enable cookies to allow the server to access the session
 			xfbml      : true,  // parse social plugins on this page
-			version    : 'v2.1' // use version 2.1
+			version    : appInfo.ver // use version 2.1
 		});
 
 		FB.getLoginStatus(function(response) {
@@ -39,13 +39,13 @@ facebook.init = function(appInfo) {
 			// The person is logged into Facebook, but not your app.
 
 			// document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-			$('#user-name').html('EmblemObjects under closed alpha.');
+			// $('#user-name').html('');
 	    } else {
 			// The person is not logged into Facebook, so we're not sure if
 			// they are logged into this app or not.
 
 			// document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
-			$('#user-name').html('EmblemObjects under closed alpha.');
+			// $('#user-name').html('');
 	    }
 	}
 	
@@ -68,7 +68,7 @@ facebook.init = function(appInfo) {
 	function displayUsername() {
 		FB.api('/me', function(response) {
 			console.log(response);
-			$('#user-name').html(response.name);
+			// $('#user-name').html(response.name);
 		});
 	}
 

@@ -1,29 +1,35 @@
 <head>
 	<title></title>
+	<script type="text/javascript" src"https://code.jquery.com/jquery-2.1.1.js"></script>
 	<script type="text/javascript" src="../../js/facebook-js-sdk/facebook-sdk.js"></script>
 	<script type="text/javascript" src="../../js/facebook-js-sdk/facebook-api.js"></script>
 <script>
 
 facebook.init({
-  appID: '609528499167439',
+  appID: '360442404114516',
+  ver: 'v2.1',
   msg: 'Passed',
 });
 
 </script>
 </head>
 <body>
+<div id="fb-root"></div>
 
 <?php
+echo 'facebook-text.php<hr/>';
 // Facebook Php Sdk Test
 // var_dump(include_once '../../php/facebook-php-require.php');
+include_once '../../php/config.php';
 include_once '../../php/facebook-php-require.php';
 
 use Facebook\FacebookSession;
 use Facebook\FacebookJavaScriptLoginHelper;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
 
-FacebookSession::setDefaultApplication('360442404114516','3685eca8c02b480bb2027336c8b820e3');
 
-echo 'Hello!<hr/>';
+FacebookSession::setDefaultApplication($FB['app-id'],$FB['app-secret']);
 
 
 /* Create Seesion Auth with Token
@@ -55,20 +61,48 @@ echo 'Hello!<hr/>';
 $helper = new FacebookJavaScriptLoginHelper();
 
 try {
-	$session = $helper->getSession();
-	echo "got session";
+	echo "getting session <hr/>";
+	$FBsession = $helper->getSession();
+	print_r($FBsession); echo "<hr/>";
 } catch (FacebookRequestException $ex) {
-	echo "<br/>Facebook Returned Error";
+	echo "Facebook Returned Error<hr/>";
 } catch (\Exception $ex) {
-	echo "<br/>Validation Failed / Local Issues";
+	echo "Validation Failed / Local Issues<hr/>";
 }
 
 // echo 'session: ' . $session;
 // echo $_SESSION['loggedin'];
 
-if ($session) {
-	echo "<hr/>starting session...";
+if ($FBsession) {
+	echo "got session...<hr/>";
+	$FBsession_info = $FBsession->getSessionInfo()->asArray();
+	echo $FBsession_info['user_id'];
+	print_r($FBsession_info['scopes']);
+	echo "<br/>";
+	echo $FBsession->getAccessToken();
+
+
+	$request = new FacebookRequest($FBsession, 'GET', '/me');
+
+	$response = $request->execute();
+
+	$profile = $response->getGraphObject(GraphUser::className());
+
+	print_r($profile); echo "<hr/>";
+	echo $profile->getProperty('email');
+	echo $profile->getProperty('first_name');
+	echo $profile->getProperty('last_name');
+	echo $profile->getProperty('gender');
+
+
+	session_start();
+	$_SESSION['status'] = false;
+	print_r($_SESSION); echo "<hr/>";
+
+	$_SESSION['fb-id'] = '8';
 }
+
+
 
 ?>
 

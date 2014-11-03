@@ -1,10 +1,18 @@
 /*
  * CONFIG JS FILE - included on every page!
  */
- var config = window.config || {};
+var config = window.config || {};
 
- // set base direcrtory
- config.DIR = 'http://localhost:8080/ITP460/ITP_EmblemObjects';
+/*
+ * SET BASE DIRECTORY
+ */
+config.DIR = 'http://localhost:8080/ITP460/ITP_EmblemObjects'; //localhost
+// config.DIR = 'http://itp460.uscitp.com/'; //itp460
 
-// Facebook App ID
-config.FBID = '609528499167439';
+/*
+ * FACEBOOK APP ID
+ */
+config.FBID = '360442404114516'; //localhost //609528499167439
+// config.FBID = '359755337516556'; //itp460 
+
+config.FBVer = 'v2.1' // js sdk version

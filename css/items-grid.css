@@ -2,12 +2,12 @@
  *
  */
 .item-container {
-    width: 280px;
-    height: 250px;
+    width: 286px;
+    height: 245px;
     position: relative;
     /*cursor: pointer;*/
     float: left;
-    margin: 10px;
+    margin: 7px;
     /*font-family: verdana;*/
     font-family: Garamond, serif;
 }
@@ -16,7 +16,7 @@
     opacity: 1;
 }
 .item-image {
-    width: 280px;
+    width: 286px;
     height: 220px;
     position: absolute;
     top: 0;
@@ -24,7 +24,7 @@
     overflow: hidden;
 }
 .item-image img {
-    width: 280px;
+    width: 286px;
     position: absolute;
     top: -30px;
     left: 0;
@@ -32,7 +32,7 @@
 .item-hover {
     visibility: hidden;
     opacity: 0;
-    width: 260px;
+    width: 266px;
     height: 200px;
     padding: 10px;
     position: absolute;
@@ -45,7 +45,7 @@
     font-family: arial, sans-serif;
 }
 .item-description {
-    width: 280px;
+    width: 286px;
     height: 25px;
     position: relative;
     top: 220px;
@@ -82,7 +82,7 @@
     text-transform: uppercase;
     text-align: left;
     float: left;
-    width: 186px;
+    width: 192px;
     padding: 0;
     padding-left: 7px; 
     line-height: 25px;

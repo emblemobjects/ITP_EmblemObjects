@@ -14,7 +14,7 @@ nav {
     margin-left: 160px;
 }
 .ml-3 {
-    margin-left: 160px;
+    margin-left: 163px;
 }
 .nav-btn {
     display: block;
@@ -33,7 +33,7 @@ nav {
     top: 6px; right: 0;
     margin-right: 10px;
     height: 12px;
-    border-right: 1px solid #888;
+    border-right: 1px solid #666;
 }
 .nav-btn-active {
     color: #FFF;

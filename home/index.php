@@ -45,6 +45,7 @@ else {
     <script>
     facebook.init({
       appID: config.FBID,
+      ver: config.FBVer,
     });
     </script>
     <script>
