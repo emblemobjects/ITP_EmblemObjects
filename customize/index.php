@@ -9,8 +9,8 @@ if (empty($_REQUEST['item_id'])) {
 }
 include_once '../php/config.php';
 include_once '../php/helper.php';
-include_once '../php/json-store-objects.php';
 include_once '../php/items.php';
+$items_array = items::get_items(0, 0, 2, 0, "");
 
 // set valid browse
 if (empty($_REQUEST['item_id']) || empty($_REQUEST['detail_id'])) {

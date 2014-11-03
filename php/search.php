@@ -43,9 +43,7 @@ if (empty($_REQUEST["query"])) {
     
     
     <!doctype html>
-    <?php
-        include 'json-store-objects.php';
-    ?>
+
 
     <html lang="en">
     <head>

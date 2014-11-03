@@ -1,8 +1,7 @@
 <!doctype html>
 <?php
-include './../php/json-store-objects.php';
+$items_array = items::get_items(0, 0, 2, 0, "");
 ?>
-
 <html lang="en">
 <head>
     <title>Emblem Objects</title>

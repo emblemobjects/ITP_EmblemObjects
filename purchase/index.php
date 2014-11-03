@@ -4,7 +4,7 @@ if (empty($_REQUEST['item_id'])) {
 }
 include_once '../php/config.php';
 include_once '../php/helper.php';
-include_once '../php/json-store-objects.php';
+$items_array = items::get_items(0, 0, 2, 0, "");
 include_once '../php/items.php';
 
 $item_id = $_REQUEST['item_id'];

@@ -122,9 +122,6 @@ else {
 </div><!--END wrapper-->
 
 <!-- TEMPLATES -->
-<?php
-    // include "../handlebar-templates/overlay-template.php";
-?>
 
 <!-- <script type="text/javascript" src="../js/json-search-db.js"></script> -->
 <script src="../js/home.js"></script>

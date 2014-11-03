@@ -113,9 +113,6 @@ if (!empty($_REQUEST["query"]) || !empty($_REQUEST["class"]) || !empty($_REQUEST
     
     ?>
     <!doctype html>
-    <?php
-       // include 'json-store-objects.php';
-    ?>
 
     <html lang="en">
     <head>

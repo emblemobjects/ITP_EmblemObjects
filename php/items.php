@@ -16,12 +16,10 @@ include_once 'config.php';
 // echo 'items.php<hr/>'; // debug line - comment out for prod
 
 // include_once 'config.php';
-// include_once 'json-store-objects.php';
 
 // CLASS items - to call items::function_name();
 class items  {
     //Function
-    //Required: items_array from json-store-objects.php
     //Output: store items in grid layout
     public static function display_grid($items){
         for ($i = 0; $i < count($items); $i++): ?>
@@ -101,7 +99,7 @@ class items  {
 
 
     //Function: getPrimaryImage
-    //Required: $items_array from json-store-objects.php
+    //Required: $items_array
     //Required: $id of the specific object
     //Return: the image filepath for the primary image of the object
     public static function getPrimaryImage($items, $id){
