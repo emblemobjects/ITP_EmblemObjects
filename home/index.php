@@ -52,6 +52,7 @@ else {
         $(document).ready(function() {
             // DOM
 
+
             $('.no-go').on('click', function(e) {
                 e.preventDefault();
                 console.log('clicked a.no-go');
@@ -67,6 +68,34 @@ else {
                 store.overlayInitThumb();
 
                 store.overlaySetPreview();
+                var price = 0;
+                var size = "";
+                var material_id = $("input[name='material-id']").val();
+                console.log(material_id);
+
+                $("input[name='size']").change(function(){
+                    console.log($(this).val());
+                    size = $(this).val();
+                    for (var i = 0; i < store.items[index]['details'].length; i++){
+                        if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
+                            console.log(i);
+                            price = store.items[index]['details'][i]['price'];
+                            $("#price-update").html(price);
+
+                        }
+                    }
+                });
+                $("input[name='material-id']").change(function(){
+                    console.log($(this).val());
+                    material_id = $(this).val();
+                    for (var i = 0; i < store.items[index]['details'].length; i++){
+                        if (store.items[index]['details'][i]['material_id']== material_id && store.items[index]['details'][i]['size'] == size){
+                            console.log(i);
+                            price = store.items[index]['details'][i]['price'];
+                            $("#price-update").html(price);
+                        }
+                    }
+                });
 
             });
 
@@ -79,6 +108,7 @@ else {
 
                 $('body').removeClass('no-scroll');
             });
+
         });
     </script>
 </head>

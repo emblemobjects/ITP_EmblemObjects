@@ -64,3 +64,4 @@ store.overlaySetPreview = function() {
         $(this).addClass('icon-selected');
     });
 };
+
