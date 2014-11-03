@@ -1,6 +1,15 @@
 <?php
 echo 'redirect.php<hr/>'; // debug line - comment out for prod
 
-include_once 'include1.php';
+session_start();
 
-echo $str;
+echo
+	$_SESSION['status'].'<br/>'.
+	$_SESSION['fb_id'].'<br/>'.
+	$_SESSION['fb_first'].'<br/>'.
+	$_SESSION['fb_last'].'<br/>'.
+	$_SESSION['fb_email'].'<br/>'.
+	$_SESSION['fb_gender'].'<br/>'.
+	$_SESSION['fb_locale'];
+
+session_destroy();

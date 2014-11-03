@@ -20,8 +20,7 @@ facebook.init = function(appInfo) {
 
 	};
 
-	console.log(appInfo.appID);
-	// console.log(appInfo.msg);
+	console.log(appInfo.appID, appInfo.ver);
 
 	function statusChangeCallback(response) {
 	    console.log('statusChangeCallback');
@@ -33,19 +32,19 @@ facebook.init = function(appInfo) {
 	    if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 
-			// testAPI();
+			ajaxSessionCallback();
 			displayUsername();
 	    } else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 
 			// document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-			// $('#user-name').html('');
+			$('#user-name').html('');
 	    } else {
 			// The person is not logged into Facebook, so we're not sure if
 			// they are logged into this app or not.
 
 			// document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
-			// $('#user-name').html('');
+			$('#user-name').html('');
 	    }
 	}
 	
@@ -55,34 +54,28 @@ facebook.init = function(appInfo) {
 	    });
 	}
 
-	// Here we run a very simple test of the Graph API after login is
-	// successful.  See statusChangeCallback() for when this call is made.
-	function testAPI() {
-		console.log('Welcome!  Fetching your information.... ');
-		FB.api('/me', function(response) {
-			console.log('Successful login for: ' + response.name);
-			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-		});
-	}
-
 	function displayUsername() {
 		FB.api('/me', function(response) {
 			console.log(response);
-			// $('#user-name').html(response.name);
+			$('#user-name').html(response.name);
 		});
 	}
 
-	// function eoPage() {
-	//   FB.api('/Emblemobjects?access_token=218952278313886|V9ctcJXDHttIku4J7cv60N2dMZk', function(response) {
-	//     console.log("random page");
-	//     console.log(response);
-	//   });
-	// }
+	function ajaxSessionCall() {
+		return $.ajax({
+			url: 'get-fb-session.php',
+			type: 'GET',
+		});
+	}
 
-	// function tcPage() {
-	//   FB.api('/dctestcause/posts?access_token=218952278313886|V9ctcJXDHttIku4J7cv60N2dMZk', function(response) {
-	//     console.log("random page");
-	//     console.log(response);
-	//   });
-	// }
+	function ajaxSessionCallback() {
+		var ajax = ajaxSessionCall();
+
+		ajax.done(function(response) {
+			console.log('ajax completed '+response);
+		});
+	}
+
+
+
 };

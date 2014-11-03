@@ -34,7 +34,7 @@ include_once 'helper.php';
  * FACEBOOK APP SETTINGS
  */
 $FB = [];
-$FB['app-id'] = '360442404114516'; $FB['app-secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
+$FB['app_id'] = '360442404114516'; $FB['app_secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
 
 /*
  * DATABASE SETTINGS

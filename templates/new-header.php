@@ -24,14 +24,14 @@
 
 
 <div id="header-head">
-    <a href="<?php echo DIR; ?>/home" class="head-home">
+    <a title="Let's go home..." href="<?php echo DIR; ?>/home" class="head-home">
         <div id="head-logo"></div>
         <span class="head-btn">EMBLEMOBJECTS</span>
     </a>
-    <a href="<?php echo DIR; ?>/whats-new" class="head-btn">
+    <a title="What's new in the world around us" href="<?php echo DIR; ?>/whats-new" class="head-btn">
         WHAT'S NEW
     </a>
-    <a href="<?php echo DIR; ?>/how-to" class="head-btn">
+    <a title="Wondering how EmblemObjects work? Let us show you" href="<?php echo DIR; ?>/how-to" class="head-btn">
         HOW TO
     </a>
 </div>
