@@ -5,16 +5,22 @@
     <title>Send an email</title>
 </head>
 <body>
-
+<!--Recipient = email you wish to send to, only used for testing email sending
+ Pick a template to see which email it would send
+ Enable ID = the Request ID in the enable request table -->
 <form action="email_form.php" method = "get">
-    Recipient : <input type = "text" name = "recipient"> <br />
+<!--    Recipient : <input type = "text" name = "recipient"> <br /> -->
     Template type : <br />
-    <input type = "radio" name = "template" value = "enableC">Enable - customer
+<!--    <input type = "radio" name = "template" value = "enableC">Enable - customer
     <input type = "radio" name = "template" value = "enableD">Enable - designer<br />
     <input type = "radio" name = "template" value = "passC">Passed - customer
     <input type = "radio" name = "template" value = "passD">Passed - designer<br />
     <input type = "radio" name = "template" value = "failC">Failed - customer
     <input type = "radio" name = "template" value = "failD">Failed - designer <br />
+    -->
+    <input type = "radio" name = "template" value = "enable">Enable
+    <input type = "radio" name = "template" value = "pass">Passed
+    <input type = "radio" name = "template" value = "fail">Failed <br />
     Enable ID : <input type = "text" name = "request_id"><br />
     <input type = "submit" value = "Send Email">
 </form>
