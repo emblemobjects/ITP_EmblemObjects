@@ -62,7 +62,7 @@
 			</div>
 		{{/if}}
 
-		<div id="form-price" class="form-grp bb-1 bt-1">Price: $<span id = "price-update">starting at $10.74</span></div>
+		<div id="form-price" class="form-grp bb-1 bt-1">Price: $<span id = "price-update">?</span></div>
 
         <input type="hidden" name="detail-id" value=""/>
 		<button type="submit" formaction="#purchase">BUY</button>

@@ -2,10 +2,10 @@
 include_once '../php/config.php';
 include_once '../php/items.php';
 if (empty($_REQUEST['search'])){
-    $store_items_result = items::get_items(0, 0, 2, 0, "");
+    $store_items_result = items::get_items(0, 0, 0, 0, "");
 }
 else {
-    $store_items_result = items::get_items(0, 0, 2, 0, $_REQUEST['search']);
+    $store_items_result = items::get_items(0, 0, 0, 0, $_REQUEST['search']);
 }
 
 ?>
