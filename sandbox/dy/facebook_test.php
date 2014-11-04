@@ -60,6 +60,7 @@ FacebookSession::setDefaultApplication($FB['app_id'],$FB['app_secret']);
 
 </script>
 
+<script type="text/javascript" src="../../js/config.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="../../js/facebook-js-sdk/facebook-sdk.js"></script>
 <script type="text/javascript" src="../../js/facebook-js-sdk/facebook-api.js"></script>

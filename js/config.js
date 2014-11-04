@@ -15,7 +15,7 @@ config.DIR = 'http://localhost:8080/ITP460/ITP_EmblemObjects'; //localhost
 config.FBID = '360442404114516'; //localhost //609528499167439
 // config.FBID = '359755337516556'; //itp460 
 
-config.FBVer = 'v2.1' // js sdk version
+config.FBVer = 'v2.2' // js sdk version
 
 /*
  * USER SETTING

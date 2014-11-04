@@ -30,7 +30,7 @@ $fb_js_helper = new FacebookJavaScriptLoginHelper();
 
 
 try {
-	echo "getting session <hr/>";
+	echo "init fb session <hr/>".PHP_EOL;
 	$fb_session = $fb_js_helper->getSession();
 	// print_r($fb_session); echo "<hr/>";
 } catch (FacebookRequestException $ex) {
@@ -61,7 +61,9 @@ if ($fb_session) {
 	$fb_profile = $fb_response->getGraphObject(GraphUser::className());
 
 	// print fb profile object - debug
-	print_r($fb_profile); echo "<hr/>";
+	echo '$fb_profile: ';
+	print_r($fb_profile);
+	// echo "<hr/>";
 
 	$fb_id = $fb_profile->getProperty('id');
 	$fb_email = $fb_profile->getProperty('email');
@@ -108,7 +110,7 @@ if ($fb_session) {
 	// echo 'user check: '.$user_known;
 
 	if ($user_known == 0) {
-		echo 'create user';
+		echo 'create user'.PHP_EOL;
 
 		$create_user_sql =
 			"INSERT INTO user_table (user_fb_id, user_first_name, user_last_name, user_email, user_gender, user_location, user_time)
@@ -123,18 +125,18 @@ if ($fb_session) {
 	    	$user_capture_results = mysqli_query($con, $user_check_sql);
 	    	$user_capture_result = mysqli_fetch_array($user_capture_results);
 	    	$_SESSION['user-id'] = $user_capture_result['user_id'];
-	    	echo 'captured: '.$_SESSION['user-id'];
+	    	echo 'captured: '.$_SESSION['user-id'].PHP_EOL;
 	    }
 	}
 	else {
-		echo 'user found';
+		echo 'user found'.PHP_EOL;
 		// print_r($user_check_results);
 
 	    $user_check_result = mysqli_fetch_array($user_check_results);
 		// print_r($user_check_result);
 
 		$_SESSION['user-id'] = $user_check_result['user_id'];
-		echo 'response: '.$_SESSION['user-id'];
+		echo 'response: '.$_SESSION['user-id'].PHP_EOL;
 	}
 }
 else {

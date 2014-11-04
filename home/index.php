@@ -17,7 +17,7 @@ else {
     ?>
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="icon" href="<?php echo DIR; ?>/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<?php echo DIR; ?>/asset/favicon-16.ico" type="image/x-icon"/>
     
     <!--External Scripts-->
     <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>

@@ -54,10 +54,10 @@ class items  {
             $item_type = "Unique";
 
             if ($items[$i]['type'] == 1){
-                $item_type = "Custom";
+                $item_type = "Design";
             } // end if ($items[$i]['type'] == 1)
             else {
-                $item_type = "Solo";
+                $item_type = "Unique";
             }
             ?>
 
@@ -75,7 +75,7 @@ class items  {
                             from <span class="white cap"><?php echo $collection_name ?></span> Collection
                         </div>
                         <div class="hover-configuration">
-                            <span class="white"><?php echo $configurations ?></span> configurations
+                            <span class="white"><?php echo $configurations ?></span> styles
                         </div>
                         <div class="hover-price">
                             starting at $<span class="white"><?php echo $lowest_price ?></span>
@@ -257,4 +257,3 @@ class items  {
         <?php
     }
 }
-

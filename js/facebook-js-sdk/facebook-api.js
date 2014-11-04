@@ -63,7 +63,7 @@ facebook.init = function(appInfo) {
 
 	function ajaxSessionCall() {
 		return $.ajax({
-			url: 'get-fb-session.php',
+			url: config.DIR+'/sandbox/dy/get-fb-session.php',
 			type: 'GET',
 		});
 	}
@@ -72,7 +72,8 @@ facebook.init = function(appInfo) {
 		var ajax = ajaxSessionCall();
 
 		ajax.done(function(response) {
-			console.log('ajax completed '+response);
+			console.log('ajax response');
+			console.log(response);
 		});
 	}
 
