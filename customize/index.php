@@ -4,7 +4,7 @@
  */
 session_start();
 include "customize-session.php";
-if (empty($_REQUEST['item_id'])) {
+if (empty($_REQUEST['detail_id'])) {
     header("location: ../home/index.php");
 }
 include_once '../php/config.php';
@@ -13,15 +13,15 @@ include_once '../php/items.php';
 $items_array = items::get_items(0, 0, 2, 0, "");
 
 // set valid browse
-if (empty($_REQUEST['item_id']) || empty($_REQUEST['detail_id'])) {
+if (empty($_REQUEST['detail_id'])) {
    $valid = false;
 } else { $valid = true; }
 
 // redirect to home if invalid
 helper::redirect_page($valid,'/home/index.php');
 
-$item_id = $_REQUEST['item_id'];
 $detail_id = $_REQUEST['detail_id'];
+$item_id = items::get_item_id($detail_id);
 $item_name = items::get_field_value($item_id, "name");
 $material_name = items::get_detail_info($item_id, $detail_id, "material");
 $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
@@ -29,7 +29,7 @@ $price = items::get_detail_info($item_id, $detail_id, "price");
 $size = items::get_detail_info($item_id, $detail_id, "size");
 ?>
 
-<!DOCTYPEe html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Emblem Objects</title>

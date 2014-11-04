@@ -13,7 +13,7 @@
 
 <div id="display-info">
 	<div id="info-name">{{name}}</div>
-	<div id="info-collection">from the <a class="standout hover" href="#collection">{{collection_name}}h</a> collection</div>
+	<div id="info-collection">from the <a class="standout hover" href="#collection">{{collection_name}}</a> collection</div>
 	<div id="info-designer">designed by <a class="standout hover" href="#designer">{{designer_first_name}} {{designer_last_name}}</a></div>
 	<div id="info-category">
 		<a class="standout hover" href="#category">{{category}}</a> - <a class="standout hover" href="#subcategory">{{subcategory}}</a>
