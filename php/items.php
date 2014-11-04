@@ -155,7 +155,7 @@ class items  {
         if ($subcategory_id != 0){
             $sql = $sql . "AND item.subcategory_id = $subcategory_id ";
         }
-        if ($type != 2){
+        if ($type != 0){
             $sql = $sql . "AND item.item_type = $type ";
         }
         if ($search_text != ""){
