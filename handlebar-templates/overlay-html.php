@@ -23,26 +23,33 @@
 
 <div id="display-form">
 	<form method="get">
+
 		<div id="form-size" class="form-grp">
 			<div class="form-label">What size would you like your object in?</div>
-			{{#each size_array}}
+
+            {{#each size_array}}
 				<label class="radio-label">
 					<input class="radio-input" type="radio" name="size" value="{{this}}"/>
 					<span>{{this}}</span>
 				</label>
 			{{/each}}
-			<div class="clear"></div>
+
+            <div class="clear"></div>
 		</div>
+
 		<div id="form-material" class="form-grp">
 			<div class="form-label">What material would you like your object to be made from?</div>
-			{{#each material_array}}
+
+            {{#each material_array}}
 				<label class="radio-label">
 					<input class="radio-input" type="radio" name="material-id" value="{{mat_id}}"/>
 					<span>{{mat_name}}</span>
 				</label>
 			{{/each}}
-			<div class="clear"></div>
+
+            <div class="clear"></div>
 		</div>
+
 		{{#if accessory_array}}
 			<div id="form-accesory" class="form-grp">
 				<div class="form-label">Would you like to add an accessory?</div>
@@ -54,8 +61,10 @@
 				</select>
 			</div>
 		{{/if}}
+
 		<div id="form-price" class="form-grp bb-1 bt-1">Price: $<span id = "price-update">starting at $10.74</span></div>
-		<input type="hidden" name="detail-id" value=""/>
+
+        <input type="hidden" name="detail-id" value=""/>
 		<button type="submit" formaction="#purchase">BUY</button>
 		{{#ifEqual type 1}}
 		<button type="submit" formaction="#enable/request">DESIGN</button>
