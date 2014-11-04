@@ -122,6 +122,15 @@ class items  {
         return $value;
     }
 
+    public static function get_item_id($detail_id){
+        global $con;
+        $sql = "SELECT item_id FROM item_detail WHERE item_detail_id = $detail_id";
+        $sql_result = mysqli_query($con, $sql);
+        $r = mysqli_fetch_array($sql_result);
+        $item_id = $r['item_id'];
+        return $item_id;
+    }
+
 
     //Function: get_detail_info
     //Similar to get_field_value, but needs to go one more array deep to retrieve detail information
@@ -146,7 +155,7 @@ class items  {
         if ($subcategory_id != 0){
             $sql = $sql . "AND item.subcategory_id = $subcategory_id ";
         }
-        if ($type != 2){
+        if ($type != 0){
             $sql = $sql . "AND item.item_type = $type ";
         }
         if ($search_text != ""){

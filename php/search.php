@@ -51,7 +51,7 @@ if (empty($_REQUEST["query"])) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">   
         <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/header.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/nav.css">
         <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/body.css">
         <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/content.css">
         <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/footer.css">

@@ -2,10 +2,10 @@
 include_once '../php/config.php';
 include_once '../php/items.php';
 if (empty($_REQUEST['search'])){
-    $store_items_result = items::get_items(0, 0, 2, 0, "");
+    $store_items_result = items::get_items(0, 0, 0, 0, "");
 }
 else {
-    $store_items_result = items::get_items(0, 0, 2, 0, $_REQUEST['search']);
+    $store_items_result = items::get_items(0, 0, 0, 0, $_REQUEST['search']);
 }
 
 ?>
@@ -17,8 +17,8 @@ else {
     ?>
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="icon" href="<?php echo DIR; ?>/asset/favicon-16.ico" type="image/x-icon"/>
-    
+    <link rel="icon" href="<?php echo DIR; ?>/asset/favicon-16.ico" type="image/x-icon"/>   
+
     <!--External Scripts-->
     <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/handlebars-v2.0.0.js"></script>
@@ -30,9 +30,9 @@ else {
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
     <!--<link rel="stylesheet" type="text/css" href="../css/body.css">-->
-    <link rel="stylesheet" type="text/css" href="../css/new-header.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/header.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/new-nav.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/navigation.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
@@ -43,10 +43,10 @@ else {
 
 
     <script>
-    facebook.init({
-      appID: config.FBID,
-      ver: config.FBVer,
-    });
+        facebook.init({
+            appID: config.FBID,
+            ver: config.FBVer,
+        });
     </script>
     <script>
         $(document).ready(function() {
@@ -127,21 +127,21 @@ else {
 
 <div id="wrapper">
     <!-- HEADER -->
-    <?php include "../templates/new-header.php"; ?>
+    <?php include "../templates/header.php"; ?>
     <!-- END HEADER -->
     <!-- NAV -->
-    <?php include '../templates/new-nav.php'; ?>
+    <?php include '../templates/nav.php'; ?>
     <!-- END NAV-->
 
     <!-- CONTENT -->
     <div id="content">
         <div class="container">
-        
+
             <!-- Container to hold the objects -->
             <div id="objects-display">
                 <?php items::display_grid($store_items_result); ?>
                 <div class="clear"></div>
-        	</div><!--END objects-display-->
+            </div><!--END objects-display-->
         </div><!--END container-->
     </div><!--END content-->
     <!-- END CONTENT-->
