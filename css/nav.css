@@ -20,7 +20,7 @@ nav {
     display: block;
     float: left;
     padding-top: 4px;
-    padding-right: 20px; 
+    padding-right: 20px;
     font-size: .9em;
     position: relative;
 }
@@ -93,8 +93,8 @@ nav {
     height: 0.08em;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
-     -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
 }
 
 #nav-search button:hover #magnifying-glass {

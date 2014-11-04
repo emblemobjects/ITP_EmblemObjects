@@ -9,7 +9,7 @@ include_once '../php/config.php';
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/header.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/nav.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/body.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/content.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $Dir;?>/css/footer.css">

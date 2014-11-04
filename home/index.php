@@ -30,9 +30,9 @@ else {
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
     <!--<link rel="stylesheet" type="text/css" href="../css/body.css">-->
-    <link rel="stylesheet" type="text/css" href="../css/new-header.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/header.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/new-nav.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/navigation.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
@@ -127,10 +127,10 @@ else {
 
 <div id="wrapper">
     <!-- HEADER -->
-    <?php include "../templates/new-header.php"; ?>
+    <?php include "../templates/header.php"; ?>
     <!-- END HEADER -->
     <!-- NAV -->
-    <?php include '../templates/new-nav.php'; ?>
+    <?php include '../templates/nav.php'; ?>
     <!-- END NAV-->
 
     <!-- CONTENT -->

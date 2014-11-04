@@ -3,14 +3,14 @@
  * test - ?item_id=1$detail_id=3
  */
 session_start();
-include "submit/index.php.php";
+include "submit/index.php";
 if (empty($_REQUEST['detail_id'])) {
     header("location: ../../home/index.php");
 }
 include_once '../../php/config.php';
 include_once '../../php/helper.php';
 include_once '../../php/items.php';
-$items_array = items::get_items(0, 0, 2, 0, "");
+$items_array = items::get_items(0, 0, 0, 0, "");
 
 // set valid browse
 if (empty($_REQUEST['detail_id'])) {
@@ -38,8 +38,8 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../../css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="../../css/body.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../../css/core.css">
     <link rel="stylesheet" type="text/css" href="../../css/content.css">
     <link rel="stylesheet" type="text/css" href="../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../css/customize.css">
@@ -50,7 +50,8 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
 
 <body>
 <div id="wrapper">
-    <?php include "../../templates/header.php"; ?>
+    <?php include_once "../../templates/header.php";
+    include_once '../../templates/nav.php'?>
 
 
     <!-- CONTENT -->
