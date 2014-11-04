@@ -18,7 +18,7 @@ else {
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="<?php echo DIR; ?>/favicon.ico" type="image/x-icon"/>
-    
+
     <!--External Scripts-->
     <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/handlebars-v2.0.0.js"></script>
@@ -43,9 +43,10 @@ else {
 
 
     <script>
-    facebook.init({
-      appID: config.FBID,
-    });
+        facebook.init({
+            appID: config.FBID,
+            ver: config.FBVer,
+        });
     </script>
     <script>
         $(document).ready(function() {
@@ -135,12 +136,12 @@ else {
     <!-- CONTENT -->
     <div id="content">
         <div class="container">
-        
+
             <!-- Container to hold the objects -->
             <div id="objects-display">
                 <?php items::display_grid($store_items_result); ?>
                 <div class="clear"></div>
-        	</div><!--END objects-display-->
+            </div><!--END objects-display-->
         </div><!--END container-->
     </div><!--END content-->
     <!-- END CONTENT-->
