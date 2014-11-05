@@ -69,17 +69,10 @@ echo "REQUEST ID : " . $request_id . "\n";
     $image = " [IMAGE]";
     $link = " [LINK] ";
     $enable_link = " [ENABLE_LINK] ";
-/*      $customer_name = user_table.user_first_name . user_table.user_last_name
-      $designer_name = user_table.user_first_name . user_table.user_last_name
-      $enable_link = enable_request.image_filepath
-      $image = enable_request.image_filepath
-      $link = enable_request.image_filepath
-      $designer_email = user_table.user_email";
+/*
+ * TO test email functionality, change designer_email and customer_email to your own email.
 */
-if(!filter_var($recipient, FILTER_VALIDATE_EMAIL)){
-    $emailErr= "Invalid email format";
-    $email_Ok = 0;
-}
+
 if($email_Ok == 1) {
     if ($template == "enable") {
         $to = $customer_email;
@@ -100,7 +93,7 @@ if($email_Ok == 1) {
             Note: This is a one time email, you have not been entered in any mailing list.
         </html>";
         echo "message to customer : " . $message;
-        mail($to,$subject,$message, $headers);
+        mail($to,$subject,$message);
         //TO THE DESIGNER
         $to = $designer_email;
         $subject = "New Enable Request :" . $request_id;
@@ -117,7 +110,7 @@ if($email_Ok == 1) {
         EmblemObjects Team</html>
         ";
         echo "message to designer : " . $message;
-        mail($to,$subject,$message, $headers);
+        mail($to,$subject,$message);
     } else if ($template == "pass") {
         $to = $designer_email;
         $subject = "Enable Request has Passed Enable Review";
@@ -130,7 +123,7 @@ if($email_Ok == 1) {
             Great Job!<br />
             EmblemObjects Team</html>";
         echo "Message to designer : " . $message;
-        mail($to,$subject,$message, $headers);
+        mail($to,$subject,$message);
         $to = $customer_email;
         $subject = "Your Object is READY! Request: ". $request_id;
         $message = "<html> <img src = '/images/logo.png'> <br />
@@ -142,7 +135,7 @@ if($email_Ok == 1) {
         Thank you for working with us!<br />
         EmblemObjects Team</html>";
         echo "Message to customer : " . $message;
-        mail($to,$subject,$message, $headers);
+        mail($to,$subject,$message);
     } else if ($template == "fail") {
         $to = $customer_email;
         $subject = "Your Object could not be printed: " . $request_id;
@@ -154,7 +147,7 @@ if($email_Ok == 1) {
                 See you soon!<br />
                 EmblemObjects Staff</html>";
         echo "Message to customer : " . $message;
-        mail($to,$subject,$message, $headers);
+        mail($to,$subject,$message);
         //MESSAGE TO DESIGNER
         $to = $designer_email;
         $subject = "Enable Request Failed Enable Review : " . $request_id;
@@ -166,9 +159,8 @@ if($email_Ok == 1) {
                 Keep on up the good work!<br />
                 EmblemObjects Team</html>";
         echo "Message to Designer : " . $message;
-        mail($to,$subject,$message, $headers);
+        mail($to,$subject,$message);
     }
-    echo "Message " ;
     mysqli_close($con);
 }
 ?>
