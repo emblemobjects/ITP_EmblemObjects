@@ -49,10 +49,12 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
 
 
 <body>
+<div id="fb-root"></div>
 <div id="wrapper">
-    <?php include_once "../../templates/header.php";
-    include_once '../../templates/nav.php'?>
-
+    <?php
+    include_once "../../templates/header.php";
+    include_once '../../templates/nav.php';
+    ?>
 
     <!-- CONTENT -->
     <div id="content">

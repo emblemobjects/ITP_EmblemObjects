@@ -6,25 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../../css/core.css">
-    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
     <link rel="stylesheet" type="text/css" href="nav.css">
     <link rel="stylesheet" type="text/css" href="../../css/content.css">
     <link rel="stylesheet" type="text/css" href="../../css/how-to.css"> 
-    <link rel="stylesheet" type="text/css" href="../../css/footer.css">   
+    <link rel="stylesheet" type="text/css" href="../../css/footer.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-    <style>
-        header {
-            background-color:#372f2b;
-        }
-    </style>
-    
 </head>
 
 
 <body>  
     <div id="wrapper">
-<?php include "../../templates/header.php";?>
+<?php include "header.php";?>
 <?php include "nav.php";?>
         <div style="clear:both"></div>
         
@@ -73,6 +69,6 @@
         <?php include "../../templates/footer.php";?>
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="nav.js"></script>
+     <script type="text/javascript" src="nav.js"></script>
 
 </html>

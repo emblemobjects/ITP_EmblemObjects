@@ -1,6 +1,7 @@
 body, ul, li {
     font-size:14px;
-    font-family:Arial, Helvetica, sans-serif;
+    /*font-family:Helvetica, Arial, sans-serif;*/
+    font-family: 'Raleway', sans-serif;
     line-height:21px;
     text-align:left;
 }
@@ -33,7 +34,8 @@ body, ul, li {
     display: inline-block;
     position: relative;
     cursor: default;
-    /*z-index: 500;*/
+    margin-left: 100px;
+    z-index:1;
 }
  
 .nav > li {
@@ -46,12 +48,11 @@ body, ul, li {
 .nav > li > a {
     position: relative;
     display: block;
-    z-index: 510;
+    z-index: 1;
     height: 55px;
     padding: 0 20px;
     text-align: center;
     line-height: 55px;
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 13px;
     color: #ffffff;
@@ -87,7 +88,7 @@ body, ul, li {
     visibility: hidden;
     overflow: hidden;
  
-    background: #ffffff;
+    background: #f8f8f8;
     border-radius: 0 0 3px 3px;
  
     -webkit-transition: all .3s ease .15s;
@@ -115,10 +116,12 @@ body, ul, li {
     width: 110px;
     /*background-color: #ff722b;*/
     background-color:#4b4441;
+    /*background-color: #c91b26;*/
 }
 #subcategories {
     width:90px;
     background-color:#948883;
+    /*background-color: #9c0f5f;*/
 }
 
 .nav .nav-line {
@@ -129,7 +132,6 @@ body, ul, li {
  
 .nav .nav-column h3 {
     margin: 0px 0 20px 0; 
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 14px;
     /*color: #372f2b;*/
@@ -146,7 +148,6 @@ body, ul, li {
 .nav .nav-column a li {
     display: block;
     margin: 0px 0 10px 0;
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 13px;
     color: white;
@@ -165,7 +166,6 @@ body, ul, li {
 
 .nav-img-text{
     color: #ff722b;
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
@@ -175,7 +175,7 @@ body, ul, li {
     font-size: 30px;
     float: right;
     margin-top: -61px;
-    background-color: #ff722b;
+    background-color: #4b4441;
     padding:20px 0px;
     width: 485px;
     text-align:center;
@@ -183,7 +183,7 @@ body, ul, li {
 }
 
 #nav-all-text:hover {
-    background-color: #ff8446;
+    background-color: #645a56;
     color:white;
 }
 
@@ -205,7 +205,7 @@ nav {
     display: block;
     float: left;
     padding-top: 4px;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: .9em;
     position: relative;
 }
@@ -218,12 +218,12 @@ nav {
 
 #nav-sort {
     float: right;
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     color: #ffffff;
     text-shadow: 0 0 1px rgba(0,0,0,.35);
     margin-top:14px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #nav-search {
@@ -238,7 +238,7 @@ nav {
     padding: 5px;
     padding-left: 10px;
     padding-right: 25px;
-    line-height: 20px;
+    height: 20px;
     font-size: .8em;
     margin-top:12px;
 }

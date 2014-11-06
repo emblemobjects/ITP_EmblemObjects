@@ -1,0 +1,67 @@
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+
+$(window).ready(function() {
+	// DOM
+	$('.faq p').hide();
+
+	// $('.view').on('click', function() {
+	// 	console.log('clicked view');
+	// 	$(this).removeClass('view');
+	// 	$(this).next().slideUp();
+	// });
+
+
+	$('.faq-q').on('click', function() {
+		console.log('clicked h3');
+		$(this).removeClass('faq-q');
+		$(this).addClass('view');
+		$(this).next().slideDown();
+		// $(this).addClass('faq-q');
+	});
+
+	$('.view').on('click', function() {
+		console.log('clicked view');
+		$(this).removeClass('view');
+		$(this).next().slideUp();
+		$(this).addClass('faq-q');
+	});
+
+	$('.faq p').on('click', function() {
+		$(this).slideUp();
+		$(this).prev().removeClass('view');
+	});
+	// $('.faq h3').hover(function() {
+	// 	// mouseover
+	// 	$(this).next().slideDown();
+	// }, function() {
+	// 	// mouseout
+	// 	$(this).next().slideUp();
+	// });
+	
+	$('.faq-q.view').removeClass('view')
+});
+
+</script>
+<style type="text/css">
+
+.view {
+	color: red;
+}
+
+</style>
+
+<body>
+
+<div class="faq">
+<h3 class="faq-q view">Who are designers?</h3>
+<p>Designers create the products you see on the site. They help you realize your images and desgins on design objects of your choosing.</p>
+</div>
+
+<div class="faq">
+<h3 class="faq-q view">How do you 3D print?</h3>
+<p>We use a number of commerical 3D printing services. This ensures that we give you the highest quality objects at the best value.</p>
+</div>
+
+
+</body>
