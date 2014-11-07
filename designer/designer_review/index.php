@@ -17,6 +17,27 @@
 <div id="wrapper">
     <?php include "../templates/header.php";?>
 
+<<<<<<< Updated upstream
+=======
+              <p>&nbsp</p>
+              <center>
+              <table border="0" cellpadding="1" cellspacing="1" style="width: 80%;">
+              <tbody>
+            		<tr>
+            			<td>
+                    <center>
+                    <a align="left" href="http://localhost:8080/itp460/ITP_EmblemObjects/designer/designer_list/"><button> < Back </button></a>&nbsp&nbsp&nbsp&nbsp
+                    <a align="right" href="#"><button> Next > </button></a>
+                  </center>
+                    <center>
+                      <h3>Request Information</h3>
+                    </center>
+                   <h4>
+                      <p>
+                      Time Remaining: D:1 H:12 M:32<br>
+                      Customer: Jon Doe<br>
+                      Due Date: 10/26/2014 @ 12:02 PM<br>
+>>>>>>> Stashed changes
 
     <!-- CONTENT -->
     <div id="content">

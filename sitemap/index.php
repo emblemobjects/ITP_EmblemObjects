@@ -1,8 +1,8 @@
+
 <?php
 include_once '../../php/config.php';
 ?>
 <!doctype html>
-
 
 <html lang="en">
 <head>
@@ -23,6 +23,7 @@ include_once '../../php/config.php';
       .no-line {
           text-decoration: none}
     </style>
+
 </head>
 
 
@@ -32,26 +33,36 @@ include_once '../../php/config.php';
       <table border="0" cellpadding="0" cellspacing="0" style="width: 60%; height: auto">
         <tbody>
         <tr>
-            <td>
-                <a href="../home/" class="no-line" style="font-size:20px">Home</a><br>
-                <a href="../whats-new/" class="no-line" style="font-size:20px" >What's New</a><br>
-                <a href="../how-to/" class="no-line" style="font-size:20px" >How To</a><br>
-                <a href="../shop" class="no-line" style="font-size:20px">Shop</a><br>
-                  <a href="../shop" class="tab">Accessories</a><br>
-                  <a href="../shop" class="tab">Art</a><br>
-                  <a href="../shop" class="tab">Gadgets</a><br>
-                  <a href="../shop" class="tab">Home</a><br>
-                  <a href="../shop" class="tab">Jewelry</a><br>
-                  <a href="../shop" class="tab">Novelty</a><br>
-                <a href="../shop" class="no-line" style="font-size:20px">Collections</a><br>
-                <a href="../shop" class="no-line" style="font-size:20px">Designer</a><br>
-                <a href="../shop" class="no-line" style="font-size:20px">Newest</a><br>
-                <a href="../shop" class="no-line" style="font-size:20px">Popular</a><br>
-            </td>
+          <td>
+              <a href="../home/" class="no-line" style="font-size:20px">Home</a><br>
+              <a href="../whats-new/" class="no-line" style="font-size:20px" >What's New</a><br>
+              <a href="../how-to/" class="no-line" style="font-size:20px" >How To</a><br>
+              <a href="../shop" class="no-line" style="font-size:20px">Shop</a><br>
+                <a href="../shop" class="tab">Accessories</a><br>
+                <a href="../shop" class="tab">Art</a><br>
+                <a href="../shop" class="tab">Gadgets</a><br>
+                <a href="../shop" class="tab">Home</a><br>
+                <a href="../shop" class="tab">Jewelry</a><br>
+                <a href="../shop" class="tab">Novelty</a><br>
+              <a href="../shop" class="no-line" style="font-size:20px">Collections</a><br>
+              <a href="../shop" class="no-line" style="font-size:20px">Designer</a><br>
+              <a href="../shop" class="no-line" style="font-size:20px">Newest</a><br>
+              <a href="../shop" class="no-line" style="font-size:20px">Popular</a><br>
+          </td>
         </tr>
         </tbody>
     </table>
   </center>
 
 </body>
+
+        </div>
+    </div>
+    <div style="clear:both"></div>
+
+
+    <div id="footer"></div>
+    <div style="clear:both"></div>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </html>
