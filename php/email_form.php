@@ -79,7 +79,7 @@ if($email_Ok == 1) {
         $subject = "Your Design Request Confirmation : " . $request_id ;
         $message = "
          <html>
-         <img src = '/images/logo.png'> <br />
+         <img src = '../images/favicon-color.png'> <br />
             Dear " . $customer_name .
             ", Thank you for your design request submission. Your design request number is " . $request_id .
             " and your designer is " . $designer_name .
@@ -97,7 +97,7 @@ if($email_Ok == 1) {
         //TO THE DESIGNER
         $to = $designer_email;
         $subject = "New Enable Request :" . $request_id;
-        $message = "<html> <img src = '/images/logo.png'> <br />
+        $message = "<html> <img src = '../images/favicon-color.png'> <br />
         Designer " . $designer_name . ",<br />
         Congratulations! Customer" . $customer_name . " has asked you to enable their design!.<br />
         Remember, you have 36 hours to complete this request, before it is transferred to
@@ -115,7 +115,7 @@ if($email_Ok == 1) {
         $to = $designer_email;
         $subject = "Enable Request has Passed Enable Review";
         $message = "<html>
-         <img src = '/images/logo.png'> <br />
+         <img src = '../images/favicon-color.png'> <br />
              Designer " . $designer_name . "<br />
             Your completed enable request " . $request_id . " has passed Enable Review. An
             email has been sent to the customer with order information. We hope they like the object and
@@ -126,7 +126,7 @@ if($email_Ok == 1) {
         mail($to,$subject,$message);
         $to = $customer_email;
         $subject = "Your Object is READY! Request: ". $request_id;
-        $message = "<html> <img src = '/images/logo.png'> <br />
+        $message = "<html> <img src = '../images/favicon-color.png'> <br />
         Dear " . $customer_name . "<br />
         Thanks again for your submission! Our designers have been hard at work creating your
         object. Below is a digital preview of your object and link to order. <br />
@@ -139,7 +139,7 @@ if($email_Ok == 1) {
     } else if ($template == "fail") {
         $to = $customer_email;
         $subject = "Your Object could not be printed: " . $request_id;
-        $message = "<html> <img src = '/images/logo.png'><br />
+        $message = "<html> <img src = '../images/favicon-color.png'><br />
         Dear " . $customer_name . "
         Our printer could not print you design with sufficient quality. The designer tried their best
         but technology has its limits. We will continue to work with our printers so that more design will
@@ -151,7 +151,7 @@ if($email_Ok == 1) {
         //MESSAGE TO DESIGNER
         $to = $designer_email;
         $subject = "Enable Request Failed Enable Review : " . $request_id;
-        $message = "<html></html><img src = '/images/logo.png'><br />
+        $message = "<html></html><img src = '../images/favicon-color.png'><br />
         Designer" . $designer_name . "
         Sorry, your enable did not pass out enable review. If you want to know, please contact:
         designreview@emblemobjects.com. Most likely, the detail was too fine to be printed or files is

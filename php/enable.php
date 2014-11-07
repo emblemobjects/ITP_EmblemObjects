@@ -1,9 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Angela
- * Date: 11/3/2014
- * Time: 9:11 PM
+ * Enable # ___
+ * Requested by ___
+ * Item name :
+ * Size:
+ * Material
+ * Artwork
+ * Object file
  */
 include_once 'config.php';
 class enable{
@@ -12,3 +15,5 @@ class enable{
         $sql = "SELECT * FROM enable WHERE enable_id = ";
     }
 }
+
+?>
