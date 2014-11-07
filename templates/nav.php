@@ -1,5 +1,6 @@
 <?php
-// include_once "../php/config.php";
+include_once '../php/navigation_categories.php';
+navigation::categories_to_JS(navigation::get_categories());
 ?>
 
 <!-- NAV -->
@@ -11,12 +12,15 @@
         <a href="#">Shop</a>
         <div>
             <div class="nav-column" id="categories">
-                <a href="#"><h3 class="category" id="Accessories" onmouseover="showSubcategories('Accessories');">Accessories</h3></a>
-                <a href="#"><h3 class="category" id="Art" onmouseover="showSubcategories('Art');">Art</h3></a>
-                <a href="#"><h3 class="category" id="Gadgets" onmouseover="showSubcategories('Gadgets');">Gadgets</h3></a>
-                <a href="#"><h3 class="category" id="Home" onmouseover="showSubcategories('Home');">Home</h3></a>
-                <a href="#"><h3 class="category" id="Jewelry" onmouseover="showSubcategories('Jewelry');">Jewelry</h3></a>
-                <a href="#"><h3 class="category" id="Novelty" onmouseover="showSubcategories('Novelty');">Novelty</h3></a>
+                <?php
+                $array_categories = navigation::get_categories();
+                for ($i = 0; $i < count($array_categories); $i++){
+                    $category_id = $array_categories[$i]['category_id'];
+                    $category_desc = $array_categories[$i]['category_desc'];
+                    echo "<a href='#'><h3 class='category' id='$category_id' onmouseover='showSubcategories($category_id);'>$category_desc</h3></a>";
+                }
+                ?>
+
             </div>
             <div class="nav-line"></div>
             
@@ -44,7 +48,7 @@
             </div>  
         </div>
     </li>
-    <li><a href="#">Designers</a></li>  
+    <li><a href="#">Designers</a></li>
 </ul>
 
 
@@ -69,3 +73,7 @@
 </nav><!-- end nav -->
 <!-- <div style="clear:both"></div> -->
 
+<?php
+include_once '../php/navigation_categories.php';
+navigation::get_categories();
+?>

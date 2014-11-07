@@ -261,7 +261,6 @@ class items  {
             var store = window.store || {};
 
             store.items = <?php echo $items_json; ?>; // this creates the JSON
-            console.log(store.items); //temporary, to look at the object
         </script>
         <?php
     }
