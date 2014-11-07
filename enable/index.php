@@ -5,11 +5,11 @@
 session_start();
 include "submit/index.php";
 if (empty($_REQUEST['detail_id'])) {
-    header("location: ../../home/index.php");
+    header("location: ../home/index.php");
 }
-include_once '../../php/config.php';
-include_once '../../php/helper.php';
-include_once '../../php/items.php';
+include_once '../php/config.php';
+include_once '../php/helper.php';
+include_once '../php/items.php';
 $items_array = items::get_items(0, 0, 0, 0, "");
 
 // set valid browse
@@ -37,12 +37,12 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
-    <link rel="stylesheet" type="text/css" href="../../css/core.css">
-    <link rel="stylesheet" type="text/css" href="../../css/content.css">
-    <link rel="stylesheet" type="text/css" href="../../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../css/customize.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../css/content.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/customize.css">
 
 
 </head>
@@ -50,8 +50,8 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
 
 <body>
 <div id="wrapper">
-    <?php include_once "../../templates/header.php";
-    include_once '../../templates/nav.php'?>
+    <?php include_once "../templates/header.php";
+    include_once '../templates/nav.php'?>
 
 
     <!-- CONTENT -->
@@ -99,7 +99,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <div style="clear:both"></div>
 
 
-    <?php include "../../templates/footer.php"; ?>
+    <?php include "../templates/footer.php"; ?>
 </div>
 </body>
 </html>
