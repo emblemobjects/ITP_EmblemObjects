@@ -30,7 +30,12 @@ class TwitterApi
         }
 
         $composite_key = rawurlencode($this->api_key) . ':' . rawurlencode($this->api_secret);
+
+        echo $composite_key.'<br/>';
+
         $base64 = base64_encode($composite_key);
+
+        echo $base64.'<br/>';
 
         $json = $this->request(
           [
@@ -47,6 +52,10 @@ class TwitterApi
           ]
         );
 
+        echo '<hr/>json:<br/>';
+        print_r($json);
+        echo '<br/>';
+
         $json_obj = json_decode($json);
         $this->bearer_token = $json_obj->access_token;
         return $this;
@@ -54,10 +63,17 @@ class TwitterApi
 
     protected function request($options)
     {
+      echo 'called request()...';
         $ch = curl_init();
         curl_setopt_array($ch, $options);
         $json = curl_exec($ch);
-//        $info = curl_getinfo($ch);
+
+        echo curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if( curl_getinfo($ch, CURLINFO_HTTP_CODE) !== 200) {
+          echo curl_error($ch);
+        }
+
         curl_close($ch);
 
         return $json;
@@ -86,11 +102,18 @@ class TwitterApi
      */
     public function get($path = 'statuses/user_timeline', $qs = [], $decoded = false)
     {
-        $this->last_url = self::API_ENDPOINT . $path . '.json?' . http_build_query($qs);
+        // $this->last_url = self::API_ENDPOINT . $path . '.json?' . http_build_query($qs);
+        $this->last_url = 'https://api.twitter.com/1.1/account/verify_credentials.json';
+
+        echo $this->last_url.'<br/>';
+
+        $base64_token = base64_encode($this->bearer_token);
+        echo $base64_token.'<br/>';
+
         $json = $this->request(
           [
             CURLOPT_HTTPHEADER => [
-              'Authorization: Bearer ' . $this->bearer_token,
+              'Authorization: Bearer ' . $base64_token,
               'Host: api.twitter.com',
               'Content-type: application/x-www-form-urlencoded;charset=UTF-8'
             ],
@@ -98,6 +121,9 @@ class TwitterApi
             CURLOPT_URL => $this->last_url
           ]
         );
+
+        echo '<hr/>json:<br/>';
+        var_dump($json);        
 
         return ($decoded ? json_decode($json) : $json);
     }
