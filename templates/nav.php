@@ -17,7 +17,7 @@ navigation::categories_to_JS(navigation::get_categories());
                 for ($i = 0; $i < count($array_categories); $i++){
                     $category_id = $array_categories[$i]['category_id'];
                     $category_desc = $array_categories[$i]['category_desc'];
-                    echo "<a href='#'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
+                    echo "<a href='?category_id=$category_id&subcategory_id= 0'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
                 }
                 ?>
 
@@ -30,14 +30,14 @@ navigation::categories_to_JS(navigation::get_categories());
             <div class="nav-line"></div>
             
             <div class="nav-column img-column">
-                <a href="#"><img src="<?php echo DIR; ?>/images/placeholder1.jpg" width="210px" height="170px"/>
+                <a href="?type=2"><img src="<?php echo DIR; ?>/images/placeholder1.jpg" width="210px" height="170px"/>
                 <span class="nav-img-text">UNIQUE</span></a>
             </div>
             <div class="nav-column img-column">
-                <a href="#"><img src="<?php echo DIR; ?>/images/placeholder2.jpg" width="210px" height="170px"/>
+                <a href="?type=1"><img src="<?php echo DIR; ?>/images/placeholder2.jpg" width="210px" height="170px"/>
                 <span class="nav-img-text">DESIGN</span></a>
             </div>
-            <a href="#"><span class="nav-img-text" id="nav-all-text">ALL</span></a>
+            <a href="?type=0"><span class="nav-img-text" id="nav-all-text">ALL</span></a>
         </div>
     </li>
     <li>
@@ -54,17 +54,35 @@ navigation::categories_to_JS(navigation::get_categories());
 
 <div id="nav-search">
     <form method="get" action="<?php echo DIR; ?>/home/">
-            <input class="ml-3" type="text" name="search" placeholder="Search..."/>
+        <?php
+        if ($_SESSION['search'] == ""){
+            $search = "";
+        }
+        else {
+            $search = $_SESSION['search'];
+        }
+        ?>
+            <input class="ml-3" type="text" name="search" placeholder = "Search..." value="<?php echo $search ?>"/>
             <button type="sumbit"><div id="magnifying-glass"></div></button>
     </form>
 </div>
 
 <div id="nav-sort">
-    <div class="nav-btn nav-btn-active">
-        <a href="#newest">Newest</a>
+    <?php
+    if ($_SESSION['order_by'] == 2){
+        $newestClass = "nav-btn-active";
+        $popularClass = "";
+    }
+    else {
+        $popularClass = "nav-btn-active";
+        $newestClass = "";
+    }
+    ?>
+    <div class="nav-btn <?php echo $newestClass ?>">
+        <a href="?order_by=2">Newest</a>
     </div>
-    <div class="nav-btn">
-        <a href="#popular">Popular</a>
+    <div class="nav-btn <?php echo $popularClass ?>">
+        <a href="?order_by=1">Popular</a>
     </div>
 </div>
 

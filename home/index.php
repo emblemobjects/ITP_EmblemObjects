@@ -1,13 +1,36 @@
 <?php
+session_start();
+if (empty($_SESSION['isStarted'])){
+    $_SESSION['isStarted'] = 1;
+    $_SESSION['category_id'] = 0;
+    $_SESSION['subcategory_id'] = 0;
+    $_SESSION['type'] = 0;
+    $_SESSION['order_by'] = 0;
+    $_SESSION['search'] = "";
+    echo "starting session";
+}
 include_once '../php/config.php';
 include_once '../php/items.php';
-if (empty($_REQUEST['search'])){
-    $store_items_result = items::get_items(0, 0, 0, 0, "");
+
+if (!empty($_REQUEST['category_id'])){
+    $_SESSION['category_id'] = $_REQUEST['category_id'];
 }
-else {
-    $store_items_result = items::get_items(0, 0, 0, 0, $_REQUEST['search']);
+if (!empty($_REQUEST['subcategory_id'])){
+    $_SESSION['subcategory_id'] = $_REQUEST['subcategory_id'];
+}
+if (!empty($_REQUEST['type'])){
+    $_SESSION['type'] = $_REQUEST['type'];
+}
+if (!empty($_REQUEST['order_by'])){
+    $_SESSION['order_by'] = $_REQUEST['order_by'];
+}
+if (!empty($_REQUEST['search'])){
+    $_SESSION['search'] = $_REQUEST['search'];
 }
 
+
+$store_items_result = items::get_items($_SESSION['category_id'], $_SESSION['subcategory_id'], $_SESSION['type'], $_SESSION['order_by'], $_SESSION['search']);
+echo $_SESSION['category_id'].$_SESSION['subcategory_id'].$_SESSION['type'].$_SESSION['order_by']. $_SESSION['search'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
