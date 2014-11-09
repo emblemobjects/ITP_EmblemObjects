@@ -137,6 +137,9 @@ body, ul, li {
 .nav .nav-column h3:hover {
     color: orange;
 }
+.nav .nav-subcategory:hover{
+    color: orange;
+}
  
 .nav .nav-column h3.orange { color: #ff722b; }
  

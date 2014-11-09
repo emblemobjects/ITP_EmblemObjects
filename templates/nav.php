@@ -17,7 +17,7 @@ navigation::categories_to_JS(navigation::get_categories());
                 for ($i = 0; $i < count($array_categories); $i++){
                     $category_id = $array_categories[$i]['category_id'];
                     $category_desc = $array_categories[$i]['category_desc'];
-                    echo "<a href='#'><h3 class='category' id='$category_id' onmouseover='showSubcategories($category_id);'>$category_desc</h3></a>";
+                    echo "<a href='#'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
                 }
                 ?>
 
