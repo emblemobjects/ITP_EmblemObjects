@@ -49,19 +49,19 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
         <div class="container" id="container">
             <div id="info">
                 <div id="info-title">
-                    <span>ENABLE #<strong><?php echo $enable_info['enable_id']?></span></strong><br>
-                    requested by |&nbsp;<strong><?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?></strong><br>
+                    <strong><span>ENABLE #<?php echo $enable_info['enable_id']?></span></strong><br>
+                    <strong>requested by |&nbsp;</strong><?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?><br>
                 </div>
                 <div id="info-char">
-                    item name |&nbsp;<strong><?php echo $enable_info['item_name']?></strong><br>
-                    size |&nbsp;<strong><?php echo $enable_info['size']?></strong><br>
-                    material |&nbsp;<strong><?php echo $enable_info['material_name']?></strong><br>
-                    date submitted |&nbsp;<strong><?php echo $enable_info['date_submitted']?></strong><br>
+                    <strong>item name |&nbsp;</strong><?php echo $enable_info['item_name']?><br>
+                    <strong>size |&nbsp;</strong><?php echo $enable_info['size']?><br>
+                        <strong>material |&nbsp;</strong><?php echo $enable_info['material_name']?><br>
+                            <strong>date submitted |&nbsp;</strong><?php echo $enable_info['date_submitted']?><br>
                 </div>
                 <div id="info-files">
-                    due date |&nbsp;<strong><?php echo $enable_info['due_date']?></strong><br>
-                    artwork |&nbsp;<strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a></strong><br>
-                    message |&nbsp;<strong><?php echo $enable_info['message']?></strong><br>
+                    <strong>due date |&nbsp;</strong><?php echo $enable_info['due_date']?><br>
+                        <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a><br>
+                            <strong>message |&nbsp;</strong><?php echo $enable_info['message']?><br>
 
                 </div>
                 <br style="clear:both"/>
