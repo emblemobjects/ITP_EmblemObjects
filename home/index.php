@@ -1,19 +1,16 @@
 <?php
+session_start();
 include_once '../php/config.php';
 include_once '../php/items.php';
-if (empty($_REQUEST['search'])){
-    $store_items_result = items::get_items(0, 0, 0, 0, "");
-}
-else {
-    $store_items_result = items::get_items(0, 0, 0, 0, $_REQUEST['search']);
-}
+include_once '../php/navigation_categories.php';
+
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
-    items::to_JS($store_items_result);
+
     ?>
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -35,7 +32,7 @@ else {
     <!--<link rel="stylesheet" type="text/css" href="../css/body.css">-->
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/header.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+
     <!-- <link rel="stylesheet" type="text/css" href="../css/navigation.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
@@ -43,6 +40,7 @@ else {
     <link rel="stylesheet" type="text/css" href="../css/items-grid.css">
     <link rel="stylesheet" type="text/css" href="../css/overlay.css">
     <link rel="stylesheet" type="text/css" href="../css/item-info.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
 
 
     <script>

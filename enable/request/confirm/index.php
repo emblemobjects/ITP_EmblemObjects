@@ -1,6 +1,7 @@
 <?php
 include_once '../php/config.php';
 include_once '../php/helper.php';
+include_once '../php/navigation_categories.php';
 
 //Catching people who got here without filling out the form
 if (empty($_REQUEST['firstName'])) {
@@ -79,15 +80,15 @@ if (mysqli_query($con, $sql_customer_insert)){
 
 
 //Inserts the enable request into the table
-$sql_insert = "INSERT INTO enable_request (user_id, date_submitted, item_id, material_id, size, image_filepath, due_date, message, status) VALUES ('$user_id', '{$current_date}', '$item_id', '$material_id', '$size', '$image_filepath', '{$due_date}', '$message', '$status')";
+$sql_insert = "INSERT INTO enable (user_id, date_submitted, item_id, material_id, size, image_filepath, due_date, message, status) VALUES ('$user_id', '{$current_date}', '$item_id', '$material_id', '$size', '$image_filepath', '{$due_date}', '$message', '$status')";
 if (mysqli_query($con, $sql_insert)){
-    $sql_enable_id = "SELECT request_id FROM enable_request WHERE date_submitted = '$current_date'";
+    $sql_enable_id = "SELECT enable_id FROM enable WHERE date_submitted = '$current_date'";
     $result_enable_id = mysqli_query($con, $sql_enable_id);
     if (!$result_enable_id) {
         exit('$result_enable_id error: ' . mysqli_error($con));
     }
     while ($r = mysqli_fetch_array($result_enable_id)){
-        $enable_id = $r['request_id'];//Needed in the email/text
+        $enable_id = $r['enable_id'];//Needed in the email/text
     }
 } else {
     echo mysqli_error($con);
@@ -108,7 +109,7 @@ $upload_message = $status_array[1];
 
 if ($uploadOk == 1){
     $image_filepath = $upload_message; // Update the order's image file path
-    $sql_update = "UPDATE enable_request SET image_filepath = '$image_filepath' WHERE request_id = '$enable_id'";
+    $sql_update = "UPDATE enable SET image_filepath = '$image_filepath' WHERE enable_id = '$enable_id'";
     mysqli_query($con, $sql_update);
     mysqli_commit($con);
     mysqli_autocommit($con, TRUE);
@@ -151,9 +152,8 @@ session_destroy();
     <?php include "../templates/header.php"; ?>
     <div id="content">
         <div id="confirmationContent">
-            <h1>Your Design Request Confirmation:</h1>
-    <span><p>Dear <strong><?php echo $firstName . " " . $lastName ?></strong>,
-            <br/>
+            <h1 style="text-align:left;">ENABLE REQUEST CONFIRMATION #<?php echo $enable_id ?></h1>
+    <span>
         <p>Thank you for your design request submission. Your design request number is <strong><?php echo $enable_id ?></strong> and your designer is <strong><?php echo $designer_name ?></strong>. Your designer will get
             to work on your design right away, turning your artwork into a unique product created just for you.</p>
         <p>Please check the email you provided: <strong><?php echo $email ?></strong> for a confirmation message.</p>

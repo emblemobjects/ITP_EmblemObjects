@@ -10,6 +10,7 @@ if (empty($_REQUEST['detail_id'])) {
 include_once '../../php/config.php';
 include_once '../../php/helper.php';
 include_once '../../php/items.php';
+include_once '../../php/navigation_categories.php';
 $items_array = items::get_items(0, 0, 0, 0, "");
 
 // set valid browse

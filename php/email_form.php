@@ -5,7 +5,7 @@ Function that takes in the email type, designer name, enable ID, and a recipient
  * */
 
 //variables from the form
-$recipient = $template = $designer_id = $request_id = "";
+$recipient = $template = $designer_id = $enable_id = "";
 //variables from SQL Server
 $customer_name = $designer_name = $designer_email = $enable_link = $image = $link = $customer_email ="";
 //variables from PHP form
@@ -21,11 +21,11 @@ function test_input($data){
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 //    $recipient = test_input($_REQUEST["recipient"]);
     $template = test_input($_REQUEST["template"]);
-    $request_id = test_input($_REQUEST["request_id"]);
+    $enable_id = test_input($_REQUEST["enable_id"]);
 }
 //echo "RECIPIENT : " . $recipient . "\n";
 echo "TEMPLATE : " . $template . "\n";
-echo "REQUEST ID : " . $request_id . "\n";
+echo "REQUEST ID : " . $enable_id . "\n";
 //make sure the email is a valid format
 //get variables from the form/ SQL database
 
@@ -35,9 +35,9 @@ echo "REQUEST ID : " . $request_id . "\n";
  * use WHERE ,AND if you have conditions to search inside the table
  */
     $sql_customer = "SELECT user_first_name, user_last_name, user_email
-            FROM user_table, enable_request
-            WHERE enable_request.user_id = user_table.user_id
-            AND enable_request.request_id = $request_id";
+            FROM user_table, enable
+            WHERE enable.user_id = user_table.user_id
+            AND enable.enable_id = $enable_id";
 //stores the variables into $result, $con = connection, $sql = query
     $customer_result = mysqli_query($con, $sql_customer);
 //while loop, mysqli_fetch_array(variable ), checks the array for specific variables
@@ -49,8 +49,8 @@ echo "REQUEST ID : " . $request_id . "\n";
     }
 //fetch the ID
     $sql_item = "SELECT item_id
-                FROM enable_request
-                WHERE request_id = $request_id";
+                FROM enable
+                WHERE enable_id = $enable_id";
     $item_result = mysqli_query($con, $sql_item);
     while($rowI = mysqli_fetch_array($item_result)){
         $item_id = $rowI['item_id'];
@@ -76,12 +76,12 @@ echo "REQUEST ID : " . $request_id . "\n";
 if($email_Ok == 1) {
     if ($template == "enable") {
         $to = $customer_email;
-        $subject = "Your Design Request Confirmation : " . $request_id ;
+        $subject = "Your Design Request Confirmation : " . $enable_id ;
         $message = "
          <html>
          <img src = '../images/favicon-color.png'> <br />
             Dear " . $customer_name .
-            ", Thank you for your design request submission. Your design request number is " . $request_id .
+            ", Thank you for your design request submission. Your design request number is " . $enable_id .
             " and your designer is " . $designer_name .
             ". Your designer will get to work on your design right away, turning your artwork into a unique product created just for you.
             <br>Within 48 hours, you will receive another email from EmblemObjects.com with your
@@ -96,7 +96,7 @@ if($email_Ok == 1) {
         mail($to,$subject,$message);
         //TO THE DESIGNER
         $to = $designer_email;
-        $subject = "New Enable Request :" . $request_id;
+        $subject = "New Enable Request :" . $enable_id;
         $message = "<html> <img src = '../images/favicon-color.png'> <br />
         Designer " . $designer_name . ",<br />
         Congratulations! Customer" . $customer_name . " has asked you to enable their design!.<br />
@@ -117,7 +117,7 @@ if($email_Ok == 1) {
         $message = "<html>
          <img src = '../images/favicon-color.png'> <br />
              Designer " . $designer_name . "<br />
-            Your completed enable request " . $request_id . " has passed Enable Review. An
+            Your completed enable request " . $enable_id . " has passed Enable Review. An
             email has been sent to the customer with order information. We hope they like the object and
             buy it. Keep up the good work.<br />
             Great Job!<br />
@@ -125,7 +125,7 @@ if($email_Ok == 1) {
         echo "Message to designer : " . $message;
         mail($to,$subject,$message);
         $to = $customer_email;
-        $subject = "Your Object is READY! Request: ". $request_id;
+        $subject = "Your Object is READY! Request: ". $enable_id;
         $message = "<html> <img src = '../images/favicon-color.png'> <br />
         Dear " . $customer_name . "<br />
         Thanks again for your submission! Our designers have been hard at work creating your
@@ -138,7 +138,7 @@ if($email_Ok == 1) {
         mail($to,$subject,$message);
     } else if ($template == "fail") {
         $to = $customer_email;
-        $subject = "Your Object could not be printed: " . $request_id;
+        $subject = "Your Object could not be printed: " . $enable_id;
         $message = "<html> <img src = '../images/favicon-color.png'><br />
         Dear " . $customer_name . "
         Our printer could not print you design with sufficient quality. The designer tried their best
@@ -150,7 +150,7 @@ if($email_Ok == 1) {
         mail($to,$subject,$message);
         //MESSAGE TO DESIGNER
         $to = $designer_email;
-        $subject = "Enable Request Failed Enable Review : " . $request_id;
+        $subject = "Enable Request Failed Enable Review : " . $enable_id;
         $message = "<html></html><img src = '../images/favicon-color.png'><br />
         Designer" . $designer_name . "
         Sorry, your enable did not pass out enable review. If you want to know, please contact:
