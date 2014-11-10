@@ -23,11 +23,7 @@ class enable
 
     public static function get_request_info($request_id)
     {
-       $sql = "SELECT * FROM enable WHERE enable_id = ";
-    }
-    public static function get_enable_info($request_id)
-    {//gets the request ID and enable info
-
+       $sql = "SELECT * FROM enable WHERE enable_id =";
     }
     public static function approve_request($request_id)
     {

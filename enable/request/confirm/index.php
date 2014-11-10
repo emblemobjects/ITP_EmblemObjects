@@ -1,6 +1,7 @@
 <?php
 include_once '../php/config.php';
 include_once '../php/helper.php';
+include_once '../php/navigation_categories.php';
 
 //Catching people who got here without filling out the form
 if (empty($_REQUEST['firstName'])) {

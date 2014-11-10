@@ -6,6 +6,7 @@ session_start();
 include_once '../php/config.php';
 include_once '../php/helper.php';
 include_once '../php/items.php';
+include_once '../php/navigation_categories.php';
 ?>
 
 <!DOCTYPE html>

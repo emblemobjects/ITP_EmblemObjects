@@ -1,52 +1,16 @@
 <?php
 session_start();
-if (empty($_SESSION['isStarted'])){
-    $_SESSION['isStarted'] = 1;
-    $_SESSION['category_id'] = 0;
-    $_SESSION['subcategory_id'] = 0;
-    $_SESSION['type'] = 0;
-    $_SESSION['order_by'] = 0;
-    $_SESSION['search'] = "";
-    echo "starting session";
-}
 include_once '../php/config.php';
 include_once '../php/items.php';
-
-if (!empty($_REQUEST['category_id'])){
-    if ($_REQUEST['category_id']== "all"){
-        $_SESSION['category_id'] = 0;
-    }
-    $_SESSION['category_id'] = $_REQUEST['category_id'];
-    echo "reset category";
-}
-if (!empty($_REQUEST['subcategory_id'])){
-    if ($_REQUEST['subcategory_id']== "all"){
-        $_SESSION['subcategory_id'] = 0;
-    }
-    $_SESSION['subcategory_id'] = $_REQUEST['subcategory_id'];
-}
-if (!empty($_REQUEST['type'])){
-    if ($_REQUEST['type']== "all"){
-        $_SESSION['type'] = 0;
-    }
-    $_SESSION['type'] = $_REQUEST['type'];
-}
-if (!empty($_REQUEST['order_by'])){
-    $_SESSION['order_by'] = $_REQUEST['order_by'];
-}
-if (!empty($_REQUEST['search'])){
-    $_SESSION['search'] = $_REQUEST['search'];
-}
+include_once '../php/navigation_categories.php';
 
 
-$store_items_result = items::get_items($_SESSION['category_id'], $_SESSION['subcategory_id'], $_SESSION['type'], $_SESSION['order_by'], $_SESSION['search']);
-echo $_SESSION['category_id'].$_SESSION['subcategory_id'].$_SESSION['type'].$_SESSION['order_by']. $_SESSION['search'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
-    items::to_JS($store_items_result);
+
     ?>
     <title>EmblemObjects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

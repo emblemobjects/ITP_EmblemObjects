@@ -1,6 +1,41 @@
 <?php
-include_once '../php/navigation_categories.php';
+if (empty($_SESSION['isStarted'])){
+    $_SESSION['isStarted'] = 1;
+    $_SESSION['category_id'] = 0;
+    $_SESSION['subcategory_id'] = 0;
+    $_SESSION['type'] = 0;
+    $_SESSION['order_by'] = 0;
+    $_SESSION['search'] = "";
+    echo "starting session";
+}
+if (!empty($_REQUEST['category_id'])){
+    if ($_REQUEST['category_id']== "all"){
+        $_SESSION['category_id'] = 0;
+    }
+    $_SESSION['category_id'] = $_REQUEST['category_id'];
+}
+if (!empty($_REQUEST['subcategory_id'])){
+    if ($_REQUEST['subcategory_id']== "all"){
+        $_SESSION['subcategory_id'] = 0;
+    }
+    $_SESSION['subcategory_id'] = $_REQUEST['subcategory_id'];
+}
+if (!empty($_REQUEST['type'])){
+    if ($_REQUEST['type']== "all"){
+        $_SESSION['type'] = 0;
+    }
+    $_SESSION['type'] = $_REQUEST['type'];
+}
+if (!empty($_REQUEST['order_by'])){
+    $_SESSION['order_by'] = $_REQUEST['order_by'];
+}
+if (!empty($_REQUEST['search'])){
+    $_SESSION['search'] = $_REQUEST['search'];
+}
+
+$store_items_result = items::get_items($_SESSION['category_id'], $_SESSION['subcategory_id'], $_SESSION['type'], $_SESSION['order_by'], $_SESSION['search']);
 navigation::categories_to_JS(navigation::get_categories());
+items::to_JS($store_items_result);
 ?>
 
 <!-- NAV -->
@@ -92,6 +127,5 @@ navigation::categories_to_JS(navigation::get_categories());
 <!-- <div style="clear:both"></div> -->
 
 <?php
-include_once '../php/navigation_categories.php';
 navigation::get_categories();
 ?>
