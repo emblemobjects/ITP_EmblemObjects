@@ -15,8 +15,8 @@
 }
 #reivew-title {
     width:100%;
-    border-bottom: solid 1px #f2b139;
-    padding-bottom: 10px;
+    /*border-bottom: solid 1px #f2b139;*/
+    /*padding-bottom: 10px;*/
 }
 #review-title span {
     font-size:2em;
@@ -28,18 +28,33 @@
 }
 #item-properties {
     width:50%;
-    float:left;
+    float:right;
     padding-top: 10px;
 }
 #review-close {
     width:100%;
-    border-top: solid 1px #f2b139;
-    padding-top: 10px;
+    /*border-top: solid 1px #f2b139;*/
+    /*padding-top: 10px;*/
 }
-.req-files {
+.gray-subtitle-bar {
     color:white;
     margin-bottom: 0px;
     padding:6px 6px 6px 10px;
     background-color:#999999;
     font-weight: 600;
 }
+
+#approve-button {
+    float: left;
+    margin-left: 250px;
+    background-color: #999999;
+}
+
+#reject-button {
+    float: right;
+    margin-right: 250px;
+    background-color: #999999;
+}
+
+
+

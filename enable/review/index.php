@@ -4,9 +4,9 @@
  */
 session_start();
 include "submit/index.php";
-//if (empty($_REQUEST['detail_id'])) {
-//    header("location: ../../home/index.php");
-//}
+if (empty($_REQUEST['detail_id'])) {
+    header("location: ../../home/index.php");
+}
 include_once '../../php/config.php';
 include_once '../../php/helper.php';
 include_once '../../php/items.php';

@@ -50,6 +50,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
             <div id="review">
                 <div id="review-title">
                     <strong><span>ENABLE #<?php echo $enable_info['enable_id']?> has been approved.</span></strong><br />
+                    <hr style="border: solid 1px #f2b139; margin: 7px;">
                 </div>
                 <div id="item-info">
                     <strong>requested by |&nbsp;</strong><?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?><br />
@@ -66,6 +67,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                 <br style="clear:both"/>
                 <div id="review-close">
                     <br />
+                    <hr style="border: solid 1px #f2b139; margin: 7px;">
                     <p>An email will now be sent to alert the designer that their design has been approved.</p>
                 </div>
             </div>
