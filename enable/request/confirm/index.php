@@ -151,9 +151,8 @@ session_destroy();
     <?php include "../templates/header.php"; ?>
     <div id="content">
         <div id="confirmationContent">
-            <h1>Your Design Request Confirmation:</h1>
-    <span><p>Dear <strong><?php echo $firstName . " " . $lastName ?></strong>,
-            <br/>
+            <h1 style="text-align:left;">ENABLE REQUEST CONFIRMATION #<?php echo $enable_id ?></h1>
+    <span>
         <p>Thank you for your design request submission. Your design request number is <strong><?php echo $enable_id ?></strong> and your designer is <strong><?php echo $designer_name ?></strong>. Your designer will get
             to work on your design right away, turning your artwork into a unique product created just for you.</p>
         <p>Please check the email you provided: <strong><?php echo $email ?></strong> for a confirmation message.</p>
