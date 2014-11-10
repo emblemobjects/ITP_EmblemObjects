@@ -15,7 +15,6 @@ include_once '../../php/enable.php';
 //}
 $enable_info = enable::get_request_info($_REQUEST['enable_id']);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -57,28 +56,28 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
 
                 <div class="gray-subtitle-bar">Order Info</div>
                 <div id="item-info">
-                    <strong>requested by: &nbsp;</strong><?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?><br />
-                    <strong>date submitted: &nbsp;</strong><?php echo $enable_info['date_submitted']?><br />
-                    <strong>due date: &nbsp;</strong><?php echo $enable_info['due_date']?><br />
-                    <strong>message: &nbsp;</strong><?php echo $enable_info['message']?><br />
+                    <strong>requested by:   &nbsp;</strong> <?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?><br />
+                    <strong>date submitted: &nbsp;</strong> <?php echo $enable_info['date_submitted']?><br />
+                    <strong>due date:       &nbsp;</strong> <?php echo $enable_info['due_date']?><br />
+                    <strong>message:        &nbsp;</strong> <?php echo $enable_info['message']?><br />
                 </div>
 
                 <br style="clear:both"/>
 
                 <div class="gray-subtitle-bar">Object Info</div>
-
                 <div id="item-info">
-                    <strong>item name: &nbsp;</strong><?php echo $enable_info['item_name']?><br />
-                    <strong>size: &nbsp;</strong><?php echo $enable_info['size']?><br />
-                    <strong>material: &nbsp;</strong><?php echo $enable_info['material_name']?><br />
+                    <strong>item name:  &nbsp;</strong>     <?php echo $enable_info['item_name']?><br />
+                    <strong>size:       &nbsp;</strong>     <?php echo $enable_info['size']?><br />
+                    <strong>material:   &nbsp;</strong>     <?php echo $enable_info['material_name']?><br />
+                    <strong>price:      &nbsp;</strong>     <?php echo $enable_info['price']?><br />
                 </div>
                 <br style="clear:both"/>
 
                 <div class="gray-subtitle-bar">Renderings</div>
                 <div class="item-info">
-                    <strong>1: &nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">enabled object</a><br />
-                    <strong>2: &nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">figure</a><br />
-                    <strong>3: &nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">back-up object (optional)</a><br />
+                    <strong>1: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">  enabled object</a><br />
+                    <strong>2: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">  figure</a><br />
+                    <strong>3: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">  back-up object (optional)</a><br />
                 </div>
             </div>
 
@@ -91,7 +90,6 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
             <div id="reject-button">
                 <strong><a class="click-me" href="reject/index.php">REJECT</a></strong>
             </div>
-
 
         </div>
     </div>

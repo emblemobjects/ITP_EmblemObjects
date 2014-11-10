@@ -55,13 +55,13 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                 <div id="info-char">
                     <strong>item name |&nbsp;</strong><?php echo $enable_info['item_name']?><br>
                     <strong>size |&nbsp;</strong><?php echo $enable_info['size']?><br>
-                        <strong>material |&nbsp;</strong><?php echo $enable_info['material_name']?><br>
-                            <strong>date submitted |&nbsp;</strong><?php echo $enable_info['date_submitted']?><br>
+                    <strong>material |&nbsp;</strong><?php echo $enable_info['material_name']?><br>
+                    <strong>date submitted |&nbsp;</strong><?php echo $enable_info['date_submitted']?><br>
                 </div>
                 <div id="info-files">
                     <strong>due date |&nbsp;</strong><?php echo $enable_info['due_date']?><br>
-                        <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a><br>
-                            <strong>message |&nbsp;</strong><?php echo $enable_info['message']?><br>
+                    <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a><br>
+                    <strong>message |&nbsp;</strong><?php echo $enable_info['message']?><br>
 
                 </div>
                 <br style="clear:both"/>
