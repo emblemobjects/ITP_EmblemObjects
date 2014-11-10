@@ -1,50 +1,9 @@
 <?php
-if (empty($_SESSION['isStarted'])){
-    $_SESSION['isStarted'] = 1;
-    $_SESSION['category_id'] = 0;
-    $_SESSION['subcategory_id'] = 0;
-    $_SESSION['type'] = 0;
-    $_SESSION['order_by'] = 0;
-    $_SESSION['search'] = "";
-    echo "starting session";
-}
-if (!empty($_REQUEST['category_id'])){
-    if ($_REQUEST['category_id']== "all"){
-        $_SESSION['category_id'] = 0;
-    }
-    $_SESSION['category_id'] = $_REQUEST['category_id'];
-}
-if (!empty($_REQUEST['subcategory_id'])){
-    if ($_REQUEST['subcategory_id']== "all"){
-        $_SESSION['subcategory_id'] = 0;
-    }
-    $_SESSION['subcategory_id'] = $_REQUEST['subcategory_id'];
-}
-if (!empty($_REQUEST['type'])){
-    if ($_REQUEST['type']== "all"){
-        $_SESSION['type'] = 0;
-    }
-    $_SESSION['type'] = $_REQUEST['type'];
-}
-if (!empty($_REQUEST['order_by'])){
-    $_SESSION['order_by'] = $_REQUEST['order_by'];
-}
-if (!empty($_REQUEST['search'])){
-    $_SESSION['search'] = $_REQUEST['search'];
-}
-
-$store_items_result = items::get_items($_SESSION['category_id'], $_SESSION['subcategory_id'], $_SESSION['type'], $_SESSION['order_by'], $_SESSION['search']);
+include_once '../php/navigation_categories.php';
 navigation::categories_to_JS(navigation::get_categories());
-items::to_JS($store_items_result);
 ?>
 
 <!-- NAV -->
-    <script>
-        var directory = '<?php echo DIR ?>';
-    </script>
-    <script type="text/javascript" src="<?php echo DIR; ?>/js/nav.js"></script>
-
-
 <nav>
 <div class="container">
 
@@ -52,13 +11,13 @@ items::to_JS($store_items_result);
     <li>
         <a href="#">Shop</a>
         <div>
-            <div class="nav-column dark-nav-color" id="categories">
+            <div class="nav-column" id="categories">
                 <?php
                 $array_categories = navigation::get_categories();
                 for ($i = 0; $i < count($array_categories); $i++){
                     $category_id = $array_categories[$i]['category_id'];
                     $category_desc = $array_categories[$i]['category_desc'];
-                    echo "<a href='".DIR."/home/index.php?category_id=$category_id&subcategory_id= 0'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
+                    echo "<a href='?category_id=$category_id&subcategory_id= 0'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
                 }
                 ?>
 
@@ -71,29 +30,31 @@ items::to_JS($store_items_result);
             <div class="nav-line"></div>
             
             <div class="nav-column img-column">
-                <a href="?type=2"><img src="<?php echo DIR; ?>/images/placeholder1.jpg" width="190px" height="150px" class="nav-object-image"/>
+                <a href="?type=2"><img src="<?php echo DIR; ?>/images/placeholder1.jpg" width="200px" height="160px"/>
                 <span class="nav-img-text">UNIQUE</span></a>
             </div>
             <div class="nav-column img-column">
-                <a href="?type=1"><img src="<?php echo DIR; ?>/images/placeholder2.jpg" width="190px" height="150px" class="nav-object-image"/>
+                <a href="?type=1"><img src="<?php echo DIR; ?>/images/placeholder2.jpg" width="200px" height="160px"/>
                 <span class="nav-img-text">DESIGN</span></a>
             </div>
-            <a href="?type=all"><span class="nav-img-text" id="nav-all-text">ALL</span></a>
+            <a href="?type=0"><span class="nav-img-text" id="nav-all-text">ALL</span></a>
         </div>
     </li>
     <li>
         <a href="#">Collections</a>
         <div>
-            <div class="nav-column dark-nav-color">
-                <a href="#"><h3>Launch Collection</h3></a>
+            <div class="nav-column">
+                <a href="#"><h3 style="color:#888">Launch Collection</h3></a>
+                <a href="#"><h3 style="color:#888">Launch Collection</h3></a>
+                <a href="#"><h3 style="color:#888">Launch Collection</h3></a>
             </div>  
         </div>
     </li>
     <li>
         <a href="#">Designers</a>
         <div>
-            <div class="nav-column dark-nav-color">
-                <a href="#"><h3>Jacob Blitzer</h3></a>
+            <div class="nav-column">
+                <a href="#"><h3 style="color:#888">Jacob Blitzer</h3></a>
             </div>  
         </div>
     </li>
@@ -140,5 +101,6 @@ items::to_JS($store_items_result);
 <!-- <div style="clear:both"></div> -->
 
 <?php
+include_once '../php/navigation_categories.php';
 navigation::get_categories();
 ?>

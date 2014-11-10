@@ -79,7 +79,6 @@ body, ul, li {
     position: absolute;
     display: block;
     width: 765px;
-    height:300px;
     top: 35px;
     left: 0;
  
@@ -90,11 +89,11 @@ body, ul, li {
     background: #fff;
     border-radius: 0 0 3px 3px;
  
-    -webkit-transition: all .3s ease .15s;
-    -moz-transition: all .3s ease .15s;
-    -o-transition: all .3s ease .15s;
-    -ms-transition: all .3s ease .15s;
-    transition: all .3s ease .15s;
+    -webkit-transition: all .1s ease .05s;
+    -moz-transition: all .1s ease .05s;
+    -o-transition: all .1s ease .05s;
+    -ms-transition: all .1s ease .05s;
+    transition: all .1s ease .05s;
 }
 
 .nav > li:hover > div {
@@ -107,32 +106,45 @@ body, ul, li {
 /* Styling the content */
 .nav .nav-column {
     float: left;
-    height:260px;
+    height:100%;
     padding:20px;
 }
 
 #categories {
     width: 110px;
-    background-color:#4b4441;
 }
+
 #subcategories {
     width:90px;
     background-color:#948883;
 }
 
+.nav .dark-nav-color {
+    background-color:#4b4441;
+    color: white;
+}
+
 .nav .nav-line {
     float:left;
     border-left: 0px solid #fff;
-    height:100%;
 }
  
 .nav .nav-column h3 {
-    margin: 0px 0 20px 0; 
+    margin: 5px 0 5px 0; 
     font-weight: bold;
     font-size: 14px;
     color:white;
     text-transform: uppercase;
 }
+
+.nav .nav-column h3:hover {
+    color: orange;
+}
+.nav .nav-subcategory:hover{
+    color: orange;
+}
+ 
+.nav .nav-column h3.orange { color: #ff722b; }
  
 .nav .nav-column a li {
     display: block;
@@ -141,9 +153,7 @@ body, ul, li {
     font-size: 13px;
     color: white;
 }
-.nav .nav-subcategory:hover{
-    color: orange;
-}
+
 
 .img-column {
     text-align: center;
@@ -152,14 +162,24 @@ body, ul, li {
 }
 
 .img-column:hover span {
-    color:orange;
+    color:#ff722b;
+}
+
+.nav-object-image {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.nav-object-image:hover {
+    box-shadow: 10px 10px 5px #cccccc;
 }
 
 .nav-img-text{
-    color: #ff722b;
+    color: black;
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
+    margin-top:10px;
+    display: inline-block;
 }
 
 #nav-all-text {
