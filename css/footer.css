@@ -9,17 +9,57 @@
 
 /* social icons container */
 #footer div {
-    width: 100%;
+    width: 160px;
     height: 100px;
     text-align:center;
+    margin:auto;
 }
 
 /* each individual icon */
-#footer div img {
+#footer div div {
     margin: 0px 0px 15px 15px;
+    width:35px;
+    height:35px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
+}
+#twitter {
+    background-image: url('../images/icon_twitter.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    float:left;
+}
+#facebook {
+    background-image: url('../images/icon_facebook.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    float:left;
+    margin: 0px 0px 15px 0px;
+}
+#pinterest {
+    background-image: url('../images/icon_pinterest.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    float:left;
+}
+#twitter:hover {
+    background-image: url('../images/icon_twitter_color.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    float:left;
+}
+#facebook:hover {
+    background-image: url('../images/icon_facebook_color.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    float:left;
+}
+#pinterest:hover {
+    background-image: url('../images/icon_pinterest_color.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    float:left;
 }
