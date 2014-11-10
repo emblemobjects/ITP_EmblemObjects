@@ -3,30 +3,9 @@
  * test - ?item_id=1$detail_id=3
  */
 session_start();
-include "submit/index.php";
-if (empty($_REQUEST['detail_id'])) {
-    header("location: ../home/index.php");
-}
 include_once '../php/config.php';
 include_once '../php/helper.php';
 include_once '../php/items.php';
-$items_array = items::get_items(0, 0, 0, 0, "");
-
-// set valid browse
-if (empty($_REQUEST['detail_id'])) {
-   $valid = false;
-} else { $valid = true; }
-
-// redirect to home if invalid
-helper::redirect_page($valid,'/home/index.php');
-
-$detail_id = $_REQUEST['detail_id'];
-$item_id = items::get_item_id($detail_id);
-$item_name = items::get_field_value($item_id, "name");
-$material_name = items::get_detail_info($item_id, $detail_id, "material");
-$material_id = items::get_detail_info($item_id, $detail_id, "material_id");
-$price = items::get_detail_info($item_id, $detail_id, "price");
-$size = items::get_detail_info($item_id, $detail_id, "size");
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +31,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
 <body>
 <div id="wrapper">
     <?php include_once "../templates/header.php";
-    include_once '../templates/navigation_categories.php'?>
+    include_once '../templates/nav.php'?>
 
 
     <!-- CONTENT -->
@@ -84,7 +63,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <div class="fileUpload">
                     <input type="hidden" name="newFileName" value="enabled_object"/>
                     <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-                    <span id="upload-error"><?php echo $errorMessage ?></span><br>
+<!--                    <span id="upload-error">--><?php //echo $errorMessage ?><!--</span><br>-->
                 </div>
                 <div style="clear:both;"></div>
                 <div class="upload">
@@ -93,7 +72,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <div class="fileUpload">
                     <input type="hidden" name="newFileName" value="enabled_object"/>
                     <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-                    <span id="upload-error"><?php echo $errorMessage ?></span><br>
+<!--                    <span id="upload-error">--><?php //echo $errorMessage ?><!--</span><br>-->
                 </div>
                 <div style="clear:both;"></div>
                 <div class="req-files">optional</div>
@@ -103,7 +82,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <div class="fileUpload">
                     <input type="hidden" name="newFileName" value="enabled_object"/>
                     <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-                    <span id="upload-error"><?php echo $errorMessage ?></span><br>
+<!--                    <span id="upload-error">--><?php //echo $errorMessage ?><!--</span><br>-->
                 </div>
             </div>
         </div>
