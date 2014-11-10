@@ -7,6 +7,16 @@ include_once '../php/config.php';
 include_once '../php/helper.php';
 include_once '../php/items.php';
 include_once '../php/navigation_categories.php';
+include_once '../php/enable.php';
+
+
+if (empty($_REQUEST['enable_id'])){
+    header('location: ../home/index.php');
+}
+$enable_info = enable::get_request_info($_REQUEST['enable_id']);
+print_r($enable_info);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,17 +50,20 @@ include_once '../php/navigation_categories.php';
         <div class="container" id="container">
             <div id="info">
                 <div id="info-title">
-                    <span>ENABLE #[number]</span><br>
-                    requested by [username]<br>
+                    <span>ENABLE #<strong><?php echo $enable_info['enable_id']?></span></strong><br>
+                    requested by <strong><?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?></strong><br>
                 </div>
                 <div id="info-char">
-                    item name [name]<br>
-                    size [size]<br>
-                    material [material]<br>
+                    item name <strong><?php echo $enable_info['item_name']?></strong><br>
+                    size <strong><?php echo $enable_info['size']?></strong><br>
+                    material <strong><?php echo $enable_info['material_name']?></strong><br>
+                    date submitted <strong><?php echo $enable_info['date_submitted']?></strong><br>
                 </div>
                 <div id="info-files">
-                    artwork [file]<br>
-                    object [file]
+                    due date <strong><?php echo $enable_info['due_date']?></strong><br>
+                    artwork <strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a></strong><br>
+                    message <strong><?php echo $enable_info['message']?></strong><br>
+
                 </div>
                 <br style="clear:both"/>
             </div>
