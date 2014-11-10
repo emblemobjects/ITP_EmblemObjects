@@ -10,7 +10,7 @@
  * Object file
  *
  * Functions for enable.php :
- * get_request_info - gets the request information using a request_id
+ * get_request_info - gets the request information using a enable_id
  * update function - request approve
  * update function - request denied
  * submit enable request
@@ -21,22 +21,22 @@ include_once 'config.php';
 class enable
 {
 
-    public static function get_request_info($request_id)
+    public static function get_request_info($enable_id)
     {
        $sql = "SELECT * FROM enable WHERE enable_id =";
     }
-    public static function approve_request($request_id)
+    public static function approve_request($enable_id)
     {
 
     }
-   public static function deny_request($request_id)
+   public static function deny_request($enable_id)
    {
 
    }
-    public static function submit_enable_request($request_id){
+    public static function submit_request($enable_id){
 
     }
-    public static function submit_enable($request_id)
+    public static function submit_enable($enable_id)
     {
         //may take in image files???
     }
