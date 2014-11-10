@@ -39,6 +39,12 @@ items::to_JS($store_items_result);
 ?>
 
 <!-- NAV -->
+    <script>
+        var directory = '<?php echo DIR ?>';
+    </script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/nav.js"></script>
+
+
 <nav>
 <div class="container">
 
@@ -52,7 +58,7 @@ items::to_JS($store_items_result);
                 for ($i = 0; $i < count($array_categories); $i++){
                     $category_id = $array_categories[$i]['category_id'];
                     $category_desc = $array_categories[$i]['category_desc'];
-                    echo "<a href='?category_id=$category_id&subcategory_id= 0'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
+                    echo "<a href='".DIR."/home/index.php?category_id=$category_id&subcategory_id= 0'><h3 class='category' data-attr-id='$category_id' >$category_desc</h3></a>";
                 }
                 ?>
 

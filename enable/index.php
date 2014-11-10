@@ -14,7 +14,6 @@ if (empty($_REQUEST['enable_id'])){
     header('location: ../home/index.php');
 }
 $enable_info = enable::get_request_info($_REQUEST['enable_id']);
-print_r($enable_info);
 
 
 ?>
