@@ -31,12 +31,6 @@ include_once 'helper.php';
 
 
 /*
- * FACEBOOK APP SETTINGS
- */
-$FB = [];
-$FB['app_id'] = '360442404114516'; $FB['app_secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
-
-/*
  * DATABASE SETTINGS
  */
 const HOST = "uscitp.com";
@@ -47,6 +41,19 @@ const DATABASE = "itp460_emblemobjects";
 // database connection using CONST
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 
+
+/*
+ * FACEBOOK APP SETTINGS
+ */
+$FB = [];
+$FB['app_id'] = '360442404114516'; $FB['app_secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
+
+
+/*
+ * TWITTER APP SETTINGS
+ */
+$TWITTER = [];
+$TWITTER['app_key'] = 'kce44m40sezTJxTwk7C7j36ww'; $TWITTER['app_secret'] = 'hvUrDc3oqBnMmoGoHHppKTlON9XSoEk5Vw0GHXRR3yIWcpk03i'; // https://127.0.0.1:4433
 
 /*
  * PLUGIN LINKS

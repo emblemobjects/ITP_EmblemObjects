@@ -15,7 +15,7 @@ $json = $twitterSearch->authenticate()->get('search/tweets', [
 
 echo '<hr/>'.$twitterSearch->getBearerToken();
 echo $json;
-echo date('Y-m-d');
+echo date('d/m/Y == H:i:s');
 
 //2lZ7adIQ10SuFYiZHSD4Dw
 //H5loIfdbEzDZnD7bhAkodmAZJd0YabymXvadP4ngOkQ

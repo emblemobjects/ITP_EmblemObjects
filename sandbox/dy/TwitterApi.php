@@ -103,7 +103,7 @@ class TwitterApi
     public function get($path = 'statuses/user_timeline', $qs = [], $decoded = false)
     {
         // $this->last_url = self::API_ENDPOINT . $path . '.json?' . http_build_query($qs);
-        $this->last_url = 'https://api.twitter.com/1.1/account/verify_credentials.json';
+        $this->last_url = 'https://api.twitter.com/1.1/search/tweets.json?q=superbowl';
 
         echo $this->last_url.'<br/>';
 
