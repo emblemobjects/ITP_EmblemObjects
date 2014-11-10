@@ -133,15 +133,6 @@ body, ul, li {
     color:white;
     text-transform: uppercase;
 }
-
-.nav .nav-column h3:hover {
-    color: orange;
-}
-.nav .nav-subcategory:hover{
-    color: orange;
-}
- 
-.nav .nav-column h3.orange { color: #ff722b; }
  
 .nav .nav-column a li {
     display: block;
@@ -150,7 +141,9 @@ body, ul, li {
     font-size: 13px;
     color: white;
 }
-
+.nav .nav-subcategory:hover{
+    color: orange;
+}
 
 .img-column {
     text-align: center;

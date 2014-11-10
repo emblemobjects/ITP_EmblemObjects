@@ -13,12 +13,22 @@ include_once '../php/config.php';
 include_once '../php/items.php';
 
 if (!empty($_REQUEST['category_id'])){
+    if ($_REQUEST['category_id']== "all"){
+        $_SESSION['category_id'] = 0;
+    }
     $_SESSION['category_id'] = $_REQUEST['category_id'];
+    echo "reset category";
 }
 if (!empty($_REQUEST['subcategory_id'])){
+    if ($_REQUEST['subcategory_id']== "all"){
+        $_SESSION['subcategory_id'] = 0;
+    }
     $_SESSION['subcategory_id'] = $_REQUEST['subcategory_id'];
 }
 if (!empty($_REQUEST['type'])){
+    if ($_REQUEST['type']== "all"){
+        $_SESSION['type'] = 0;
+    }
     $_SESSION['type'] = $_REQUEST['type'];
 }
 if (!empty($_REQUEST['order_by'])){
@@ -58,7 +68,7 @@ echo $_SESSION['category_id'].$_SESSION['subcategory_id'].$_SESSION['type'].$_SE
     <!--<link rel="stylesheet" type="text/css" href="../css/body.css">-->
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <!-- <link rel="stylesheet" type="text/css" href="../css/header.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+
     <!-- <link rel="stylesheet" type="text/css" href="../css/navigation.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
@@ -66,6 +76,7 @@ echo $_SESSION['category_id'].$_SESSION['subcategory_id'].$_SESSION['type'].$_SE
     <link rel="stylesheet" type="text/css" href="../css/items-grid.css">
     <link rel="stylesheet" type="text/css" href="../css/overlay.css">
     <link rel="stylesheet" type="text/css" href="../css/item-info.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
 
 
     <script>

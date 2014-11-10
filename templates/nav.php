@@ -37,7 +37,7 @@ navigation::categories_to_JS(navigation::get_categories());
                 <a href="?type=1"><img src="<?php echo DIR; ?>/images/placeholder2.jpg" width="210px" height="170px"/>
                 <span class="nav-img-text">DESIGN</span></a>
             </div>
-            <a href="?type=0"><span class="nav-img-text" id="nav-all-text">ALL</span></a>
+            <a href="?type=all"><span class="nav-img-text" id="nav-all-text">ALL</span></a>
         </div>
     </li>
     <li>

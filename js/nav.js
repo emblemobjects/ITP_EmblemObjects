@@ -9,9 +9,10 @@ function clearColumns() {
 $(document).ready(function(){
     $(".category").on("mouseover", function(){
         var category_id = $(this).attr('data-attr-id');
+        var subcategories = [];
         for (var i = 0; i < store.categories.length; i++){
             if (category_id == store.categories[i]['category_id']){
-                var subcategories = store.categories[i]['subcategory'];
+               subcategories = store.categories[i]['subcategory'];
             }
         }
         // Fill subcategories div
@@ -21,10 +22,13 @@ $(document).ready(function(){
         }
         innerText += "</ul>"
         $('#subcategories').html(innerText);
+        //Changes the color
+        $('.category').css('color', 'white');
+        $(this).css('color', 'orange')
+        console.log(this);
     });
     $(".nav-btn").on("click", function(){
         $(".nav-btn").removeClass('nav-btn-active');
         $(this).addClass('nav-btn-active');
-        console.log("changed");
     })
 })
