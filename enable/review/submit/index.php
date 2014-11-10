@@ -47,8 +47,8 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
     <!-- CONTENT -->
     <div id="content">
         <div class="container" id="container">
-            <div id="info">
-                <div id="info-title">
+            <div id="review">
+                <div id="review-title">
                     <strong><span>ENABLE #<?php echo $enable_info['enable_id']?> has been submitted.</span></strong><br />
                 </div>
                 <div id="item-info">
@@ -64,7 +64,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                     <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Click Here to Redirect</a><br>
                 </div>
                 <br style="clear:both"/>
-                <div id="info-close">
+                <div id="review-close">
                     <br />
                     <p>The administrators will now process your request. You should hear back within 48 hours via email.</p>
                 </div>
