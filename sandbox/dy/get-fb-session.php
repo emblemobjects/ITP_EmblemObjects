@@ -140,7 +140,7 @@ if ($fb_session) {
 	}
 }
 else {
-	$session_destroy();
+	// $session_destroy();
 }
 
 echo 'ajax get-fb-session.php done';
