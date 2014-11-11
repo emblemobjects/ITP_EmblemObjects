@@ -62,7 +62,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <h1>DESIGN YOUR OBJECT</h1>
                 <h4>Base Object: <?php echo $item_name ?></h4>
             </div>
-            <form id="customizeObject" method="POST" action="/confirm/index.php" enctype="multipart/form-data">
+            <form id="customizeObject" method="POST" action="confirm/index.php" enctype="multipart/form-data">
                 <div id="container-left">
 
                     <h3>Upload an image.</h3>
