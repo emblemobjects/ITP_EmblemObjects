@@ -6,7 +6,6 @@ if (empty($_SESSION['isStarted'])){
     $_SESSION['type'] = 0;
     $_SESSION['order_by'] = 0;
     $_SESSION['search'] = "";
-    echo "starting session";
 }
 if (!empty($_REQUEST['category_id'])){
     if ($_REQUEST['category_id']== "all"){
