@@ -1,11 +1,19 @@
 <!doctype html>
+<?php
+session_start();
+include_once '../php/config.php';
+include_once '../php/items.php';
+include_once '../php/navigation_categories.php';
 
+
+?>
 <html lang="en">
 <head>
     <title>Emblem Objects - How-To</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
     <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
@@ -19,7 +27,8 @@
 
 <body>  
     <div id="wrapper">
-<?php include "../templates/header.php";?>
+<?php include "../templates/header.php";
+include "../templates/nav.php";?>
         
         
         <!-- CONTENT --> 

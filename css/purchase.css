@@ -44,7 +44,7 @@ h5{
 
 }
 .input {
-    width: 150px;
+    width: 100px;
     float: left;
 }
 
@@ -71,4 +71,7 @@ h4{
 }
 .readOnly{
     background-color: #cccccc;
+}
+#content{
+    width: 1000px;
 }

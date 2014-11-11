@@ -1,6 +1,8 @@
 <!doctype html>
 <?php
-$items_array = items::get_items(0, 0, 2, 0, "");
+include_once '../php/config.php';
+include_once '../php/items.php';
+include_once '../php/navigation_categories.php';
 ?>
 <html lang="en">
 <head>
@@ -13,13 +15,15 @@ $items_array = items::get_items(0, 0, 2, 0, "");
     <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
 
 </head>
 
 
 <body>
 <div id="wrapper">
-    <?php include "../templates/header.php";?>
+    <?php include "../templates/header.php";
+    include "../templates/nav.php";?>
 
 
     <!-- CONTENT -->

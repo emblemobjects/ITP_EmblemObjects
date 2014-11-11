@@ -1,11 +1,12 @@
 <?php
+include_once '../php/config.php';
+include_once '../php/items.php';
+include_once '../php/navigation_categories.php';
 if (empty($_REQUEST['item_id'])) {
     header("location: ../home/index.php");
 }
-include_once '../php/config.php';
-include_once '../php/helper.php';
-$items_array = items::get_items(0, 0, 2, 0, "");
-include_once '../php/items.php';
+$items_array = items::get_items(0, 0, 0, 0, "");
+
 
 $item_id = $_REQUEST['item_id'];
 $item_name = items::get_field_value($item_id, "name");
@@ -24,6 +25,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../css/body.css">
@@ -32,12 +34,14 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <link rel="stylesheet" type="text/css" href="../css/purchase.css">
 
 
+
 </head>
 
 
 <body>
 <div id="wrapper">
-    <?php include "../templates/header.php"; ?>
+    <?php include "../templates/header.php";
+    include "../templates/nav.php";?>
 
 
     <!-- CONTENT -->
