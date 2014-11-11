@@ -87,8 +87,9 @@ status: 3 = request rejected
     public static function submit_enable($enable_id, $file1, $file2, $file3)
     {
         global $con;
-        $sql = "INSERT INTO enable
-              VALUES ($enable_id, $file1, $file2, $file3)";
+        $sql = "INSERT INTO enable(image_filepath, instance_filepath, bu_instance_filepath)
+              VALUES ( $file1, $file2, $file3)
+              WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
         email("enable", $enable_id);
         return $success;
