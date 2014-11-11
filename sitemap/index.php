@@ -1,5 +1,7 @@
 
-<?php include_once '../../php/config.php';?>
+<?php include_once '../php/config.php';
+include_once '../php/items.php';
+include_once '../php/navigation_categories.php'?>
 <!-- doctype html -->
 
 <html lang="en">
@@ -23,25 +25,15 @@
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
-    <link rel="stylesheet" type="text/css" href="../css/items-grid.css">
-    <link rel="stylesheet" type="text/css" href="../css/overlay.css">
-    <link rel="stylesheet" type="text/css" href="../css/item-info.css">
 
 <!-- STYLES -->
     <style type="text/css">
       .tab {
         margin-left: 15px;
         text-decoration: none;}
-    </style>
-
-    <style type="text/css">
       .tab2 {
         margin-left: 30px;
         text-decoration: none;}
-    </style>
-
-    <style type="text/css">
       .main_link {
         font-size:15px;
         text-decoration: none;}
@@ -49,10 +41,10 @@
 </head>
 
   <body>
-    <?php include "../templates/header.php"; ?>
-    <?php include '../templates/nav.php'; ?>
-    <div style="margin-top: 50px ; width: 100%">
-        <a><center><h2> Site Map </h2></center></a><br>
+    <?php
+    include_once "../templates/header.php";
+    include_once '../templates/nav.php'; ?>
+        <a><h2> Site Map </h2></a><br>
       <div style="float:left ; margin-left: 250px">
           <a href="../whats-new/" class="main_link">What's New</a><br>
           <a href="../how-to/" class="main_link">How To</a><br>

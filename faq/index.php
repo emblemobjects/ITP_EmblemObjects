@@ -1,4 +1,7 @@
 <!doctype html>
+<?php include_once '../php/config.php';
+include_once '../php/items.php';
+include_once '../php/navigation_categories.php'?>
 
 <html lang="en">
 <head>
@@ -23,24 +26,22 @@
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
-    <link rel="stylesheet" type="text/css" href="../css/items-grid.css">
-    <link rel="stylesheet" type="text/css" href="../css/overlay.css">
-    <link rel="stylesheet" type="text/css" href="../css/item-info.css">
 
 </head>
 
 
 <body>
     <div id="wrapper">
-<?php include "../templates/header.php";?>
+        <?php
+        include_once "../templates/header.php";
+        include_once '../templates/nav.php'; ?>
 
 
         <!-- CONTENT -->
         <div id="content">
             <div class="container">
-              <p>&nbsp</p>
-              <center><h1>FAQ</h1></center><p>&nbsp</p>
+              <br><br>
+              <h1>FAQ</h1><p>&nbsp</p>
 <h3>Q: What are you?</h3>
 A: We are EmblemObjects, a 3D printing design service, creating product tailored to your needs.
 <br><br>
@@ -71,7 +72,7 @@ A: We will let you that our printers cannot print the object, and release the au
 A: At this time, we only on accept U.S. Dollars. We are always thinking of way to widen our market so check back often.
 <br><br><h3>Q: What is your shipping policy?</h3>
 A: We charge a flat rate $7 to shipping anywhere in US (except Hawaii and Alaska). At this point, we do not ship outside of the US.
-<p>&nbsp</p>
+<br><br>
             </div>
         </div>
         <div style="clear:both"></div>
