@@ -13,13 +13,11 @@ twitter::set_app([
 	'api_secret'=> $TWITTER['app_secret'],
 ]);
 
-twitter::get_bearer_token();
-
 $response = twitter::search(['superbowl','nfl']);
 
 twitter::to_JSON($response,'results');
 
-$timeline = twitter::get_timeline('dchen2913');
+$timeline = twitter::get_timeline('stephenathome');
 
 twitter::to_JSON($timeline,'timeline');
 

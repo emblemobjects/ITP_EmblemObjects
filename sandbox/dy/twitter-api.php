@@ -88,7 +88,7 @@ class twitter {
 
 	public static function search($search = []) {
 		//
-		$token_enc = base64_encode(self::$bearer_token);
+		$token_enc = base64_encode(self::get_bearer_token());
 		// echo $token_enc.'<br/>';
 
 		$search = implode('+', $search);
@@ -141,7 +141,7 @@ class twitter {
 
 	public static function get_timeline($user) {
 		//
-		$token_enc = base64_encode(self::$bearer_token);
+		$token_enc = base64_encode(self::get_bearer_token());
 		// echo $token_enc.'<br/>';
 
 		$url = self::API_END . '/statuses/user_timeline.json?screen_name=' . $user;
