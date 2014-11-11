@@ -36,10 +36,13 @@ $(document).ready(function(){
         // Fill subcategories div
         var innerText = "<ul>";
         for (var i=0; i<subcategories.length; i++) {
-            innerText += "<a href='?subcategory_id= "+ subcategories[i]['subcategory_id'] + "'><li class='nav-subcategory' data-attr-id='" + subcategories[i]['subcategory_id'] + "'>" + subcategories[i]['subcategory_desc'] +"</li></a>";
+            innerText += "<a href='" + directory + "/home/index.php?subcategory_id= " + subcategories[i]['subcategory_id'] + "'><li class='nav-subcategory' data-attr-id='" + subcategories[i]['subcategory_id'] + "'>" + subcategories[i]['subcategory_desc'] + "</li></a>";
         }
         innerText += "</ul>"
         $('#subcategories').html(innerText);
+        //Changes the color
+        $('.category').css('color', 'white');
+        $(this).css('color', 'orange');
     });
     $(".nav-btn").on("click", function(){
         $(".nav-btn").removeClass('nav-btn-active');
