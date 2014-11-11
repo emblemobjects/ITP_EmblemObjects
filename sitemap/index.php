@@ -41,9 +41,9 @@ include_once '../php/navigation_categories.php'?>
 </head>
 
   <body>
-    <?php include "../templates/header.php"; ?>
-    <?php include '../templates/nav.php'; ?>
-    <div style="margin-top: 50px ; width: 100%">
+    <?php
+    include_once "../templates/header.php";
+    include_once '../templates/nav.php'; ?>
         <a><h2> Site Map </h2></a><br>
       <div style="float:left ; margin-left: 250px">
           <a href="../whats-new/" class="main_link">What's New</a><br>
