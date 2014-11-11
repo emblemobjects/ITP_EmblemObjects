@@ -6,6 +6,10 @@
 	padding: 0;
 }
 
+body{
+	font-family: verdana;
+}
+
 article, aside, header, footer, section {
 	display: block;
 }
