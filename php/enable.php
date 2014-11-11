@@ -15,7 +15,6 @@
  * update function - request denied
  * submit enable request
  * submit enable // when designer uploads related files
- * get enable info // includes stuff the designer submits
  */
 include_once 'config.php';
 
@@ -56,25 +55,47 @@ class enable
         $array_info=['enable_id'=>$r['enable_id'],'first_name'=>$r2['user_first_name'], 'last_name'=>$r2['user_last_name'], 'date_submitted'=>$r['date_submitted'], 'item_name'=>$r3['item_name'], 'material_name'=>$r4['material_desc'], 'size'=>$r['size'], 'image_filepath'=>$r['image_filepath'], 'due_date'=>$r['due_date'], 'message'=>$r['message'], 'status'=>$r['status']];
         return $array_info;
     }
-
+/*
+ * Enable status
+ * status: 0 = awaiting designer upload
+status: 1 = awaiting EO staff approval
+status: 2 = request accepted
+status: 3 = request rejected
+ */
     public static function approve_request($enable_id)
     {
-
+        global $con;
+        $sql = "UPDATE enable.status
+                SET enable.status = 2
+                WHERE enable.enable_id = $enable_id";
+        $success = mysqli_query($con, $sql);
+        return $success;
     }
 
     public static function deny_request($enable_id)
     {
-
+        global $con;
+        $sql = "UPDATE enable.status
+                SET enable.status = 3
+                WHERE enable.enable_id = $enable_id";
+        $success = mysqli_query($con, $sql);
+        return $success;
     }
 
     public static function submit_request($enable_id)
     {
-
+        //incomplete, has this alraedy been done?
+        global $con;
+        $sql = "INSERT INTO enable
+              VALUES ($enable_id)";
     }
 
     public static function submit_enable($enable_id)
     {
-        //may take in image files???
+        //incomplete, has this alraedy been done?
+        global $con;
+        $sql = "INSERT INTO enable
+              VALUES ($enable_id)";
     }
 }
 
