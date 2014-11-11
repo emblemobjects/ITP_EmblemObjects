@@ -40,10 +40,17 @@ store.getIndex = function(el){
     return $(el).attr('data-item-id');
 }
 
+
 var template = Handlebars.compile($('#overlay-template').html());
 store.renderOverlay = function(index){
     var html = "";
-    html = template(store.items[index-1]);
+    var i = 0;
+    for (var k = 0; k < store.items.length; k++){
+        if (store.items[k]['id'] == index){
+            var i = k;
+        }
+    }
+    html = template(store.items[i]);
     return html;
 }
 store.displayOverlay = function(html){
