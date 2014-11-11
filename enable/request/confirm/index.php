@@ -1,7 +1,8 @@
 <?php
-include_once '../php/config.php';
-include_once '../php/helper.php';
-include_once '../php/navigation_categories.php';
+include_once '../../../php/config.php';
+include_once '../../../php/helper.php';
+include_once '../../../php/navigation_categories.php';
+include_once '../../../php/items.php';
 
 //Catching people who got here without filling out the form
 if (empty($_REQUEST['firstName'])) {
@@ -43,7 +44,7 @@ $user_id = 0;
 $enable_id = 0;
 
 //PLACEHOLDERS that needs to be replaced by functions
-$target_dir = "../uploads/";
+$target_dir = "../../../uploads/";
 $image_filepath = "/uploads/placeholder.png";
 $status = 0;
 
@@ -96,10 +97,10 @@ if (mysqli_query($con, $sql_insert)){
 
 
 // Uploads the file
-include "../php/upload.php";
+include "../../../php/upload.php";
 
 $file_type_num = 1;
-$dir = "../uploads/";
+$dir = "../../../uploads/";
 $file = $_FILES["uploadButton"];
 $newFileName = $_REQUEST['newFileName'];
 
@@ -117,13 +118,13 @@ if ($uploadOk == 1){
     $_SESSION['error_message'] = $upload_message;  // Change the error message
     mysqli_rollback($con); // Rollback the data just inserted
     mysqli_autocommit($con, TRUE);
-    header('location: ../customize/');
+    header('location: ../request/');
     exit();
 }
 
 // If successful, clear and destroy the session
-session_unset();
-session_destroy(); 
+//session_unset();
+//session_destroy();
 
 ?>
 
@@ -136,12 +137,14 @@ session_destroy();
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="../css/body.css">
-    <link rel="stylesheet" type="text/css" href="../css/content.css">
-    <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/customize.css">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/body.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/core.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/content.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/customize.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo DIR ?>/css/nav.css">
 
 
 </head>
@@ -149,7 +152,9 @@ session_destroy();
 
 <body>
 <div id="wrapper">
-    <?php include "../templates/header.php"; ?>
+    <?php include "../../../templates/header.php";
+    include "../../../templates/nav.php";
+    ?>
     <div id="content">
         <div id="confirmationContent">
             <h1 style="text-align:left;">ENABLE REQUEST CONFIRMATION #<?php echo $enable_id ?></h1>
@@ -168,5 +173,5 @@ session_destroy();
     </div>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <?php include "../templates/footer.php"; ?>
+    <?php include "../../../templates/footer.php"; ?>
 </html>
