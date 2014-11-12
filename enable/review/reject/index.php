@@ -62,6 +62,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                     <strong>item name |&nbsp;</strong><?php echo $enable_info['item_name']?><br />
                     <strong>size |&nbsp;</strong><?php echo $enable_info['size']?><br />
                     <strong>material |&nbsp;</strong><?php echo $enable_info['material_name']?><br />
+                    <strong>price |&nbsp;</strong><?php echo $enable_info['price']?><br />
                     <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Click Here to Redirect</a><br>
                 </div>
                 <br style="clear:both"/>

@@ -65,9 +65,9 @@
 		<div id="form-price" class="form-grp bb-1 bt-1">Price: $<span id = "price-update">?</span></div>
 
         <input type="hidden" name="detail-id" value=""/>
-		<button type="submit" formaction="#purchase">BUY</button>
+		<button type="submit" formaction="#purchase" onclick="">BUY</button>
 		{{#ifEqual type 1}}
-		<button type="submit" formaction="#enable/request">DESIGN</button>
+		<button type="submit" formaction="#enable/request" onclick="">DESIGN</button>
 		<div id="form-info">BUY ORDERS OBJECT AS IS.</div>
 		{{/ifEqual}}
 	</form>
