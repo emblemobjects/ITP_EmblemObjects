@@ -1,7 +1,7 @@
 <?php
 
 
-// First name
+/* Request Session */
 function startRequestSession() {
 	$request_session_vars = array();
 	$request_session_vars[] = setSessionVar('first_name');
@@ -25,13 +25,31 @@ function clearRequestSession() {
 	unsetSessionVar("error_message3");
 }
 
+
+
+/* Enable Session */
+function startEnableSession() {
+	$request_session_vars = array();
+	$request_session_vars[] = setSessionVar('error_message1');
+	$request_session_vars[] = setSessionVar('error_message2');
+	$request_session_vars[] = setSessionVar('error_message3');	
+	return $request_session_vars;
+}
+
+function clearEnableSession() {
+	unsetSessionVar("error_message1");
+	unsetSessionVar("error_message2");
+	unsetSessionVar("error_message3");
+}
+
+
+
 function setSessionVar($name) {
 	$var = "";
 	if (isset($_SESSION[$name])) {
 	    $var = $_SESSION[$name];
 	} else {
 	    $_SESSION[$name] = "";
-	    //$var = "";
 	}
 	return $var;
 }

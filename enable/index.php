@@ -8,13 +8,18 @@ include_once '../php/helper.php';
 include_once '../php/items.php';
 include_once '../php/navigation_categories.php';
 include_once '../php/enable.php';
+include_once '../php/request-session.php';
+$enable_array = startEnableSession();
+
+$errorMessage1 = $enable_array[0];
+$errorMessage2 = $enable_array[1];
+$errorMessage3 = $enable_array[2];
 
 
 if (empty($_REQUEST['enable_id'])){
     header('location: ../home/index.php');
 }
 $enable_info = enable::get_request_info($_REQUEST['enable_id']);
-
 
 ?>
 
@@ -66,38 +71,43 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                 </div>
                 <br style="clear:both"/>
             </div>
-            <hr style="border: solid 3px #333333; margin: 20px 0px 20px 0px;">
-            <div id="files">
-                <div id="files-title">FILE UPLOAD</div><br/>
-                <div class="req-files">required</div>
-                <div class="upload">
-                    1. enabled object
+            <form  method="POST" action="enable-upload/index.php" enctype="multipart/form-data">
+                <input type="hidden" name="enable_id" value="<?php echo $enable_info['enable_id'] ?>" />
+                <hr style="border: solid 3px #333333; margin: 20px 0px 20px 0px;">
+                <div id="files">
+                    <div id="files-title">FILE UPLOAD</div><br/>
+                    <div class="req-files">required</div>
+                    <div class="upload">
+                        1. enabled object
+                    </div>
+                    <div class="fileUpload">
+                        <input type="hidden" name="newFileName1" value="enabled_object"/>
+                        <input type="file" id="uploadButton1" name="uploadButton1" accept=".gif, .png, .jpg, .jpeg, .ai" />
+                        <span id="upload-error"><?php echo $errorMessage1 ?></span><br>
+    
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="upload">
+                        2. figure
+                    </div>
+                    <div class="fileUpload">
+                        <input type="hidden" name="newFileName2" value="enabled_figure"/>
+                        <input type="file" id="uploadButton2" name="uploadButton2" accept=".gif, .png, .jpg, .jpeg, .ai" />
+                        <span id="upload-error"><?php echo $errorMessage2 ?></span><br>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="req-files">optional</div>
+                    <div class="upload">
+                        3. back-up object
+                    </div>
+                    <div class="fileUpload">
+                        <input type="hidden" name="newFileName3" value="enabled_backup"/>
+                        <input type="file" id="uploadButton3" name="uploadButton3" accept=".gif, .png, .jpg, .jpeg, .ai" />
+                        <span id="upload-error"><?php echo $errorMessage3 ?></span><br>
+                    </div>
                 </div>
-                <div class="fileUpload">
-                    <input type="hidden" name="newFileName" value="enabled_object"/>
-                    <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-<!--                    <span id="upload-error">--><?php //echo $errorMessage ?><!--</span><br>-->
-                </div>
-                <div style="clear:both;"></div>
-                <div class="upload">
-                    2. figure
-                </div>
-                <div class="fileUpload">
-                    <input type="hidden" name="newFileName" value="enabled_object"/>
-                    <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-<!--                    <span id="upload-error">--><?php //echo $errorMessage ?><!--</span><br>-->
-                </div>
-                <div style="clear:both;"></div>
-                <div class="req-files">optional</div>
-                <div class="upload">
-                    3. back-up object
-                </div>
-                <div class="fileUpload">
-                    <input type="hidden" name="newFileName" value="enabled_object"/>
-                    <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-<!--                    <span id="upload-error">--><?php //echo $errorMessage ?><!--</span><br>-->
-                </div>
-            </div>
+                <div id="submitRequest"><button id="submit-button" type="submit" value="Submit Request">Submit Request</button></div>
+            </form>
         </div>
     </div>
     <div style="clear:both"></div>

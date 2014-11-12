@@ -65,8 +65,8 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         $file_name = $enable_id . "_" . $new_file_name;
         $file_path = $target_dir . $file_name . $uploadFile_type;
         
-        // Move the uploads to the order directory and rename them
-        if (move_uploaded_file($_FILES["uploadButton"]["tmp_name"], $file_path)) {
+        // Move the uploads to the orders directory and rename them
+        if (move_uploaded_file($file["tmp_name"], $file_path)) {
             $upload_message = $file_path;
         } else {
             $upload_message = "There is a problem with your file. Please choose another";

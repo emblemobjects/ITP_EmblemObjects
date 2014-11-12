@@ -45,8 +45,6 @@ $designer_email = $array_info[0]['designer_email'];
 /* clear the request session variables */
 clearRequestSession(); 
 
-/* re-enable autocommit */
-mysqli_autocommit($con, TRUE);
 ?>
 
 

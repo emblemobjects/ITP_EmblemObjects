@@ -84,15 +84,30 @@ status: 3 = request rejected
         return $success;
     }
 
-    public static function submit_enable($enable_id, $file1, $file2, $file3)
-    {
+    public static function submit_enable($enable_id) {       
+        // Uploads the files
+        include_once "../../php/upload.php";
         global $con;
-        $sql = "INSERT INTO enable(image_filepath, instance_filepath, bu_instance_filepath)
-              VALUES ( $file1, $file2, $file3)
-              WHERE enable.enable_id = $enable_id";
-        $success = mysqli_query($con, $sql);
-        email("enable", $enable_id);
-        return $success;
+
+            
+        $file1 = uploadEnable($con, 1, 1, $enable_id);
+        $file2 = uploadEnable($con, 1, 2, $enable_id);
+        $file3 = uploadEnable($con, 1, 3, $enable_id);
+        
+        if ($file1 === 0 || $file2 === 0 || $file3 === 0) {
+            header('location: ../?enable_id=' . $enable_id);
+            exit();
+        } else {
+    
+            // If uploads successful, then no redirect, so insert files into database
+            global $con;
+            $sql = "INSERT INTO enable(image_filepath, instance_filepath, bu_instance_filepath)
+                  VALUES ( $file1, $file2, $file3)
+                  WHERE enable.enable_id = $enable_id";
+            $success = mysqli_query($con, $sql);
+            //email("enable", $enable_id);
+            return $success;
+        }
     }
 
     public static function submit_enable_request($firstName, $lastName, $material_id, $email, $message, $item_id, $size, $detail_id)
@@ -153,7 +168,7 @@ status: 3 = request rejected
         }
 
 // Uploads the file
-        include "../../../php/upload.php";
+        include_once "../../../php/upload.php";
 
         $file_type_num = 1;
         $dir = "../../../uploads/";
@@ -165,6 +180,7 @@ status: 3 = request rejected
         $upload_message = $status_array[1];
 
         if ($uploadOk == 1){
+            $_SESSION['error_message1'] = "";
             $image_filepath = $upload_message; // Update the order's image file path
             $sql_update = "UPDATE enable SET image_filepath = '$image_filepath' WHERE enable_id = '$enable_id'";
             mysqli_query($con, $sql_update);
@@ -181,6 +197,27 @@ status: 3 = request rejected
         array_push($array_output, ['enable_id'=> $enable_id, 'designer_name'=>$designer_name, 'designer_email'=>$designer_email]);
         return $array_output;
     }
+}
+
+function uploadEnable($con, $file_type_num, $index, $enable_id) {
+        $file_type_num = 1;
+        $dir = "../../uploads/";
+        $file = $_FILES["uploadButton" . $index];
+        $newFileName = $_REQUEST['newFileName' . $index];
+
+        $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
+        $uploadOk = $status_array[0];
+        $upload_message = $status_array[1];
+
+        if ($uploadOk != 1){
+            $_SESSION['error_message' . $index] = $upload_message;  // Change the error message
+            mysqli_rollback($con); // Rollback the data just inserted
+            mysqli_autocommit($con, TRUE);
+            return 0;
+        } else {
+            $_SESSION['error_message' . $index] = "";
+            return $upload_message; // should be file path if no error
+        }
 }
 
 ?>
