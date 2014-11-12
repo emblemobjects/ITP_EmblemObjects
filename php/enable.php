@@ -95,7 +95,7 @@ status: 3 = request rejected
         return $success;
     }
 
-    public static function submit_enable_request($firstName, $lastName, $material_id, $email, $message, $item_id, $size)
+    public static function submit_enable_request($firstName, $lastName, $material_id, $email, $message, $item_id, $size, $detail_id)
     {
         global $con;
 
@@ -170,11 +170,12 @@ status: 3 = request rejected
             mysqli_query($con, $sql_update);
             mysqli_commit($con);
             mysqli_autocommit($con, TRUE);
+                      
         } else {  // There was an error uploading the file
-            $_SESSION['error_message'] = $upload_message;  // Change the error message
+            $_SESSION['error_message1'] = $upload_message;  // Change the error message
             mysqli_rollback($con); // Rollback the data just inserted
             mysqli_autocommit($con, TRUE);
-            header('location: ../request/');
+            header('location: ../?detail_id=' . $detail_id);
             exit();
         }
         array_push($array_output, ['enable_id'=> $enable_id, 'designer_name'=>$designer_name, 'designer_email'=>$designer_email]);

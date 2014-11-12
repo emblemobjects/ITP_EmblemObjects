@@ -11,6 +11,8 @@ include_once '../../php/config.php';
 include_once '../../php/helper.php';
 include_once '../../php/items.php';
 include_once '../../php/navigation_categories.php';
+include_once '../../php/request-session.php';
+$request_array = startRequestSession();
 $items_array = items::get_items(0, 0, 0, 0, "");
 
 // set valid browse
@@ -28,6 +30,13 @@ $material_name = items::get_detail_info($item_id, $detail_id, "material");
 $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
 $price = items::get_detail_info($item_id, $detail_id, "price");
 $size = items::get_detail_info($item_id, $detail_id, "size");
+
+$firstName = $request_array[0];
+$lastName = $request_array[1];
+$email = $request_array[2];
+$message = $request_array[3];
+$errorMessage1 = $request_array[4];
+
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +81,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                         <input type="hidden" name="newFileName" value="customer_artwork"/>
                         <div id="uploadFile"><img id = "previewObject" src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>" /></div>
                         <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-                        <span id="upload-error"><?php echo $errorMessage ?></span><br>
+                        <span id="upload-error"><?php echo $errorMessage1 ?></span><br>
                     </div>
 
                     <br style="clear:both;"/>
@@ -80,15 +89,16 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <div id="container-right">
                     <input type="hidden" name="item_id" value="<?php echo $item_id ?>" />
                     <input type="hidden" name="material_id" value="<?php echo $material_id ?>" />
+                    <input type="hidden" name="detail_id" value="<?php echo $detail_id ?>" />
                     <br/>
                     <br />
                     <div class="input">Material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
                     <div class="input">Size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
                     <div class="input">Price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
-                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' required><br />
-                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' required><br />
-                    <div class="input">Email:</div><input type="text" name="email" size='25' required><br />
-                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"></textarea><br />
+                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' value="<?php echo $firstName; ?>" required><br />
+                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' value="<?php echo $lastName; ?>" required><br />
+                    <div class="input">Email:</div><input type="text" name="email" size='25' value="<?php echo $email; ?>" required><br />
+                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"><?php echo $message; ?></textarea><br />
                 </div>
 
                 <br style="clear:both">

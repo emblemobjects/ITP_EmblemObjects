@@ -4,13 +4,16 @@ include_once '../../../php/helper.php';
 include_once '../../../php/navigation_categories.php';
 include_once '../../../php/items.php';
 include_once '../../../php/enable.php';
+include_once '../../../php/request-session.php';
 
 //Catching people who got here without filling out the form
 if (empty($_REQUEST['firstName'])) {
     $valid = false;
 } else { $valid = true; }
 
-helper::redirect_page($valid,'/customize/index.php');
+$detail_id = $_REQUEST['detail_id'];
+
+helper::redirect_page($valid,'/enable/request/?detail_id=' . $detail_id);
 
 session_start();
 
@@ -33,11 +36,17 @@ $_SESSION['message'] = $message;
 /* disable autocommit */
 mysqli_autocommit($con, FALSE);
 
-$array_info = enable::submit_enable_request($firstName, $lastName, $material_id, $email, $message, $item_id, $size); //This also executes the insert
-print_r($array_info);
+$array_info = enable::submit_enable_request($firstName, $lastName, $material_id, $email, $message, $item_id, $size, $detail_id); //This also executes the insert
+//print_r($array_info);
 $enable_id = $array_info[0]['enable_id'];
 $designer_name = $array_info[0]['designer_name'];
 $designer_email = $array_info[0]['designer_email'];
+
+/* clear the request session variables */
+clearRequestSession(); 
+
+/* re-enable autocommit */
+mysqli_autocommit($con, TRUE);
 ?>
 
 
