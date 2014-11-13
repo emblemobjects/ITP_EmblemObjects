@@ -221,7 +221,8 @@ class items  {
             }
 
             while ($detail_row = mysqli_fetch_array($detail_results)) {
-                array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $detail_row['item_raw_price'], 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
+                $item_raw_price=number_format($detail_row['item_raw_price'], 2);
+                array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $item_raw_price, 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
             }
             $material_array = [];
             for ($i = 0; $i < count($detail_array); $i++) {

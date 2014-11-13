@@ -115,14 +115,8 @@ store.priceUpdate = function(index) {
     }
 
     var lowest_price = store.items[id]['details'][0]['price'];
-
-    //for (var j = 0; j < store.items[id]['details'].length; j++){
-    //    if (store.items[id]['details'][j]['price'] < lowest_price){
-    //        console.log(store.items[id]['details'][j]['price'] + "is less than " + lowest_price);
-    //        lowest_price = store.items[id]['details'][j]['price'];
-    //        console.log(lowest_price);
-    //    }
-    //}
+    var size = store.items[id]['details'][0]['size'];
+    var material_id = 1;
     $("#price-update").html('Price: $' + lowest_price);
     document.getElementById(store.items[id]['details'][0]['size']).checked = true;
     document.getElementById(store.items[id]['details'][0]['material']).checked = true;      //hack bc each item has acrylic as a material
@@ -131,7 +125,7 @@ store.priceUpdate = function(index) {
 
     $("input[name='size']").change(function(){
 
-        var size = $(this).val();
+        size = $(this).val();
 
         for (var i = 0; i < store.items[id]['details'].length; i++){
             if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id']== material_id){
@@ -143,7 +137,7 @@ store.priceUpdate = function(index) {
     });
     $("input[name='material-id']").change(function(){
 
-        var material_id = $(this).val();
+        material_id = $(this).val();
 
         for (var i = 0; i < store.items[id]['details'].length; i++){
             if (store.items[id]['details'][i]['material_id']== material_id && store.items[id]['details'][i]['size'] == size){
