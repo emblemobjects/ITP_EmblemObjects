@@ -118,11 +118,10 @@ include_once '../../../php/navigation_categories.php';
 			<span class="heading">Pending Enable Reivew</span><br/>
 			<span>Submitted enable requests waiting for review</span>
 			<div class="field">
-				<div class="cell-w200 cell-h30 ml-30">Enable Request ID</div>
+				<div class="cell-w200 cell-h30 ml-125">Enable Request ID</div>
 				<div class="cell-w200 cell-h30">End Time</div>
 				<div class="cell-w200 cell-h30">Submit Time</div>
 				<div class="cell-w250 cell-h30">Object Name</div>
-				<div class="cell-w90 cell-h30">Edit</div>
 				<div class="clear"></div>
 			</div><!--END pending .field-->
 			<div class="clear"></div>
@@ -130,11 +129,10 @@ include_once '../../../php/navigation_categories.php';
 				foreach($pending as $request) {
                     $row = '';
 					$row .= '<div class="row light">';
-					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-30');
+					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-125'); //m-30
 					$row .= user_lists::makeDateCell($request['due_date']);
 					$row .= user_lists::makeDateCell($request['date_submitted']);
 					$row .= user_lists::makeNameCell($request['item_name']);
-					$row .= user_lists::makeButton("#edit", "edit", "EDIT");
 					$row .= '<div class="clear"></div>';
 					$row .= '</div></a><div class="clear"></div>';
 					echo $row;
