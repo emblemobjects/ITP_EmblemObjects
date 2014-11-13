@@ -31,12 +31,21 @@ $fb_js_helper = new FacebookJavaScriptLoginHelper();
 
 try {
 	echo "init fb session <hr/>".PHP_EOL;
+	
 	$fb_session = $fb_js_helper->getSession();
 	// print_r($fb_session); echo "<hr/>";
 } catch (FacebookRequestException $ex) {
 	echo "Facebook Returned Error<hr/>";
+
+	session_start();
+	$_SESSION['status'] = 'false';
+	$_SESSION['user-id'] = 'none';
 } catch (\Exception $ex) {
 	echo "Validation Failed / Local Issues<hr/>";
+
+	session_start();
+	$_SESSION['status'] = 'false';
+	$_SESSION['user-id'] = 'none';
 }
 
 
@@ -45,6 +54,7 @@ if ($fb_session) {
 
 	session_start();
 	$_SESSION['status'] = 'false';
+	$_SESSION['user-id'] = 'none';
 
 	// accessToken from session - not necs yet
 	// echo $FBsession->getAccessToken(); echo '<hr/>';
@@ -141,6 +151,9 @@ if ($fb_session) {
 }
 else {
 	// $session_destroy();
+	session_start();
+	$_SESSION['status'] = 'false';
+	$_SESSION['user-id'] = 'none';
 }
 
 echo 'ajax get-fb-session.php done';
