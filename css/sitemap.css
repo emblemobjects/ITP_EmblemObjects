@@ -55,13 +55,13 @@ h3 {
     color: #333;
 }
 
-a {
+.link {
     font-weight:700;
     color: #333;
     cursor:pointer;
 }
 
-a:hover {
+.link:hover {
     color: #f2b139;
     cursor: pointer;
 }
