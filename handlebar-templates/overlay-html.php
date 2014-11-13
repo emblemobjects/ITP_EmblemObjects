@@ -67,14 +67,14 @@
 		{{#ifEqual type 1}}
         <div id="design-btn">
             <input type="hidden" name="detail-id" value=""/>
-            <button type="submit" formaction="http://www.emblemobjects.com/purchase/index.php" onclick="">BUY</button>
-            <button type="submit" formaction="http://www.emblemobjects.com/enable/request/index.php">DESIGN</button>
+            <button type="submit" formaction="../purchase/index.php" onclick="">BUY</button>
+            <button type="submit" formaction="../enable/request/index.php">DESIGN</button>
             <div id="form-info">BUY ORDERS OBJECT AS IS.</div>
         </div>
         {{else}}
         <div id="unique-btn">
             <input type="hidden" name="detail-id" value=""/>
-            <button type="submit" formaction="http://www.emblemobjects.com/purchase/index.php">BUY</button>
+            <button type="submit" formaction="../purchase/index.php">BUY</button>
         </div>
 		{{/ifEqual}}
 	</form>
