@@ -72,16 +72,35 @@ store.overlaySetPreview = function() {
     });
 };
 
-store.coolFunction = function(index) {
+store.priceUpdate = function(index) {
     var index = index;
 
-    //$(':radio[value="20mm"]').attr('checked', 'checked');
-    //$(':radio[value="ACRYLIC"]').attr('checked', 'checked'); --> doesn't work
+    var i = 0;
+    for (var k = 0; k < store.items.length; k++){
+        if (store.items[k]['id'] == index){
+            var i = k;
+        }
+    }
+
+    var smallSize = store.items[i]['size_array'][0];
+    var smallMat = store.items[i]['material_array'][0];     //doesn't do anything
+
+    document.getElementById(smallSize).checked = true;
+    document.getElementById("Acrylic").checked = true;      //hack bc each item has acrylic as a material
+    //$(':radio[value="1"]').attr('checked', 'checked');
 
     var price = 0;
-    var size = "";
-    var material_id = ""; //$("input[name='material-id']").val();
-    //console.log('first material id= ' + material_id);
+    var size = smallSize;
+    var material_id = "1";                                 //hack bc each item has acrylic as a material
+
+    for (var i = 0; i < store.items[index]['details'].length; i++){
+        if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
+            console.log('size index= ' + i);
+            price = store.items[index]['details'][i]['price'];
+            $("#price-update").html('Price: $' + price);
+
+        }
+    }
 
     $("input[name='size']").change(function(){
         console.log('size= ' + $(this).val());
@@ -90,7 +109,7 @@ store.coolFunction = function(index) {
             if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
                 console.log('size index= ' + i);
                 price = store.items[index]['details'][i]['price'];
-                $("#price-update").html('$' + price);
+                $("#price-update").html('Price: $' + price);
 
             }
         }
@@ -103,7 +122,7 @@ store.coolFunction = function(index) {
             if (store.items[index]['details'][i]['material_id']== material_id && store.items[index]['details'][i]['size'] == size){
                 console.log('material index= ' +i);
                 price = store.items[index]['details'][i]['price'];
-                $("#price-update").html('$' + price);
+                $("#price-update").html('Price: $' + price);
             }
         }
     });

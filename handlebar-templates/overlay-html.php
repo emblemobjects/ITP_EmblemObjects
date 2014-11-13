@@ -29,7 +29,7 @@
 
             {{#each size_array}}
 				<label class="radio-label">
-					<input class="radio-input" type="radio" name="size" value="{{this}}"/>
+					<input class="radio-input" type="radio" name="size" id={{this}} value="{{this}}"/>
 					<span>{{this}}</span>
 				</label>
 			{{/each}}
@@ -42,7 +42,7 @@
 
             {{#each material_array}}
 				<label class="radio-label">
-					<input class="radio-input" type="radio" name="material-id" value="{{mat_id}}"/>
+					<input class="radio-input" type="radio" name="material-id" id={{mat_name}} value="{{mat_id}}"/>
 					<span>{{mat_name}}</span>
 				</label>
 			{{/each}}
@@ -62,7 +62,7 @@
 			</div>
 		{{/if}}
 
-		<div id="form-price" class="form-grp bb-1 bt-1">Price: <span id = "price-update"></span></div>
+		<div id="form-price" class="form-grp bb-1 bt-1"><span id="price-update"></span></div>
 
 		{{#ifEqual type 1}}
         <div id="design-btn">

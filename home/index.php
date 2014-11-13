@@ -67,7 +67,7 @@ include_once '../php/navigation_categories.php';
                 store.displayOverlay(store.renderOverlay(index));
                 store.overlayInitThumb();
                 store.overlaySetPreview();
-                store.coolFunction(index);
+                store.priceUpdate(index);
 
             });
 
