@@ -75,6 +75,8 @@ store.overlaySetPreview = function() {
 store.priceUpdate = function(index) {
     var index = index;
 
+    /////////////////////////// pre-selection for price
+
     var i = 0;
     for (var k = 0; k < store.items.length; k++){
         if (store.items[k]['id'] == index){
@@ -102,14 +104,19 @@ store.priceUpdate = function(index) {
         }
     }
 
+    /////////////////////////// update price on selection change
+
     $("input[name='size']").change(function(){
         console.log('size= ' + $(this).val());
+
         size = $(this).val();
+
         for (var i = 0; i < store.items[index]['details'].length; i++){
             if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
+
                 console.log('size index= ' + i);
-                price = store.items[index]['details'][i]['price'];
-                $("#price-update").html('Price: $' + price);
+                var newPrice = store.items[index]['details'][i]['price'];
+                $("#price-update").html('Price: $' + newPrice);
 
             }
         }
@@ -117,12 +124,16 @@ store.priceUpdate = function(index) {
     $("input[name='material-id']").change(function(){
         console.log('material id inside jquery= ' + $(this).val());
         console.log('mstore.items[index][].length= ' + store.items[index]['details'].length);
+
         material_id = $(this).val();
+
         for (var i = 0; i < store.items[index]['details'].length; i++){
             if (store.items[index]['details'][i]['material_id']== material_id && store.items[index]['details'][i]['size'] == size){
+
                 console.log('material index= ' +i);
-                price = store.items[index]['details'][i]['price'];
-                $("#price-update").html('Price: $' + price);
+                var newPrice = store.items[index]['details'][i]['price'];
+                $("#price-update").html('Price: $' + newPrice);
+
             }
         }
     });
