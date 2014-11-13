@@ -92,12 +92,13 @@ include_once '../../../php/navigation_categories.php';
 		    <?php
 			    $row = '';
 				foreach($pending as $request) {
+                    $edit_path = DIR . "/enable/review/review.php?enable_id=".$request['enable_id'];
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-30');
 					$row .= user_lists::makeDateCell($request['due_date']);
 					$row .= user_lists::makeDateCell($request['date_submitted']);
 					$row .= user_lists::makeNameCell($request['item_name']);
-					$row .= user_lists::makeButton("#edit", "edit", "EDIT");
+					$row .= user_lists::makeButton("$edit_path", "edit", "EDIT");
 					$row .= '<div class="clear"></div>';
 					$row .= '</div></a><div class="clear"></div>';
 					echo $row;
