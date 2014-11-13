@@ -18,8 +18,8 @@
         <div id="user-name"></div>
     </a>
     <div class="clear"></div>
-    <a href="#designer" class="user-btn">Designer</a>
-    <a href="#staff" class="user-btn">Emblem Staff</a>
+    <a href="<?php echo DIR."/user/designer/enable-list/index.php"?>" class="user-btn">Designer</a>
+    <a href="<?php echo DIR."/user/staff/review-list/index.php"?>" class="user-btn">Emblem Staff</a>
 </div>
 
 
