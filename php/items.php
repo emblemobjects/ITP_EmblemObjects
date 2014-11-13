@@ -37,17 +37,17 @@ class items  {
             $designer = $items[$i]['designer_first_name']." ".$items[$i]['designer_last_name'];
             $collection_name = $items[$i]['collection_name'];
             $configurations = count($items[$i]['details']);
-            $lowest_price = 0;
+            $lowest_price = $items[$i]['details'][0]['price'];
 
-            for ($j = 0; $j < count ($items[$i]['details']); $j++){
-                if ($j == 0){
-                    $lowest_price = $items[$i]['details'][$j]['price'];
-                } else {
-                    if ($items[$i]['details'][$j]['price'] < $lowest_price){
-                        $lowest_price = $items[$i]['details'][$j]['price'];
-                    } // end if ($items[$i]['details'][$j]['price'] < $lowest_price)
-                } // end  if else ($j == 0)
-            } // end for ($j = 0; $j < count ($items[$i]['details']); $j++)
+//            for ($j = 0; $j < count ($items[$i]['details']); $j++){
+//                if ($j == 0){
+//                    $lowest_price = $items[$i]['details'][$j]['price'];
+//                } else {
+//                    if ($items[$i]['details'][$j]['price'] < $lowest_price){
+//                        $lowest_price = $items[$i]['details'][$j]['price'];
+//                    } // end if ($items[$i]['details'][$j]['price'] < $lowest_price)
+//                } // end  if else ($j == 0)
+//            } // end for ($j = 0; $j < count ($items[$i]['details']); $j++)
 
             $description = $items[$i]['description'];
             $item_name = $items[$i]['name'];
