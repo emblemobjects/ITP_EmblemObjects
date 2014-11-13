@@ -96,6 +96,7 @@ include_once '../../../php/navigation_categories.php';
 			<div class="clear"></div>
 			<?php
 				foreach($current as $request) {
+                    $pass_filepath = DIR . "/enable/review/pass/?enable_id=".$request['enable_id'];
                     $row = '';
 					$row = '<a href="../../../enable/?enable_id=' . $request['enable_id'] . '">';
 					$row .= '<div class="row light">';
@@ -104,7 +105,7 @@ include_once '../../../php/navigation_categories.php';
 					$row .= user_lists::makeDueDate($request['due_date']);
 					$row .= user_lists::makeNameCell($request['item_name']);
 					$row .= user_lists::makeArtworkCell($request['image_filepath']);
-					$row .= user_lists::makeButton("#pass", "pass", "&#10006;");
+					$row .= user_lists::makeButton($pass_filepath, "pass", "&#10006;");
 					$row .= '<div class="clear"></div>';
 					$row .= '</div></a><div class="clear"></div>';
 					echo $row;

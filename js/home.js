@@ -38,7 +38,6 @@ Handlebars.registerHelper('ifEqual', function(value1, value2, options) {
 
 store.getIndex = function(el){
     return $(el).attr('data-item-id');
-    console.log(store.items);
 }
 
 
