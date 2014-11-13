@@ -24,28 +24,20 @@ include_once '../php/navigation_categories.php'?>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../css/content.css">
+    <link rel="stylesheet" type="text/css" href="../css/sitemap.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
 
-<!-- STYLES -->
-    <style type="text/css">
-      .tab {
-        margin-left: 15px;
-        text-decoration: none;}
-      .tab2 {
-        margin-left: 30px;
-        text-decoration: none;}
-      .main_link {
-        font-size:15px;
-        text-decoration: none;}
-    </style>
 </head>
 
   <body>
     <?php
     include_once "../templates/header.php";
     include_once '../templates/nav.php'; ?>
-        <a><h2> Site Map </h2></a><br>
-      <div style="float:left ; margin-left: 250px">
+        <h2> Site Map </h2>
+    <hr />
+
+    <div id="type-cat">
+      <div class="item-cat">
           <a href="../whats-new/" class="main_link">What's New</a><br>
           <a href="../how-to/" class="main_link">How To</a><br>
           <a href="../shop" class="main_link">Collections</a><br>
@@ -53,8 +45,12 @@ include_once '../php/navigation_categories.php'?>
           <a href="../shop" class="main_link">Newest</a><br>
           <a href="../shop" class="main_link">Popular</a><br>
       </div>
-      <div style="float:left ; margin-left: 50px;">
-          <a href="../shop" class="main_link">Shop</a><br>
+    </div>
+
+    <div id="shop-cat">
+    <a href="../shop" class="main_link">Shop</a>
+
+      <div class="item-cat">
             <a href="../shop" class="tab">Accessories</a><br>
               <a href="../shop" class="tab2">Cases</a><br>
               <a href="../shop" class="tab2">Keychains</a><br>
@@ -64,7 +60,7 @@ include_once '../php/navigation_categories.php'?>
               <a href="../shop" class="tab2">Parametics</a><br>
               <a href="../shop" class="tab2">Themed</a><br>
       </div>
-      <div style="float:left ; margin-left: 50px; margin-top: 18px;">
+      <div class="item-cat">
             <a href="../shop" class="tab">Gadgets</a><br>
               <a href="../shop" class="tab2">Parts</a><br>
               <a href="../shop" class="tab2">Props</a><br>
@@ -75,7 +71,7 @@ include_once '../php/navigation_categories.php'?>
               <a href="../shop" class="tab2">Lighting</a><br>
               <a href="../shop" class="tab2">Desktop</a><br>
       </div>
-      <div style="float:left ; margin-left: 50px; margin-top: 18px;">
+      <div class="item-cat">
             <a href="../shop" class="tab">Jewelry</a><br>
               <a href="../shop" class="tab2">Rings</a><br>
               <a href="../shop" class="tab2">Pendants</a><br>
@@ -88,8 +84,8 @@ include_once '../php/navigation_categories.php'?>
               <a href="../shop" class="tab2">Desk Toys</a><br>
               <a href="../shop" class="tab2">Puzzles</a><br>
       </div>
-      </div>
-    </div>
+        </div>
+
   </body>
 
     <?php include "../templates/footer.php";?>
