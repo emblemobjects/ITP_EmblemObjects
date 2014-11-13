@@ -144,7 +144,7 @@ include_once '../../../php/navigation_categories.php';
 		
 		<br/>
 		<section id="approved-enable" class="list">
-			<span class="heading">Approved Enable Requests</span><br/>
+			<span class="heading">Approved Requests</span><br/>
 			<span>Enable requests that have passed enable review</span>
 			<div class="field">
 				<div class="cell-w200 cell-h30 ml-125">Enable Request ID</div>
@@ -171,7 +171,7 @@ include_once '../../../php/navigation_categories.php';
 		
 		<br/>
 		<section id="rejected-enable" class="section-enable-list">
-			<span class="heading">Rejected Enable Requests</span><br/>
+			<span class="heading">Rejected Requests</span><br/>
 			<span>Enable requests that failed enable review</span>
 			<div class="field">
 				<div class="cell-w200 cell-h30 ml-175">Enable Request ID</div>

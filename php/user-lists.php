@@ -101,8 +101,8 @@ function createDate($datetime) {
 	if ( $v = $interval->m >= 1 ) return pluralize( $interval->m, 'month' ) . $suffix;
 	if ( $v = $interval->d >= 1 ) return pluralize( $interval->d, 'day' ) . $suffix;
 	if ( $v = $interval->h >= 1 ) return pluralize( $interval->h, 'hour' ) . $suffix;
-	if ( $v = $interval->i >= 1 ) return pluralize( $interval->i, 'minute' ) . $suffix;
-	return pluralize( $interval->s, 'second' ) . $suffix;
+	if ( $v = $interval->i >= 1 ) return pluralize( $interval->i, 'min' ) . $suffix;
+	return pluralize( $interval->s, 'sec' ) . $suffix;
 }
 
 ?>

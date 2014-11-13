@@ -48,6 +48,7 @@ include_once '../../../php/navigation_categories.php';
 				$pending = array();
 				$approved = array();
 				$rejected = array();
+				$need_enabling = array();
 				foreach($requests as $request) {
 					$status = $request['status'];				
 					switch($status) {
@@ -62,6 +63,9 @@ include_once '../../../php/navigation_categories.php';
 							break;
 						case 3:
 							$rejected[] = $request;
+							break;
+						case 4:
+							$need_enabling[] = $request;
 							break;
 					}
 				}
@@ -81,7 +85,7 @@ include_once '../../../php/navigation_categories.php';
 		<br/>
 				
 		<section id="pending-review" class="list">
-			<span class="heading">Needs Enable Reivew</span><br/>
+			<span class="heading">Needs Reviewing</span><br/>
 			<span>Submitted enable requests waiting for review</span>
 			<div class="field">
 				<div class="cell-w200 cell-h30 ml-30">Enable Request ID</div>
@@ -111,17 +115,48 @@ include_once '../../../php/navigation_categories.php';
 		
 		<br/>
 		
-		<section id="current-enable" class="list">
-			<span class="heading">Requests Awaiting Enabling</span><br/>
-			<span>Designer needs to enable the object</span>
+		<section id="need-enabling" class="list">
+			<span class="heading">Needs Enabling</span><br/>
+			<span>Requests designers passed on that need enabling</span>
 			<!--enable-id date time time-left object-name object-image enable-artwork pass-->
 			<div class="field">
-				<div class="cell-w200 cell-h30 ml-10">Enable Request ID</div>
+				<div class="cell-w200 cell-h30 ml-30">Enable Request ID</div>
 				<div class="cell-w200 cell-h30">End Time</div>
 				<div class="cell-w150 cell-h30">Time Left</div>
 				<div class="cell-w250 cell-h30">Object Name</div>
 				<div class="cell-w100 cell-h30">Artwork</div>
-				<div class="cell-w90 cell-h30">Pass</div>
+				<div class="clear"></div>
+			</div><!--END current .field-->
+			<div class="clear"></div>
+			<?php
+				foreach($need_enabling as $request) {
+                    $row = '';
+					$row = '<a href="../../../enable/?enable_id=' . $request['enable_id'] . '">';
+					$row .= '<div class="row light">';
+					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-30');
+					$row .= user_lists::makeDateCell($request['due_date']);
+					$row .= user_lists::makeDueDate($request['due_date']);
+					$row .= user_lists::makeNameCell($request['item_name']);
+					$row .= user_lists::makeArtworkCell($request['image_filepath']);
+					$row .= '<div class="clear"></div>';
+					$row .= '</div></a><div class="clear"></div>';
+					echo $row;
+				}
+			?>
+		</section><!--END current-enable-->
+		
+		<br/>
+		
+		<section id="current-enable" class="list">
+			<span class="heading">Awaiting Enabling from Designer</span><br/>
+			<span>Designer needs to enable the object</span>
+			<!--enable-id date time time-left object-name object-image enable-artwork pass-->
+			<div class="field">
+				<div class="cell-w200 cell-h30 ml-30">Enable Request ID</div>
+				<div class="cell-w200 cell-h30">End Time</div>
+				<div class="cell-w150 cell-h30">Time Left</div>
+				<div class="cell-w250 cell-h30">Object Name</div>
+				<div class="cell-w100 cell-h30">Artwork</div>
 				<div class="clear"></div>
 			</div><!--END current .field-->
 			<div class="clear"></div>
@@ -130,12 +165,11 @@ include_once '../../../php/navigation_categories.php';
 					$row = '';
 					$row = '<a href="#">';
 					$row .= '<div class="row light">';
-					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-10');
+					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-30');
 					$row .= user_lists::makeDateCell($request['due_date']);
 					$row .= user_lists::makeDueDate($request['due_date']);
 					$row .= user_lists::makeNameCell($request['item_name']);
 					$row .= user_lists::makeArtworkCell($request['image_filepath']);
-					$row .= user_lists::makeButton("#pass", "pass", "&#10006;");
 					$row .= '<div class="clear"></div>';
 					$row .= '</div></a><div class="clear"></div>';
 					echo $row;
@@ -145,7 +179,7 @@ include_once '../../../php/navigation_categories.php';
 		<br/>
 
 		<section id="approved-enable" class="list">
-			<span class="heading">Approved Enable Requests</span><br/>
+			<span class="heading">Approved Requests</span><br/>
 			<span>Enable requests that have passed enable review</span>
 			<div class="field">
 				<div class="cell-w200 cell-h30 ml-125">Enable Request ID</div>
@@ -172,7 +206,7 @@ include_once '../../../php/navigation_categories.php';
 		
 		<br/>
 		<section id="rejected-enable" class="section-enable-list">
-			<span class="heading">Rejected Enable Requests</span><br/>
+			<span class="heading">Rejected Requests</span><br/>
 			<span>Enable requests that failed enable review</span>
 			<div class="field">
 				<div class="cell-w200 cell-h30 ml-175">Enable Request ID</div>
