@@ -65,7 +65,10 @@ include_once '../../../php/navigation_categories.php';
 							$rejected[] = $request;
 							break;
 					}
-				} 
+				}
+                
+                //Fixes the time differences
+                date_default_timezone_set("America/Los_Angeles");
 			?>
 		
 		<div style="text-align: center;">

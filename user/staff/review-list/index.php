@@ -65,6 +65,9 @@ include_once '../../../php/navigation_categories.php';
 							break;
 					}
 				}
+				
+				//Fixes the time differences
+				date_default_timezone_set("America/Los_Angeles");
 			?>
 		
 		<div style="text-align: center;">

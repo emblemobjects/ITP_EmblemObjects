@@ -95,8 +95,6 @@ function pluralize($count, $text) {
 }
 
 function createDate($datetime) {
-	//Fixes the time differences
-    date_default_timezone_set("America/Los_Angeles");
 	$interval = date_create('now')->diff( $datetime );
 	$suffix = ( $interval->invert ? ' overdue' : '' );
 	if ( $v = $interval->y >= 1 ) return pluralize( $interval->y, 'year' ) . $suffix;
