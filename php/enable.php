@@ -93,9 +93,9 @@ status: 3 = request rejected
         global $con;
 
             
-        $file1 = uploadEnable($con, 1, 1, $enable_id);
-        $file2 = uploadEnable($con, 1, 2, $enable_id);
-        $file3 = uploadEnable($con, 1, 3, $enable_id);
+        $file1 = uploadEnable($con, 2, 1, $enable_id);
+        $file2 = uploadEnable($con, 2, 2, $enable_id);
+        $file3 = uploadEnable($con, 3, 3, $enable_id);
         
         if ($file1 === 0 || $file2 === 0 || $file3 === 0) {
             header('location: ../?enable_id=' . $enable_id);
