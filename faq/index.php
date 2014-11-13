@@ -41,20 +41,21 @@ include_once '../php/navigation_categories.php'?>
     <!-- CONTENT -->
     <div id="content">
         <div class="container">
-
-            <br/><br/>
+            <br/>
 
             <h1>FAQ</h1>
             <hr/>
 
             <section id="faq">
                 <h3>Q: What are you?</h3>
+
                 <div class="answer">A: We are EmblemObjects, a 3D printing design service, creating product tailored to
                     your
                     needs.
                 </div>
 
                 <h3>Q: What is a Base Object?</h3>
+
                 <div class="answer">A: Base Objects are products that have been created for the purpose of having your
                     designs 3D
                     printed on
@@ -62,6 +63,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: What is an Unique Object?</h3>
+
                 <div class="answer">A: Unique Objects are products that are fully realized by a designer, so what you
                     see is
                     what you
@@ -69,6 +71,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: Who are designers?</h3>
+
                 <div class="answer">A: Designers create products you see on the site. They help you realize your images
                     and
                     designs on
@@ -77,6 +80,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: How do you 3D print?</h3>
+
                 <div class="answer">A: We use a number of commercial 3D printing services. This ensures that we give you
                     the
                     best
@@ -85,6 +89,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: What happens to my Design Request?</h3>
+
                 <div class="answer">A: Our designers gets your Design Requests and create object previews for you. These
                     are
                     real
@@ -93,6 +98,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: How do I pay for my order?</h3>
+
                 <div class="answer">A: We use PayPal checkout. They are one of the most trusted name in online payments
                     and
                     have
@@ -101,12 +107,14 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: Can I use my credit card for payment, if I don’t have a PayPal account?</h3>
+
                 <div class="answer">A: Yes you can. We use PayPal Guest Checkout so you don’t have to to be registered
                     on
                     PayPal.
                 </div>
 
                 <h3>Q: Am I obligated to buy if I submit a Design Request?</h3>
+
                 <div class="answer">A: Of course not, if the object preview is not what you want, you don’t have to buy
                     it.
                     Just be
@@ -114,6 +122,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: How long does it take for me to get my objects?</h3>
+
                 <div class="answer">A: It depends on the type objects and quantity of the order. Naturally, unique
                     objects
                     will take less because we can initiate the printing process right away. If you are designing a base
@@ -125,6 +134,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: What happens if my object does not pass design review?</h3>
+
                 <div class="answer">A: We will let you know that the object cannot be printed. There is no cost to you.
                     Though this
                     happens very
@@ -132,6 +142,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: What if your 3D printers cannot print the object?</h3>
+
                 <div class="answer">A: We will let you that our printers cannot print the object, and release the
                     authorization hold on
                     your
@@ -139,6 +150,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: Do you take other currencies?</h3>
+
                 <div class="answer">A: At this time, we only on accept U.S. Dollars. We are always thinking of way to
                     widen
                     our market
@@ -147,6 +159,7 @@ include_once '../php/navigation_categories.php'?>
                 </div>
 
                 <h3>Q: What is your shipping policy?</h3>
+
                 <div class="answer">A: We charge a flat rate $7 to shipping anywhere in US (except Hawaii and Alaska).
                     At
                     this point, we

@@ -1,4 +1,3 @@
-
 <?php include_once '../php/config.php';
 include_once '../php/items.php';
 include_once '../php/navigation_categories.php'?>
@@ -29,67 +28,111 @@ include_once '../php/navigation_categories.php'?>
 
 </head>
 
-  <body>
+<body>
+
+<div id="wrapper">
     <?php
     include_once "../templates/header.php";
     include_once '../templates/nav.php'; ?>
-        <h2> Site Map </h2>
-    <hr />
 
-    <div id="type-cat">
-      <div class="item-cat">
-          <a href="../whats-new/" class="main_link">What's New</a><br>
-          <a href="../how-to/" class="main_link">How To</a><br>
-          <a href="../shop" class="main_link">Collections</a><br>
-          <a href="../shop" class="main_link">Designer</a><br>
-          <a href="../shop" class="main_link">Newest</a><br>
-          <a href="../shop" class="main_link">Popular</a><br>
-      </div>
-    </div>
+    <!-- CONTENT -->
+    <div id="content">
+        <div class="container">
 
-    <div id="shop-cat">
-    <a href="../shop" class="main_link">Shop</a>
+            <div class="title">
+                <h1>Sitemap</h1>
+            </div>
+<!--            <hr/>-->
 
-      <div class="item-cat">
-            <a href="../shop" class="tab">Accessories</a><br>
-              <a href="../shop" class="tab2">Cases</a><br>
-              <a href="../shop" class="tab2">Keychains</a><br>
-              <a href="../shop" class="tab2">Belts & Buckels</a><br>
-            <a href="../shop" class="tab">Art</a><br>
-              <a href="../shop" class="tab2">Sculpture</a><br>
-              <a href="../shop" class="tab2">Parametics</a><br>
-              <a href="../shop" class="tab2">Themed</a><br>
-      </div>
-      <div class="item-cat">
-            <a href="../shop" class="tab">Gadgets</a><br>
-              <a href="../shop" class="tab2">Parts</a><br>
-              <a href="../shop" class="tab2">Props</a><br>
-            <a href="../shop" class="tab">Home</a><br>
-              <a href="../shop" class="tab2">Placements</a><br>
-              <a href="../shop" class="tab2">Holders</a><br>
-              <a href="../shop" class="tab2">Vases</a><br>
-              <a href="../shop" class="tab2">Lighting</a><br>
-              <a href="../shop" class="tab2">Desktop</a><br>
-      </div>
-      <div class="item-cat">
-            <a href="../shop" class="tab">Jewelry</a><br>
-              <a href="../shop" class="tab2">Rings</a><br>
-              <a href="../shop" class="tab2">Pendants</a><br>
-              <a href="../shop" class="tab2">Necklaces</a><br>
-              <a href="../shop" class="tab2">Bracelets</a><br>
-              <a href="../shop" class="tab2">Earrings</a><br>
-              <a href="../shop" class="tab2">Cufflings</a><br>
-              <a href="../shop" class="tab2">Watches</a><br>
-            <a href="../shop" class="tab">Novelty</a><br>
-              <a href="../shop" class="tab2">Desk Toys</a><br>
-              <a href="../shop" class="tab2">Puzzles</a><br>
-      </div>
+            <div id="about-cat">
+                <h3> About </h3>
+                <hr/>
+                <div class="item-cat">
+                    <a href="../whats-new/index.php">What's New</a><br>
+                    <a href="../how-to/index.php">How To</a><br>
+                    <a href="../faq/index.php">FAQ</a><br>
+                </div>
+            </div>
+
+            <div id="organize-cat">
+                <h3>Organize</h3>
+                <hr/>
+                <div class="item-cat">
+
+                    <a href="../#">Collections</a><br>
+                    <a href="../#">Designers</a><br>
+
+                    <div class="indent">
+                        <a href="../#">Jacob Blitzer</a><br>
+                    </div>
+                    <a href="../home/?order_by=2">Newest</a><br>
+                    <a href="../home/?order_by=1">Popular</a><br>
+                </div>
+            </div>
+
+
+            <div id="shop-cat">
+                <h3>Shop</h3>
+                <hr/>
+                <div class="item-cat">
+                    <!--        <h3>Shop</h3>-->
+                    <a href="../home/index.php?category_id=4&subcategory_id=%200"><h4>Home</h4></a>
+
+                    <div class="indent">
+                        <a href="../home/index.php?subcategory_id=%209">Placements</a><br>
+                        <a href="../home/index.php?subcategory_id=%2010">Holders</a><br>
+                        <a href="../home/index.php?subcategory_id=%2011">Vases</a><br>
+                        <a href="../home/index.php?subcategory_id=%2012">Lighting</a><br>
+                        <a href="../home/index.php?subcategory_id=%2013">Desktop</a><br>
+                    </div>
+                    <a href="../home/index.php?category_id=6&subcategory_id=%200">Jewelry</a><br>
+
+                    <div class="indent">
+                        <a href="../home/index.php?subcategory_id=%2016">Rings</a><br>
+                        <a href="../home/index.php?subcategory_id=%2017">Pendants</a><br>
+                        <a href="../home/index.php?subcategory_id=%2018">Necklaces</a><br>
+                        <a href="../home/index.php?subcategory_id=%2019">Bracelets</a><br>
+                        <a href="../home/index.php?subcategory_id=%2020">Earrings</a><br>
+                        <a href="../home/index.php?subcategory_id=%2021">Cufflings</a><br>
+                        <a href="../home/index.php?subcategory_id=%2022">Watches</a><br>
+                    </div>
+                </div>
+                <div class="item-cat">
+                    <a href="../home/index.php?category_id=1&subcategory_id=%200">Accessories</a><br>
+
+                    <div class="indent">
+                        <a href="../home/index.php?subcategory_id=%201">Cases</a><br>
+                        <a href="../home/index.php?subcategory_id=%202">Keychains</a><br>
+                        <a href="../home/index.php?subcategory_id=%203">Belts & Buckles</a><br>
+                    </div>
+                    <a href="../home/index.php?category_id=2&subcategory_id=%200">Art</a><br>
+
+                    <div class="indent">
+                        <a href="../home/index.php?subcategory_id=%204">Sculpture</a><br>
+                        <a href="../home/index.php?subcategory_id=%205">Parametics</a><br>
+                        <a href="../ITP_EmblemObjects/home/index.php?subcategory_id=%206">Themed</a><br>
+                    </div>
+                    <a href="../home/index.php?category_id=3&subcategory_id=%200">Gadgets</a><br>
+
+                    <div class="indent">
+                        <a href="../home/index.php?subcategory_id=%207">Parts</a><br>
+                        <a href="../home/index.php?subcategory_id=%208">Props</a><br>
+                    </div>
+                    <a href="../home/index.php?category_id=5&subcategory_id=%200">Novelty</a><br>
+                    <div class="indent">
+                        <a href="../home/index.php?subcategory_id=%2014">Desk Toys</a><br>
+                        <a href="../home/index.php?subcategory_id=%2015">Puzzles</a><br>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</div>
+</body>
 
-  </body>
-
-    <?php include "../templates/footer.php";?>
-    <div style="clear:both"></div>
-    <div style="clear:both"></div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<?php include "../templates/footer.php"; ?>
+<div style="clear:both"></div>
+<div style="clear:both"></div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </html>
