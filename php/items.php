@@ -138,8 +138,14 @@ class items  {
     //Required: the detail id
     //Required: the field name
     //Return: the value of the field
-    public static function get_detail_info($id, $detail_id, $field_name){
-        $value = $GLOBALS['items_array'][$id]['details'][$detail_id][$field_name];
+    public static function get_detail_info($index, $detail_id, $field_name){
+        $id = $index - 1;
+        for ($i = 0; $i < count($GLOBALS['items_array'][$id]['details']); $i++){
+            if ($GLOBALS['items_array'][$id]['details'][$i]['detail_id'] == $detail_id){
+
+                $value = $GLOBALS['items_array'][$id]['details'][$i][$field_name];
+            }
+        }
         return $value;
     }
 

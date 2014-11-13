@@ -66,15 +66,15 @@
 
 		{{#ifEqual type 1}}
         <div id="design-btn">
-            <input type="hidden" name="detail-id" value=""/>
-            <button type="submit" formaction="../purchase/index.php" onclick="">BUY</button>
-            <button type="submit" formaction="../enable/request/index.php">DESIGN</button>
+            <input type="hidden" name="detail_id" value=""/>
+            <button type="submit" formmethod="GET" formaction="../purchase/index.php" onclick="">BUY</button>
+            <button type="submit" formmethod="GET" formaction="../enable/request/index.php">DESIGN</button>
             <div id="form-info">BUY ORDERS OBJECT AS IS.</div>
         </div>
         {{else}}
         <div id="unique-btn">
-            <input type="hidden" name="detail-id" value=""/>
-            <button type="submit" formaction="../purchase/index.php">BUY</button>
+            <input type="hidden" name="detail_id" value=""/>
+            <button type="submit" formmethod="GET" formaction="../purchase/index.php">BUY</button>
         </div>
 		{{/ifEqual}}
 	</form>

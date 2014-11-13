@@ -69,9 +69,21 @@ h4{
     height: 190px;
     width: 200px;
 }
-.readOnly{
+.readOnly {
+    float:left;
+    margin-right: 10px;
+    border: 0;
+    background-color: inherit;
+}
+
+.readOnlyBox{
     background-color: #cccccc;
+    width:100px;
+}
+.input {
+    width: 150px;
+    float: left;
 }
 #content{
-    width: 1000px;
+    width: 1200px;
 }

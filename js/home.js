@@ -38,6 +38,7 @@ Handlebars.registerHelper('ifEqual', function(value1, value2, options) {
 
 store.getIndex = function(el){
     return $(el).attr('data-item-id');
+    console.log(store.items);
 }
 
 
@@ -130,22 +131,24 @@ store.priceUpdate = function(index) {
         for (var i = 0; i < store.items[id]['details'].length; i++){
             if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id']== material_id){
                 var newPrice = store.items[id]['details'][i]['price'];
-                $("#price-update").html('Price: $' + newPrice);
-
+                var detail_id = store.items[id]['details'][i]['detail_id'];
             }
         }
+        $("#price-update").html('Price: $' + newPrice);
+        $("input[name='detail_id']").val(detail_id);
+
     });
     $("input[name='material-id']").change(function(){
 
         material_id = $(this).val();
-
         for (var i = 0; i < store.items[id]['details'].length; i++){
             if (store.items[id]['details'][i]['material_id']== material_id && store.items[id]['details'][i]['size'] == size){
                 var newPrice = store.items[id]['details'][i]['price'];
-                $("#price-update").html('Price: $' + newPrice);
-
+                var detail_id = store.items[id]['details'][i]['detail_id'];
             }
         }
+        $("#price-update").html('Price: $' + newPrice);
+        $("input[name='detail_id']").val(detail_id);
     });
 }
 

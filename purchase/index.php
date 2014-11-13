@@ -2,15 +2,14 @@
 include_once '../php/config.php';
 include_once '../php/items.php';
 include_once '../php/navigation_categories.php';
-if (empty($_REQUEST['item_id'])) {
+if (empty($_REQUEST['detail_id'])) {
     header("location: ../home/index.php");
 }
 $items_array = items::get_items(0, 0, 0, 0, "");
-
-
-$item_id = $_REQUEST['item_id'];
-$item_name = items::get_field_value($item_id, "name");
 $detail_id = $_REQUEST['detail_id'];
+$item_id = items::get_item_id($detail_id);
+
+$item_name = items::get_field_value($item_id, "name");
 $material_name = items::get_detail_info($item_id, $detail_id, "material");
 $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
 $price = items::get_detail_info($item_id, $detail_id, "price");
@@ -51,7 +50,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <h1>PURCHASE YOUR UNIQUE OBJECT</h1>
                 <h4>Object: <?php echo $item_name ?></h4>
             </div>
-            <form id="purchaseObject" method="POST" action="#">
+            <form id="purchaseObject" method="POST" action="<?php echo DIR."/payment/index.php"?>">
                 <div id="container-left">
 
                     <h3>Preview your object</h3>
