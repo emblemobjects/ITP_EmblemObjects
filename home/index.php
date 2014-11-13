@@ -55,7 +55,6 @@ include_once '../php/navigation_categories.php';
 
             $('.no-go').on('click', function(e) {
                 e.preventDefault();
-                console.log('clicked a.no-go');
 
                 $('#overlay')
                     .removeClass('hidden')

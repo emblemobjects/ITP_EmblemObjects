@@ -73,65 +73,81 @@ store.overlaySetPreview = function() {
 };
 
 store.priceUpdate = function(index) {
+    console.log(store.items);
     var index = index;
+
+    ///////////////////////////// pre-selection for price
+    //
+    //var i = 0;
+    //for (var k = 0; k < store.items.length; k++){
+    //    if (store.items[k]['id'] == index){
+    //        var i = k;
+    //    }
+    //}
+    //
+    //var smallSize = store.items[i]['size_array'][0];
+    //var smallMat = store.items[i]['material_array'][0];     //doesn't do anything
+    //
+    //document.getElementById(smallSize).checked = true;
+    //document.getElementById("Acrylic").checked = true;      //hack bc each item has acrylic as a material
+    ////$(':radio[value="1"]').attr('checked', 'checked');
+    //
+    //var price = 0;
+    //var size = smallSize;
+    //var material_id = "1";                                 //hack bc each item has acrylic as a material
+    //
+    //for (var i = 0; i < store.items[index]['details'].length; i++){
+    //    if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
+    //        console.log('size index= ' + i);
+    //        price = store.items[index]['details'][i]['price'];
+    //        $("#price-update").html('Price: $' + price);
+    //
+    //    }
+    //}
 
     /////////////////////////// pre-selection for price
 
-    var i = 0;
+    var id = 0;
     for (var k = 0; k < store.items.length; k++){
         if (store.items[k]['id'] == index){
-            var i = k;
+            var id = k;
         }
     }
 
-    var smallSize = store.items[i]['size_array'][0];
-    var smallMat = store.items[i]['material_array'][0];     //doesn't do anything
+    var lowest_price = store.items[id]['details'][0]['price'];
 
-    document.getElementById(smallSize).checked = true;
-    document.getElementById("Acrylic").checked = true;      //hack bc each item has acrylic as a material
+    //for (var j = 0; j < store.items[id]['details'].length; j++){
+    //    if (store.items[id]['details'][j]['price'] < lowest_price){
+    //        console.log(store.items[id]['details'][j]['price'] + "is less than " + lowest_price);
+    //        lowest_price = store.items[id]['details'][j]['price'];
+    //        console.log(lowest_price);
+    //    }
+    //}
+    $("#price-update").html('Price: $' + lowest_price);
+    document.getElementById(store.items[id]['details'][0]['size']).checked = true;
+    document.getElementById(store.items[id]['details'][0]['material']).checked = true;      //hack bc each item has acrylic as a material
     //$(':radio[value="1"]').attr('checked', 'checked');
-
-    var price = 0;
-    var size = smallSize;
-    var material_id = "1";                                 //hack bc each item has acrylic as a material
-
-    for (var i = 0; i < store.items[index]['details'].length; i++){
-        if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
-            console.log('size index= ' + i);
-            price = store.items[index]['details'][i]['price'];
-            $("#price-update").html('Price: $' + price);
-
-        }
-    }
-
     /////////////////////////// update price on selection change
 
     $("input[name='size']").change(function(){
-        console.log('size= ' + $(this).val());
 
-        size = $(this).val();
+        var size = $(this).val();
 
-        for (var i = 0; i < store.items[index]['details'].length; i++){
-            if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
-
-                console.log('size index= ' + i);
-                var newPrice = store.items[index]['details'][i]['price'];
+        for (var i = 0; i < store.items[id]['details'].length; i++){
+            if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id']== material_id){
+                var newPrice = store.items[id]['details'][i]['price'];
                 $("#price-update").html('Price: $' + newPrice);
 
             }
         }
     });
     $("input[name='material-id']").change(function(){
-        console.log('material id inside jquery= ' + $(this).val());
-        console.log('mstore.items[index][].length= ' + store.items[index]['details'].length);
 
-        material_id = $(this).val();
+        var material_id = $(this).val();
 
-        for (var i = 0; i < store.items[index]['details'].length; i++){
-            if (store.items[index]['details'][i]['material_id']== material_id && store.items[index]['details'][i]['size'] == size){
-
-                console.log('material index= ' +i);
-                var newPrice = store.items[index]['details'][i]['price'];
+        for (var i = 0; i < store.items[id]['details'].length; i++){
+            if (store.items[id]['details'][i]['material_id']== material_id && store.items[id]['details'][i]['size'] == size){
+                var newPrice = store.items[id]['details'][i]['price'];
                 $("#price-update").html('Price: $' + newPrice);
 
             }
