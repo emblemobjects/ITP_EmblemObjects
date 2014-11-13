@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../../../php/config.php';
 include_once '../../../php/items.php';
 include_once '../../../php/navigation_categories.php';
@@ -42,8 +43,8 @@ include_once '../../../php/navigation_categories.php';
 				<div id="main">
 			
 			<?php
-				// Get current requests given user_id
-				$requests = user_lists::getDesignerRequests($con, 0);
+				// Get current requests given designer_id
+				$requests = user_lists::getDesignerRequests($con, 1);
 				$current = array();
 				$pending = array();
 				$approved = array();
@@ -64,7 +65,7 @@ include_once '../../../php/navigation_categories.php';
 							$rejected[] = $request;
 							break;
 					}
-				}
+				} 
 			?>
 		
 		<div style="text-align: center;">
@@ -91,8 +92,8 @@ include_once '../../../php/navigation_categories.php';
 			</div><!--END current .field-->
 			<div class="clear"></div>
 			<?php
-				$row = '';
 				foreach($current as $request) {
+                    $row = '';
 					$row = '<a href="../../../enable/?enable_id=' . $request['enable_id'] . '">';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-10');
@@ -122,8 +123,8 @@ include_once '../../../php/navigation_categories.php';
 			</div><!--END pending .field-->
 			<div class="clear"></div>
 		    <?php
-			    $row = '';
 				foreach($pending as $request) {
+                    $row = '';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-30');
 					$row .= user_lists::makeDateCell($request['due_date']);
@@ -150,8 +151,8 @@ include_once '../../../php/navigation_categories.php';
 			</div><!--END approved .field-->
 			<div class="clear"></div>
 			<?php
-				$row = '';
 				foreach($approved as $request) {
+                    $row = '';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-125');
 					$row .= user_lists::makeDateCell($request['date_submitted']);
@@ -177,8 +178,8 @@ include_once '../../../php/navigation_categories.php';
 			<div class="clear"></div>
 		
 			<?php
-				$row = '';
 				foreach($rejected as $request) {
+                    $row = '';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-175');
 					$row .= user_lists::makeDateCell($request['date_submitted']);

@@ -90,8 +90,8 @@ include_once '../../../php/navigation_categories.php';
 			</div><!--END pending .field-->
 			<div class="clear"></div>
 		    <?php
-			    $row = '';
 				foreach($pending as $request) {
+					$row = '';
                     $edit_path = DIR . "/enable/review/review.php?enable_id=".$request['enable_id'];
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-30');
@@ -123,8 +123,8 @@ include_once '../../../php/navigation_categories.php';
 			</div><!--END current .field-->
 			<div class="clear"></div>
 			<?php
-				$row = '';
 				foreach($current as $request) {
+					$row = '';
 					$row = '<a href="#">';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-10');
@@ -152,9 +152,9 @@ include_once '../../../php/navigation_categories.php';
 				<div class="clear"></div>
 			</div><!--END approved .field-->
 			<div class="clear"></div>
-			<?php
-				$row = '';
+			<?php				
 				foreach($approved as $request) {
+					$row = '';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-125');
 					$row .= user_lists::makeDateCell($request['date_submitted']);
@@ -180,8 +180,8 @@ include_once '../../../php/navigation_categories.php';
 			<div class="clear"></div>
 		
 			<?php
-				$row = '';
 				foreach($rejected as $request) {
+					$row = '';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-175');
 					$row .= user_lists::makeDateCell($request['date_submitted']);

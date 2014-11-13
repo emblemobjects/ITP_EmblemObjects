@@ -62,6 +62,20 @@ status: 1 = awaiting EO staff approval
 status: 2 = request accepted
 status: 3 = request rejected
  */
+    
+    public static function make_request_pending($enable_id){
+        global $con;
+        $sql = "UPDATE enable
+                SET enable.status = '1'
+                WHERE enable.enable_id = $enable_id";
+        $success = mysqli_query($con, $sql);
+        if (!$success){
+            echo (mysqli_error($con));
+        }
+        //email("pending", $enable_id);
+        return $success;
+    }
+    
     public static function approve_request($enable_id)
     {
         global $con;

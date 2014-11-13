@@ -22,6 +22,9 @@ mysqli_autocommit($con, FALSE);
 /* submit the enable */
 enable::submit_enable($enable_id);
 
+/* change request to pending */
+enable::make_request_pending($enable_id);
+
 /* clear the request session variables */
 clearEnableSession(); 
 
