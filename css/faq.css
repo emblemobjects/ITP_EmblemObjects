@@ -1,0 +1,15 @@
+.answer {
+    display:none;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.question {
+    padding-top: 5px;
+}
+
+.question:hover {
+    background-color: #333;
+    color: #f2b139;
+    cursor: pointer;
+}
