@@ -1,4 +1,10 @@
-/* item container
+#designButtons {
+    border: 1px solid red;
+}
+
+#uniqueButtons {
+    border: 1px solid blue;
+}/* item container
  *
  */
 .item-container {

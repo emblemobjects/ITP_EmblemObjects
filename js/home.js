@@ -72,3 +72,41 @@ store.overlaySetPreview = function() {
     });
 };
 
+store.coolFunction = function(index) {
+    var index = index;
+
+    //$(':radio[value="20mm"]').attr('checked', 'checked');
+    //$(':radio[value="ACRYLIC"]').attr('checked', 'checked'); --> doesn't work
+
+    var price = 0;
+    var size = "";
+    var material_id = ""; //$("input[name='material-id']").val();
+    //console.log('first material id= ' + material_id);
+
+    $("input[name='size']").change(function(){
+        console.log('size= ' + $(this).val());
+        size = $(this).val();
+        for (var i = 0; i < store.items[index]['details'].length; i++){
+            if (store.items[index]['details'][i]['size'] == size && store.items[index]['details'][i]['material_id']== material_id){
+                console.log('size index= ' + i);
+                price = store.items[index]['details'][i]['price'];
+                $("#price-update").html('$' + price);
+
+            }
+        }
+    });
+    $("input[name='material-id']").change(function(){
+        console.log('material id inside jquery= ' + $(this).val());
+        console.log('mstore.items[index][].length= ' + store.items[index]['details'].length);
+        material_id = $(this).val();
+        for (var i = 0; i < store.items[index]['details'].length; i++){
+            if (store.items[index]['details'][i]['material_id']== material_id && store.items[index]['details'][i]['size'] == size){
+                console.log('material index= ' +i);
+                price = store.items[index]['details'][i]['price'];
+                $("#price-update").html('$' + price);
+            }
+        }
+    });
+}
+
+

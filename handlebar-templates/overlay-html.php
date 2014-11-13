@@ -62,13 +62,20 @@
 			</div>
 		{{/if}}
 
-		<div id="form-price" class="form-grp bb-1 bt-1">Price: $<span id = "price-update">?</span></div>
+		<div id="form-price" class="form-grp bb-1 bt-1">Price: <span id = "price-update"></span></div>
 
-        <input type="hidden" name="detail-id" value=""/>
-		<button type="submit" formaction="#purchase" onclick="">BUY</button>
 		{{#ifEqual type 1}}
-		<button type="submit" formaction="#enable/request" onclick="">DESIGN</button>
-		<div id="form-info">BUY ORDERS OBJECT AS IS.</div>
+        <div id="design-btn">
+            <input type="hidden" name="detail-id" value=""/>
+            <button type="submit" formaction="http://www.emblemobjects.com/purchase/index.php" onclick="">BUY</button>
+            <button type="submit" formaction="http://www.emblemobjects.com/enable/request/index.php">DESIGN</button>
+            <div id="form-info">BUY ORDERS OBJECT AS IS.</div>
+        </div>
+        {{else}}
+        <div id="unique-btn">
+            <input type="hidden" name="detail-id" value=""/>
+            <button type="submit" formaction="http://www.emblemobjects.com/purchase/index.php">BUY</button>
+        </div>
 		{{/ifEqual}}
 	</form>
 </div><!-- div#display-form -->
