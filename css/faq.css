@@ -1,15 +1,37 @@
+.container {
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+
+#faq {
+    padding-left: 20px;
+}
+
+hr {
+    height:1px;
+    border:none;
+    background-color: #f2b139;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .answer {
     display:none;
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
-.question {
-    padding-top: 5px;
+h3 {
+    font-weight:700;
+    color: #333;
+    cursor:pointer;
 }
 
-.question:hover {
-    background-color: #333;
+h3:hover {
     color: #f2b139;
     cursor: pointer;
+}
+
+h3.open {
+    color: #f2b139;
 }
