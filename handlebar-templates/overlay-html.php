@@ -29,7 +29,7 @@
 
             {{#each size_array}}
 				<label class="radio-label">
-					<input class="radio-input" type="radio" name="size" id={{this}} value="{{this}}"/>
+					<input class="radio-input" type="radio" name="size" value="{{this}}"/>
 					<span>{{this}}</span>
 				</label>
 			{{/each}}
@@ -42,7 +42,7 @@
 
             {{#each material_array}}
 				<label class="radio-label">
-					<input class="radio-input" type="radio" name="material-id" id={{mat_name}} value="{{mat_id}}"/>
+					<input class="radio-input" type="radio" name="material-id" value="{{mat_id}}"/>
 					<span>{{mat_name}}</span>
 				</label>
 			{{/each}}

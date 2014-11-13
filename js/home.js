@@ -115,12 +115,13 @@ store.priceUpdate = function(index) {
     }
 
     var lowest_price = store.items[id]['details'][0]['price'];
+    var detail_id = store.items[id]['details'][0]['detail_id'];
+    $("input[name='detail_id']").val(detail_id);
     var size = store.items[id]['details'][0]['size'];
     var material_id = 1;
     $("#price-update").html('Price: $' + lowest_price);
-    document.getElementById(store.items[id]['details'][0]['size']).checked = true;
-    document.getElementById(store.items[id]['details'][0]['material']).checked = true;      //hack bc each item has acrylic as a material
-    //$(':radio[value="1"]').attr('checked', 'checked');
+    $("input[name='size']:first").attr("checked", "true");
+    $("input[name='material-id']:first").attr("checked", "true");
     /////////////////////////// update price on selection change
 
     $("input[name='size']").change(function(){
