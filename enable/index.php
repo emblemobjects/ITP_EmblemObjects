@@ -52,6 +52,11 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
     <!-- CONTENT -->
     <div id="content">
         <div class="container" id="container">
+            <?php
+            if ($enable_info['status']!=0){
+            ?>
+            <div class="warning">Warning:You are accessing a request that already has files uploaded.</div>
+            <?php };?>
             <div id="info">
                 <div id="info-title">
                     <strong><span>ENABLE #<?php echo $enable_info['enable_id']?></span></strong><br>
@@ -65,7 +70,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                 </div>
                 <div id="info-files">
                     <strong>due date |&nbsp;</strong><?php echo $enable_info['due_date']?><br>
-                    <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a><br>
+                    <strong>artwork |&nbsp;</strong><a download target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Link here</a><br>
                     <strong>message |&nbsp;</strong><?php echo $enable_info['message']?><br>
 
                 </div>
@@ -105,6 +110,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                         <input type="file" id="uploadButton3" name="uploadButton3" accept=".gif, .png, .jpg, .jpeg, .ai" />
                         <span id="upload-error"><?php echo $errorMessage3 ?></span><br>
                     </div>
+                    <br class="clear" />
                 </div>
                 <div id="submitRequest"><button id="submit-button" type="submit" value="Submit Request">Submit Request</button></div>
             </form>

@@ -52,7 +52,7 @@ class enable
             exit (mysqli_error($con));
         }
         $r4 = mysqli_fetch_array($result_material);
-        $array_info=['enable_id'=>$r['enable_id'],'first_name'=>$r2['user_first_name'], 'last_name'=>$r2['user_last_name'], 'date_submitted'=>$r['date_submitted'], 'item_name'=>$r3['item_name'], 'material_name'=>$r4['material_desc'], 'size'=>$r['size'], 'image_filepath'=>$r['image_filepath'], 'due_date'=>$r['due_date'], 'message'=>$r['message'], 'status'=>$r['status']];
+        $array_info=['enable_id'=>$r['enable_id'],'first_name'=>$r2['user_first_name'], 'last_name'=>$r2['user_last_name'], 'date_submitted'=>$r['date_submitted'], 'item_name'=>$r3['item_name'], 'material_name'=>$r4['material_desc'], 'size'=>$r['size'], 'image_filepath'=>$r['image_filepath'], 'due_date'=>$r['due_date'], 'message'=>$r['message'], 'status'=>$r['status'], 'figure'=>$r['figure_filepath'], 'instance'=>$r['instance_filepath'], 'bu_instance'=>$r['instance_filepath']];
         return $array_info;
     }
 /*
@@ -65,22 +65,25 @@ status: 3 = request rejected
     public static function approve_request($enable_id)
     {
         global $con;
-        $sql = "UPDATE enable.status
-                SET enable.status = 2
+        $sql = "UPDATE enable
+                SET enable.status = '2'
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        email("pass", $enable_id);
+        if (!$success){
+            echo (mysqli_error($con));
+        }
+        //email("pass", $enable_id);
         return $success;
     }
 
     public static function deny_request($enable_id)
     {
         global $con;
-        $sql = "UPDATE enable.status
+        $sql = "UPDATE enable
                 SET enable.status = 3
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        email("fail", $enable_id);
+        //email("fail", $enable_id);
         return $success;
     }
 
@@ -101,10 +104,12 @@ status: 3 = request rejected
     
             // If uploads successful, then no redirect, so insert files into database
             global $con;
-            $sql = "INSERT INTO enable(image_filepath, instance_filepath, bu_instance_filepath)
-                  VALUES ( $file1, $file2, $file3)
-                  WHERE enable.enable_id = $enable_id";
+            $sql = "UPDATE enable SET figure_filepath='$file1', instance_filepath='$file2', bu_instance_filepath='$file3', status='1'
+                  WHERE enable.enable_id = '$enable_id'";
             $success = mysqli_query($con, $sql);
+            if (!$success){
+                echo mysqli_error($con);
+            }
             //email("enable", $enable_id);
             return $success;
         }

@@ -67,7 +67,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         
         // Move the uploads to the orders directory and rename them
         if (move_uploaded_file($file["tmp_name"], $file_path)) {
-            $upload_message = $file_path;
+            $upload_message = "/uploads/". $file_name . $uploadFile_type;
         } else {
             $upload_message = "There is a problem with your file. Please choose another";
             $uploadOk = 0;
