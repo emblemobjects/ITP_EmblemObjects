@@ -9,8 +9,9 @@ class user_lists {
 	* Input: $con: the database connection, $user_id: the id of the user
 	* Output: An array containing the $user_id's enable requests
 	*/
-    public static function getDesignerRequests($con, $user_id) {       
-		//include_once 'config.php';
+    public static function getDesignerRequests($con, $user_id) {
+
+
         $sql = "SELECT e.enable_id, e.due_date, e.date_submitted, i.item_name, e.image_filepath, e.status
                 FROM enable e
                 INNER JOIN item i

@@ -69,26 +69,26 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                     <strong>item name:  &nbsp;</strong>     <?php echo $enable_info['item_name']?><br />
                     <strong>size:       &nbsp;</strong>     <?php echo $enable_info['size']?><br />
                     <strong>material:   &nbsp;</strong>     <?php echo $enable_info['material_name']?><br />
-                    <strong>price:      &nbsp;</strong>     <?php echo $enable_info['price']?><br />
+                    <strong>price:      &nbsp;</strong>     [PLACEHOLDER]<?php //echo $enable_info['price'];?><br />
                 </div>
                 <br style="clear:both"/>
 
                 <div class="gray-subtitle-bar">Renderings</div>
                 <div class="item-info">
-                    <strong>1: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">  enabled object</a><br />
-                    <strong>2: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">  figure</a><br />
-                    <strong>3: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">  back-up object (optional)</a><br />
+                    <strong>1: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['figure']?>">  enabled object</a><br />
+                    <strong>2: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['instance']?>">  figure</a><br />
+                    <strong>3: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['bu_instance']?>">  back-up object (optional)</a><br />
                 </div>
             </div>
 
             <hr style="border: solid 1px #f2b139; margin: 7px;">
 
             <div id="approve-button">
-                <strong><a class="click-me" href="approve/index.php">APPROVE</a></strong>
+                <strong><a class="click-me" href="approve/index.php?enable_id=<?php echo $enable_info['enable_id'] ?>">APPROVE</a></strong>
             </div>
 
             <div id="reject-button">
-                <strong><a class="click-me" href="reject/index.php">REJECT</a></strong>
+                <strong><a class="click-me" href="reject/index.php?enable_id=<?php echo $enable_info['enable_id'] ?>">REJECT</a></strong>
             </div>
 
         </div>

@@ -14,7 +14,7 @@ include_once '../../../php/enable.php';
 //    header('location: ../home/index.php');
 //}
 $enable_info = enable::get_request_info($_REQUEST['enable_id']);
-
+enable::deny_request($_REQUEST['enable_id']);
 
 ?>
 
@@ -62,8 +62,12 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                     <strong>item name |&nbsp;</strong><?php echo $enable_info['item_name']?><br />
                     <strong>size |&nbsp;</strong><?php echo $enable_info['size']?><br />
                     <strong>material |&nbsp;</strong><?php echo $enable_info['material_name']?><br />
-                    <strong>price |&nbsp;</strong><?php echo $enable_info['price']?><br />
-                    <strong>artwork |&nbsp;</strong><a target="_blank" href="<?php echo DIR.$enable_info['image_filepath']?>">Click Here to Redirect</a><br>
+                    <strong>figure |&nbsp;</strong><a target="_blank" href="<?php echo DIR . $enable_info['figure']?>" download>Click Here to Download</a><br />
+                    <strong>instance |&nbsp;</strong><a target="_blank" href="<?php echo DIR. $enable_info['instance']?>">Click Here to Download</a><br>
+                    <strong>back-up instance | &nbsp;</strong>
+                    <?php if ($enable_info['bu_instance']!=""){?>
+                        <a target="_blank" href="<?php echo DIR. $enable_info['bu_instance']?>" download>Click Here to Download</a><br>
+                    <?php }; ?>
                 </div>
                 <br style="clear:both"/>
                 <div id="review-close">
