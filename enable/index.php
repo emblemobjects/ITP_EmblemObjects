@@ -53,7 +53,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
     <div id="content">
         <div class="container" id="container">
             <?php
-            if ($enable_info['status']!=0){
+            if ($enable_info['status']!=0 && $enable_info['status']!=4){
             ?>
             <div class="warning">Warning: You are accessing a request that already has files uploaded.</div>
             <?php };?>
