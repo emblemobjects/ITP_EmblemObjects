@@ -103,9 +103,15 @@ status: 3 = request rejected
         } else {
     
             // If uploads successful, then no redirect, so insert files into database
+            // Check if only 2 files were uploaded
             global $con;
-            $sql = "UPDATE enable SET figure_filepath='$file1', instance_filepath='$file2', bu_instance_filepath='$file3', status='1'
+            if ($file3) {
+                $sql = "UPDATE enable SET figure_filepath='$file1', instance_filepath='$file2', bu_instance_filepath='$file3', status='1'
                   WHERE enable.enable_id = '$enable_id'";
+            } else {
+                $sql = "UPDATE enable SET figure_filepath='$file1', instance_filepath='$file2', status='1'
+                  WHERE enable.enable_id = '$enable_id'";
+            }
             $success = mysqli_query($con, $sql);
             if (!$success){
                 echo mysqli_error($con);
@@ -205,11 +211,12 @@ status: 3 = request rejected
 }
 
 function uploadEnable($con, $file_type_num, $index, $enable_id) {
-        $file_type_num = 1;
-        $dir = "../../uploads/";
-        $file = $_FILES["uploadButton" . $index];
-        $newFileName = $_REQUEST['newFileName' . $index];
-
+    $file_type_num = 1;
+    $dir = "../../uploads/";
+    $file = $_FILES["uploadButton" . $index];
+    $newFileName = $_REQUEST['newFileName' . $index];
+    
+    if ($file['size'] != 0) {
         $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
         $uploadOk = $status_array[0];
         $upload_message = $status_array[1];
@@ -223,6 +230,9 @@ function uploadEnable($con, $file_type_num, $index, $enable_id) {
             $_SESSION['error_message' . $index] = "";
             return $upload_message; // should be file path if no error
         }
+    } else {
+        return null;
+    }   
 }
 
 ?>

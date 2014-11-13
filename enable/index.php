@@ -55,7 +55,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
             <?php
             if ($enable_info['status']!=0){
             ?>
-            <div class="warning">Warning:You are accessing a request that already has files uploaded.</div>
+            <div class="warning">Warning: You are accessing a request that already has files uploaded.</div>
             <?php };?>
             <div id="info">
                 <div id="info-title">
@@ -87,7 +87,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                     </div>
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName1" value="enabled_object"/>
-                        <input type="file" id="uploadButton1" name="uploadButton1" accept=".gif, .png, .jpg, .jpeg, .ai" />
+                        <input type="file" id="uploadButton1" name="uploadButton1" accept=".gif, .png, .jpg, .jpeg, .ai" required/>
                         <span id="upload-error"><?php echo $errorMessage1 ?></span><br>
     
                     </div>
@@ -97,7 +97,7 @@ $enable_info = enable::get_request_info($_REQUEST['enable_id']);
                     </div>
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName2" value="enabled_figure"/>
-                        <input type="file" id="uploadButton2" name="uploadButton2" accept=".gif, .png, .jpg, .jpeg, .ai" />
+                        <input type="file" id="uploadButton2" name="uploadButton2" accept=".gif, .png, .jpg, .jpeg, .ai" required/>
                         <span id="upload-error"><?php echo $errorMessage2 ?></span><br>
                     </div>
                     <div style="clear:both;"></div>
