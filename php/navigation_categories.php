@@ -20,7 +20,6 @@ class navigation{
         }
         while ($r = mysqli_fetch_array($result_categories)){
             $array_subcategories = [];
-            array_push($array_subcategories, array('subcategory_id'=>'all', 'subcategory_desc' => "All"));
             $category_id = $r['category_id'];
             $sql_subcategories = "SELECT subcategory_id, subcategory_desc FROM item_subcategory WHERE category_id = $category_id";
             $result_subcategories = mysqli_query ($con, $sql_subcategories);
