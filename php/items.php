@@ -103,13 +103,14 @@ class items  {
     //Required: $id of the specific object
     //Return: the image filepath for the primary image of the object
     public static function getPrimaryImage($items, $id){
+        $index = $id -1;
         $primaryImage = 0;//Default to 0 if there's an error or whatever
-        for ($j = 0; $j < count($items[$id]['images']); $j++){
-            if ($items[$id]['images'][$j]['is_primary']==1){
+        for ($j = 0; $j < count($items[$index]['images']); $j++){
+            if ($items[$index]['images'][$j]['is_primary']==1){
                 $primaryImage = $j;
             }
         }
-        $image_filepath = DIR."/objects/".$items[$id]['images'][$primaryImage]['image_filepath'];
+        $image_filepath = DIR."/objects/".$items[$index]['images'][$primaryImage]['image_filepath'];
         return $image_filepath;
     }
 
@@ -118,7 +119,8 @@ class items  {
     //Required: $id of the specific object, the field name to look for
     //Return: the value of the field
     public static function get_field_value($id, $field_name){
-        $value = $GLOBALS['items_array'][$id][$field_name];
+        $index = $id - 1;
+        $value = $GLOBALS['items_array'][$index][$field_name];
         return $value;
     }
 
@@ -129,6 +131,7 @@ class items  {
         $r = mysqli_fetch_array($sql_result);
         $item_id = $r['item_id'];
         return $item_id;
+
     }
 
 
@@ -138,12 +141,12 @@ class items  {
     //Required: the detail id
     //Required: the field name
     //Return: the value of the field
-    public static function get_detail_info($index, $detail_id, $field_name){
-        $id = $index - 1;
-        for ($i = 0; $i < count($GLOBALS['items_array'][$id]['details']); $i++){
-            if ($GLOBALS['items_array'][$id]['details'][$i]['detail_id'] == $detail_id){
+    public static function get_detail_info($id, $detail_id, $field_name){
+        $index = $id - 1;
+        for ($i = 0; $i < count($GLOBALS['items_array'][$index]['details']); $i++){
+            if ($GLOBALS['items_array'][$index]['details'][$i]['detail_id'] == $detail_id){
 
-                $value = $GLOBALS['items_array'][$id]['details'][$i][$field_name];
+                $value = $GLOBALS['items_array'][$index]['details'][$i][$field_name];
             }
         }
         return $value;
