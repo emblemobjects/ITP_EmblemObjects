@@ -3,10 +3,6 @@
  * test - ?item_id=1$detail_id=3
  */
 session_start();
-include "submit/index.php";
-if (empty($_REQUEST['detail_id'])) {
-    header("location: ../../home/index.php");
-}
 include_once '../../php/config.php';
 include_once '../../php/helper.php';
 include_once '../../php/items.php';
@@ -27,12 +23,21 @@ $material_name = items::get_detail_info($item_id, $detail_id, "material");
 $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
 $price = items::get_detail_info($item_id, $detail_id, "price");
 $size = items::get_detail_info($item_id, $detail_id, "size");
+include_once '../../php/navigation_categories.php';
+include_once '../../php/enable.php';
+
+
+//if (empty($_REQUEST['enable_id'])){
+//    header('location: ../home/index.php');
+//}
+$enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id']));
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Emblem Objects</title>
+    <title>Emblem Objects - Submit</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
@@ -43,10 +48,8 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <link rel="stylesheet" type="text/css" href="../../css/content.css">
     <link rel="stylesheet" type="text/css" href="../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../css/customize.css">
-
-
+    <link rel="stylesheet" type="text/css" href="../../css/review.css">
 </head>
-
 
 <body>
 <div id="wrapper">
@@ -57,49 +60,70 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <!-- CONTENT -->
     <div id="content">
         <div class="container" id="container">
-            <div id="title-div">
-                <h1>DESIGN YOUR OBJECT</h1>
-                <h4>Base Object: <?php echo $item_name ?></h4>
+            <div id="review">
+                <div id="review-title">
+                    <strong>Review</strong> <br/>
+                    <strong><span>ENABLE #<?php echo $enable_info['enable_id']?> </span></strong><br/>
+                </div>
+
+                <hr style="border: solid 1px #f2b139; margin: 7px;">
+
+                <div class="gray-subtitle-bar">Order Info</div>
+                <div id="item-info">
+                    <strong>requested by:   &nbsp;</strong> <?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?><br />
+                    <strong>date submitted: &nbsp;</strong> <?php echo $enable_info['date_submitted']?><br />
+                    <strong>due date:       &nbsp;</strong> <?php echo $enable_info['due_date']?><br />
+                    <strong>message:        &nbsp;</strong> <?php echo $enable_info['message']?><br />
+                </div>
+
+                <br style="clear:both"/>
+
+                <div class="gray-subtitle-bar">Object Info</div>
+                <div id="item-info">
+                    <strong>item name:  &nbsp;</strong>     <?php echo $enable_info['item_name']?><br />
+                    <strong>size:       &nbsp;</strong>     <?php echo $enable_info['size']?><br />
+                    <strong>material:   &nbsp;</strong>     <?php echo $enable_info['material_name']?><br />
+                </div>
+                <br style="clear:both"/>
+
+                <div class="gray-subtitle-bar">Renderings</div>
+                <div class="item-info">
+                    <strong>1: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['figure']?>">  enabled object</a><br />
+                    <strong>2: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['instance']?>">  figure</a><br />
+                    <strong>3: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['bu_instance']?>">  back-up object (optional)</a><br />
+                </div>
             </div>
-            <form id="customizeObject" method="POST" action="/confirm/index.php" enctype="multipart/form-data">
-                <div id="container-left">
 
-                    <h3>Upload an image.</h3>
-                    <h5>Allowed file types: .gif, .png, .jpg, .ai</h5>
+            <hr style="border: solid 1px #f2b139; margin: 7px;">
 
-                    <div class="fileUpload">
-                        <input type="hidden" name="newFileName" value="customer_artwork"/>
-                        <div id="uploadFile"><img id = "previewObject" src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>" /></div>
-                        <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
-                        <span id="upload-error"><?php echo $errorMessage ?></span><br>
-                    </div>
+            <div id="approve-button">
+                <strong><a class="click-me" href="approve/index.php?enable_id=<?php echo $enable_info['enable_id'] ?>">APPROVE</a></strong>
+            </div>
 
-                    <br style="clear:both;"/>
-                </div>
-                <div id="container-right">
-                    <input type="hidden" name="item_id" value="<?php echo $item_id ?>" />
-                    <input type="hidden" name="material_id" value="<?php echo $material_id ?>" />
-                    <br/>
-                    <br />
-                    <div class="input">Material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
-                    <div class="input">Size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
-                    <div class="input">Price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
-                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' required><br />
-                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' required><br />
-                    <div class="input">Email:</div><input type="text" name="email" size='25' required><br />
-                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"></textarea><br />
-                </div>
+            <div id="reject-button">
+                <strong><a class="click-me" href="reject/index.php?enable_id=<?php echo $enable_info['enable_id'] ?>">REJECT</a></strong>
+            </div>
 
-                <br style="clear:both">
-                <br/>
-                <div id="submitRequest"><button id="submit-button" type="submit" value="Submit Request">Submit Request</button></div>
-            </form>
         </div>
     </div>
     <div style="clear:both"></div>
 
-
     <?php include "../../templates/footer.php"; ?>
+
+    <script>
+        function outputPrice {
+            var price = 0;
+            var size = <?php echo $enable_info['size']?>;
+            var material_id = <?php echo $enable_info['material_name']?>
+            for (var i = 0; i < store.items[id]['details'].length; i++){
+                if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id'] == material_id){
+                    price = store.items[id]['details'][i]['price'];
+                }
+            }
+            return price;
+        };
+    </script>
+
 </div>
 </body>
 </html>
