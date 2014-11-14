@@ -42,7 +42,6 @@ include_once '../php/navigation_categories.php'?>
             <div class="title">
                 <h1>Sitemap</h1>
             </div>
-<!--            <hr/>-->
 
             <div id="about-cat">
                 <h3> About </h3>
@@ -93,7 +92,7 @@ include_once '../php/navigation_categories.php'?>
                         <a class="link" href="../home/index.php?subcategory_id=%2018">Necklaces</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%2019">Bracelets</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%2020">Earrings</a><br>
-                        <a class="link" href="../home/index.php?subcategory_id=%2021">Cufflings</a><br>
+                        <a class="link" href="../home/index.php?subcategory_id=%2021">Cuff Links</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%2022">Watches</a><br>
                     </div>
                 </div>
@@ -109,7 +108,7 @@ include_once '../php/navigation_categories.php'?>
                     <a class="link" href="../home/index.php?category_id=2&subcategory_id=%200">Art</a><br>
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%204">Sculpture</a><br>
-                        <a class="link" href="../home/index.php?subcategory_id=%205">Parametics</a><br>
+                        <a class="link" href="../home/index.php?subcategory_id=%205">Parametrics</a><br>
                         <a class="link" href="../ITP_EmblemObjects/home/index.php?subcategory_id=%206">Themed</a><br>
                     </div>
 

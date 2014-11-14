@@ -32,10 +32,7 @@ $enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id'])
     <link rel="stylesheet" type="text/css" href="../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../css/customize.css">
     <link rel="stylesheet" type="text/css" href="../../css/review.css">
-
-
 </head>
-
 
 <body>
 <div id="wrapper">
@@ -69,7 +66,7 @@ $enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id'])
                     <strong>item name:  &nbsp;</strong>     <?php echo $enable_info['item_name']?><br />
                     <strong>size:       &nbsp;</strong>     <?php echo $enable_info['size']?><br />
                     <strong>material:   &nbsp;</strong>     <?php echo $enable_info['material_name']?><br />
-                    <strong>price:      &nbsp;</strong>     [PLACEHOLDER]<?php //echo $enable_info['price'];?><br />
+                    <strong>price:      &nbsp;</strong>     <!--                    [PLACEHOLDER]--><?php ////echo $enable_info['price'];?><!--<br />-->
                 </div>
                 <br style="clear:both"/>
 
@@ -96,6 +93,21 @@ $enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id'])
     <div style="clear:both"></div>
 
     <?php include "../../templates/footer.php"; ?>
+
+    <script>
+        var outputPrice = function(){
+            var price = 0;
+            var size = <?php echo $enable_info['size']?>;
+            var material_id = <?php echo $enable_info['material_name']?>
+            for (var i = 0; i < store.items[id]['details'].length; i++){
+                if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id'] == material_id){
+                    price = store.items[id]['details'][i]['price'];
+                }
+            }
+            return price;
+        };
+    </script>
+
 </div>
 </body>
 </html>
