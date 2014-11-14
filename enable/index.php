@@ -19,7 +19,7 @@ $errorMessage3 = $enable_array[2];
 if (empty($_REQUEST['enable_id'])){
     header('location: ../home/index.php');
 }
-$enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id']));
+$enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enable_id']));
 
 ?>
 

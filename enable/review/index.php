@@ -20,7 +20,7 @@ if (empty($_REQUEST['detail_id'])) {
 // redirect to home if invalid
 helper::redirect_page($valid,'/home/index.php');
 
-$detail_id = $_REQUEST['detail_id'];
+$detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
 $item_id = items::get_item_id($detail_id);
 $item_name = items::get_field_value($item_id, "name");
 $material_name = items::get_detail_info($item_id, $detail_id, "material");

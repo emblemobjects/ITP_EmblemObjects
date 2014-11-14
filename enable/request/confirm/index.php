@@ -11,19 +11,19 @@ if (empty($_REQUEST['firstName'])) {
     $valid = false;
 } else { $valid = true; }
 
-$detail_id = $_REQUEST['detail_id'];
+$detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
 
 helper::redirect_page($valid,'/enable/request/?detail_id=' . $detail_id);
 
 session_start();
 
-$firstName = escape_str($con, $_REQUEST['firstName']);
-$lastName = escape_str($con, $_REQUEST['lastName']);
-$material_id = escape_str($con, $_REQUEST['material_id']);
-$email = escape_str($con, $_REQUEST['email']);
-$message = escape_str($con, $_REQUEST['message']);
-$item_id = escape_str($con, $_REQUEST['item_id']);
-$size = escape_str($con, $_REQUEST['size']);
+$firstName = helper::escape_str($con, $_REQUEST['firstName']);
+$lastName = helper::escape_str($con, $_REQUEST['lastName']);
+$material_id = helper::escape_str($con, $_REQUEST['material_id']);
+$email = helper::escape_str($con, $_REQUEST['email']);
+$message = helper::escape_str($con, $_REQUEST['message']);
+$item_id = helper::escape_str($con, $_REQUEST['item_id']);
+$size = helper::escape_str($con, $_REQUEST['size']);
 
 
 // Store session information in case uploading the file throws an error

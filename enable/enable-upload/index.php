@@ -11,7 +11,7 @@ if (empty($_FILES["uploadButton1"])) {
     $valid = false;
 } else { $valid = true; }
 
-$enable_id = $_REQUEST['enable_id'];
+$enable_id = helper::escape_str($con, $_REQUEST['enable_id']);
 helper::redirect_page($valid,'/enable/request/?enable_id=' . $enable_id);
 
 session_start();

@@ -11,25 +11,25 @@ if (!empty($_REQUEST['category_id'])){
     if ($_REQUEST['category_id']== "all"){
         $_SESSION['category_id'] = 0;
     }
-    $_SESSION['category_id'] = $_REQUEST['category_id'];
+    $_SESSION['category_id'] = helper::escape_str($con, $_REQUEST['category_id']);
 }
 if (!empty($_REQUEST['subcategory_id'])){
     if ($_REQUEST['subcategory_id']== "all"){
         $_SESSION['subcategory_id'] = 0;
     }
-    $_SESSION['subcategory_id'] = $_REQUEST['subcategory_id'];
+    $_SESSION['subcategory_id'] = helper::escape_str($con, $_REQUEST['subcategory_id']);
 }
 if (!empty($_REQUEST['type'])){
     if ($_REQUEST['type']== "all"){
         $_SESSION['type'] = 0;
     }
-    $_SESSION['type'] = $_REQUEST['type'];
+    $_SESSION['type'] = helper::escape_str($con, $_REQUEST['type']);
 }
 if (!empty($_REQUEST['order_by'])){
-    $_SESSION['order_by'] = $_REQUEST['order_by'];
+    $_SESSION['order_by'] = helper::escape_str($con, $_REQUEST['order_by']);
 }
 if (!empty($_REQUEST['search'])){
-    $_SESSION['search'] = $_REQUEST['search'];
+    $_SESSION['search'] = helper::escape_str($con, $_REQUEST['search']);
 }
 
 $store_items_result = items::get_items($_SESSION['category_id'], $_SESSION['subcategory_id'], $_SESSION['type'], $_SESSION['order_by'], $_SESSION['search']);
