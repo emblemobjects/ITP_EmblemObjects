@@ -233,7 +233,7 @@ status: 3 = request rejected
 }
 
 function uploadEnable($con, $file_type_num, $index, $enable_id) {
-    $file_type_num = 1;
+    $file_type_num = $file_type_num;
     $dir = "../../uploads/";
     $file = $_FILES["uploadButton" . $index];
     $newFileName = helper::escape_str($con, $_REQUEST['newFileName' . $index]);

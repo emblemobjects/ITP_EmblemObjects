@@ -87,8 +87,8 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
                     </div>
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName1" value="enabled_object"/>
-                        <input type="file" id="uploadButton1" name="uploadButton1" accept=".obj, .stl" required/>
-                        <span id="upload-error"><?php echo $errorMessage1 ?></span><br>
+                        <input type="file" id="uploadButton1" name="uploadButton1" required/><br/>
+                        <span class="upload-error"><?php echo $errorMessage1 ?></span><br>
     
                     </div>
                     <div style="clear:both;"></div>
@@ -97,8 +97,8 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
                     </div>
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName2" value="enabled_figure"/>
-                        <input type="file" id="uploadButton2" name="uploadButton2" accept=".obj, .stl" required/>
-                        <span id="upload-error"><?php echo $errorMessage2 ?></span><br>
+                        <input type="file" id="uploadButton2" name="uploadButton2" required/><br/>
+                        <span class="upload-error"><?php echo $errorMessage2 ?></span><br>
                     </div>
                     <div style="clear:both;"></div>
                     <div class="req-files">optional</div>
@@ -107,8 +107,8 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
                     </div>
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName3" value="enabled_backup"/>
-                        <input type="file" id="uploadButton3" name="uploadButton3" accept=".3dm" />
-                        <span id="upload-error"><?php echo $errorMessage3 ?></span><br>
+                        <input type="file" id="uploadButton3" name="uploadButton3" /><br/>
+                        <span class="upload-error"><?php echo $errorMessage3 ?></span><br>
                     </div>
                     <br class="clear" />
                 </div>

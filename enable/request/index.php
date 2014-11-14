@@ -80,7 +80,7 @@ $errorMessage1 = $request_array[4];
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName" value="customer_artwork"/>
                         <div id="uploadFile"><img id = "previewObject" src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>" /></div>
-                        <input type="file" id="uploadButton" name="uploadButton" accept=".gif, .png, .jpg, .jpeg, .ai" />
+                        <input type="file" id="uploadButton" name="uploadButton" />
                         <span id="upload-error"><?php echo $errorMessage1 ?></span><br>
                     </div>
 

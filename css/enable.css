@@ -55,3 +55,11 @@
     color: red;
     margin: 10px;
 }
+.upload-error {
+    color:red;
+    font-size:8pt;
+}
+
+#submit-button {
+    padding:5px;
+}
