@@ -127,13 +127,14 @@ store.priceUpdate = function(index) {
     $("input[name='size']").change(function(){
 
         size = $(this).val();
-
+        
         for (var i = 0; i < store.items[id]['details'].length; i++){
             if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id']== material_id){
                 var newPrice = store.items[id]['details'][i]['price'];
                 var detail_id = store.items[id]['details'][i]['detail_id'];
             }
         }
+
         $("#price-update").html('Price: $' + newPrice);
         $("input[name='detail_id']").val(detail_id);
 
