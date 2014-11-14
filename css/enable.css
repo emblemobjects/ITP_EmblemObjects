@@ -1,5 +1,6 @@
 #content {
     width:100%;
+    font-family: 'Myriad Pro', Tahoma, Verdana, sans-serif;
 }
 #container {
     width:800px;
@@ -62,4 +63,8 @@
 
 #submit-button {
     padding:5px;
+}
+
+.fileUpload {
+    text-align: right;
 }

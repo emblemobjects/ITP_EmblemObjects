@@ -122,6 +122,7 @@ body, ul, li {
 .nav .dark-nav-color {
     background-color:#4b4441;
     color: white;
+    text-align: left;
 }
 
 .nav .nav-line {

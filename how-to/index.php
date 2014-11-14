@@ -19,7 +19,6 @@ include_once '../php/navigation_categories.php';
     <script type="text/javascript" src="<?php echo DIR; ?>/js/config.js"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/nav.js"></script>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
