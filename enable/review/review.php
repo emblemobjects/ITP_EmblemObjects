@@ -95,7 +95,7 @@ $enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id'])
     <?php include "../../templates/footer.php"; ?>
 
     <script>
-        var outputPrice = function(){
+        function outputPrice {
             var price = 0;
             var size = <?php echo $enable_info['size']?>;
             var material_id = <?php echo $enable_info['material_name']?>
