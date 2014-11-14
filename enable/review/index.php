@@ -9,20 +9,20 @@ include_once '../../php/items.php';
 $items_array = items::get_items(0, 0, 0, 0, "");
 
 // set valid browse
-if (empty($_REQUEST['detail_id'])) {
+if (empty($_REQUEST['enable_id'])) {
    $valid = false;
 } else { $valid = true; }
 
 // redirect to home if invalid
 helper::redirect_page($valid,'/home/index.php');
 
-$detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
-$item_id = items::get_item_id($detail_id);
-$item_name = items::get_field_value($item_id, "name");
-$material_name = items::get_detail_info($item_id, $detail_id, "material");
-$material_id = items::get_detail_info($item_id, $detail_id, "material_id");
-$price = items::get_detail_info($item_id, $detail_id, "price");
-$size = items::get_detail_info($item_id, $detail_id, "size");
+// $detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
+// $item_id = items::get_item_id($detail_id);
+// $item_name = items::get_field_value($item_id, "name");
+// $material_name = items::get_detail_info($item_id, $detail_id, "material");
+// $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
+// $price = items::get_detail_info($item_id, $detail_id, "price");
+// $size = items::get_detail_info($item_id, $detail_id, "size");
 include_once '../../php/navigation_categories.php';
 include_once '../../php/enable.php';
 
@@ -30,7 +30,7 @@ include_once '../../php/enable.php';
 //if (empty($_REQUEST['enable_id'])){
 //    header('location: ../home/index.php');
 //}
-$enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id']));
+$enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enable_id']));
 
 ?>
 
