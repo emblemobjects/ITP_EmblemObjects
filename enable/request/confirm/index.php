@@ -17,13 +17,13 @@ helper::redirect_page($valid,'/enable/request/?detail_id=' . $detail_id);
 
 session_start();
 
-$firstName = $_REQUEST['firstName'];
-$lastName = $_REQUEST['lastName'];
-$material_id = $_REQUEST['material_id'];
-$email = $_REQUEST['email'];
-$message = $_REQUEST['message'];
-$item_id = $_REQUEST['item_id'];
-$size = $_REQUEST['size'];
+$firstName = escape_str($con, $_REQUEST['firstName']);
+$lastName = escape_str($con, $_REQUEST['lastName']);
+$material_id = escape_str($con, $_REQUEST['material_id']);
+$email = escape_str($con, $_REQUEST['email']);
+$message = escape_str($con, $_REQUEST['message']);
+$item_id = escape_str($con, $_REQUEST['item_id']);
+$size = escape_str($con, $_REQUEST['size']);
 
 
 // Store session information in case uploading the file throws an error

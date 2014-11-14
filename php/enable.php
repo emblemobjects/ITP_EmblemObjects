@@ -206,7 +206,7 @@ status: 3 = request rejected
         $file_type_num = 1;
         $dir = "../../../uploads/";
         $file = $_FILES["uploadButton"];
-        $newFileName = $_REQUEST['newFileName'];
+        $newFileName = escape_str($con, $_REQUEST['newFileName']);
 
         $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
         $uploadOk = $status_array[0];
@@ -236,7 +236,7 @@ function uploadEnable($con, $file_type_num, $index, $enable_id) {
     $file_type_num = 1;
     $dir = "../../uploads/";
     $file = $_FILES["uploadButton" . $index];
-    $newFileName = $_REQUEST['newFileName' . $index];
+    $newFileName = escape_str($con, $_REQUEST['newFileName' . $index]);
     
     if ($file['size'] != 0) {
         $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);

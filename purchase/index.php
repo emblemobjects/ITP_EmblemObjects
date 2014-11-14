@@ -6,7 +6,7 @@ if (empty($_REQUEST['detail_id'])) {
     header("location: ../home/index.php");
 }
 $items_array = items::get_items(0, 0, 0, 0, "");
-$detail_id = $_REQUEST['detail_id'];
+$detail_id = escape_str($con, $_REQUEST['detail_id']);
 $item_id = items::get_item_id($detail_id);
 
 $item_name = items::get_field_value($item_id, "name");

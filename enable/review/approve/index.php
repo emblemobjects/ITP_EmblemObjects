@@ -13,8 +13,8 @@ include_once '../../../php/enable.php';
 //if (empty($_REQUEST['enable_id'])){
 //    header('location: ../home/index.php');
 //}
-$enable_info = enable::get_request_info($_REQUEST['enable_id']);
-enable::approve_request($_REQUEST['enable_id']);
+$enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id']));
+enable::approve_request(escape_str($con, $_REQUEST['enable_id']));
 ?>
 
 <!DOCTYPE html>
