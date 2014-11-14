@@ -10,7 +10,6 @@
 }
 
 #shop-cat {
-    /*border: 1px solid red;*/
     height: auto;
     margin-left: 5%;
     float: left;
@@ -19,7 +18,6 @@
 }
 
 #organize-cat {
-    /*border: 1px solid green;*/
     height: auto;
     margin-left: 5%;
     float: left;
@@ -27,7 +25,6 @@
 }
 
 #about-cat {
-    /*border: 1px solid yellow;*/
     margin-left: 7%;
     height: auto;
     float: left;
@@ -48,7 +45,6 @@ hr {
 h1 {
     padding-top: 10px;
     margin-bottom: 15px;
-    /*border-bottom: 3px solid #333;*/
 }
 
 h3 {

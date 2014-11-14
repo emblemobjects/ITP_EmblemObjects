@@ -1,6 +1,5 @@
 store = window.store || {};
 
-// handlebars helper if equals
 Handlebars.registerHelper('ifEqual', function(value1, value2, options) {
     if (value1 == value2) {
         return options.fn(this);
@@ -47,8 +46,6 @@ store.overlaySetPreview = function() {
 store.priceUpdate = function(index) {
     console.log(store.items);
     var index = index;
-
-    /////////////////////////// pre-selection for price
 
     var id = 0;
     for (var k = 0; k < store.items.length; k++){
