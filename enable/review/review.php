@@ -66,7 +66,6 @@ $enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id'])
                     <strong>item name:  &nbsp;</strong>     <?php echo $enable_info['item_name']?><br />
                     <strong>size:       &nbsp;</strong>     <?php echo $enable_info['size']?><br />
                     <strong>material:   &nbsp;</strong>     <?php echo $enable_info['material_name']?><br />
-                    <strong>price:      &nbsp;</strong>     <!--                    [PLACEHOLDER]--><?php ////echo $enable_info['price'];?><!--<br />-->
                 </div>
                 <br style="clear:both"/>
 
