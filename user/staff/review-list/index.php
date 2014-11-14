@@ -98,7 +98,7 @@ include_once '../../../php/navigation_categories.php';
 		    <?php
 				foreach($pending as $request) {
 					$row = '';
-                    $edit_path = DIR . "/enable/review/review.php?enable_id=".$request['enable_id'];
+                    $edit_path = DIR . "/enable/review/index.php?enable_id=".$request['enable_id'];
 					$row .= '<a href="' . $edit_path . '">';
 					$row .= '<div class="row light">';
 					$row .= user_lists::makeIdCell($request['enable_id'], 'ml-125');
