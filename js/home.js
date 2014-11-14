@@ -118,7 +118,7 @@ store.priceUpdate = function(index) {
     var detail_id = store.items[id]['details'][0]['detail_id'];
     $("input[name='detail_id']").val(detail_id);
     var size = store.items[id]['details'][0]['size'];
-    var material_id = 1;
+    var material_id = store.items[id]['details'][0]['material_id'];
     $("#price-update").html('Price: $' + lowest_price);
     $("input[name='size']:first").attr("checked", "true");
     $("input[name='material-id']:first").attr("checked", "true");
