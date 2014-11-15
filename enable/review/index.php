@@ -88,9 +88,9 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
 
                 <div class="gray-subtitle-bar">Renderings</div>
                 <div class="item-info">
-                    <strong>1: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['figure']?>">  enabled object</a><br />
-                    <strong>2: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['instance']?>">  figure</a><br />
-                    <strong>3: &nbsp;</strong>  <a target="_blank" href="<?php echo DIR.$enable_info['bu_instance']?>">  back-up object (optional)</a><br />
+                    <strong>1: &nbsp;</strong>  <a download href="<?php echo DIR.$enable_info['figure']?>">  enabled object</a><br />
+                    <strong>2: &nbsp;</strong>  <a download href="<?php echo DIR.$enable_info['instance']?>">  figure</a><br />
+                    <strong>3: &nbsp;</strong>  <a download href="<?php echo DIR.$enable_info['bu_instance']?>">  back-up object (optional)</a><br />
                 </div>
             </div>
 
