@@ -45,6 +45,9 @@ $errorMessage1 = $request_array[4];
     <title>Emblem Objects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<<<<<<< HEAD
+    <script type="text/javascript" src="../../js/request.js"></script>
+=======
     
     <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/handlebars-v2.0.0.js"></script>
@@ -53,6 +56,7 @@ $errorMessage1 = $request_array[4];
     <script type="text/javascript" src="<?php echo DIR; ?>/js/config.js"></script>
     <script type="text/javascript" src="<?php echo DIR; ?>/js/nav.js"></script>
 
+>>>>>>> FETCH_HEAD
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -78,13 +82,13 @@ $errorMessage1 = $request_array[4];
         <div class="container" id="container">
             <div id="title-div">
                 <h1>DESIGN YOUR OBJECT</h1>
-                <h4>Base Object: <?php echo $item_name ?></h4>
+                <h4><strong>base object |</strong>&nbsp;<?php echo $item_name ?></h4>
             </div>
             <form id="customizeObject" method="POST" action="confirm/index.php" enctype="multipart/form-data">
                 <div id="container-left">
 
-                    <h3>Upload an image.</h3>
-                    <h5>Allowed file types: .gif, .png, .jpg, .ai</h5>
+                    <h3>upload an image.</h3>
+                    <h5>accepted file types: .gif, .png, .jpg, .ai</h5>
 
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName" value="customer_artwork"/>
@@ -101,13 +105,13 @@ $errorMessage1 = $request_array[4];
                     <input type="hidden" name="detail_id" value="<?php echo $detail_id ?>" />
                     <br/>
                     <br />
-                    <div class="input">Material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
-                    <div class="input">Size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
-                    <div class="input">Price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
-                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' value="<?php echo $firstName; ?>" required><br />
-                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' value="<?php echo $lastName; ?>" required><br />
-                    <div class="input">Email:</div><input type="text" name="email" size='25' value="<?php echo $email; ?>" required><br />
-                    <div class="input">Message to Designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"><?php echo $message; ?></textarea><br />
+                    <div class="input">material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
+                    <div class="input">size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
+                    <div class="input">price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
+                    <div class="input">first name:</div><input type="text" name="firstName" size='25' value="<?php echo $firstName; ?>" required><br />
+                    <div class="input">last name:</div><input type="text" name="lastName" size='25' value="<?php echo $lastName; ?>" required><br />
+                    <div class="input">email:</div><input type="text" name="email" size='25' value="<?php echo $email; ?>" required><br />
+                    <div class="input">message to designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"><?php echo $message; ?></textarea><br />
                 </div>
 
                 <br style="clear:both">
