@@ -1,0 +1,6 @@
+# EmblemObjects.com HTACCESS #
+
+# Redirect
+# emblemobjects.com  -> /home
+RewriteEngine On
+RewriteRule ^$ /home [L]

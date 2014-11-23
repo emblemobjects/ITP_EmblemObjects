@@ -47,6 +47,8 @@ $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
  */
 $FB = [];
 $FB['app_id'] = '360442404114516'; $FB['app_secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
+// $FB['app_id'] = '359755337516556'; $FB['app_secret'] = '86478e6c611072cc6796bde77291a934'; //itp460
+// $FB['app_id'] = '365380733620683'; $FB['app_secret'] = 'd5800cc94912b481c5db374f52988137'; //preview
 
 
 /*
