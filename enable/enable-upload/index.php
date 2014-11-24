@@ -9,10 +9,12 @@ include_once '../../php/request-session.php';
 //Catching people who got here without filling out the form
 if (empty($_FILES["uploadButton1"])) {
     $valid = false;
-} else { $valid = true; }
+} else {
+    $valid = true;
+}
 
 $enable_id = helper::escape_str($con, $_REQUEST['enable_id']);
-helper::redirect_page($valid,'/enable/request/?enable_id=' . $enable_id);
+helper::redirect_page($valid, '/enable/request/?enable_id=' . $enable_id);
 
 session_start();
 
@@ -26,7 +28,7 @@ enable::submit_enable($enable_id);
 enable::make_request_pending($enable_id);
 
 /* clear the request session variables */
-clearEnableSession(); 
+clearEnableSession();
 
 /* re-enable autocommit */
 mysqli_autocommit($con, TRUE);
@@ -63,7 +65,7 @@ mysqli_autocommit($con, TRUE);
         <div id="confirmationContent">
             <h1 style="text-align:left;">UPLOAD SUCCESSFUL #<?php echo $enable_id ?></h1>
     <span>
-        <p>Thank you for your enable artwork uplaod.</p>
+        <p>Thank you for your enable artwork upload.</p>
 
         <p>EmblemObjects Team</p>
     </span>

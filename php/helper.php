@@ -29,95 +29,108 @@
 include_once 'config.php';
 
 // CLASS helper - to call helper::functtion_name();
-class helper {
-	// functions, const
+class helper
+{
+    // functions, const
 
-	// Prevent direct access to file
-	// @param __FILE__, $_SERVER['SCRIPT_NAME']
-	// @require DIR must be set
-	public static function secure_file($file) {
-		$file = helper::get_file($file);
-		$path = $_SERVER['SCRIPT_NAME'];
+    // Prevent direct access to file
+    // @param __FILE__, $_SERVER['SCRIPT_NAME']
+    // @require DIR must be set
+    public static function secure_file($file)
+    {
+        $file = helper::get_file($file);
+        $path = $_SERVER['SCRIPT_NAME'];
 
-		if ( strpos($path,$file) ) {
-			header('location: '.DIR.'/home/index.php');
-		}
-	}
+        if (strpos($path, $file)) {
+            header('location: ' . DIR . '/home/index.php');
+        }
+    }
 
-	// Get curernt file name
-	// @param __FILE__, file extension str if you want extension removed.
-	public static function get_file($file,$extension = NULL) {
-		// function
-		if ( isset($extension) ) {
-			return basename($file,$extension);
-		} else {
-			return basename($file);
-		}
-	}
+    // Get curernt file name
+    // @param __FILE__, file extension str if you want extension removed.
+    public static function get_file($file, $extension = NULL)
+    {
+        // function
+        if (isset($extension)) {
+            return basename($file, $extension);
+        } else {
+            return basename($file);
+        }
+    }
 
-	// Get escaped value
-	// @param $con = mysqli_connect, str need to be escaped
-	// @require function must be called after $con = mysqli_connect
-	public static function escape_str($con,$value) {
-		return mysqli_real_escape_string($con,$value);
-	}
+    // Get escaped value
+    // @param $con = mysqli_connect, str need to be escaped
+    // @require function must be called after $con = mysqli_connect
+    public static function escape_str($con, $value)
+    {
+        return mysqli_real_escape_string($con, $value);
+    }
 
-	// Redirect to page
-	// @param $valid allow access to page, false for redirect
-	// @param $page must contain "/" and extendsion
-	// @require must be called after DIR
-	public static function redirect_page($valid,$page) {
-		if ($valid == false) {
-			header('location: '.DIR.$page);
-		} else { return; }
-	}
+    // Redirect to page
+    // @param $valid allow access to page, false for redirect
+    // @param $page must contain "/" and extendsion
+    // @require must be called after DIR
+    public static function redirect_page($valid, $page)
+    {
+        if ($valid == false) {
+            header('location: ' . DIR . $page);
+        } else {
+            return;
+        }
+    }
 }
 
 
 // Test your code HERE
-class sandbox {
+class sandbox
+{
 
-	// Run your sandbox function here
-	public function run() {
-		// Run your test function
-		echo 'helper.php exec sandbox::run();<hr/>'; // debug line
-		// sandbox::test_function();
+    // Run your sandbox function here
+    public function run()
+    {
+        // Run your test function
+        echo 'helper.php exec sandbox::run();<hr/>'; // debug line
+        // sandbox::test_function();
 
-		// sandbox::test_secure_file();
-		// sandbox::test_get_file();
-		// sandbox::test_escape_str();
-	}
+        // sandbox::test_secure_file();
+        // sandbox::test_get_file();
+        // sandbox::test_escape_str();
+    }
 
-	// Example Function
-	private function test_function() {
-		// Test code
-		// echo "I am test code!";
-	}
+    // Example Function
+    private function test_function()
+    {
+        // Test code
+        // echo "I am test code!";
+    }
 
 
-	private function test_secure_file() {
-		helper::secure_file(__FILE__);
-	}
+    private function test_secure_file()
+    {
+        helper::secure_file(__FILE__);
+    }
 
-	private function test_get_file() {
-		echo helper::get_file(__FILE__,'.php');
-	}
+    private function test_get_file()
+    {
+        echo helper::get_file(__FILE__, '.php');
+    }
 
-	private function test_escape_str() {
-		include_once 'db-con.php';
+    private function test_escape_str()
+    {
+        include_once 'db-con.php';
 
-		if (!$con) {
-			exit(mysqli_error($con));
-		}
+        if (!$con) {
+            exit(mysqli_error($con));
+        }
 
-		$sql = "There's a";
+        $sql = "There's a";
 
-		echo $sql;
+        echo $sql;
 
-		echo '<br/>';
+        echo '<br/>';
 
-		echo helper::escape_str($con,$sql);
-	}
+        echo helper::escape_str($con, $sql);
+    }
 
 }
 

@@ -1,581 +1,637 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Enable Requests Page</title>
+    <title>Enable Requests Page</title>
 
-<style>
-/* CORE CSS
- *
- */
-* {
-	margin: 0;
-	padding: 0;
-}
-body {
-	color: #666;
-	background-color: #EEE;
-	/*font-family: 'tahoma';*/
-	font-family: 'verdana';
-	/*font-family: 'arial';*/
-	/*font-family: 'myriad pro';*/
-	font-size: 12pt;
-}
-article, aside, header, footer, nav, section {
-	display: block;
-}
-a {
-	color: inherit;
-	text-decoration: none;
-}
-.clear {
-	clear: both;
-}
+    <style>
+        /* CORE CSS
+         *
+         */
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-#main {
-	width: 1000px;
-	margin: 20px auto;
-	background-color: #FFF;
-}
+        body {
+            color: #666;
+            background-color: #EEE;
+            /*font-family: 'tahoma';*/
+            font-family: 'verdana';
+            /*font-family: 'arial';*/
+            /*font-family: 'myriad pro';*/
+            font-size: 12pt;
+        }
+
+        article, aside, header, footer, nav, section {
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        #main {
+            width: 1000px;
+            margin: 20px auto;
+            background-color: #FFF;
+        }
+
+        /* SECTION TAB CSS
+         *
+         */
+        .section-nav {
+            width: 150px;
+            float: left;
+            line-height: 2rem;
+            margin: 10px;
+            text-align: center;
+            background-color: #EEE;
+        }
+
+        .section-nav:hover {
+            background-color: #999;
+            color: #EEE;
+        }
+
+        /* LIST SECTION CSS
+         *
+         */
+        .list {
+            margin-bottom: 30px;
+        }
+
+        .heading {
+            font-size: 1.6rem;
+        }
+
+        .field {
+            font-size: 1.3rem;
+            background-color: #666;
+            color: #EEE;
+        }
+
+        .row {
+            font-size: 1rem;
+        }
+
+        .light {
+            background-color: #FFF;
+            color: #666;
+        }
+
+        .dark {
+            background-color: #EEE;
+            color: #666;
+        }
+
+        .light:hover {
+            background-color: #999;
+            color: #EEE;
+        }
+
+        .dark:hover {
+            background-color: #999;
+            color: #EEE;
+        }
+
+        /* LIST CELL CSS
+         *
+         */
+        .cell-w250 {
+            width: 250px;
+            float: left;
+            text-align: center;
+        }
+
+        .cell-w200 {
+            width: 200px;
+            float: left;
+            text-align: center;
+        }
+
+        .cell-w150 {
+            width: 150px;
+            float: left;
+            text-align: center;
+        }
+
+        .cell-w100 {
+            width: 100px;
+            float: left;
+            text-align: center;
+        }
+
+        .cell-w90 {
+            width: 90px;
+            float: left;
+            text-align: center;
+        }
+
+        .cell-h50 {
+            line-height: 50px;
+            padding: 10px 0;
+        }
+
+        /* MARGINS CSS
+         *
+         */
+        .ml-10 {
+            margin-left: 10px
+        }
+
+        .ml-30 {
+            margin-left: 30px;
+        }
+
+        .ml-125 {
+            margin-left: 125px;
+        }
+
+        .ml-175 {
+            margin-left: 175px;
+        }
+
+        /* CELL COMPONENT CSS
+         *
+         */
+        .cell-img {
+            display: block;
+            width: 50px;
+            margin-left: 25px;
+        }
+
+        .pass {
+            display: block;
+            font-size: 2rem;
+        }
+
+        .pass:hover {
+            color: #F93;
+        }
+
+        .edit {
+            display: block;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .edit:hover {
+            color: #F93;
+        }
 
 
-/* SECTION TAB CSS
- *
- */
-.section-nav {
-	width: 150px;
-	float: left;
-	line-height: 2rem;
-	margin: 10px;
-	text-align: center;
-	background-color: #EEE;
-}
-.section-nav:hover {
-	background-color: #999;
-	color: #EEE;
-}
-
-
-/* LIST SECTION CSS
- *
- */
-.list {
-	margin-bottom: 30px;
-}
-.heading {
-	font-size: 1.6rem;
-}
-.field {
-	font-size: 1.3rem;
-	background-color: #666;
-	color: #EEE;
-}
-.row {
-	font-size: 1rem;
-}
-.light {
-	background-color: #FFF;
-	color: #666;
-}
-.dark {
-	background-color: #EEE;
-	color: #666;
-}
-.light:hover {
-	background-color: #999;
-	color: #EEE;
-}
-.dark:hover {
-	background-color: #999;
-	color: #EEE;
-}
-
-/* LIST CELL CSS
- *
- */
-.cell-w250 {
-	width: 250px;
-	float: left;
-	text-align: center;
-}
-.cell-w200 {
-	width: 200px;
-	float: left;
-	text-align: center;
-}
-.cell-w150 {
-	width: 150px;
-	float: left;
-	text-align: center;
-}
-.cell-w100 {
-	width: 100px;
-	float: left;
-	text-align: center;
-}
-.cell-w90 {
-	width: 90px;
-	float: left;
-	text-align: center;
-}
-.cell-h50 {
-	line-height: 50px;
-	padding: 10px 0;
-}
-
-/* MARGINS CSS
- *
- */
-.ml-10 {
-	margin-left: 10px
-}
-.ml-30 {
-	margin-left: 30px;
-}
-.ml-125 {
-	margin-left: 125px;
-}
-.ml-175 {
-	margin-left: 175px;
-}
-
-/* CELL COMPONENT CSS
- *
- */
-.cell-img {
-	display: block;
-	width: 50px;
-	margin-left: 25px;
-}
-.pass {
-	display: block;
-	font-size: 2rem;
-}
-.pass:hover {
-	color: #F93;
-}
-
-.edit {
-	display: block;
-	font-size: 1.2em;
-	font-weight: bold;
-}
-.edit:hover {
-	color: #F93;
-}
-
-
-
-
-</style>
+    </style>
 </head>
 <body>
 
 <div id="main">
 
-<a href="#current-enable"><div class="section-nav">Current Enable</div></a>
-<a href="#pending-review"><div class="section-nav">Pending Review</div></a>
-<a href="#approved-enable"><div class="section-nav">Approved Enable</div></a>
-<a href="#rejected-enable"><div class="section-nav">Rejected Enable</div></a>
+<a href="#current-enable">
+    <div class="section-nav">Current Enable</div>
+</a>
+<a href="#pending-review">
+    <div class="section-nav">Pending Review</div>
+</a>
+<a href="#approved-enable">
+    <div class="section-nav">Approved Enable</div>
+</a>
+<a href="#rejected-enable">
+    <div class="section-nav">Rejected Enable</div>
+</a>
+
 <div class="clear"></div>
 
 <section id="current-enable" class="list">
-	<span class="heading">Current Enable Requests</span> click for more info or pass to skip request
-	<!--enable-id date time time-left object-name object-image enable-artwork pass-->
-	<div class="field">
-		<div class="cell-w200 cell-h50 ml-10">Enable Request ID</div>
-		<div class="cell-w200 cell-h50">End Time</div>
-		<div class="cell-w150 cell-h50">Time Left</div>
-		<div class="cell-w250 cell-h50">Object Name</div>
-		<div class="cell-w100 cell-h50">Artwork</div>
-		<div class="cell-w90 cell-h50">Pass</div>
-		<div class="clear"></div>
-	</div><!--END current .field-->
-	<div class="clear"></div>
+    <span class="heading">Current Enable Requests</span> click for more info or pass to skip request
+    <!--enable-id date time time-left object-name object-image enable-artwork pass-->
+    <div class="field">
+        <div class="cell-w200 cell-h50 ml-10">Enable Request ID</div>
+        <div class="cell-w200 cell-h50">End Time</div>
+        <div class="cell-w150 cell-h50">Time Left</div>
+        <div class="cell-w250 cell-h50">Object Name</div>
+        <div class="cell-w100 cell-h50">Artwork</div>
+        <div class="cell-w90 cell-h50">Pass</div>
+        <div class="clear"></div>
+    </div>
+    <!--END current .field-->
+    <div class="clear"></div>
 
-	<!-- CURRENT LIST -->
-	<a href="#">
-		<div class="row light">
-			<div class="cell-w200 cell-h50 ml-10">
-				#65343
-			</div>
-			<div class="cell-w200 cell-h50">
-				10/29/2014 4:24PM
-			</div>
-			<div class="cell-w150 cell-h50">
-				28 HR 37 MIN
-			</div>
-			<div class="cell-w250 cell-h50">
-				Standard Dogtag
-			</div>
-			<div class="cell-w100 cell-h50">
-				<img class="cell-img" src="http://placekitten.com/800/801"/>
-			</div>
-			<div class="cell-w90 cell-h50">
-				<a href="#pass">
-					<span class="pass">&#10006;</span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div><!--END current.row-->
-	</a>
-	<div class="clear"></div>
+    <!-- CURRENT LIST -->
+    <a href="#">
+        <div class="row light">
+            <div class="cell-w200 cell-h50 ml-10">
+                #65343
+            </div>
+            <div class="cell-w200 cell-h50">
+                10/29/2014 4:24PM
+            </div>
+            <div class="cell-w150 cell-h50">
+                28 HR 37 MIN
+            </div>
+            <div class="cell-w250 cell-h50">
+                Standard Dogtag
+            </div>
+            <div class="cell-w100 cell-h50">
+                <img class="cell-img" src="http://placekitten.com/800/801"/>
+            </div>
+            <div class="cell-w90 cell-h50">
+                <a href="#pass">
+                    <span class="pass">&#10006;</span>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--END current.row-->
+    </a>
+
+    <div class="clear"></div>
 
 
-	<!-- EXAMPLE CURRENT LIST -->
-	<a href="#">
-		<div class="row dark">
-			<div class="cell-w200 cell-h50 ml-10">
-				#65343
-			</div>
-			<div class="cell-w200 cell-h50">
-				10/29/2014 4:24PM
-			</div>
-			<div class="cell-w150 cell-h50">
-				28 HR 37 MIN
-			</div>
-			<div class="cell-w250 cell-h50">
-				Standard Dogtag
-			</div>
-			<div class="cell-w100 cell-h50">
-				<img class="cell-img" src="http://placekitten.com/800/801"/>
-			</div>
-			<div class="cell-w90 cell-h50">
-				<a href="#pass">
-					<span class="pass">&#10006;</span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div><!--END current.row-->
-	</a>
-	<div class="clear"></div>
-	<a href="#">
-		<div class="row light">
-			<div class="cell-w200 cell-h50 ml-10">
-				#65343
-			</div>
-			<div class="cell-w200 cell-h50">
-				10/29/2014 4:24PM
-			</div>
-			<div class="cell-w150 cell-h50">
-				28 HR 37 MIN
-			</div>
-			<div class="cell-w250 cell-h50">
-				Standard Dogtag
-			</div>
-			<div class="cell-w100 cell-h50">
-				<img class="cell-img" src="http://placekitten.com/800/801"/>
-			</div>
-			<div class="cell-w90 cell-h50">
-				<a href="#pass">
-					<span class="pass">&#10006;</span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div><!--END current.row-->
-	</a>
-	<div class="clear"></div>
-	<a href="#">
-		<div class="row dark">
-			<div class="cell-w200 cell-h50 ml-10">
-				#65343
-			</div>
-			<div class="cell-w200 cell-h50">
-				10/29/2014 4:24PM
-			</div>
-			<div class="cell-w150 cell-h50">
-				28 HR 37 MIN
-			</div>
-			<div class="cell-w250 cell-h50">
-				Standard Dogtag
-			</div>
-			<div class="cell-w100 cell-h50">
-				<img class="cell-img" src="http://placekitten.com/800/801"/>
-			</div>
-			<div class="cell-w90 cell-h50">
-				<a href="#pass">
-					<span class="pass">&#10006;</span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div><!--END current.row-->
-	</a>
-	<div class="clear"></div>
-	<!-- END EXAMPLE CURRENT LIST -->
+    <!-- EXAMPLE CURRENT LIST -->
+    <a href="#">
+        <div class="row dark">
+            <div class="cell-w200 cell-h50 ml-10">
+                #65343
+            </div>
+            <div class="cell-w200 cell-h50">
+                10/29/2014 4:24PM
+            </div>
+            <div class="cell-w150 cell-h50">
+                28 HR 37 MIN
+            </div>
+            <div class="cell-w250 cell-h50">
+                Standard Dogtag
+            </div>
+            <div class="cell-w100 cell-h50">
+                <img class="cell-img" src="http://placekitten.com/800/801"/>
+            </div>
+            <div class="cell-w90 cell-h50">
+                <a href="#pass">
+                    <span class="pass">&#10006;</span>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--END current.row-->
+    </a>
 
-	
-	<!-- END CURRENT LIST-->
-</section><!--END current-enable-->
+    <div class="clear"></div>
+    <a href="#">
+        <div class="row light">
+            <div class="cell-w200 cell-h50 ml-10">
+                #65343
+            </div>
+            <div class="cell-w200 cell-h50">
+                10/29/2014 4:24PM
+            </div>
+            <div class="cell-w150 cell-h50">
+                28 HR 37 MIN
+            </div>
+            <div class="cell-w250 cell-h50">
+                Standard Dogtag
+            </div>
+            <div class="cell-w100 cell-h50">
+                <img class="cell-img" src="http://placekitten.com/800/801"/>
+            </div>
+            <div class="cell-w90 cell-h50">
+                <a href="#pass">
+                    <span class="pass">&#10006;</span>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--END current.row-->
+    </a>
+
+    <div class="clear"></div>
+    <a href="#">
+        <div class="row dark">
+            <div class="cell-w200 cell-h50 ml-10">
+                #65343
+            </div>
+            <div class="cell-w200 cell-h50">
+                10/29/2014 4:24PM
+            </div>
+            <div class="cell-w150 cell-h50">
+                28 HR 37 MIN
+            </div>
+            <div class="cell-w250 cell-h50">
+                Standard Dogtag
+            </div>
+            <div class="cell-w100 cell-h50">
+                <img class="cell-img" src="http://placekitten.com/800/801"/>
+            </div>
+            <div class="cell-w90 cell-h50">
+                <a href="#pass">
+                    <span class="pass">&#10006;</span>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--END current.row-->
+    </a>
+
+    <div class="clear"></div>
+    <!-- END EXAMPLE CURRENT LIST -->
+
+
+    <!-- END CURRENT LIST-->
+</section>
+<!--END current-enable-->
 
 
 <section id="pending-review" class="list">
-	<span class="heading">Pending Enable Reivew</span> submitted enable requests waiting for review
-	<div class="field">
-		<div class="cell-w200 cell-h50 ml-30">Enable Request ID</div>
-		<div class="cell-w200 cell-h50">End Time</div>
-		<div class="cell-w200 cell-h50">Submit Time</div>
-		<div class="cell-w250 cell-h50">Object Name</div>
-		<div class="cell-w90 cell-h50">Edit</div>
-		<div class="clear"></div>
-	</div><!--END pending .field-->
-	<div class="clear"></div>
+    <span class="heading">Pending Enable Reivew</span> submitted enable requests waiting for review
+    <div class="field">
+        <div class="cell-w200 cell-h50 ml-30">Enable Request ID</div>
+        <div class="cell-w200 cell-h50">End Time</div>
+        <div class="cell-w200 cell-h50">Submit Time</div>
+        <div class="cell-w250 cell-h50">Object Name</div>
+        <div class="cell-w90 cell-h50">Edit</div>
+        <div class="clear"></div>
+    </div>
+    <!--END pending .field-->
+    <div class="clear"></div>
 
-	<!-- PENDING LIST -->
-	<div class="row light">
-		<div class="cell-w200 cell-h50 ml-30">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/29/2014 4:24PM
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w90 cell-h50">
-			<a href="#edit">
-				<span class="edit">EDIT</span>
-			</a>
-		</div>
-		<div class="clear"></div>
-	</div><!--END pending .row-->
-	<div class="clear"></div>
+    <!-- PENDING LIST -->
+    <div class="row light">
+        <div class="cell-w200 cell-h50 ml-30">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/29/2014 4:24PM
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w90 cell-h50">
+            <a href="#edit">
+                <span class="edit">EDIT</span>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END pending .row-->
+    <div class="clear"></div>
 
 
-	<!-- EXAMPLE PENDING LIST -->
-	<div class="row dark">
-		<div class="cell-w200 cell-h50 ml-30">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/29/2014 4:24PM
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w90 cell-h50">
-			<a href="#edit">
-				<span class="edit">EDIT</span>
-			</a>
-		</div>
-		<div class="clear"></div>
-	</div><!--END pending .row-->
-	<div class="clear"></div>
-	<div class="row light">
-		<div class="cell-w200 cell-h50 ml-30">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/29/2014 4:24PM
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w90 cell-h50">
-			<a href="#edit">
-				<span class="edit">EDIT</span>
-			</a>
-		</div>
-		<div class="clear"></div>
-	</div><!--END pending .row-->
-	<div class="clear"></div>
-	<div class="row dark">
-		<div class="cell-w200 cell-h50 ml-30">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/29/2014 4:24PM
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w90 cell-h50">
-			<a href="#edit">
-				<span class="edit">EDIT</span>
-			</a>
-		</div>
-		<div class="clear"></div>
-	</div><!--END pending .row-->
-	<div class="clear"></div>
-	<!-- END EXAMPLE PENDING LIST -->
+    <!-- EXAMPLE PENDING LIST -->
+    <div class="row dark">
+        <div class="cell-w200 cell-h50 ml-30">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/29/2014 4:24PM
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w90 cell-h50">
+            <a href="#edit">
+                <span class="edit">EDIT</span>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END pending .row-->
+    <div class="clear"></div>
+    <div class="row light">
+        <div class="cell-w200 cell-h50 ml-30">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/29/2014 4:24PM
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w90 cell-h50">
+            <a href="#edit">
+                <span class="edit">EDIT</span>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END pending .row-->
+    <div class="clear"></div>
+    <div class="row dark">
+        <div class="cell-w200 cell-h50 ml-30">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/29/2014 4:24PM
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w90 cell-h50">
+            <a href="#edit">
+                <span class="edit">EDIT</span>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END pending .row-->
+    <div class="clear"></div>
+    <!-- END EXAMPLE PENDING LIST -->
 
-	
-	<!-- END PENDING LIST-->
-</section><!--END pending-review-->
+
+    <!-- END PENDING LIST-->
+</section>
+<!--END pending-review-->
 
 
 <section id="approved-enable" class="list">
-	<span class="heading">Approved Enable Requests</span> enable requests that have passed enable review
-	<div class="field">
-		<div class="cell-w200 cell-h50 ml-125">Enable Request ID</div>
-		<div class="cell-w200 cell-h50">Submit Time</div>
-		<div class="cell-w250 cell-h50">Object Name</div>
-		<div class="cell-w100 cell-h50">Artwork</div>
-		<div class="clear"></div>
-	</div><!--END approved .field-->
-	<div class="clear"></div>
+    <span class="heading">Approved Enable Requests</span> enable requests that have passed enable review
+    <div class="field">
+        <div class="cell-w200 cell-h50 ml-125">Enable Request ID</div>
+        <div class="cell-w200 cell-h50">Submit Time</div>
+        <div class="cell-w250 cell-h50">Object Name</div>
+        <div class="cell-w100 cell-h50">Artwork</div>
+        <div class="clear"></div>
+    </div>
+    <!--END approved .field-->
+    <div class="clear"></div>
 
-	<!-- APPROVED LIST -->
-	<div class="row light">
-		<div class="cell-w200 cell-h50 ml-125">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w100 cell-h50">
-			<img class="cell-img" src="http://placekitten.com/800/801"/>
-		</div>
-		<div class="clear"></div>
-	</div><!--END approved .row-->
-	<div class="clear"></div>
-
-	
-	<!-- EXAMPLE APPROVED LIST -->
-	<div class="row dark">
-		<div class="cell-w200 cell-h50 ml-125">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w100 cell-h50">
-			<img class="cell-img" src="http://placekitten.com/800/801"/>
-		</div>
-		<div class="clear"></div>
-	</div><!--END approved .row-->
-	<div class="clear"></div>
-	<div class="row light">
-		<div class="cell-w200 cell-h50 ml-125">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w100 cell-h50">
-			<img class="cell-img" src="http://placekitten.com/800/801"/>
-		</div>
-		<div class="clear"></div>
-	</div><!--END approved .row-->
-	<div class="clear"></div>
-	<div class="row dark">
-		<div class="cell-w200 cell-h50 ml-125">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="cell-w100 cell-h50">
-			<img class="cell-img" src="http://placekitten.com/800/801"/>
-		</div>
-		<div class="clear"></div>
-	</div><!--END approved .row-->
-	<div class="clear"></div>
-	<!-- END EXAMPLE APPROVED LIST -->
+    <!-- APPROVED LIST -->
+    <div class="row light">
+        <div class="cell-w200 cell-h50 ml-125">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w100 cell-h50">
+            <img class="cell-img" src="http://placekitten.com/800/801"/>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END approved .row-->
+    <div class="clear"></div>
 
 
-	<!-- END ARPPOVED LIST -->
-</section><!--END approved-enable-->
+    <!-- EXAMPLE APPROVED LIST -->
+    <div class="row dark">
+        <div class="cell-w200 cell-h50 ml-125">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w100 cell-h50">
+            <img class="cell-img" src="http://placekitten.com/800/801"/>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END approved .row-->
+    <div class="clear"></div>
+    <div class="row light">
+        <div class="cell-w200 cell-h50 ml-125">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w100 cell-h50">
+            <img class="cell-img" src="http://placekitten.com/800/801"/>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END approved .row-->
+    <div class="clear"></div>
+    <div class="row dark">
+        <div class="cell-w200 cell-h50 ml-125">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="cell-w100 cell-h50">
+            <img class="cell-img" src="http://placekitten.com/800/801"/>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END approved .row-->
+    <div class="clear"></div>
+    <!-- END EXAMPLE APPROVED LIST -->
+
+
+    <!-- END ARPPOVED LIST -->
+</section>
+<!--END approved-enable-->
 
 
 <section id="rejected-enable" class="section-enable-list">
-	<span class="heading">Rejected Enable Requests</span> enable requests that failed enable review
-	<div class="field">
-		<div class="cell-w200 cell-h50 ml-175">Enable Request ID</div>
-		<div class="cell-w200 cell-h50">Submit Time</div>
-		<div class="cell-w250 cell-h50">Object Name</div>
-		<div class="clear"></div>
-	</div><!--END rejected .field-->
-	<div class="clear"></div>
+    <span class="heading">Rejected Enable Requests</span> enable requests that failed enable review
+    <div class="field">
+        <div class="cell-w200 cell-h50 ml-175">Enable Request ID</div>
+        <div class="cell-w200 cell-h50">Submit Time</div>
+        <div class="cell-w250 cell-h50">Object Name</div>
+        <div class="clear"></div>
+    </div>
+    <!--END rejected .field-->
+    <div class="clear"></div>
 
-	<!-- REJECTED LIST -->
-	<div class="row light">
-		<div class="cell-w200 cell-h50 ml-175">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="clear"></div>
-	</div><!--END rejected .row-->
-	<div class="clear"></div>
-
-
-	<!-- EXAMPLE REJECTED LIST -->
-	<div class="row dark">
-		<div class="cell-w200 cell-h50 ml-175">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="clear"></div>
-	</div><!--END rejected .row-->
-	<div class="clear"></div>
-	<div class="row light">
-		<div class="cell-w200 cell-h50 ml-175">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="clear"></div>
-	</div><!--END rejected .row-->
-	<div class="clear"></div>
-	<div class="row dark">
-		<div class="cell-w200 cell-h50 ml-175">
-			#65343
-		</div>
-		<div class="cell-w200 cell-h50">
-			10/28/2014 8:17PM
-		</div>
-		<div class="cell-w250 cell-h50">
-			Standard Dogtag
-		</div>
-		<div class="clear"></div>
-	</div><!--END rejected .row-->
-	<div class="clear"></div>
-	<!-- END EXAMPLE REJECTED LIST -->
+    <!-- REJECTED LIST -->
+    <div class="row light">
+        <div class="cell-w200 cell-h50 ml-175">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END rejected .row-->
+    <div class="clear"></div>
 
 
-	<!-- END REJECTED LIST -->
-</section><!--END rejected-enable-->
+    <!-- EXAMPLE REJECTED LIST -->
+    <div class="row dark">
+        <div class="cell-w200 cell-h50 ml-175">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END rejected .row-->
+    <div class="clear"></div>
+    <div class="row light">
+        <div class="cell-w200 cell-h50 ml-175">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END rejected .row-->
+    <div class="clear"></div>
+    <div class="row dark">
+        <div class="cell-w200 cell-h50 ml-175">
+            #65343
+        </div>
+        <div class="cell-w200 cell-h50">
+            10/28/2014 8:17PM
+        </div>
+        <div class="cell-w250 cell-h50">
+            Standard Dogtag
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END rejected .row-->
+    <div class="clear"></div>
+    <!-- END EXAMPLE REJECTED LIST -->
 
+
+    <!-- END REJECTED LIST -->
+</section>
+<!--END rejected-enable-->
 
 
 <div class="clear"></div>
-</div><!--END main-->
+</div>
+<!--END main-->
 
 </body>
 </html>

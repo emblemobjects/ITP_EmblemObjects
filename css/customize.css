@@ -1,95 +1,105 @@
 #container {
-    width:800px;
-    margin:auto;
-    background-color:white;
-    padding:5px 20px 20px 20px;
-    margin-top:30px;
-    margin-bottom:30px;
+    width: 800px;
+    background-color: white;
+    padding: 5px 20px 20px 20px;
+    margin: 30px auto;
     font-family: "Garamond", serif;
 }
+
 #title-div {
-    width:100%;
-    margin:auto;
-    margin-top:15px;
+    width: 100%;
+    margin: 15px auto auto;
 }
+
 #container-left {
-    width:370px;
-    margin-right:60px;
-    float:left;
+    width: 370px;
+    margin-right: 60px;
+    float: left;
 }
+
 h1 {
     background-color: #333333;
     text-align: left;
     padding: 5px;
 }
+
 #content h1 {
-    text-align:center;
-    font-size:1.2em;
+    text-align: center;
+    font-size: 1.2em;
     margin-bottom: 3px;
-    font-weight:200;
-    color:white;
-    width:790px;
+    font-weight: 200;
+    color: white;
+    width: 790px;
 }
+
 #content h3 {
-    text-align:right;
-    font-size:1.2em;
-    margin-bottom:5px;
+    text-align: right;
+    font-size: 1.2em;
+    margin-bottom: 5px;
     margin-top: 15px;
-    font-weight:200;
+    font-weight: 200;
 }
-#content h5{
+
+#content h5 {
     text-align: right;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-#container-right{
-    margin-top:15px;
-    width:370px;
-    text-align:left;
-    float:right;
+
+#container-right {
+    margin-top: 15px;
+    width: 370px;
+    text-align: left;
+    float: right;
 }
+
 #buy-div {
-    height:15px;
-    width:50%;
-    margin:auto;
-    text-align:center;
+    height: 15px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
 }
 
 #uploadFile {
     float: right;
     margin-left: 37%;
-    height:190px;
-    width:200px;
+    height: 190px;
+    width: 200px;
 
 }
+
 #uploadButton {
     float: right;
-    margin:10px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
     position: relative;
     left: 50px;
 }
 
-.fileUpload{
+.fileUpload {
     text-align: right;
     float: right;
 }
-#confirmationContent{
+
+#confirmationContent {
     padding: 50px;
     width: 600px;
     margin: 0px auto;
 }
-p{
+
+p {
     margin-bottom: 10px;
 }
-#submitRequest{
+
+#submitRequest {
     text-align: center;
 }
-h4{
-    font-weight:200;
-    border-bottom:1px solid #f2b139;
+
+h4 {
+    font-weight: 200;
+    border-bottom: 1px solid #f2b139;
 }
 
-#previewObject{
+#previewObject {
     height: 190px;
     width: 200px;
 }
@@ -101,27 +111,29 @@ h4{
     margin-left: 37%;
 }
 
-#submit-button{
+#submit-button {
     cursor: pointer;
 }
 
 .readOnly {
-    float:left;
+    float: left;
     margin-right: 10px;
     border: 0;
     background-color: inherit;
 }
 
-.readOnlyBox{
+.readOnlyBox {
     background-color: #cccccc;
-    width:100px;
+    width: 100px;
 }
+
 .input {
     width: 150px;
     float: left;
 }
-#content{
-  width: 1200px;
+
+#content {
+    width: 1200px;
 }
 
 #confirmationContent {

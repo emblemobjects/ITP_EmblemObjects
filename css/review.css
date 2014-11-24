@@ -1,46 +1,49 @@
 #content {
-    width:100%;
+    width: 100%;
 }
+
 #container {
-    width:800px;
-    background-color:white;
-    margin-top: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 30px;
-    padding:40px 30px 60px 30px;
+    width: 800px;
+    background-color: white;
+    margin: 30px auto;
+    padding: 40px 30px 60px 30px;
 }
+
 #review {
 
 }
-#reivew-title {
-    width:100%;
-    /*border-bottom: solid 1px #f2b139;*/
-    /*padding-bottom: 10px;*/
+
+#review-title {
+    width: 100%;
 }
+
 #review-title span {
-    font-size:2em;
+    font-size: 2em;
 }
+
 #item-info {
-    width:50%;
-    float:left;
+    width: 50%;
+    float: left;
     padding-top: 10px;
 }
+
 #item-properties {
-    width:50%;
-    float:right;
+    width: 50%;
+    float: right;
     padding-top: 10px;
 }
+
 #review-close {
-    width:100%;
+    width: 100%;
     /*border-top: solid 1px #f2b139;*/
     /*padding-top: 10px;*/
 }
+
 .gray-subtitle-bar {
-    color:white;
+    color: white;
     margin-bottom: 0px;
-    padding:6px 6px 6px 10px;
-    background-color:#999999;
+    padding: 6px 6px 6px 10px;
+    background-color: #999999;
     font-weight: 600;
 }
 

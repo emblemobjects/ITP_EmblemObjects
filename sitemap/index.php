@@ -62,6 +62,7 @@ include_once '../php/navigation_categories.php'?>
                     <a class="link" href="../#">Collections</a><br>
 
                     <a class="link" href="../#">Designers</a><br>
+
                     <div class="indent">
                         <a class="link" href="../#">Jacob Blitzer</a><br>
                     </div>
@@ -77,6 +78,7 @@ include_once '../php/navigation_categories.php'?>
                 <hr/>
                 <div class="item-cat">
                     <a class="link" href="../home/index.php?category_id=4&subcategory_id=%200"><h4>Home</h4></a>
+
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%209">Placements</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%2010">Holders</a><br>
@@ -86,6 +88,7 @@ include_once '../php/navigation_categories.php'?>
                     </div>
 
                     <a class="link" href="../home/index.php?category_id=6&subcategory_id=%200">Jewelry</a><br>
+
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%2016">Rings</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%2017">Pendants</a><br>
@@ -99,6 +102,7 @@ include_once '../php/navigation_categories.php'?>
                 <div class="item-cat">
 
                     <a class="link" href="../home/index.php?category_id=1&subcategory_id=%200">Accessories</a><br>
+
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%201">Cases</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%202">Keychains</a><br>
@@ -106,19 +110,22 @@ include_once '../php/navigation_categories.php'?>
                     </div>
 
                     <a class="link" href="../home/index.php?category_id=2&subcategory_id=%200">Art</a><br>
+
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%204">Sculpture</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%205">Parametrics</a><br>
-                        <a class="link" href="../ITP_EmblemObjects/home/index.php?subcategory_id=%206">Themed</a><br>
+                        <a class="link" href="../home/index.php?subcategory_id=%206">Themed</a><br>
                     </div>
 
                     <a class="link" href="../home/index.php?category_id=3&subcategory_id=%200">Gadgets</a><br>
+
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%207">Parts</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%208">Props</a><br>
                     </div>
 
                     <a class="link" href="../home/index.php?category_id=5&subcategory_id=%200">Novelty</a><br>
+
                     <div class="indent">
                         <a class="link" href="../home/index.php?subcategory_id=%2014">Desk Toys</a><br>
                         <a class="link" href="../home/index.php?subcategory_id=%2015">Puzzles</a><br>

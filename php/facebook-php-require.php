@@ -4,7 +4,7 @@
 // define('FACEBOOK_SDK_V4_SRC_DIR', __DIR__.'/facebook-php-sdk/src');
 // require __DIR__.'/facebook-php-sdk/autoload.php';
 
-require_once (__DIR__.'/facebook-php-sdk/facebook-autoload.php');
+require_once(__DIR__ . '/facebook-php-sdk/facebook-autoload.php');
 // require_once (__DIR__.'/facebook-php-sdk/Facebook/FacebookSession.php');
 // require_once (__DIR__.'/facebook-php-sdk/Facebook/FacebookJavaScriptLoginHelper.php');
 // require_once (__DIR__.'/facebook-php-sdk/Facebook/FacebookSignedRequestFromInputHelper.php');

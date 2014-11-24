@@ -9,11 +9,13 @@ include_once '../../../php/request-session.php';
 //Catching people who got here without filling out the form
 if (empty($_REQUEST['firstName'])) {
     $valid = false;
-} else { $valid = true; }
+} else {
+    $valid = true;
+}
 
 $detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
 
-helper::redirect_page($valid,'/enable/request/?detail_id=' . $detail_id);
+helper::redirect_page($valid, '/enable/request/?detail_id=' . $detail_id);
 
 session_start();
 
@@ -43,7 +45,7 @@ $designer_name = $array_info[0]['designer_name'];
 $designer_email = $array_info[0]['designer_email'];
 
 /* clear the request session variables */
-clearRequestSession(); 
+clearRequestSession();
 
 ?>
 
@@ -78,11 +80,14 @@ clearRequestSession();
         <div id="confirmationContent">
             <h1 style="text-align:left;">ENABLE REQUEST CONFIRMATION #<?php echo $enable_id ?></h1>
     <span>
-        <p>Thank you for your design request submission. Your design request number is <strong><?php echo $enable_id ?></strong> and your designer is <strong><?php echo $designer_name ?></strong>. Your designer will get
+        <p>Thank you for your design request submission. Your design request number is
+            <strong><?php echo $enable_id ?></strong> and your designer is <strong><?php echo $designer_name ?></strong>.
+            Your designer will get
             to work on your design right away, turning your artwork into a unique product created just for you.</p>
         <p>Please check the email you provided: <strong><?php echo $email ?></strong> for a confirmation message.</p>
         <p>Within 48 hours, you will receive another email from EmblemObjects.com with your
-            unique object ready to to order. Until then, your designer may wish to contact you from <strong><?php echo $designer_email ?></strong>.</p>
+            unique object ready to to order. Until then, your designer may wish to contact you from
+            <strong><?php echo $designer_email ?></strong>.</p>
         <p>You are one step closer to creating something truly special with us!</p>
         <p>Thank you for designing with us!</p>
 

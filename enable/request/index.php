@@ -1,7 +1,4 @@
 <?php
-/* /customize/index.php
- * test - ?item_id=1$detail_id=3
- */
 session_start();
 include "submit/index.php";
 if (empty($_REQUEST['detail_id'])) {
@@ -18,11 +15,14 @@ $items_array = items::get_items(0, 0, 0, 0, "");
 // set valid browse
 if (empty($_REQUEST['detail_id'])) {
     $valid = false;
-} else { $valid = true; }
+} else {
+    $valid = true;
+}
 
 // redirect to home if invalid
-helper::redirect_page($valid,'/home/index.php');
+helper::redirect_page($valid, '/home/index.php');
 
+//Get the information, only detail_id is passed through
 $detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
 $item_id = items::get_item_id($detail_id);
 $item_name = items::get_field_value($item_id, "name");
@@ -87,31 +87,54 @@ $errorMessage1 = $request_array[4];
 
                     <div class="fileUpload">
                         <input type="hidden" name="newFileName" value="customer_artwork"/>
-                        <div id="uploadFile"><img id = "previewObject" src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>" /></div>
-                        <input type="file" id="uploadButton" name="uploadButton" />
+
+                        <div id="uploadFile"><img id="previewObject"
+                                                  src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>"/>
+                        </div>
+                        <input type="file" id="uploadButton" name="uploadButton"/>
                         <span id="upload-error"><?php echo $errorMessage1 ?></span><br>
                     </div>
 
                     <br style="clear:both;"/>
                 </div>
                 <div id="container-right">
-                    <input type="hidden" name="item_id" value="<?php echo $item_id ?>" />
-                    <input type="hidden" name="material_id" value="<?php echo $material_id ?>" />
-                    <input type="hidden" name="detail_id" value="<?php echo $detail_id ?>" />
+                    <input type="hidden" name="item_id" value="<?php echo $item_id ?>"/>
+                    <input type="hidden" name="material_id" value="<?php echo $material_id ?>"/>
+                    <input type="hidden" name="detail_id" value="<?php echo $detail_id ?>"/>
                     <br/>
-                    <br />
-                    <div class="input">material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
-                    <div class="input">size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
-                    <div class="input">price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
-                    <div class="input">first name:</div><input type="text" name="firstName" size='25' value="<?php echo $firstName; ?>" required><br />
-                    <div class="input">last name:</div><input type="text" name="lastName" size='25' value="<?php echo $lastName; ?>" required><br />
-                    <div class="input">email:</div><input type="text" name="email" size='25' value="<?php echo $email; ?>" required><br />
-                    <div class="input">message to designer:</div><textarea name="message" rows="5" cols="27" maxlength="1000"><?php echo $message; ?></textarea><br />
+                    <br/>
+
+                    <div class="input">material:</div>
+                    <input class="readOnly" type="text" size='25' name="material_name"
+                           value="<?php echo $material_name ?>" readonly/><br/>
+
+                    <div class="input">size:</div>
+                    <input class="readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>"
+                           readonly/><br/>
+
+                    <div class="input">price:</div>
+                    <input class="readOnly" type="text" size='25' name="price" value="<?php echo $price; ?>"
+                           readonly/><br/>
+
+                    <div class="input">first name:</div>
+                    <input type="text" name="firstName" size='25' value="<?php echo $firstName; ?>" required><br/>
+
+                    <div class="input">last name:</div>
+                    <input type="text" name="lastName" size='25' value="<?php echo $lastName; ?>" required><br/>
+
+                    <div class="input">email:</div>
+                    <input type="text" name="email" size='25' value="<?php echo $email; ?>" required><br/>
+
+                    <div class="input">message to designer:</div>
+                    <textarea name="message" rows="5" cols="27" maxlength="1000"><?php echo $message; ?></textarea><br/>
                 </div>
 
                 <br style="clear:both">
                 <br/>
-                <div id="submitRequest"><button id="submit-button" type="submit" value="Submit Request">Submit Request</button></div>
+
+                <div id="submitRequest">
+                    <button id="submit-button" type="submit" value="Submit Request">Submit Request</button>
+                </div>
             </form>
         </div>
     </div>

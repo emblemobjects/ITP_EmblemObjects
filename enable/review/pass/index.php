@@ -48,23 +48,26 @@ enable::pass_request(helper::escape_str($con, $_REQUEST['enable_id']));
         <div class="container" id="container">
             <div id="review">
                 <div id="review-title">
-                    <strong><span style="color: red">ENABLE #<?php echo $enable_info['enable_id']?> has been PASSED.</span></strong><br />
+                    <strong><span style="color: red">ENABLE #<?php echo $enable_info['enable_id'] ?>
+                            has been PASSED.</span></strong><br/>
                     <hr style="border: solid 1px #f2b139; margin: 7px;">
                 </div>
                 <div id="item-info">
-                    <strong>requested by |&nbsp;</strong><?php echo $enable_info['first_name']." ".$enable_info['last_name'] ?><br />
-                    <strong>date submitted |&nbsp;</strong><?php echo $enable_info['date_submitted']?><br />
-                    <strong>due date |&nbsp;</strong><?php echo $enable_info['due_date']?><br />
-                    <strong>message |&nbsp;</strong><?php echo $enable_info['message']?><br />
+                    <strong>requested by
+                        |&nbsp;</strong><?php echo $enable_info['first_name'] . " " . $enable_info['last_name'] ?><br/>
+                    <strong>date submitted |&nbsp;</strong><?php echo $enable_info['date_submitted'] ?><br/>
+                    <strong>due date |&nbsp;</strong><?php echo $enable_info['due_date'] ?><br/>
+                    <strong>message |&nbsp;</strong><?php echo $enable_info['message'] ?><br/>
                 </div>
                 <div id="item-properties">
-                    <strong>item name |&nbsp;</strong><?php echo $enable_info['item_name']?><br />
-                    <strong>size |&nbsp;</strong><?php echo $enable_info['size']?><br />
-                    <strong>material |&nbsp;</strong><?php echo $enable_info['material_name']?><br />
+                    <strong>item name |&nbsp;</strong><?php echo $enable_info['item_name'] ?><br/>
+                    <strong>size |&nbsp;</strong><?php echo $enable_info['size'] ?><br/>
+                    <strong>material |&nbsp;</strong><?php echo $enable_info['material_name'] ?><br/>
                 </div>
                 <br style="clear:both"/>
+
                 <div id="review-close">
-                    <br />
+                    <br/>
                     <hr style="border: solid 1px #f2b139; margin: 7px;">
                     <p>An email will now be sent to alert the staff that you have passed the request</p>
                 </div>

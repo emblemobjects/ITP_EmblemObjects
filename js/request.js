@@ -10,8 +10,8 @@ function readURL(input) {
     }
 }
 
-$(document).ready(function(){
-    $("#uploadButton").change(function(){
+$(document).ready(function () {
+    $("#uploadButton").change(function () {
         readURL(this);
     });
 });

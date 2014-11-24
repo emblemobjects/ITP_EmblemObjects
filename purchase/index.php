@@ -33,7 +33,6 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <link rel="stylesheet" type="text/css" href="../css/purchase.css">
 
 
-
 </head>
 
 
@@ -50,35 +49,63 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <h1>PURCHASE YOUR UNIQUE OBJECT</h1>
                 <h4>Object: <?php echo $item_name ?></h4>
             </div>
-            <form id="purchaseObject" method="POST" action="<?php echo DIR."/payment/index.php"?>">
+            <form id="purchaseObject" method="POST" action="<?php echo DIR . "/payment/index.php" ?>">
                 <div id="container-left">
 
                     <h3>Preview your object</h3>
                     <h5>Please review the material, size, and price</h5>
 
-                        <div id="preview"><img id = "previewObject" src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>" /></div>
+                    <div id="preview"><img id="previewObject"
+                                           src="<?php echo items::getPrimaryImage($GLOBALS['items_array'], $item_id); ?>"/>
+                    </div>
 
                     <br style="clear:both;"/>
                 </div>
                 <div id="container-right">
-                    <input type="hidden" name="item_id" value="<?php echo $item_id ?>" />
-                    <input type="hidden" name="material_id" value="<?php echo $material_id ?>" />
-                    <br />
-                    <div class="input">Material:</div><input class = "readOnly" type="text" size='25' name="material_name" value="<?php echo $material_name ?>" readonly /><br />
-                    <div class="input">Size:</div><input class = "readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>" readonly /><br />
-                    <div class="input">Price:</div><input class = "readOnly" type="text" size='25' name="price" value="<?php echo $price ; ?>" readonly /><br />
-                    <div class="input">First Name:</div><input type="text" name="firstName" size='25' required><br />
-                    <div class="input">Last Name:</div><input type="text" name="lastName" size='25' required><br />
-                    <div class="input">Email:</div><input type="text" name="email" size='25' required><br />
-                    <div class="input">Shipping Address</div><input type="text" name="address" size='25' required><br />
-                    <div class="input">City:</div><input type="text" name="city" size='25' required><br />
-                    <div class="input">State:</div><input type="text" name="state" size='25' required><br />
-                    <div class="input">Zip Code:</div><input type="text" name="zip" size='25' required><br />
+                    <input type="hidden" name="item_id" value="<?php echo $item_id ?>"/>
+                    <input type="hidden" name="material_id" value="<?php echo $material_id ?>"/>
+                    <br/>
+
+                    <div class="input">Material:</div>
+                    <input class="readOnly" type="text" size='25' name="material_name"
+                           value="<?php echo $material_name ?>" readonly/><br/>
+
+                    <div class="input">Size:</div>
+                    <input class="readOnly" type="text" size='25' name="size" value="<?php echo $size; ?>"
+                           readonly/><br/>
+
+                    <div class="input">Price:</div>
+                    <input class="readOnly" type="text" size='25' name="price" value="<?php echo $price; ?>"
+                           readonly/><br/>
+
+                    <div class="input">First Name:</div>
+                    <input type="text" name="firstName" size='25' required><br/>
+
+                    <div class="input">Last Name:</div>
+                    <input type="text" name="lastName" size='25' required><br/>
+
+                    <div class="input">Email:</div>
+                    <input type="text" name="email" size='25' required><br/>
+
+                    <div class="input">Shipping Address</div>
+                    <input type="text" name="address" size='25' required><br/>
+
+                    <div class="input">City:</div>
+                    <input type="text" name="city" size='25' required><br/>
+
+                    <div class="input">State:</div>
+                    <input type="text" name="state" size='25' required><br/>
+
+                    <div class="input">Zip Code:</div>
+                    <input type="text" name="zip" size='25' required><br/>
                 </div>
 
                 <br style="clear:both">
                 <br/>
-                <div id="paymentButton"><button type="submit" value="Submit Request">Continue to Payment</button></div>
+
+                <div id="paymentButton">
+                    <button type="submit" value="Submit Request">Continue to Payment</button>
+                </div>
             </form>
         </div>
     </div>

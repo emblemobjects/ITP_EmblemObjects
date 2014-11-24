@@ -56,12 +56,14 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
                 <hr style="border: solid 1px #f2b139; margin: 7px;">
                 <div class="gray-subtitle-bar">Order Info</div>
                 <div id="item-info">
-                    <strong>requested by: </strong> <?php echo $enable_info['first_name'] . " " . $enable_info['last_name'] ?><br/>
+                    <strong>requested
+                        by: </strong> <?php echo $enable_info['first_name'] . " " . $enable_info['last_name'] ?><br/>
                     <strong>date submitted: </strong> <?php echo $enable_info['date_submitted'] ?><br/>
                     <strong>due date: </strong> <?php echo $enable_info['due_date'] ?><br/>
                     <strong>message: </strong> <?php echo $enable_info['message'] ?><br/>
                 </div>
                 <br style="clear:both"/>
+
                 <div class="gray-subtitle-bar">Object Info</div>
                 <div id="item-info">
                     <strong>item name: </strong><?php echo $enable_info['item_name'] ?><br/>
@@ -69,6 +71,7 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
                     <strong>material: </strong><?php echo $enable_info['material_name'] ?><br/>
                 </div>
                 <br style="clear:both"/>
+
                 <div class="gray-subtitle-bar">Renderings</div>
                 <div class="item-info">
                     <strong>1: </strong> <a download href="<?php echo DIR . $enable_info['figure'] ?>"> enabled

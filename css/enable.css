@@ -1,68 +1,77 @@
 #content {
-    width:100%;
+    width: 100%;
     font-family: 'Myriad Pro', Tahoma, Verdana, sans-serif;
 }
+
 #container {
-    width:800px;
-    background-color:white;
-    margin-top: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 30px;
-    padding:40px 30px 60px 30px;
+    width: 800px;
+    background-color: white;
+    margin: 30px auto;
+    padding: 40px 30px 60px 30px;
 }
+
 #info {
 
 }
+
 #info-title {
-    width:100%;
+    width: 100%;
     border-bottom: solid 1px #f2b139;
     padding-bottom: 10px;
 }
+
 #info-title span {
-    font-size:2em;
+    font-size: 2em;
 }
+
 #info-char {
-    width:50%;
-    float:left;
+    width: 50%;
+    float: left;
     padding-top: 10px;
 }
+
 #info-files {
-    width:50%;
-    float:left;
+    width: 50%;
+    float: left;
     padding-top: 10px;
 }
+
 #files-title {
     margin-bottom: 0px;
-    font-size:1.3em;
+    font-size: 1.3em;
 }
+
 .req-files {
-    color:white;
+    color: white;
     margin-bottom: 0px;
-    padding:6px 6px 6px 10px;
-    background-color:#999999;
+    padding: 6px 6px 6px 10px;
+    background-color: #999999;
     font-weight: 600;
 }
+
 .upload {
-    margin:10px;
-    float:left;
-    width:40%;
+    margin: 10px;
+    float: left;
+    width: 40%;
 }
+
 .fileUpload {
-    float:left;
-    width:50%;
+    float: left;
+    width: 50%;
 }
-.warning{
+
+.warning {
     color: red;
     margin: 10px;
 }
+
 .upload-error {
-    color:red;
-    font-size:8pt;
+    color: red;
+    font-size: 8pt;
 }
 
 #submit-button {
-    padding:5px;
+    padding: 5px;
 }
 
 .fileUpload {

@@ -12,22 +12,20 @@
 #content .container h1 {
     text-align: center;
     font-size: 2em;
-    margin:0px;
-    padding:20px 0px 20px 0px;
+    margin: 0px;
+    padding: 20px 0px 20px 0px;
 }
-
 
 #content .container hr {
     height: 1px;
     color: #ffffff;
 }
 
-
 .how-to-index {
     width: 50px;
-    float:left;
+    float: left;
     margin-left: 20px;
-    font-size:18pt;
+    font-size: 18pt;
     color: #333333;
     position: relative;
     top: 50%;
@@ -42,12 +40,11 @@
     font-weight: bold;
 }
 
-
 .how-to-box {
     width: 1090px;
     padding: 0px 20px 0px 20px;
-    float:left;
-    font-size:11pt;
+    float: left;
+    font-size: 11pt;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -65,14 +62,14 @@
     margin-right: 0px;
 }
 
-.box-color-1{
+.box-color-1 {
     background-color: rgba(255, 255, 255, 0.8);
-    height:350px;
+    height: 350px;
     text-align: center;
 }
 
-.box-color-2{
+.box-color-2 {
     background-color: rgba(240, 240, 240, 0.8);
-    height:350px;
+    height: 350px;
     text-align: center;
 }

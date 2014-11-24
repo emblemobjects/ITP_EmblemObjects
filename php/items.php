@@ -18,54 +18,46 @@ include_once 'config.php';
 // include_once 'config.php';
 
 // CLASS items - to call items::function_name();
-class items  {
+class items
+{
     //Function
     //Output: store items in grid layout
-    public static function display_grid($items){
+    public static function display_grid($items)
+    {
         for ($i = 0; $i < count($items); $i++): ?>
-            
+
             <?php // restart after alt syntx
             $primaryImage = 0;//Default to 0 if there's an error or whatever
 
-            for ($j = 0; $j < count($items[$i]['images']); $j++){
-                if ($items[$i]['images'][$j]['is_primary']==1){
+            for ($j = 0; $j < count($items[$i]['images']); $j++) {
+                if ($items[$i]['images'][$j]['is_primary'] == 1) {
                     $primaryImage = $j;
                 } // end if ($items[$i]['images'][$j]['is_primary']==1)
             } // end for ($j = 0; $j < count($items[$i]['images']); $j++)
 
-            $image_filepath = DIR."/objects/".$items[$i]['images'][$primaryImage]['image_filepath'];
-            $designer = $items[$i]['designer_first_name']." ".$items[$i]['designer_last_name'];
+            $image_filepath = DIR . "/objects/" . $items[$i]['images'][$primaryImage]['image_filepath'];
+            $designer = $items[$i]['designer_first_name'] . " " . $items[$i]['designer_last_name'];
             $collection_name = $items[$i]['collection_name'];
             $configurations = count($items[$i]['details']);
             $lowest_price = $items[$i]['details'][0]['price'];
 
-//            for ($j = 0; $j < count ($items[$i]['details']); $j++){
-//                if ($j == 0){
-//                    $lowest_price = $items[$i]['details'][$j]['price'];
-//                } else {
-//                    if ($items[$i]['details'][$j]['price'] < $lowest_price){
-//                        $lowest_price = $items[$i]['details'][$j]['price'];
-//                    } // end if ($items[$i]['details'][$j]['price'] < $lowest_price)
-//                } // end  if else ($j == 0)
-//            } // end for ($j = 0; $j < count ($items[$i]['details']); $j++)
 
             $description = $items[$i]['description'];
             $item_name = $items[$i]['name'];
             $item_type = "Unique";
 
-            if ($items[$i]['type'] == 1){
+            if ($items[$i]['type'] == 1) {
                 $item_type = "Design";
-            } // end if ($items[$i]['type'] == 1)
-            else {
+            } else {
                 $item_type = "Unique";
             }
             ?>
 
             <!-- H TML BLOCK -->
-            <a class="no-go" href="#" data-item-id="<?php echo $items[$i]['id']?>">
-            <div class="item-container">
+            <a class="no-go" href="#" data-item-id="<?php echo $items[$i]['id'] ?>">
+                <div class="item-container">
                     <div class="item-image">
-                        <img src="<?php echo $image_filepath ?>" />
+                        <img src="<?php echo $image_filepath ?>"/>
                     </div>
                     <div class="item-hover">
                         <div class="hover-designer">
@@ -90,7 +82,7 @@ class items  {
                         <div class="description-type"><?php echo $item_type ?></div>
                     </div>
                     <div class="clear"></div>
-            </div>
+                </div>
             </a>
             <!--END HTML BLOCK-->
 
@@ -102,15 +94,16 @@ class items  {
     //Required: $items_array
     //Required: $id of the specific object
     //Return: the image filepath for the primary image of the object
-    public static function getPrimaryImage($items, $id){
-        $index = $id -1;
+    public static function getPrimaryImage($items, $id)
+    {
+        $index = $id - 1;
         $primaryImage = 0;//Default to 0 if there's an error or whatever
-        for ($j = 0; $j < count($items[$index]['images']); $j++){
-            if ($items[$index]['images'][$j]['is_primary']==1){
+        for ($j = 0; $j < count($items[$index]['images']); $j++) {
+            if ($items[$index]['images'][$j]['is_primary'] == 1) {
                 $primaryImage = $j;
             }
         }
-        $image_filepath = DIR."/objects/".$items[$index]['images'][$primaryImage]['image_filepath'];
+        $image_filepath = DIR . "/objects/" . $items[$index]['images'][$primaryImage]['image_filepath'];
         return $image_filepath;
     }
 
@@ -118,13 +111,15 @@ class items  {
     //Function: get_field_value
     //Required: $id of the specific object, the field name to look for
     //Return: the value of the field
-    public static function get_field_value($id, $field_name){
+    public static function get_field_value($id, $field_name)
+    {
         $index = $id - 1;
         $value = $GLOBALS['items_array'][$index][$field_name];
         return $value;
     }
 
-    public static function get_item_id($detail_id){
+    public static function get_item_id($detail_id)
+    {
         global $con;
         $sql = "SELECT item_id FROM item_detail WHERE item_detail_id = $detail_id";
         $sql_result = mysqli_query($con, $sql);
@@ -141,10 +136,11 @@ class items  {
     //Required: the detail id
     //Required: the field name
     //Return: the value of the field
-    public static function get_detail_info($id, $detail_id, $field_name){
+    public static function get_detail_info($id, $detail_id, $field_name)
+    {
         $index = $id - 1;
-        for ($i = 0; $i < count($GLOBALS['items_array'][$index]['details']); $i++){
-            if ($GLOBALS['items_array'][$index]['details'][$i]['detail_id'] == $detail_id){
+        for ($i = 0; $i < count($GLOBALS['items_array'][$index]['details']); $i++) {
+            if ($GLOBALS['items_array'][$index]['details'][$i]['detail_id'] == $detail_id) {
 
                 $value = $GLOBALS['items_array'][$index]['details'][$i][$field_name];
             }
@@ -152,31 +148,31 @@ class items  {
         return $value;
     }
 
-    public static function get_items($category_id, $subcategory_id, $type, $order_by, $search_text){
+    public static function get_items($category_id, $subcategory_id, $type, $order_by, $search_text)
+    {
         global $con;
         //sql statement to select -basic
-        $sql = "SELECT item_id, item_tag, subcategory_desc, item_name, user_first_name, user_last_name, item_description, category_desc, item_type, collection_desc
+        $sql = "SELECT item_id, item_tag, subcategory_desc, item.subcategory_id, item_subcategory.category_id, item_name, user_first_name, user_last_name, item_description, category_desc, item_type, collection_desc
         FROM item, item_category, item_subcategory, user_table, collection
         WHERE item.subcategory_id = item_subcategory.subcategory_id AND item_subcategory.category_id = item_category.category_id AND item.item_designer = user_table.user_ID AND item.collection_id = collection.collection_id ";
-        if ($category_id != 0){
+        if ($category_id != 0) {
             $sql = $sql . "AND item_category.category_id = $category_id ";
         }
-        if ($subcategory_id != 0){
+        if ($subcategory_id != 0) {
             $sql = $sql . "AND item.subcategory_id = $subcategory_id ";
         }
-        if ($type != 0){
+        if ($type != 0) {
             $sql = $sql . "AND item.item_type = $type ";
         }
-        if ($search_text != ""){
+        if ($search_text != "") {
             $sql = $sql . "AND item.item_name LIKE '%$search_text%' ";
             //$sql = $sql . "AND item.item_name LIKE '%$search_text%' OR item.item_tag LIKE '%$search_text%' OR item_subcategory.subcategory_desc LIKE '%$search_text%' OR user_table.user_first_name LIKE '%$search_text%' OR user_table.user_last_name LIKE '%$search_text%' OR item_category.category_desc LIKE '%$search_text%' OR collection.collection_desc LIKE '%$search_text%' ";
         }
-        if ($order_by !=0){
-            if ($order_by == 1){
+        if ($order_by != 0) {
+            if ($order_by == 1) {
                 //Order by popular
                 $sql = $sql . "ORDER BY purchase_count ";
-            }
-            else {
+            } else {
                 //Order by latest
                 $sql = $sql . "ORDER BY item_id DESC";
             }
@@ -230,8 +226,8 @@ class items  {
             }
 
             while ($detail_row = mysqli_fetch_array($detail_results)) {
-                $item_raw_price=number_format($detail_row['item_raw_price'], 2);
-                array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'],'material_id'=>$detail_row['material_id'],'price' => $item_raw_price, 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
+                $item_raw_price = number_format($detail_row['item_raw_price'], 2);
+                array_push($detail_array, array('detail_id' => $detail_row['item_detail_id'], 'material_id' => $detail_row['material_id'], 'price' => $item_raw_price, 'material' => $detail_row['material_desc'], 'size' => $detail_row['item_size']));
             }
             $material_array = [];
             for ($i = 0; $i < count($detail_array); $i++) {
@@ -242,7 +238,7 @@ class items  {
                     }
                 }
                 if ($insertOption == 1) {
-                    array_push($material_array, array('mat_id'=>$detail_array[$i]['material_id'], 'mat_name'=>$detail_array[$i]['material']));
+                    array_push($material_array, array('mat_id' => $detail_array[$i]['material_id'], 'mat_name' => $detail_array[$i]['material']));
                 }
             }
             $size_array = [];
@@ -259,12 +255,13 @@ class items  {
             }
 
             //pushing another array to the second dimension
-            array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array, 'material_array' => $material_array, 'size_array' => $size_array));
+            array_push($items_array, array('id' => $items_row['item_id'], 'tag' => $items_row['item_tag'], 'subcategory' => $items_row['subcategory_desc'], 'subcategory_id' => $items_row['subcategory_id'], 'category_id' => $items_row['category_id'], 'name' => $items_row['item_name'], 'designer_first_name' => $items_row['user_first_name'], 'designer_last_name' => $items_row['user_last_name'], 'description' => $items_row['item_description'], 'category' => $items_row['category_desc'], 'type' => $items_row['item_type'], 'collection_name' => $items_row['collection_desc'], 'details' => $detail_array, 'images' => $image_array, 'material_array' => $material_array, 'size_array' => $size_array));
         }
         return $items_array;
     }
 
-    public static function to_JS($items_array){
+    public static function to_JS($items_array)
+    {
         $items_json = json_encode($items_array);
         ?>
         <script>
@@ -272,6 +269,6 @@ class items  {
 
             store.items = <?php echo $items_json; ?>; // this creates the JSON
         </script>
-        <?php
+    <?php
     }
 }

@@ -1,7 +1,8 @@
 <?php
-    include_once 'config.php';
+include_once 'config.php';
+
 /**
-Function that takes in the email type, designer name, enable ID, and a recipient and sends an email to it
+ * Function that takes in the email type, designer name, enable ID, and a recipient and sends an email to it
  * */
 class email
 {
@@ -24,13 +25,14 @@ class email
             $data = htmlspecialchars($data);
             return $data;
         }
-/* REMOVED FROM THE FORM
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-//    $recipient = test_input($_REQUEST["recipient"]);
-            $template = test_input($_REQUEST["template"]);
-            $enable_id = test_input($_REQUEST["enable_id"]);
-        }
-*/
+
+        /* REMOVED FROM THE FORM
+                if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        //    $recipient = test_input($_REQUEST["recipient"]);
+                    $template = test_input($_REQUEST["template"]);
+                    $enable_id = test_input($_REQUEST["enable_id"]);
+                }
+        */
 //echo "RECIPIENT : " . $recipient . "\n";
         echo "TEMPLATE : " . $template . "\n";
         echo "REQUEST ID : " . $enable_id . "\n";
@@ -171,4 +173,5 @@ class email
         }
     }
 }
+
 ?>
