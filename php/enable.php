@@ -84,7 +84,7 @@ class enable
         if (!$success) {
             echo(mysqli_error($con));
         }
-        //email("pending", $enable_id);
+        email("pending", $enable_id);
         return $success;
     }
 
@@ -98,7 +98,7 @@ class enable
         if (!$success) {
             echo(mysqli_error($con));
         }
-        //email("pass", $enable_id);
+        email("pass", $enable_id);
         return $success;
     }
 
@@ -109,7 +109,7 @@ class enable
                 SET enable.status = 3
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        //email("fail", $enable_id);
+        email("fail", $enable_id);
         return $success;
     }
 
