@@ -10,6 +10,7 @@ if (empty($_SESSION['isStarted'])) {
 if (!empty($_REQUEST['category_id'])) {
     if ($_REQUEST['category_id'] == "all") {
         $_SESSION['category_id'] = 0;
+        $_SESSION['search'] = "";
     }
     $_SESSION['category_id'] = helper::escape_str($con, $_REQUEST['category_id']);
 }
@@ -49,7 +50,7 @@ items::to_JS($store_items_result);
 
             <ul class="nav" onmouseleave="clearColumns();">
                 <li>
-                    <a href="<?php echo DIR ?>/home/index.php">Shop</a>
+                    <a href="<?php echo DIR ?>/home/index.php?category_id=all">Shop</a>
 
                     <div>
                         <div class="nav-column dark-nav-color" id="categories">
