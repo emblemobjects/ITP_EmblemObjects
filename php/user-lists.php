@@ -102,17 +102,18 @@ class user_lists
 }
 
 
-function pluralize($count, $text)
-{
-    return $count . (($count == 1) ? (" $text") : (" ${text}s"));
-}
-
 function createDate($datetime)
 {
 	$datetime1 = new DateTime();
-	$interval = $datetime1->diff($datetime);
-	$suffix = ($interval->invert ? '-' : '+');
-	return $suffix . $interval->format('%h h %i min');
+	$interval = $datetime1->diff($datetime);		
+	$mins = $interval->i;
+	$hours = $interval->h + ($interval->d*24);			
+	if ($hours) {
+		$hours = $hours . " hr ";
+	} else {
+		$hours - "";
+	}
+	return $interval->format('%r') . $hours . $mins . " min";
 }
 
 ?>
