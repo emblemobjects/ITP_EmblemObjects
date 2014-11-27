@@ -109,14 +109,10 @@ function pluralize($count, $text)
 
 function createDate($datetime)
 {
-    $interval = date_create('now')->diff($datetime);
-    $suffix = ($interval->invert ? ' overdue' : '');
-    if ($v = $interval->y >= 1) return pluralize($interval->y, 'year') . $suffix;
-    if ($v = $interval->m >= 1) return pluralize($interval->m, 'month') . $suffix;
-    if ($v = $interval->d >= 1) return pluralize($interval->d, 'day') . $suffix;
-    if ($v = $interval->h >= 1) return pluralize($interval->h, 'hour') . $suffix;
-    if ($v = $interval->i >= 1) return pluralize($interval->i, 'min') . $suffix;
-    return pluralize($interval->s, 'sec') . $suffix;
+	$datetime1 = new DateTime();
+	$interval = $datetime1->diff($datetime);
+	$suffix = ($interval->invert ? '-' : '+');
+	return $suffix . $interval->format('%h h %i min');
 }
 
 ?>
