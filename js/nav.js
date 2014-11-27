@@ -22,6 +22,10 @@ function adjustPosition() {
     $(navColumns[2]).css("background-color", $("#categories").css("background-color"));
 }
 
+function highlightSubcategory(cat) {
+     $('.nav-subcategory').css('color', 'white');
+     $(cat).css('color', 'orange');
+}
 
 $(document).ready(function () {
     $(".category").on("mouseover", function () {
@@ -34,7 +38,7 @@ $(document).ready(function () {
         // Fill subcategories div
         var innerText = "<ul>";
         for (var i = 0; i < subcategories.length; i++) {
-            innerText += "<a href='" + directory + "/home/index.php?subcategory_id= " + subcategories[i]['subcategory_id'] + "'><li class='nav-subcategory' data-attr-id='" + subcategories[i]['subcategory_id'] + "'>" + subcategories[i]['subcategory_desc'] + "</li></a>";
+            innerText += "<a href='" + directory + "/home/index.php?subcategory_id= " + subcategories[i]['subcategory_id'] + "'><li class='nav-subcategory' onmouseover='highlightSubcategory(this)' data-attr-id='" + subcategories[i]['subcategory_id'] + "'>" + subcategories[i]['subcategory_desc'] + "</li></a>";
         }
         innerText += "</ul>";
         $('#subcategories').html(innerText);
@@ -47,6 +51,6 @@ $(document).ready(function () {
         $(this).addClass('nav-btn-active');
         console.log("changed");
     });
-
+    
     adjustPosition();
 });
