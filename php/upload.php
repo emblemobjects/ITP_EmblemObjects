@@ -76,6 +76,4 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
 
     return array($uploadOk, $upload_message);
 }
-
-
-?> 
+?>
