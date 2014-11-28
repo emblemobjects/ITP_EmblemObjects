@@ -25,6 +25,7 @@ function clearRequestSession()
     unsetSessionVar("error_message1");
     unsetSessionVar("error_message2");
     unsetSessionVar("error_message3");
+	unsetSessionVar("previous-page");
 }
 
 
@@ -43,6 +44,7 @@ function clearEnableSession()
     unsetSessionVar("error_message1");
     unsetSessionVar("error_message2");
     unsetSessionVar("error_message3");
+	unsetSessionVar("previous-page");
 }
 
 

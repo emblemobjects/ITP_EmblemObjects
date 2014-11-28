@@ -8,9 +8,17 @@ include_once '../php/enable.php';
 include_once '../php/request-session.php';
 $enable_array = startEnableSession();
 
-$errorMessage1 = $enable_array[0];
-$errorMessage2 = $enable_array[1];
-$errorMessage3 = $enable_array[2];
+if (isset($_SESSION['previous-page']) && $_SESSION['previous-page'] == "enable-upload") {
+    $errorMessage1 = $enable_array[0];
+    $errorMessage2 = $enable_array[1];
+    $errorMessage3 = $enable_array[2];
+    unset($_SESSION['previous-page']);
+} else {
+    clearEnableSession();
+    $errorMessage1 = "";
+    $errorMessage2 = "";
+    $errorMessage3 = "";
+}
 
 //Redirects in case someone got here by mistake
 if (empty($_REQUEST['enable_id'])) {

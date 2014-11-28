@@ -17,6 +17,7 @@ $enable_id = helper::escape_str($con, $_REQUEST['enable_id']);
 helper::redirect_page($valid, '/enable/request/?enable_id=' . $enable_id);
 
 session_start();
+$_SESSION['previous-page'] = basename(dirname($_SERVER['PHP_SELF']));
 
 /* disable autocommit */
 mysqli_autocommit($con, FALSE);

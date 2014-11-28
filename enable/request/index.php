@@ -31,11 +31,22 @@ $material_id = items::get_detail_info($item_id, $detail_id, "material_id");
 $price = items::get_detail_info($item_id, $detail_id, "price");
 $size = items::get_detail_info($item_id, $detail_id, "size");
 
-$firstName = $request_array[0];
-$lastName = $request_array[1];
-$email = $request_array[2];
-$message = $request_array[3];
-$errorMessage1 = $request_array[4];
+if (isset($_SESSION['previous-page']) && $_SESSION['previous-page'] == "confirm") {
+    $firstName = $request_array[0];
+    $lastName = $request_array[1];
+    $email = $request_array[2];
+    $message = $request_array[3];
+    $errorMessage1 = $request_array[4];
+    unset($_SESSION['previous-page']);
+} else {
+    clearRequestSession();
+    $firstName = "";
+    $lastName = "";
+    $email = "";
+    $message = "";
+    $errorMessage1 = "";
+}
+
 
 ?>
 
