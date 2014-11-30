@@ -93,20 +93,6 @@ $enable_info = enable::get_request_info(escape_str($con, $_REQUEST['enable_id'])
 
     <?php include "../../templates/footer.php"; ?>
 
-    <script>
-        function outputPrice {
-            var price = 0;
-            var size = <?php echo $enable_info['size']?>;
-            var material_id = <?php echo $enable_info['material_name']?>
-            for (var i = 0; i < store.items[id]['details'].length; i++){
-                if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id'] == material_id){
-                    price = store.items[id]['details'][i]['price'];
-                }
-            }
-            return price;
-        };
-    </script>
-
 </div>
 </body>
 </html>
