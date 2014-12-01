@@ -17,6 +17,7 @@
  * submit enable // when designer uploads related files
  */
 include_once 'config.php';
+include_once 'email_form.php';
 
 class enable
 {
