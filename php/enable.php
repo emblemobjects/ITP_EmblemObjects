@@ -52,7 +52,10 @@ class enable
             exit (mysqli_error($con));
         }
         $r4 = mysqli_fetch_array($result_material);
-        $array_info = ['enable_id' => $r['enable_id'], 'first_name' => $r2['user_first_name'], 'last_name' => $r2['user_last_name'], 'date_submitted' => $r['date_submitted'], 'item_name' => $r3['item_name'], 'material_name' => $r4['material_desc'], 'size' => $r['size'], 'image_filepath' => $r['image_filepath'], 'due_date' => $r['due_date'], 'message' => $r['message'], 'status' => $r['status'], 'figure' => $r['figure_filepath'], 'instance' => $r['instance_filepath'], 'bu_instance' => $r['instance_filepath']];
+        $array_info = ['enable_id' => $r['enable_id'], 'first_name' => $r2['user_first_name'], 'last_name' => $r2['user_last_name'],
+            'date_submitted' => $r['date_submitted'], 'item_name' => $r3['item_name'], 'material_name' => $r4['material_desc'], 'size' => $r['size'],
+            'image_filepath' => $r['image_filepath'], 'due_date' => $r['due_date'], 'message' => $r['message'], 'status' => $r['status'],
+            'figure' => $r['figure_filepath'], 'instance' => $r['instance_filepath'], 'bu_instance' => $r['instance_filepath']];
         return $array_info;
     }
 
@@ -84,7 +87,7 @@ class enable
         if (!$success) {
             echo(mysqli_error($con));
         }
-        email("pending", $enable_id);
+     //   email("pending", $enable_id);
         return $success;
     }
 
@@ -143,7 +146,7 @@ class enable
             if (!$success) {
                 echo mysqli_error($con);
             }
-            //email("enable", $enable_id);
+            email("enable", $enable_id);
             return $success;
         }
     }
@@ -204,6 +207,7 @@ class enable
         } else {
             echo mysqli_error($con);
         }
+        email("enable", $enable_id);
 
 // Uploads the file
         include_once "../../../php/upload.php";
