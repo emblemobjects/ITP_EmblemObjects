@@ -6,7 +6,7 @@ include_once 'config.php';
  * */
 class email
 {
-    public static function email($input_template, $input_enable_id)
+    public static function send_email($input_template, $input_enable_id)
     {
         global $con;
 //variables from the form

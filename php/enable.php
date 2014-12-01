@@ -88,7 +88,7 @@ class enable
         if (!$success) {
             echo(mysqli_error($con));
         }
-     //   email::email("pending", $enable_id);
+     //   email::send_email("pending", $enable_id);
         return $success;
     }
 
@@ -102,7 +102,7 @@ class enable
         if (!$success) {
             echo(mysqli_error($con));
         }
-        email::email("pass", $enable_id);
+        email::send_email("pass", $enable_id);
         return $success;
     }
 
@@ -113,7 +113,7 @@ class enable
                 SET enable.status = 3
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        email::email("fail", $enable_id);
+        email::send_email("fail", $enable_id);
         return $success;
     }
 
@@ -147,7 +147,7 @@ class enable
             if (!$success) {
                 echo mysqli_error($con);
             }
-            email::email("enable", $enable_id);
+            email::send_email("enable", $enable_id);
             return $success;
         }
     }
@@ -208,7 +208,7 @@ class enable
         } else {
             echo mysqli_error($con);
         }
-        email::email("enable", $enable_id);
+        email::send_email("enable", $enable_id);
 
 // Uploads the file
         include_once "../../../php/upload.php";
