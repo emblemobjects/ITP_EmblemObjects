@@ -10,7 +10,7 @@
 }
 
 #review {
-    font-family: 'Myriad Pro', Tahoma, Verdana, sans-serif;
+    font-family: Garamond, serif;
     font-size: 12pt;
 
 }
@@ -53,7 +53,7 @@
     float: left;
     margin-left: 250px;
     background-color: #e3e3e3;
-    font-family: 'Myriad Pro', Tahoma, Verdana, sans-serif;
+    font-family: Garamond, serif;
     font-size: 12pt;
     padding: 5px;
 }
@@ -62,7 +62,7 @@
     float: right;
     margin-right: 250px;
     background-color: #e3e3e3;
-    font-family: 'Myriad Pro', Tahoma, Verdana, sans-serif;
+    font-family: Garamond, serif;
     font-size: 12pt;
     padding: 5px;
 }

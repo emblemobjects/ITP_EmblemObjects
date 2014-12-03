@@ -29,7 +29,6 @@ h1 {
     margin-bottom: 3px;
     font-weight: 200;
     color: white;
-    width: 790px;
 }
 
 #content h3 {
@@ -83,7 +82,8 @@ h1 {
 #confirmationContent {
     padding: 50px;
     width: 600px;
-    margin: 0px auto;
+    margin: 52px auto;
+    font-family: Garamond, serif;
 }
 
 p {
