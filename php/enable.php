@@ -147,7 +147,7 @@ class enable
             if (!$success) {
                 echo mysqli_error($con);
             }
-            email::send_email("enable", $enable_id);
+            email::send_email("designer-enable", $enable_id);
             return $success;
         }
     }
