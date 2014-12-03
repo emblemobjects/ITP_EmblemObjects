@@ -24,7 +24,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
 
     // Check if file size > 3MB
     if ($uploadFile_size > 3000000) {
-        $upload_message = "*File size can not exceed 3MB.";
+        $upload_message = "*File size cannot exceed 3MB.";
         $uploadOk = 0;
     }
 
@@ -36,7 +36,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
             $uploadFile_type = strstr($uploadFile_type, '/');
             $uploadFile_type = str_replace("/", ".", $uploadFile_type);
         } else {
-            $upload_message = "*Only .gif, .png, .jpg, .jpeg, and .ai files are allowed.";
+            $upload_message = "*Please upload a .gif, .png, .jpg, .jpeg, or .ai file.";
             $uploadOk = 0;
         }
     } elseif ($file_type_num == 2) {
@@ -46,7 +46,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         } elseif ($uploadFile_type == $filetypes[1]) {
             $uploadFile_type = ".stl";
         } else {
-            $upload_message = "*Only .obj and .stl files are allowed.";
+            $upload_message = "*Please upload a .obj or .stl file.";
             $uploadOk = 0;
         }
     } elseif ($file_type_num == 3) {
@@ -54,7 +54,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         if (in_array($uploadFile_type, $filetypes)) {
             $uploadFile_type = ".3dm";
         } else {
-            $upload_message = "*Only .3dm files are allowed.";
+            $upload_message = "*Please upload a .3dm file.";
             $uploadOk = 0;
         }
     }
