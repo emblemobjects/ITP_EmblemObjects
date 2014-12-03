@@ -56,7 +56,7 @@ class enable
         $array_info = ['enable_id' => $r['enable_id'], 'first_name' => $r2['user_first_name'], 'last_name' => $r2['user_last_name'],
             'date_submitted' => $r['date_submitted'], 'item_name' => $r3['item_name'], 'material_name' => $r4['material_desc'], 'size' => $r['size'],
             'image_filepath' => $r['image_filepath'], 'due_date' => $r['due_date'], 'message' => $r['message'], 'status' => $r['status'],
-            'figure' => $r['figure_filepath'], 'instance' => $r['instance_filepath'], 'bu_instance' => $r['instance_filepath']];
+            'figure' => $r['figure_filepath'], 'instance' => $r['instance_filepath'], 'bu_instance' => $r['bu_instance_filepath']];
         return $array_info;
     }
 
