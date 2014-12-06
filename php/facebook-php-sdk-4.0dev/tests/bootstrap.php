@@ -5,9 +5,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Facebook\FacebookSDKException;
 
 if (!file_exists(__DIR__ . '/FacebookTestCredentials.php')) {
-  throw new FacebookSDKException(
-    'You must create a FacebookTestCredentials.php file from FacebookTestCredentials.php.dist'
-  );
+    throw new FacebookSDKException(
+        'You must create a FacebookTestCredentials.php file from FacebookTestCredentials.php.dist'
+    );
 }
 
 require_once __DIR__ . '/FacebookTestCredentials.php';
@@ -29,7 +29,6 @@ require_once __DIR__ . '/FacebookTestHelper.php';
 FacebookTestHelper::initialize();
 
 // Delete the temp test user after all tests have fired
-register_shutdown_function(function ()
-{
-  FacebookTestHelper::deleteTestUser();
+register_shutdown_function(function () {
+    FacebookTestHelper::deleteTestUser();
 });

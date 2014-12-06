@@ -1,17 +1,18 @@
 <?php
 
 $target_dir = "uploads/";//directory to place the file
-$target_dir = $target_dir . basename ( $_FILES["uploadFile"]["name"]);
+$target_dir = $target_dir . basename($_FILES["uploadFile"]["name"]);
 $uploadOk = 1;
 
 //insert file constraints (size, types, etc)
-if($uploadFile_size > 1000) //what is the file size?
+if ($uploadFile_size > 1000) //what is the file size?
 {
     echo "File is too large ";
     $uploadOk = 0;
 }
-if(!($uploadFile_type == "image/bmp" || $uploadFile_type == "image/jpg" || $uploadFile_type == "image/png"
-|| $uploadFile_type == ".ai")){
+if (!($uploadFile_type == "image/bmp" || $uploadFile_type == "image/jpg" || $uploadFile_type == "image/png"
+    || $uploadFile_type == ".ai")
+) {
     echo "Sorry, only image file types are allowed";
     $uploadOk = 0;
 }
@@ -20,13 +21,12 @@ if(!($uploadFile_type == "image/bmp" || $uploadFile_type == "image/jpg" || $uplo
 //$_FILES["file"]["type"] == "image/png");
 //$temp = explode(".",$_FILES["file"]["name"]);
 // $extension = end($temp);
-if($ok ==0) {
+if ($ok == 0) {
     echo "Your file failed to upload ";
-}
-else {
+} else {
     if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) {//moves the file where it should be going
         echo "The file " . basename($_FILES["uploadFile"]["name"]) . "has been uploaded ";
-} else {
+    } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }

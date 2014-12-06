@@ -46,14 +46,18 @@ $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
  * FACEBOOK APP SETTINGS
  */
 $FB = [];
-$FB['app_id'] = '360442404114516'; $FB['app_secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
+$FB['app_id'] = '360442404114516';
+$FB['app_secret'] = '3685eca8c02b480bb2027336c8b820e3'; //localhost
+// $FB['app_id'] = '359755337516556'; $FB['app_secret'] = '86478e6c611072cc6796bde77291a934'; //itp460
+// $FB['app_id'] = '365380733620683'; $FB['app_secret'] = 'd5800cc94912b481c5db374f52988137'; //preview
 
 
 /*
  * TWITTER APP SETTINGS
  */
 $TWITTER = [];
-$TWITTER['app_key'] = 'kce44m40sezTJxTwk7C7j36ww'; $TWITTER['app_secret'] = 'hvUrDc3oqBnMmoGoHHppKTlON9XSoEk5Vw0GHXRR3yIWcpk03i'; // https://127.0.0.1:4433
+$TWITTER['app_key'] = 'kce44m40sezTJxTwk7C7j36ww';
+$TWITTER['app_secret'] = 'hvUrDc3oqBnMmoGoHHppKTlON9XSoEk5Vw0GHXRR3yIWcpk03i'; // https://127.0.0.1:4433
 
 /*
  * PLUGIN LINKS

@@ -1,11 +1,7 @@
 html, body {
-    background-color: #f8f8f8;
     font-family: Garamond, serif;
     color: #ffffff;
-    background-image: url("http://localhost:8080/itp460/ITP_EmblemObjects/images/geometric_lines_background.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background: #f8f8f8 url("http://localhost:8080/itp460/ITP_EmblemObjects/images/geometric_lines_background.png") no-repeat fixed center;
     margin: 0;
     padding: 0;
     height: 100%;

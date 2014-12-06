@@ -1,10 +1,4 @@
-#designButtons {
-    border: 1px solid red;
-}
-
-#uniqueButtons {
-    border: 1px solid blue;
-}/* item container
+/* item container
  *
  */
 .item-container {
@@ -17,10 +11,12 @@
     /*font-family: verdana;*/
     font-family: Garamond, serif;
 }
+
 .item-container:hover .item-hover {
     visibility: visible;
     opacity: 1;
 }
+
 .item-image {
     width: 286px;
     height: 220px;
@@ -29,12 +25,14 @@
     left: 0;
     overflow: hidden;
 }
+
 .item-image img {
     width: 286px;
     position: absolute;
     top: -30px;
     left: 0;
 }
+
 .item-hover {
     visibility: hidden;
     opacity: 0;
@@ -44,12 +42,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0, 0, 0, .6);
     color: #DDD;
     transition: opacity .1s linear;
     overflow: hidden;
     font-family: arial, sans-serif;
 }
+
 .item-description {
     width: 286px;
     height: 25px;
@@ -59,43 +58,51 @@
     background-color: #000;
     color: #EEE;
 }
+
 .hover-designer {
     line-height: 1.5rem;
 }
+
 .hover-collection {
     font-size: .9rem;
     line-height: 1rem;
 }
+
 .hover-configuration {
     line-height: 2rem;
 }
+
 .hover-price {
     line-height: 2rem;
 }
+
 .hover-description {
     padding-top: .5rem;
     line-height: 1rem;
     height: 4.05rem;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 .white {
     color: #FFF;
 }
+
 .cap {
     text-transform: uppercase;
 }
+
 .description-name {
     text-transform: uppercase;
     text-align: left;
     float: left;
     width: 192px;
-    padding: 0;
-    padding-left: 7px; 
+    padding: 0 0 0 7px;
     line-height: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .description-type {
     text-transform: uppercase;
     text-align: right;

@@ -1,5 +1,5 @@
 var theData = {
-    storeItems:[
+    storeItems: [
         {
             name: "Super Cool Necklace",
             materials: ["wood", "copper", "plastic"],
@@ -7,9 +7,9 @@ var theData = {
             colors: ["red", "blue", "white"],
             img: "../images/icon_tumblr.png",
             description: "This is the complete ically pass the ically pass the ting HTML code from " +
-                "ically pass the ically pass the ically pass the ically pass thpass the ically pass the " +
-                "the data into a JavaScript variable, I decided tically pass the o put all of that into",
-            price:20.99
+            "ically pass the ically pass the ically pass the ically pass thpass the ically pass the " +
+            "the data into a JavaScript variable, I decided tically pass the o put all of that into",
+            price: 20.99
         },
         {
             name: "Pretty Butterfly Thing",
@@ -18,15 +18,15 @@ var theData = {
             colors: ["pink", "purple", "cyan"],
             img: "../images/logo.png",
             description: "ically pass the ically pass the ically pass the ically pass the ically pass the " +
-                "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
-                "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
-                "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the ",
-            price:9.99
+            "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
+            "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the " +
+            "ically pass the ically pass the ically pass the ically pass the ically pass the ically pass the ",
+            price: 9.99
         }
     ]
 };
 
-var openOverlay = function() {
+var openOverlay = function () {
 
     console.log("hello");
 
@@ -38,16 +38,16 @@ var openOverlay = function() {
 
 };
 
-var closeOverlay = function() {
+var closeOverlay = function () {
 
-    document.getElementById('light').style.display='none';
-    document.getElementById('fade').style.display='none';
+    document.getElementById('light').style.display = 'none';
+    document.getElementById('fade').style.display = 'none';
 
 };
 
 /////////////////////////////////////////
 jQuery.prototype.center = function () {
-    this.css("position","absolute");
+    this.css("position", "absolute");
 
     var windowHeight = (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop();
     var windowWidth = (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft();
@@ -59,7 +59,6 @@ jQuery.prototype.center = function () {
 };
 
 /////////////////////////////
-
 
 
 var scriptHTML = document.getElementById('overlay-template').innerHTML;

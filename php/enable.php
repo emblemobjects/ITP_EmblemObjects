@@ -27,7 +27,7 @@ class enable
         $array_info = [];
         $sql = "SELECT * FROM enable WHERE enable_id = '$enable_id'";
         $result = mysqli_query($con, $sql);
-        if (!$result){
+        if (!$result) {
             exit (mysqli_error($con));
         }
         $r = mysqli_fetch_array($result);
@@ -36,54 +36,58 @@ class enable
         $material_id = $r['material_id'];
         $sql_user = "SELECT user_first_name, user_last_name FROM user_table WHERE user_id = '$user_id'";
         $result_user = mysqli_query($con, $sql_user);
-        if (!$result_user){
+        if (!$result_user) {
             exit (mysqli_error($con));
         }
         $r2 = mysqli_fetch_array($result_user);
         $sql_item = "SELECT item_name FROM item WHERE item_id = '$item_id'";
         $result_item = mysqli_query($con, $sql_item);
-        if (!$result_item){
+        if (!$result_item) {
             exit (mysqli_error($con));
         }
         $r3 = mysqli_fetch_array($result_item);
         $sql_material = "SELECT material_desc FROM material WHERE material_id = '$material_id'";
         $result_material = mysqli_query($con, $sql_material);
-        if (!$result_material){
+        if (!$result_material) {
             exit (mysqli_error($con));
         }
         $r4 = mysqli_fetch_array($result_material);
-        $array_info=['enable_id'=>$r['enable_id'],'first_name'=>$r2['user_first_name'], 'last_name'=>$r2['user_last_name'], 'date_submitted'=>$r['date_submitted'], 'item_name'=>$r3['item_name'], 'material_name'=>$r4['material_desc'], 'size'=>$r['size'], 'image_filepath'=>$r['image_filepath'], 'due_date'=>$r['due_date'], 'message'=>$r['message'], 'status'=>$r['status'], 'figure'=>$r['figure_filepath'], 'instance'=>$r['instance_filepath'], 'bu_instance'=>$r['instance_filepath']];
+        $array_info = ['enable_id' => $r['enable_id'], 'first_name' => $r2['user_first_name'], 'last_name' => $r2['user_last_name'], 'date_submitted' => $r['date_submitted'], 'item_name' => $r3['item_name'], 'material_name' => $r4['material_desc'], 'size' => $r['size'], 'image_filepath' => $r['image_filepath'], 'due_date' => $r['due_date'], 'message' => $r['message'], 'status' => $r['status'], 'figure' => $r['figure_filepath'], 'instance' => $r['instance_filepath'], 'bu_instance' => $r['instance_filepath']];
         return $array_info;
     }
-/*
- * Enable status
- * status: 0 = awaiting designer upload
-status: 1 = awaiting EO staff approval
-status: 2 = request accepted
-status: 3 = request rejected
- */
-    public static function pass_request($enable_id){
+
+    /*
+     * Enable status
+     * status: 0 = awaiting designer upload
+    status: 1 = awaiting EO staff approval
+    status: 2 = request accepted
+    status: 3 = request rejected
+     */
+    public static function pass_request($enable_id)
+    {
         global $con;
         $sql = "UPDATE enable SET enable.status='4' WHERE enable.enable_id = $enable_id";
         $query = mysqli_query($con, $sql);
-        if (!$query){
+        if (!$query) {
             exit (mysqli_error($con));
         }
         return $query;
     }
-    public static function make_request_pending($enable_id){
+
+    public static function make_request_pending($enable_id)
+    {
         global $con;
         $sql = "UPDATE enable
                 SET enable.status = '1'
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        if (!$success){
-            echo (mysqli_error($con));
+        if (!$success) {
+            echo(mysqli_error($con));
         }
-        //email("pending", $enable_id);
+        email("pending", $enable_id);
         return $success;
     }
-    
+
     public static function approve_request($enable_id)
     {
         global $con;
@@ -91,10 +95,10 @@ status: 3 = request rejected
                 SET enable.status = '2'
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        if (!$success){
-            echo (mysqli_error($con));
+        if (!$success) {
+            echo(mysqli_error($con));
         }
-        //email("pass", $enable_id);
+        email("pass", $enable_id);
         return $success;
     }
 
@@ -105,25 +109,26 @@ status: 3 = request rejected
                 SET enable.status = 3
                 WHERE enable.enable_id = $enable_id";
         $success = mysqli_query($con, $sql);
-        //email("fail", $enable_id);
+        email("fail", $enable_id);
         return $success;
     }
 
-    public static function submit_enable($enable_id) {       
+    public static function submit_enable($enable_id)
+    {
         // Uploads the files
         include_once "../../php/upload.php";
         global $con;
 
-            
+
         $file1 = uploadEnable($con, 2, 1, $enable_id);
         $file2 = uploadEnable($con, 2, 2, $enable_id);
         $file3 = uploadEnable($con, 3, 3, $enable_id);
-        
+
         if ($file1 === 0 || $file2 === 0 || $file3 === 0) {
             header('location: ../?enable_id=' . $enable_id);
             exit();
         } else {
-    
+
             // If uploads successful, then no redirect, so insert files into database
             // Check if only 2 files were uploaded
             global $con;
@@ -135,7 +140,7 @@ status: 3 = request rejected
                   WHERE enable.enable_id = '$enable_id'";
             }
             $success = mysqli_query($con, $sql);
-            if (!$success){
+            if (!$success) {
                 echo mysqli_error($con);
             }
             //email("enable", $enable_id);
@@ -147,7 +152,7 @@ status: 3 = request rejected
     {
         global $con;
 
-        $array_output=[];
+        $array_output = [];
         $image_filepath = "Placeholder";
         //Fixes the time differences
         date_default_timezone_set("America/Los_Angeles");
@@ -161,23 +166,23 @@ status: 3 = request rejected
         if (!$result_designer) {
             exit('$result_designer error: ' . mysqli_error($con));
         }
-        while ($r = mysqli_fetch_array($result_designer)){
+        while ($r = mysqli_fetch_array($result_designer)) {
             $designer_first_name = $r['user_first_name'];
             $designer_last_name = $r['user_last_name'];
             $designer_email = $r['user_email'];
         }
 
 
-        $designer_name = $designer_first_name." ".$designer_last_name;
+        $designer_name = $designer_first_name . " " . $designer_last_name;
         //Inserts the customer into the table - disregard duplicates
         $sql_customer_insert = "INSERT INTO user_table (user_first_name, user_last_name, user_email) VALUES ('$firstName', '$lastName', '$email')";
-        if (mysqli_query($con, $sql_customer_insert)){
+        if (mysqli_query($con, $sql_customer_insert)) {
             $sql_user_id = "SELECT user_id FROM user_table WHERE user_first_name = '$firstName'";
             $result_user_id = mysqli_query($con, $sql_user_id);
-            if (!$result_user_id){
-                exit ('$result_user_id error: '.mysqli_error($con));
+            if (!$result_user_id) {
+                exit ('$result_user_id error: ' . mysqli_error($con));
             }
-            while ($r = mysqli_fetch_array($result_user_id)){
+            while ($r = mysqli_fetch_array($result_user_id)) {
                 $user_id = $r['user_id'];//this is needed for the next SQL statement to insert into enable requests table
             }
         } else {
@@ -187,13 +192,13 @@ status: 3 = request rejected
 
 //Inserts the enable request into the table
         $sql_insert = "INSERT INTO enable (user_id, date_submitted, item_id, material_id, size, image_filepath, due_date, message, status) VALUES ('$user_id', '{$current_date}', '$item_id', '$material_id', '$size', '$image_filepath', '{$due_date}', '$message', '0')";
-        if (mysqli_query($con, $sql_insert)){
+        if (mysqli_query($con, $sql_insert)) {
             $sql_enable_id = "SELECT enable_id FROM enable WHERE date_submitted = '$current_date'";
             $result_enable_id = mysqli_query($con, $sql_enable_id);
             if (!$result_enable_id) {
                 exit('$result_enable_id error: ' . mysqli_error($con));
             }
-            while ($r = mysqli_fetch_array($result_enable_id)){
+            while ($r = mysqli_fetch_array($result_enable_id)) {
                 $enable_id = $r['enable_id'];//Needed in the email/text
             }
         } else {
@@ -206,20 +211,20 @@ status: 3 = request rejected
         $file_type_num = 1;
         $dir = "../../../uploads/";
         $file = $_FILES["uploadButton"];
-        $newFileName = escape_str($con, $_REQUEST['newFileName']);
+        $newFileName = helper::escape_str($con, $_REQUEST['newFileName']);
 
         $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
         $uploadOk = $status_array[0];
         $upload_message = $status_array[1];
 
-        if ($uploadOk == 1){
+        if ($uploadOk == 1) {
             $_SESSION['error_message1'] = "";
             $image_filepath = $upload_message; // Update the order's image file path
             $sql_update = "UPDATE enable SET image_filepath = '$image_filepath' WHERE enable_id = '$enable_id'";
             mysqli_query($con, $sql_update);
             mysqli_commit($con);
             mysqli_autocommit($con, TRUE);
-                      
+
         } else {  // There was an error uploading the file
             $_SESSION['error_message1'] = $upload_message;  // Change the error message
             mysqli_rollback($con); // Rollback the data just inserted
@@ -227,23 +232,23 @@ status: 3 = request rejected
             header('location: ../?detail_id=' . $detail_id);
             exit();
         }
-        array_push($array_output, ['enable_id'=> $enable_id, 'designer_name'=>$designer_name, 'designer_email'=>$designer_email]);
+        array_push($array_output, ['enable_id' => $enable_id, 'designer_name' => $designer_name, 'designer_email' => $designer_email]);
         return $array_output;
     }
 }
 
-function uploadEnable($con, $file_type_num, $index, $enable_id) {
-    $file_type_num = 1;
+function uploadEnable($con, $file_type_num, $index, $enable_id)
+{
     $dir = "../../uploads/";
     $file = $_FILES["uploadButton" . $index];
-    $newFileName = escape_str($con, $_REQUEST['newFileName' . $index]);
-    
+    $newFileName = helper::escape_str($con, $_REQUEST['newFileName' . $index]);
+
     if ($file['size'] != 0) {
         $status_array = uploadFile($file_type_num, $file, $dir, $enable_id, $newFileName);
         $uploadOk = $status_array[0];
         $upload_message = $status_array[1];
 
-        if ($uploadOk != 1){
+        if ($uploadOk != 1) {
             $_SESSION['error_message' . $index] = $upload_message;  // Change the error message
             mysqli_rollback($con); // Rollback the data just inserted
             mysqli_autocommit($con, TRUE);
@@ -254,7 +259,7 @@ function uploadEnable($con, $file_type_num, $index, $enable_id) {
         }
     } else {
         return null;
-    }   
+    }
 }
 
 ?>

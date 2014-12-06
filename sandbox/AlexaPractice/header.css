@@ -1,30 +1,29 @@
 header {
-    background-color:#372f2b;
     color: #FFF;
     overflow: hidden;
     height: 150px;
-    min-width:1200px;
-    width:100%;
+    min-width: 1200px;
+    width: 100%;
     font-family: 'Raleway', sans-serif;
     font-family: 'Montserrat', sans-serif;
-    background-image: url("geometric-boxes-white.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    background: #372f2b url("geometric-boxes-white.png") no-repeat center;
 }
-
 
 /* LOGIN/STATUS */
 #user {
     position: absolute;
-    top: 10px; right: 7px;
+    top: 10px;
+    right: 7px;
     text-align: right;
     font-size: .9em;
     font-family: arial, sans-serif;
 }
+
 #user-login {
     width: 85px;
     float: right;
 }
+
 #user-name {
     width: 200px;
     float: right;
@@ -33,14 +32,17 @@ header {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 #user-name:hover {
     color: #f2b139;
 }
+
 .user-btn {
     display: block;
     margin-top: 7px;
     font-family: 'Montserrat', sans-serif;
 }
+
 .user-btn:hover {
     color: #f2b139;
 }
@@ -48,12 +50,15 @@ header {
 /* HEADER NAV */
 #header-head {
     position: absolute;
-    top: 70px; left: 3px;
+    top: 70px;
+    left: 3px;
 }
+
 .head-home {
     display: block;
     float: left;
 }
+
 #head-logo {
     display: block;
     float: left;
@@ -64,6 +69,7 @@ header {
     background-size: 100% 100%;
     background-position: center;
 }
+
 .head-btn {
     display: block;
     float: left;
@@ -72,20 +78,22 @@ header {
     margin-right: 40px;
     /*line-height: 2em;*/
 }
+
 .head-btn:hover {
     color: #f2b139;
 }
+
 .head-home:hover {
     color: #f2b139;
 }
+
 .head-home:hover #head-logo {
-    background-image: url('logo-hover.png');
     background-size: 100% 100%;
-    background-position: center;
+    background: url('logo-hover.png') center;
 }
 
-#brand-btn{
-    font-size:2em;
+#brand-btn {
+    font-size: 2em;
     margin-top: 45px;
     /*text-transform: uppercase;*/
 }

@@ -31,25 +31,25 @@ class TwitterApi
 
         $composite_key = rawurlencode($this->api_key) . ':' . rawurlencode($this->api_secret);
 
-        echo $composite_key.'<br/>';
+        echo $composite_key . '<br/>';
 
         $base64 = base64_encode($composite_key);
 
-        echo $base64.'<br/>';
+        echo $base64 . '<br/>';
 
         $json = $this->request(
-          [
-            CURLOPT_HTTPHEADER => [
-              'Authorization: Basic ' . $base64,
-              'Content-type: application/x-www-form-urlencoded;charset=UTF-8',
-            ],
-            CURLINFO_HEADER_OUT => true,
-            CURLOPT_URL => self::AUTH_URL,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
-            CURLOPT_SSL_VERIFYPEER => false
-          ]
+            [
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Basic ' . $base64,
+                    'Content-type: application/x-www-form-urlencoded;charset=UTF-8',
+                ],
+                CURLINFO_HEADER_OUT => true,
+                CURLOPT_URL => self::AUTH_URL,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
+                CURLOPT_SSL_VERIFYPEER => false
+            ]
         );
 
         echo '<hr/>json:<br/>';
@@ -63,15 +63,15 @@ class TwitterApi
 
     protected function request($options)
     {
-      echo 'called request()...';
+        echo 'called request()...';
         $ch = curl_init();
         curl_setopt_array($ch, $options);
         $json = curl_exec($ch);
 
         echo curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        if( curl_getinfo($ch, CURLINFO_HTTP_CODE) !== 200) {
-          echo curl_error($ch);
+        if (curl_getinfo($ch, CURLINFO_HTTP_CODE) !== 200) {
+            echo curl_error($ch);
         }
 
         curl_close($ch);
@@ -105,25 +105,25 @@ class TwitterApi
         // $this->last_url = self::API_ENDPOINT . $path . '.json?' . http_build_query($qs);
         $this->last_url = 'https://api.twitter.com/1.1/search/tweets.json?q=superbowl';
 
-        echo $this->last_url.'<br/>';
+        echo $this->last_url . '<br/>';
 
         $base64_token = base64_encode($this->bearer_token);
-        echo $base64_token.'<br/>';
+        echo $base64_token . '<br/>';
 
         $json = $this->request(
-          [
-            CURLOPT_HTTPHEADER => [
-              'Authorization: Bearer ' . $base64_token,
-              'Host: api.twitter.com',
-              'Content-type: application/x-www-form-urlencoded;charset=UTF-8'
-            ],
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_URL => $this->last_url
-          ]
+            [
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Bearer ' . $base64_token,
+                    'Host: api.twitter.com',
+                    'Content-type: application/x-www-form-urlencoded;charset=UTF-8'
+                ],
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_URL => $this->last_url
+            ]
         );
 
         echo '<hr/>json:<br/>';
-        var_dump($json);        
+        var_dump($json);
 
         return ($decoded ? json_decode($json) : $json);
     }

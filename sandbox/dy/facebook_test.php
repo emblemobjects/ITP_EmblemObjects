@@ -1,5 +1,5 @@
 <head>
-	<title></title>
+    <title></title>
 
 </head>
 <body>
@@ -14,7 +14,7 @@ include_once '../../php/facebook-php-require.php';
 
 use Facebook\FacebookSession;
 
-FacebookSession::setDefaultApplication($FB['app_id'],$FB['app_secret']);
+FacebookSession::setDefaultApplication($FB['app_id'], $FB['app_secret']);
 
 
 
@@ -25,25 +25,27 @@ FacebookSession::setDefaultApplication($FB['app_id'],$FB['app_secret']);
 <hr/>
 
 <div
-  class="fb-like"
-  data-href="http://www.google.com"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
+    class="fb-like"
+    data-href="http://www.google.com"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
 </div>
 <!-- data-href="http//:localhost:8080/facebook/facebook-login.html" -->
 
 <div id="user">
     <div id="user-login">
-        <fb:login-button 
+        <fb:login-button
             scope="public_profile,email"
             autologoutlink="true"
             onlogin="checkLoginState();">
         </fb:login-button>
-    </div><!--end span#user-login-->
+    </div>
+    <!--end span#user-login-->
     <a href="#user">
         <div id="user-name"></div>
     </a>
+
     <div class="clear"></div>
     <a href="#designer" class="user-btn">Designer</a>
     <a href="#staff" class="user-btn">Emblem Staff</a>
@@ -56,8 +58,6 @@ FacebookSession::setDefaultApplication($FB['app_id'],$FB['app_secret']);
 <script>
 
 
-
-
 </script>
 
 <script type="text/javascript" src="../../js/config.js"></script>
@@ -67,13 +67,13 @@ FacebookSession::setDefaultApplication($FB['app_id'],$FB['app_secret']);
 
 <script>
 
-var config = window.config || {};
+    var config = window.config || {};
 
-facebook.init({
-  appID: '360442404114516',
-  ver: 'v2.1',
-  msg: 'Passed',
-});
+    facebook.init({
+        appID: '360442404114516',
+        ver: 'v2.1',
+        msg: 'Passed',
+    });
 
 </script>
 

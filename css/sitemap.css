@@ -4,7 +4,7 @@
 }
 
 .item-cat {
-    float:left ;
+    float: left;
     margin-left: 20px;
     margin-top: 5px;
 }
@@ -36,8 +36,8 @@
 }
 
 hr {
-    height:1px;
-    border:none;
+    height: 1px;
+    border: none;
     background-color: #f2b139;
     margin-bottom: 5px;
 }
@@ -52,9 +52,9 @@ h3 {
 }
 
 .link {
-    font-weight:700;
+    font-weight: 700;
     color: #333;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .link:hover {

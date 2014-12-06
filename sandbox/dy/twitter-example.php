@@ -1,19 +1,19 @@
-<?php 
+<?php
 
 require_once 'TwitterApi.php';
 
 // https://github.com/skaterdav85/twitter-library
 $twitterSearch = new Tang\TwitterRestApi\TwitterApi([
-  'api_key' => 'kce44m40sezTJxTwk7C7j36ww',
-  'api_secret' => 'hvUrDc3oqBnMmoGoHHppKTlON9XSoEk5Vw0GHXRR3yIWcpk03i'
+    'api_key' => 'kce44m40sezTJxTwk7C7j36ww',
+    'api_secret' => 'hvUrDc3oqBnMmoGoHHppKTlON9XSoEk5Vw0GHXRR3yIWcpk03i'
 ]);
 
 $json = $twitterSearch->authenticate()->get('search/tweets', [
-  'q' => 'cats'
+    'q' => 'cats'
 ]);
 
 
-echo '<hr/>'.$twitterSearch->getBearerToken();
+echo '<hr/>' . $twitterSearch->getBearerToken();
 echo $json;
 echo date('d/m/Y == H:i:s');
 
