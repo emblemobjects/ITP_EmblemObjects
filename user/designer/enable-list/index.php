@@ -28,8 +28,16 @@ include_once '../../../php/navigation_categories.php';
     <link rel="stylesheet" type="text/css" href="../../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../../css/user-lists.css">
 
+    <script>
+        facebook.init({
+            appID: config.FBID,
+            ver: config.FBVer
+        });
+    </script>
+
 </head>
 <body>
+<div id="fb-root"></div>
 
 <div id="wrapper">
     <?php

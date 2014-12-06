@@ -39,7 +39,7 @@ include_once '../php/navigation_categories.php';
     <script>
         facebook.init({
             appID: config.FBID,
-            ver: config.FBVer,
+            ver: config.FBVer
         });
     </script>
     <script>
