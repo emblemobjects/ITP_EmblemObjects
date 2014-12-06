@@ -6,7 +6,7 @@ include_once 'config.php';
  * */
 class email
 {
-    public static function email($input_template, $input_enable_id)
+    public static function send_email($input_template, $input_enable_id)
     {
         global $con;
 //variables from the form
@@ -34,8 +34,8 @@ class email
                 }
         */
 //echo "RECIPIENT : " . $recipient . "\n";
-        echo "TEMPLATE : " . $template . "\n";
-        echo "REQUEST ID : " . $enable_id . "\n";
+        //echo "TEMPLATE : " . $template . "\n";
+        //echo "REQUEST ID : " . $enable_id . "\n";
 //make sure the email is a valid format
 //get variables from the form/ SQL database
 
@@ -82,6 +82,10 @@ class email
         */
 
         if ($email_Ok == 1) {
+            $headers = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/html; charset=UTF-8' . "\r\n";
+            $headers .= "X-Mailer: PHP \r\n";
+            $headers .= "From: EmblemObjects\r\n";
+            //$headers .= 'Reply-To: ".$email."' . "\r\n";
             if ($template == "enable") {
                 $to = $customer_email;
                 $subject = "Your Design Request Confirmation : " . $enable_id;
@@ -100,8 +104,8 @@ class email
             EmblemObjects Team<br />
             Note: This is a one time email, you have not been entered in any mailing list.
         </html>";
-                echo "message to customer : " . $message;
-                mail($to, $subject, $message);
+                //echo "message to customer : " . $message;
+                mail($to, $subject, $message, $headers);
                 //TO THE DESIGNER
                 $to = $designer_email;
                 $subject = "New Enable Request :" . $enable_id;
@@ -117,8 +121,10 @@ class email
         Thank you for working with us!<br />
         EmblemObjects Team</html>
         ";
-                echo "message to designer : " . $message;
+                //echo "message to designer : " . $message;
                 mail($to, $subject, $message);
+                
+                
             } else if ($template == "pass") {
                 $to = $designer_email;
                 $subject = "Enable Request has Passed Enable Review";
@@ -130,7 +136,7 @@ class email
             buy it. Keep up the good work.<br />
             Great Job!<br />
             EmblemObjects Team</html>";
-                echo "Message to designer : " . $message;
+                //echo "Message to designer : " . $message;
                 mail($to, $subject, $message);
                 $to = $customer_email;
                 $subject = "Your Object is READY! Request: " . $enable_id;
@@ -142,8 +148,10 @@ class email
                     "<br /> We hope you like your object and hope to help you again on your creative endeavors!<br />
         Thank you for working with us!<br />
         EmblemObjects Team</html>";
-                echo "Message to customer : " . $message;
+                //echo "Message to customer : " . $message;
                 mail($to, $subject, $message);
+                
+                
             } else if ($template == "fail") {
                 $to = $customer_email;
                 $subject = "Your Object could not be printed: " . $enable_id;
@@ -154,22 +162,36 @@ class email
         be printable. Come back and check us out soon, maybe we can print it then! <br /> <br />
                 See you soon!<br />
                 EmblemObjects Staff</html>";
-                echo "Message to customer : " . $message;
+                //echo "Message to customer : " . $message;
                 mail($to, $subject, $message);
                 //MESSAGE TO DESIGNER
                 $to = $designer_email;
                 $subject = "Enable Request Failed Enable Review : " . $enable_id;
                 $message = "<html></html><img src = '../images/favicon-color.png'><br />
-        Designer" . $designer_name . "
+        Designer " . $designer_name . ",<br/>
         Sorry, your enable did not pass out enable review. If you want to know, please contact:
         designreview@emblemobjects.com. Most likely, the detail was too fine to be printed or files is
         too large. There will always be more enable requests. <br /> <br />
                 Keep on up the good work!<br />
                 EmblemObjects Team</html>";
-                echo "Message to Designer : " . $message;
+                //echo "Message to Designer : " . $message;
                 mail($to, $subject, $message);
+                
+                
+            } else if ($template == "designer-enable") {
+                $to = $designer_email;
+                $subject = "Thank You for Enabling Order #" . $enable_id;
+                $message = "<html><head><head/><body><img src = '../images/favicon-color.png' alt=''/><br />
+                Designer " . $designer_name . ",<br/><br/>
+                Thank you for uploading your designs.<br/>
+                You will recieve another email within 36 hours notifying you whether your designers were approved.<br/><br/>
+                Thank you for designing with us!<br/>
+                EmblemObjects Team
+                </body></html>";
+                //echo "Message to designer : " . $message;
+                mail($to, $subject, $message, $headers);
             }
-            mysqli_close($con);
+           // mysqli_close($con);
         }
     }
 }

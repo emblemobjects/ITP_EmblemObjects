@@ -26,16 +26,24 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Emblem Objects - Submit</title>
+    <title>Emblem Objects</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/handlebars-v2.0.0.js"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/facebook-js-sdk/facebook-sdk.js"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/facebook-js-sdk/facebook-api.js"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/config.js"></script>
+    <script type="text/javascript" src="<?php echo DIR; ?>/js/nav.js"></script>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../css/core.css">
     <link rel="stylesheet" type="text/css" href="../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../css/nav.css">
-    <link rel="stylesheet" type="text/css" href="../../css/core.css">
     <link rel="stylesheet" type="text/css" href="../../css/content.css">
     <link rel="stylesheet" type="text/css" href="../../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../css/customize.css">
     <link rel="stylesheet" type="text/css" href="../../css/review.css">
 </head>
 

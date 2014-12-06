@@ -39,7 +39,7 @@ include_once '../php/navigation_categories.php';
     <script>
         facebook.init({
             appID: config.FBID,
-            ver: config.FBVer
+            ver: config.FBVer,
         });
     </script>
     <script>
@@ -51,12 +51,6 @@ include_once '../php/navigation_categories.php';
 <body>
 <div id="fb-root"></div>
 
-<div id="overlay" class="hidden">
-    <div id="overlay-close"></div>
-    <div id="overlay-display">
-        <?php include '../handlebar-templates/overlay-html.php'; ?>
-    </div>
-</div>
 <div id="wrapper">
 
     <?php include "../templates/header.php"; ?>
@@ -65,11 +59,7 @@ include_once '../php/navigation_categories.php';
 
     <div id="content">
         <div class="container">
-
-            <div id="objects-display">
-                <?php items::display_grid($store_items_result); ?>
-                <div class="clear"></div>
-            </div>
+            This page is under construction.
         </div>
     </div>
 

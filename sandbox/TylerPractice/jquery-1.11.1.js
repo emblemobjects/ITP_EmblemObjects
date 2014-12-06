@@ -5987,7 +5987,7 @@
                 elems = i === last ? this : this.clone(true);
                 jQuery(insert[i])[original](elems);
 
-                // Modern browsers can apply jQuery collections as arrays, but oldIE needs a .get()
+                // Modern browsers can apply jQuery collection as arrays, but oldIE needs a .get()
                 push.apply(ret, elems.get());
             }
 

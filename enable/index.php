@@ -70,7 +70,7 @@ $enable_info = enable::get_request_info(helper::escape_str($con, $_REQUEST['enab
                 ?>
                 <div class="warning">Warning: You are accessing a request that already has files uploaded.</div>
             <?php }; ?>
-            <div id="info">
+            <div id="enable-info">
                 <div id="info-title">
                     <strong><span>ENABLE #<?php echo $enable_info['enable_id'] ?></span></strong><br>
                     <strong>requested by

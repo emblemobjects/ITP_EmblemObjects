@@ -2,13 +2,13 @@
     background: #333333;
     min-width: 1200px;
     width: 100%;
-    height: 100px; /* Height of the footer */
+    height: 170px; /* Height of the footer */
     position: absolute;
-    bottom: 0px;
+    bottom: -70px;
 }
 
 /* social icons container */
-#footer div {
+#icons-container {
     width: 160px;
     height: 100px;
     text-align: center;
@@ -29,37 +29,44 @@
 
 #twitter {
     background-size: 35px 35px;
-    background: url('../images/icon_twitter.png') no-repeat;
+    background-image: url('../images/icon_twitter.png');
     float: left;
 }
 
 #facebook {
     background-size: 35px 35px;
-    background: url('../images/icon_facebook.png') no-repeat;
+    background-image: url('../images/icon_facebook.png');
     float: left;
     margin: 0px 0px 15px 0px;
 }
 
 #pinterest {
     background-size: 35px 35px;
-    background: url('../images/icon_pinterest.png') no-repeat;
+    background-image: url('../images/icon_pinterest.png');
     float: left;
 }
 
 #twitter:hover {
     background-size: 35px 35px;
-    background: url('../images/icon_twitter_color.png') no-repeat;
+    background-image: url('../images/icon_twitter_color.png');
     float: left;
 }
 
 #facebook:hover {
     background-size: 35px 35px;
-    background: url('../images/icon_facebook_color.png') no-repeat;
+    background-image: url('../images/icon_facebook_color.png');
     float: left;
 }
 
 #pinterest:hover {
     background-size: 35px 35px;
-    background: url('../images/icon_pinterest_color.png') no-repeat;
+    background-image: url('../images/icon_pinterest_color.png');
     float: left;
+}
+#info {
+    text-align: center;
+    width: 270px;
+    color: white;
+    font-size: .7em;
+    margin: auto;
 }

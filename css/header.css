@@ -60,11 +60,11 @@ header {
 #head-logo {
     display: block;
     float: left;
-    width: 40px;
-    height: 40px;
-    margin-top: 24px;
+    width: 50px;
+    height: 50px;
+    margin-top: 14px;
     background-size: 100% 100%;
-    background: url('../asset/favicon-fff.png') center;
+    background-image: url('../asset/favicon-fff.png');
 }
 
 .head-btn {
@@ -86,5 +86,5 @@ header {
 
 .head-home:hover #head-logo {
     background-size: 100% 100%;
-    background: url('../asset/favicon-f2b139.png') center;
+    background-image: url('../asset/favicon-f2b139.png');
 }

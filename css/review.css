@@ -10,6 +10,8 @@
 }
 
 #review {
+    font-family: Garamond, serif;
+    font-size: 12pt;
 
 }
 
@@ -50,13 +52,19 @@
 #approve-button {
     float: left;
     margin-left: 250px;
-    background-color: #999999;
+    background-color: #e3e3e3;
+    font-family: Garamond, serif;
+    font-size: 12pt;
+    padding: 5px;
 }
 
 #reject-button {
     float: right;
     margin-right: 250px;
-    background-color: #999999;
+    background-color: #e3e3e3;
+    font-family: Garamond, serif;
+    font-size: 12pt;
+    padding: 5px;
 }
 
 

@@ -89,7 +89,7 @@ items::to_JS($store_items_result);
 
                     <div>
                         <div class="nav-column dark-nav-color">
-                            <a href="#"><h3>Launch Collection</h3></a>
+                            <a href="../collection/index.php"><h3>Launch Collection</h3></a>
                         </div>
                     </div>
                 </li>
@@ -98,7 +98,7 @@ items::to_JS($store_items_result);
 
                     <div>
                         <div class="nav-column dark-nav-color">
-                            <a href="#"><h3>Jacob Blitzer</h3></a>
+                            <a href="../designer/index.php"><h3>Jacob Blitzer</h3></a>
                         </div>
                     </div>
                 </li>
@@ -116,7 +116,7 @@ items::to_JS($store_items_result);
                     ?>
                     <input class="ml-3" type="text" name="search" placeholder="Search..."
                            value="<?php echo $search ?>"/>
-                    <button type="sumbit">
+                    <button type="submit">
                         <div id="magnifying-glass"></div>
                     </button>
                 </form>

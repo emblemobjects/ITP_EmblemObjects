@@ -16,6 +16,8 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
 {
 
     $target_file = $target_dir . basename($file["name"]);
+    $file_info = new SplFileInfo($file["name"]);
+    $file_extension = $file_info->getExtension();
     $uploadFile_type = $file["type"];
     $uploadFile_size = $file["size"];
 
@@ -24,7 +26,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
 
     // Check if file size > 3MB
     if ($uploadFile_size > 3000000) {
-        $upload_message = "*File size can not exceed 3MB.";
+        $upload_message = "*File size cannot exceed 3MB.";
         $uploadOk = 0;
     }
 
@@ -36,7 +38,7 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
             $uploadFile_type = strstr($uploadFile_type, '/');
             $uploadFile_type = str_replace("/", ".", $uploadFile_type);
         } else {
-            $upload_message = "*Only .gif, .png, .jpg, .jpeg, and .ai files are allowed.";
+            $upload_message = "*Please upload a .gif, .png, .jpg, .jpeg, or .ai file.";
             $uploadOk = 0;
         }
     } elseif ($file_type_num == 2) {
@@ -46,15 +48,15 @@ function uploadFile($file_type_num, $file, $target_dir, $enable_id, $new_file_na
         } elseif ($uploadFile_type == $filetypes[1]) {
             $uploadFile_type = ".stl";
         } else {
-            $upload_message = "*Only .obj and .stl files are allowed.";
+            $upload_message = "*Please upload a .obj or .stl file.";
             $uploadOk = 0;
         }
     } elseif ($file_type_num == 3) {
-        $filetypes = array("text/vnd.in3d.3dml", "model/vnd.flatland.3dml");
-        if (in_array($uploadFile_type, $filetypes)) {
+        $filetypes = array("model/vnd.flatland.3dml", "text/vnd.in3d.3dml", "x-world/x-3dmf");
+        if ((in_array($uploadFile_type, $filetypes)) || ($uploadFile_type == "application/octet-stream" && $file_extension == "3dm")){
             $uploadFile_type = ".3dm";
         } else {
-            $upload_message = "*Only .3dm files are allowed.";
+            $upload_message = "*Please upload a .3dm file.";
             $uploadOk = 0;
         }
     }
