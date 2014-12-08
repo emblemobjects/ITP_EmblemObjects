@@ -55,7 +55,7 @@ store.priceUpdate = function (index) {
         }
     }
     //Assuming that the "first" detail ID will always contain the lowest price (or in this case, will always be the price displayed because those radio boxes are auto checked
-    var lowest_price = store.items[id]['details'][0]['price'];
+    var lowest_price = (store.items[id]['details'][0]['price'] + 6)*1.15;
     var detail_id = store.items[id]['details'][0]['detail_id'];
     $("input[name='detail_id']").val(detail_id);
     var size = store.items[id]['details'][0]['size'];
@@ -71,7 +71,7 @@ store.priceUpdate = function (index) {
         //matches to the array
         for (var i = 0; i < store.items[id]['details'].length; i++) {
             if (store.items[id]['details'][i]['size'] == size && store.items[id]['details'][i]['material_id'] == material_id) {
-                var newSizePrice = store.items[id]['details'][i]['price'];
+                var newSizePrice = (store.items[id]['details'][i]['price']+ 6)*1.15;
                 var detail_id = store.items[id]['details'][i]['detail_id'];
             }
         }
@@ -87,7 +87,7 @@ store.priceUpdate = function (index) {
         material_id = $(this).val();
         for (var i = 0; i < store.items[id]['details'].length; i++) {
             if (store.items[id]['details'][i]['material_id'] == material_id && store.items[id]['details'][i]['size'] == size) {
-                var newMatPrice = store.items[id]['details'][i]['price'];
+                var newMatPrice = (store.items[id]['details'][i]['price']+ 6)*1.15;
                 var detail_id = store.items[id]['details'][i]['detail_id'];
             }
         }
