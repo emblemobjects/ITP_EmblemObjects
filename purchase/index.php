@@ -2,9 +2,9 @@
 include_once '../php/config.php';
 include_once '../php/items.php';
 include_once '../php/navigation_categories.php';
-//if (empty($_REQUEST['detail_id'])) {
-//    header("location: ../home/index.php");
-//}
+if (empty($_REQUEST['detail_id'])) {
+    header("location: ../home/index.php");
+}
 $items_array = items::get_items(0, 0, 0, 0, "");
 $detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
 $item_id = items::get_item_id($detail_id);
