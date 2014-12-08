@@ -49,7 +49,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <h1>PURCHASE YOUR UNIQUE OBJECT</h1>
                 <h4>Object: <?php echo $item_name ?></h4>
             </div>
-            <form id="purchaseObject" name="purchaseObject" onsubmit="return validateForm();" method="POST" action="<?php echo DIR . "/payment/index.php" ?>">
+            <form id="purchaseObject" name="purchaseObject" method="POST" action="<?php echo DIR . "/payment/index.php" ?>">
                 <div id="container-left">
 
                     <h3>Preview your object</h3>
@@ -79,25 +79,25 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                            readonly/><br/>
 
                     <div class="input">First Name:</div>
-                    <input type="text" name="firstName" size='25' required><br/>
+                    <input type="text" name="firstName" size='25' required onkeyup="store.lettersOnly(this.value)"><br/>
 
                     <div class="input">Last Name:</div>
-                    <input type="text" name="lastName" size='25' required><br/>
+                    <input type="text" name="lastName" size='25' required onkeyup="store.lettersOnly(this.value)"><br/>
 
                     <div class="input">Email:</div>
-                    <input type="text" name="email" size='25' required><br/>
+                    <input type="text" name="email" size='25' required onkeyup="store.emailValidation(this.value)"><br/>
 
                     <div class="input">Shipping Address</div>
                     <input type="text" name="address" size='25' required><br/>
 
                     <div class="input">City:</div>
-                    <input type="text" name="city" size='25' required><br/>
+                    <input type="text" name="city" size='25' required onkeyup="store.lettersOnly(this.value)"><br/>
 
                     <div class="input">State:</div>
-                    <input type="text" name="state" size='25' required><br/>
+                    <input type="text" name="state" size='25' required onkeyup="store.lettersOnly(this.value)"><br/>
 
                     <div class="input">Zip Code:</div>
-                    <input type="text" name="zip" size='25' required><br/>
+                    <input type="text" name="zip" size='25' required onkeyup="store.numbersOnly(this.value)"><br/>
                 </div>
 
                 <br style="clear:both">
@@ -115,7 +115,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
     <?php include "../templates/footer.php"; ?>
 </div>
 
-<script src="<?php include "../js/purchase.js"; ?>"></script>
+<script src="../js/purchase.js"></script>
 
 </body>
 </html>
