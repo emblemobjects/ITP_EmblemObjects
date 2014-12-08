@@ -2,9 +2,9 @@
 include_once '../php/config.php';
 include_once '../php/items.php';
 include_once '../php/navigation_categories.php';
-if (empty($_REQUEST['detail_id'])) {
-    header("location: ../home/index.php");
-}
+//if (empty($_REQUEST['detail_id'])) {
+//    header("location: ../home/index.php");
+//}
 $items_array = items::get_items(0, 0, 0, 0, "");
 $detail_id = helper::escape_str($con, $_REQUEST['detail_id']);
 $item_id = items::get_item_id($detail_id);
@@ -49,7 +49,7 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
                 <h1>PURCHASE YOUR UNIQUE OBJECT</h1>
                 <h4>Object: <?php echo $item_name ?></h4>
             </div>
-            <form id="purchaseObject" method="POST" action="<?php echo DIR . "/payment/index.php" ?>">
+            <form id="purchaseObject" name="purchaseObject" onsubmit="return validateForm();" method="POST" action="<?php echo DIR . "/payment/index.php" ?>">
                 <div id="container-left">
 
                     <h3>Preview your object</h3>
@@ -114,5 +114,8 @@ $size = items::get_detail_info($item_id, $detail_id, "size");
 
     <?php include "../templates/footer.php"; ?>
 </div>
+
+<script src="<?php include "../js/purchase.js"; ?>"></script>
+
 </body>
 </html>
