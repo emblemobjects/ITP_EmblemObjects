@@ -66,6 +66,12 @@ include_once '../php/navigation_categories.php';
     <div id="content">
         <div class="container">
 
+            <?php
+                if ($search != "") {
+                    echo '<p id="search-results-text">Search results for "'. $search . '"</p>';
+                }
+            ?>
+
             <div id="objects-display">
                 <?php items::display_grid($store_items_result); ?>
                 <div class="clear"></div>
