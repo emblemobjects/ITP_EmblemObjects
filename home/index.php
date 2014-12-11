@@ -67,8 +67,8 @@ include_once '../php/navigation_categories.php';
         <div class="container">
 
             <?php
-                if ($search != "") {
-                    echo '<p id="search-results-text">Search results for "'. $search . '"</p>';
+                if ($_SESSION['search'] != "") {
+                    echo '<p id="search-results-text">Search results for "'. $_SESSION['search'] . '. Click "all" to clear."</p>';
                 }
             ?>
 
