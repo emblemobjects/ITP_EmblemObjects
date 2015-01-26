@@ -1,0 +1,6 @@
+[26-Jan-2015 02:19:32 America/Denver] PHP Fatal error:  Uncaught exception 'Facebook\FacebookSDKException' with message 'You must provide or set a default application id.' in /home/emblemo1/public_html/itp/php/facebook-php-sdk/src/FacebookSession.php:170
+Stack trace:
+#0 /home/emblemo1/public_html/itp/php/facebook-php-sdk/src/FacebookSignedRequestFromInputHelper.php(60): Facebook\FacebookSession::_getTargetAppId(NULL)
+#1 /home/emblemo1/public_html/itp/sandbox/dy/get-fb-session.php(29): Facebook\FacebookSignedRequestFromInputHelper->__construct()
+#2 {main}
+  thrown in /home/emblemo1/public_html/itp/php/facebook-php-sdk/src/FacebookSession.php on line 170
